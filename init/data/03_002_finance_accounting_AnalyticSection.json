@@ -1,0 +1,352 @@
+[
+    {
+        "name": "finance\\accounting\\AnalyticSection",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "code": "1EUP",
+                "description": null,
+                "is_locked": 0,
+                "label": "EUPEN",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 2,
+                "code": "1HAN",
+                "description": null,
+                "is_locked": 0,
+                "label": "HAN-SUR-LESSE",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 3,
+                "code": "1OVI",
+                "description": null,
+                "is_locked": 0,
+                "label": "OVIFAT",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 4,
+                "code": "1ROC",
+                "description": null,
+                "is_locked": 0,
+                "label": "ROCHEFORT",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 5,
+                "code": "1WAN",
+                "description": null,
+                "is_locked": 0,
+                "label": "WANNE",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 6,
+                "code": "2ANT",
+                "description": null,
+                "is_locked": 0,
+                "label": "ANTOING",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 7,
+                "code": "2AR2",
+                "description": null,
+                "is_locked": 0,
+                "label": "ARBREFONTAINE 2",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 8,
+                "code": "2ARB",
+                "description": null,
+                "is_locked": 0,
+                "label": "ARBREFONTAINE",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 9,
+                "code": "2BAS",
+                "description": null,
+                "is_locked": 0,
+                "label": "BASSEILLES",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 10,
+                "code": "2BOH",
+                "description": null,
+                "is_locked": 0,
+                "label": "BOHAN",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 11,
+                "code": "2BOV",
+                "description": null,
+                "is_locked": 0,
+                "label": "BOVET",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 12,
+                "code": "2BRP",
+                "description": null,
+                "is_locked": 0,
+                "label": "BRULY PRESBYTERE",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 13,
+                "code": "2BRU",
+                "description": null,
+                "is_locked": 0,
+                "label": "BRULY",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 14,
+                "code": "2BST",
+                "description": null,
+                "is_locked": 0,
+                "label": "BASTOGNE",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 15,
+                "code": "2CHA",
+                "description": null,
+                "is_locked": 0,
+                "label": "CHASSEPIERRE",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 16,
+                "code": "2COL",
+                "description": null,
+                "is_locked": 0,
+                "label": "COLLIPAIN",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 17,
+                "code": "2COR",
+                "description": null,
+                "is_locked": 0,
+                "label": "CORNIMONT",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 18,
+                "code": "2DAV",
+                "description": null,
+                "is_locked": 0,
+                "label": "DAVERDISSE",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 19,
+                "code": "2HAS",
+                "description": null,
+                "is_locked": 0,
+                "label": "HASTIERE",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 20,
+                "code": "2HAU",
+                "description": null,
+                "is_locked": 0,
+                "label": "HAUS-STOCKEM",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 21,
+                "code": "2HOU",
+                "description": null,
+                "is_locked": 0,
+                "label": "HOUDEMONT",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 22,
+                "code": "2LAR",
+                "description": null,
+                "is_locked": 0,
+                "label": "LA REID",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 23,
+                "code": "2LAT",
+                "description": null,
+                "is_locked": 0,
+                "label": "LATOUR",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 24,
+                "code": "2LES",
+                "description": null,
+                "is_locked": 0,
+                "label": "LESSE",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 25,
+                "code": "2LOU",
+                "description": null,
+                "is_locked": 0,
+                "label": "LOUETTE-ST-PIERRE",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 26,
+                "code": "2MAB",
+                "description": null,
+                "is_locked": 0,
+                "label": "MABOGE",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 27,
+                "code": "2MOR",
+                "description": null,
+                "is_locked": 0,
+                "label": "MORMONT",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 28,
+                "code": "2STA",
+                "description": null,
+                "is_locked": 0,
+                "label": "STAVELOT",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 29,
+                "code": "2STR",
+                "description": null,
+                "is_locked": 0,
+                "label": "STRYA",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 30,
+                "code": "2VER",
+                "description": null,
+                "is_locked": 0,
+                "label": "VERGNIES",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 31,
+                "code": "2VIL",
+                "description": null,
+                "is_locked": 0,
+                "label": "VILLERS",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 32,
+                "code": "2WER",
+                "description": null,
+                "is_locked": 0,
+                "label": "WERBOMONT",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 33,
+                "code": "3NAM",
+                "description": null,
+                "is_locked": 0,
+                "label": "NAMUR",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 34,
+                "code": "3SEC",
+                "description": null,
+                "is_locked": 0,
+                "label": "SECRETARIAT",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 35,
+                "code": "4BRL",
+                "description": null,
+                "is_locked": 0,
+                "label": "BREL",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 36,
+                "code": "4OLL",
+                "description": null,
+                "is_locked": 0,
+                "label": "LLN",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 37,
+                "code": "5COM",
+                "description": null,
+                "is_locked": 0,
+                "label": "Commun Villers",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 38,
+                "code": "ZLLN",
+                "description": null,
+                "is_locked": 0,
+                "label": "LLN test",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 39,
+                "code": "ZZZZ",
+                "description": null,
+                "is_locked": 0,
+                "label": "GENERAL",
+                "analytic_chart_id": null
+            },
+            {
+                "id": 40,
+                "code": null,
+                "description": null,
+                "is_locked": 0,
+                "label": null,
+                "analytic_chart_id": null
+            },
+            {
+                "id": 41,
+                "code": null,
+                "description": null,
+                "is_locked": 0,
+                "label": null,
+                "analytic_chart_id": null
+            },
+            {
+                "id": 42,
+                "code": null,
+                "description": null,
+                "is_locked": 0,
+                "label": null,
+                "analytic_chart_id": null
+            },
+            {
+                "id": 43,
+                "code": "3VGO",
+                "description": null,
+                "is_locked": 0,
+                "label": "VANGOGH",
+                "analytic_chart_id": null
+            }
+        ]
+    }
+]

@@ -1,0 +1,78 @@
+{
+    "name": "Recherche avancé de paiement",
+    "description": "Contrôleur proposant une recherche avancée de la paiment.",
+    "model": {
+        "booking_id": {
+            "label": "Réservation",
+            "description": "La réservation est liée au paiement.",
+            "help": ""
+        },
+        "center_office_id": {
+            "label": "Center de gestion",
+            "description": "Le centre de gestion qui traite le paiement.",
+            "help": ""
+        },
+        "partner_id": {
+            "label": "Client",
+            "description": "Client de la réservation associée au paiement .",
+            "help": ""
+        },
+        "amount_min": {
+            "label": "Montant minimal",
+            "description": "Montant minimal attendu pour le paiement.",
+            "help": ""
+        },
+        "amount_max": {
+            "label": "Montant maximum",
+            "description": "Montant maximal attendu pour le paiement.",
+            "help": ""
+        },
+        "receipt_date_min": {
+            "label": "Date de réception du",
+            "description": "Date minimale de réception du paiement.",
+            "help": ""
+        },
+        "receipt_date_max": {
+            "label": "Date de réception au",
+            "description": "Date maximale de réception au paiement.",
+            "help": ""
+        },
+        "booking_date_min": {
+            "label": "Date de la réservation du",
+            "description": "Date minimale de la reservation.",
+            "help": ""
+        },
+        "booking_date_max": {
+            "label": "Date de la réservation au",
+            "description": "Date maximale de réservation.",
+            "help": ""
+        },
+        "bank_account_iban": {
+            "label": "IBAN",
+            "description": "Paiements liés à un numéro de compte bancaire.",
+            "help": ""
+        },
+        "payment_origin": {
+            "label": "Origine de paiement",
+            "description": "L'origine de paiement utilisé.",
+            "selection": {
+                "all": "Tout",
+                "cashdesk": "Caisse",
+                "bank": "Banque",
+                "online": "En ligne"
+            },
+            "help": ""
+        },
+        "payment_method": {
+            "label": "Mode de paiement",
+            "description": "Le mode de paiement utilisé.",
+            "selection": {
+                "all": "Tout",
+                "bank_card": "Carte bancaire",
+                "voucher": "Chèque cadeau (voucher)",
+                "cash": "Espèces"
+            },
+            "help": ""
+        }
+    }
+}

@@ -1,0 +1,65 @@
+{
+    "description": "",
+    "view": {
+        "item.bank_statements": {
+            "label": "Extraits bancaires",
+            "help": ""
+        },
+        "item.bank_statements.all": {
+            "label": "Tous les extraits",
+            "help": ""
+        },
+        "item.bank_statements.ready": {
+            "label": "Extraits réconciliés",
+            "help": ""
+        },
+        "item.exports": {
+            "label": "Exports",
+            "help": ""
+        },
+        "item.exports.downloads": {
+            "label": "Exports à télécharger",
+            "help": ""
+        },
+        "item.exports.all": {
+            "label": "Tous les exports",
+            "help": ""
+        },
+        "item.invoices": {
+            "label": "Factures",
+            "help": ""
+        },
+        "item.invoices.all": {
+            "label": "Toutes les factures",
+            "help": ""
+        },
+        "item.fundings": {
+            "label": "Paiements",
+            "help": ""
+        },
+        "item.fundings.reimburse": {
+            "label": "Paiements à rembourser",
+            "help": ""
+        },
+        "item.settings": {
+            "label": "Paramètres",
+            "help": ""
+        },
+        "finance.accounting.vat_rules": {
+            "label": "Règles TVA",
+            "help": ""
+        },
+        "finance.accounting.accounting_rules": {
+            "label": "Règles comptables",
+            "help": ""
+        },
+        "finance.accounting.account_chart": {
+            "label": "Plan comptable",
+            "help": ""
+        },
+        "finance.accounting.accounting_journals": {
+            "label": "Journaux comptables",
+            "help": ""
+        }
+    }
+}

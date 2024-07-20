@@ -1,0 +1,30 @@
+{
+    "name": "test",
+    "description": "",
+    "controller": "lodging_test",
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "name",
+
+                "width": "10%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "value": "code",
+                "width": "15%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "value": "date",
+                "width": "10%",
+                "widget": {
+                    "usage": "datetime/short"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "name": "Taux d'occupation",
+    "description": "This view displays the occupancy rate.",
+    "access": {
+        "groups": ["booking.default.user"]
+    },
+    "controller": "lodging_stats_chart-occupancy",
+    "header": {
+        "modes": ["grid"]
+    },
+    "layout": {
+        "entity": "lodging\\sale\\booking\\Consumption",
+        "group_by": "range",
+        "field": "date",
+        "range_interval": "month",
+        "range_from": "date.prev.month.first",
+        "range_to": "date.next.month.last"
+    }
+}

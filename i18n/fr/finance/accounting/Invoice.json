@@ -1,0 +1,85 @@
+{
+    "name": "Facture",
+    "plural": "Factures",
+    "description": "",
+    "model": {
+        "name": {
+            "label": "Numéro",
+            "description": "Numéro de facture.",
+            "help": ""
+        },
+        "center_office_id": {
+            "label": "Equipe de gestion",
+            "description": "Le centre de gestion à l'origine de la facture.",
+            "help": ""
+        },
+        "display_price": {
+            "label": "Total",
+            "description": "Montant total de la facture.",
+            "help": ""
+        },
+        "balance": {
+            "label": "Solde",
+            "description": "Solde de la facture.",
+            "help": "Montant restant à payer au moment de l'émission de la facture."
+        },
+        "accounting_price": {
+            "label": "Total",
+            "description": "Montant total de la facture.",
+            "help": ""
+        },
+        "reversed_invoice_id": {
+            "label": "Facture liée",
+            "description": "La facture symétrique (facture annulée ou note de crédit).",
+            "help": ""
+        },
+        "is_deposit": {
+            "label": "Facture d'acompte",
+            "description": "La facture est une facture d'acompte.",
+            "help": ""
+        }
+    },
+    "view": {
+        "form.default": {
+            "name": "Facture",
+            "description": "",
+            "actions": {
+                "action.invoice": {
+                    "label": "Émettre la facture",
+                    "description": "Générer une facture sur base de la version proforma."
+                },
+                "action.reverse": {
+                    "label": "Note de crédit",
+                    "description": "Annuler la facture par une note de crédit."
+                },
+                "action.refresh_paid": {
+                    "label": "Rafraîchir le statut",
+                    "description": "Forcer la vérification du statut des paiements."
+                },
+                "action.remove": {
+                    "label": "Supprimer la proforma",
+                    "description": "La facture proforma sera supprimée."
+                },
+                "action.refresh_fundings": {
+                    "label": "(Re)générer le financement",
+                    "description": "Une vérification sera faire sur la facture et un financement sera créé si nécessaire. Et les acomptes de prépaiement (partiellement) payés y seront rattachés."
+                }
+            },
+            "layout": {
+                "sections.invoice.lines": {
+                    "label": "Lignes de facture"
+                },
+                "sections.invoice.entries": {
+                    "label": "Écritures comptables"
+                }
+            }
+        },
+        "list.default": {
+            "name": "Factures",
+            "description": "Liste des factures.",
+            "layout": {
+            }
+        }
+    },
+    "error": {}
+}

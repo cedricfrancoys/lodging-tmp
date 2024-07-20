@@ -1,0 +1,10 @@
+{
+    "name": "Client",
+    "plural": "Clients",
+    "description": "",
+    "error": {
+        "bookings_ids": {
+            "non_removable_customer": "Les clients liés à des réservations ne peuvent pas être supprimés."
+        }
+    }
+}

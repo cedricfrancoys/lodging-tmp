@@ -1,0 +1,217 @@
+:host {
+
+    a {
+        cursor: pointer;
+    }
+
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+    .overlay-container {
+        @media print {
+            display: none;
+        }
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        background-color: white;
+
+        mat-spinner {
+            position: absolute;
+            left: calc(50% - 50px);
+            top: 33%;
+        }
+    }
+
+    .container {
+        height: 100%;
+        width: 100%;
+
+        &.hidden {
+            display: none;
+        }
+
+        .header-wrap{
+            @media print {
+                display: none;
+            }
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: solid 1px lightgrey;
+            height: 48px;
+
+            .header {
+                padding-left: 12px;
+                height: 48px;
+                line-height: 48px;
+                font-size: 22px;
+            }
+        }
+        .body {
+            position: relative;
+
+            @media print {
+                height: auto !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                background-color: white !important;
+
+                &::-webkit-scrollbar-thumb {
+                    background: transparent !important;
+                }
+            }
+
+            height: calc(100vh - 123px);
+            width: 100%;
+            overflow-y: scroll;
+            padding: 12px;
+            background-color: #e1e1e1;
+
+
+            &::-webkit-scrollbar {
+                width: 6px;
+                background: transparent;
+
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: var(--mdc-theme-primary, #6200ee);
+                border-radius: 10px;
+            }
+
+            .actions {
+                @media print {
+                    display: none;
+                    margin: 0 !important;
+                    padding: 0 !important;
+                }
+
+                display: flex;
+
+                button {
+                    text-transform: uppercase;
+                }
+
+                .actions-view {
+                    position: fixed;
+
+                    button:not(:last-child) {
+                        margin-right: 12px;
+                    }
+                }
+
+            }
+
+            /* class related to the ticket */
+            .view {
+
+                @media print {
+                    &::-webkit-scrollbar-thumb {
+                       background: transparent;
+                    }
+                    /* Printer POS 80mm */
+                    &.pos-80 {
+                        height: auto !important;
+                        margin: 0 0 20mm 0!important;
+                        padding: 9mm 5mm 0 8mm !important;
+                        width: 100% !important;
+                        box-sizing: border-box !important;
+                        overflow-x: hidden;
+                    }
+                    /* Printer A4 */
+                    &.iso-a4 {
+                        position: relative;
+                        height: auto !important;
+                        left: 70mm;
+                        margin: 10mm 0 30mm 0 !important;
+                        width: 72mm !important;
+                        padding: 9mm !important;
+                        border: solid 1px black;
+                    }
+                }
+
+                margin: auto;
+                margin-top: 30px;
+
+                /* ticket layout, whatever the printer */
+                width: 72mm;
+                padding: 9mm;
+                background-color: white;
+                font-size: 14px;
+
+                hr {
+                    border: thin 1px black;
+                    margin: 0;
+                }
+
+                .ticket-details {
+                    text-align: center;
+                    font-size: 15px;
+                    p {
+                        margin: 0.5px 0 !important;
+                    }
+
+                    .company-name {
+                        font-weight: 600;
+                    }
+                }
+
+                .customer-details {
+                    text-align: center;
+                    margin-top: 1px;
+
+                    p {
+                        margin: 0.5px 0 !important;
+                    }
+                }
+
+                .order-details {
+                    text-align: center;
+                    margin-top: 10px;
+
+                    font-size: 15px;
+
+                    p {
+                        padding: 0;
+                        margin: 0;
+                    }
+                }
+
+                .dotts {
+                    float: right;
+                    font-weight: lighter;
+                    margin: 0.2rem;
+                }
+
+                h2 {
+                    text-align: center;
+                    text-decoration: underline;
+                }
+
+                ul {
+                    padding: 0;
+
+                    li {
+                        list-style-type: none;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        span:last-of-type {
+                            margin-left: auto;
+                        }
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+}

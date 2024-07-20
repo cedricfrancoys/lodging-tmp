@@ -1,0 +1,26 @@
+{
+    "name": "Recherche avancé des Arrivées",
+    "description": "Contrôleur pour la recherche avancée des Arrivées (réservations).",
+    "model": {
+        "center_id": {
+            "label": "Centre",
+            "description": "Centre pour lequel faire la recherche.",
+            "help": ""
+        },
+        "date_from": {
+            "label": "Date de début",
+            "description": "Date de début de l'intervalle de temps.",
+            "help": ""
+        },
+        "date_to": {
+            "label": "Date de fin ",
+            "description": "Date de fin de l'intervalle de temps.",
+            "help": ""
+        },
+        "type_id": {
+            "label": "Type",
+            "description": "Type de réservation (automatique, selon les produits choisis).",
+            "help": ""
+        }
+    }
+}

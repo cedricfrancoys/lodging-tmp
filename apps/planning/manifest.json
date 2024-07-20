@@ -1,0 +1,13 @@
+{
+    "name": "APPS_APP_PLANNING",
+    "description": "",
+    "url": "/planning",
+    "icon": "calendar_month",
+    "color": "#D1358D",
+    "access": {
+        "groups": [
+            "booking.infra.user"
+        ]
+    },
+    "show_in_apps": true
+}

@@ -1,0 +1,48 @@
+[
+    {
+        "name": "sale\\customer\\AgeRange",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "name": "Adulte (26-99)",
+                "description": "Adultes de 26 ans et plus.",
+                "age_from": 26,
+                "age_to": 99,
+                "is_active": 1
+            },
+            {
+                "id": 2,
+                "name": "Secondaire (12-26)",
+                "description": "Adolescents (école secondaire) et jeunes adultes.",
+                "age_from": 12,
+                "age_to": 26,
+                "is_active": 1
+            },
+            {
+                "id": 3,
+                "name": "Primaire (6-12)",
+                "description": "Enfants (école primaire).",
+                "age_from": 6,
+                "age_to": 12,
+                "is_active": 1
+            },
+            {
+                "id": 4,
+                "name": "Maternelle (3-6)",
+                "description": "Enfants en bas âge (école maternelle).",
+                "age_from": 3,
+                "age_to": 6,
+                "is_active": 1
+            },
+            {
+                "id": 5,
+                "name": "Bébé (0-3)",
+                "description": "Enfants en très bas âge (bébés).",
+                "age_from": 0,
+                "age_to": 3,
+                "is_active": 1
+            }
+        ]
+    }
+]

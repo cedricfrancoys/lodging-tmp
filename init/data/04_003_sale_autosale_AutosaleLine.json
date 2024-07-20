@@ -1,0 +1,305 @@
+[
+    {
+        "name": "sale\\autosale\\AutosaleLine",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "description": "Carte de membre",
+                "has_own_qty": 1,
+                "qty": 1,
+                "product_id": 945,
+                "autosale_list_id": 1,
+                "scope": "booking"
+            },
+            {
+                "id": 2,
+                "description": "Carte de membre",
+                "has_own_qty": 1,
+                "qty": 1,
+                "product_id": 945,
+                "autosale_list_id": 2,
+                "scope": "booking"
+            },
+            {
+                "id": 3,
+                "description": "Frais de dossier",
+                "has_own_qty": 1,
+                "qty": 1,
+                "product_id": 1392,
+                "autosale_list_id": 3,
+                "scope": "booking"
+            },
+            {
+                "id": 4,
+                "description": "Carte grand gîte",
+                "has_own_qty": 1,
+                "qty": 1,
+                "product_id": 1393,
+                "autosale_list_id": 3,
+                "scope": "booking"
+            },
+            {
+                "id": 5,
+                "description": "Carte petit gîte",
+                "has_own_qty": 1,
+                "qty": 1,
+                "product_id": 1394,
+                "autosale_list_id": 3,
+                "scope": "booking"
+            },
+            {
+                "id": 6,
+                "description": "Taxe de séjour",
+                "has_own_qty": 0,
+                "qty": 1,
+                "product_id": 963,
+                "autosale_list_id": 1,
+                "scope": "group"
+            },
+            {
+                "id": 7,
+                "description": "Taxe de séjour",
+                "has_own_qty": 0,
+                "qty": 1,
+                "product_id": 1349,
+                "autosale_list_id": 3,
+                "scope": "group"
+            },
+            {
+                "id": 8,
+                "description": "Taxe de séjour",
+                "has_own_qty": 0,
+                "qty": 1,
+                "product_id": 660,
+                "autosale_list_id": 2,
+                "scope": "group"
+            },
+            {
+                "id": 9,
+                "description": "Carte de membre",
+                "has_own_qty": 1,
+                "qty": 1,
+                "product_id": 945,
+                "autosale_list_id": 4,
+                "scope": "booking"
+            },
+            {
+                "id": 10,
+                "description": "Taxe de séjour",
+                "has_own_qty": 0,
+                "qty": 1,
+                "product_id": 963,
+                "autosale_list_id": 4,
+                "scope": "group"
+            },
+            {
+                "id": 11,
+                "description": "Carte de membre",
+                "has_own_qty": 1,
+                "qty": 1,
+                "product_id": 945,
+                "autosale_list_id": 5,
+                "scope": "booking"
+            },
+            {
+                "id": 12,
+                "description": "Taxe de séjour",
+                "has_own_qty": 0,
+                "qty": 1,
+                "product_id": 660,
+                "autosale_list_id": 5,
+                "scope": "group"
+            },
+            {
+                "id": 13,
+                "description": "Frais de dossier",
+                "has_own_qty": 1,
+                "qty": 1,
+                "product_id": 1392,
+                "autosale_list_id": 6,
+                "scope": "booking"
+            },
+            {
+                "id": 14,
+                "description": "Carte grand gîte",
+                "has_own_qty": 1,
+                "qty": 1,
+                "product_id": 1393,
+                "autosale_list_id": 6,
+                "scope": "group"
+            },
+            {
+                "id": 15,
+                "description": "Carte petit gîte",
+                "has_own_qty": 1,
+                "qty": 1,
+                "product_id": 1394,
+                "autosale_list_id": 6,
+                "scope": "group"
+            },
+            {
+                "id": 16,
+                "description": "Taxe de séjour",
+                "has_own_qty": 0,
+                "qty": 1,
+                "product_id": 1349,
+                "autosale_list_id": 6,
+                "scope": "group"
+            },
+            {
+                "id": 17,
+                "description": "Carte de membre",
+                "has_own_qty": 1,
+                "qty": 1,
+                "product_id": 945,
+                "autosale_list_id": 7,
+                "scope": "booking"
+            },
+            {
+                "id": 18,
+                "description": "Taxe de séjour",
+                "has_own_qty": 0,
+                "qty": 1,
+                "product_id": 963,
+                "autosale_list_id": 7,
+                "scope": "group"
+            },
+            {
+                "id": 19,
+                "description": "Carte de membre",
+                "has_own_qty": 1,
+                "qty": 1,
+                "product_id": 945,
+                "autosale_list_id": 8,
+                "scope": "booking"
+            },
+            {
+                "id": 20,
+                "description": "Taxe de séjour",
+                "has_own_qty": 0,
+                "qty": 1,
+                "product_id": 963,
+                "autosale_list_id": 8,
+                "scope": "group"
+            },
+            {
+                "id": 21,
+                "description": "Frais de dossier",
+                "has_own_qty": 1,
+                "qty": 1,
+                "product_id": 1392,
+                "autosale_list_id": 9,
+                "scope": "booking"
+            },
+            {
+                "id": 22,
+                "description": "Carte grand gîte",
+                "has_own_qty": 1,
+                "qty": 1,
+                "product_id": 1393,
+                "autosale_list_id": 9,
+                "scope": "group"
+            },
+            {
+                "id": 23,
+                "description": "Carte petit gîte",
+                "has_own_qty": 1,
+                "qty": 1,
+                "product_id": 1394,
+                "autosale_list_id": 9,
+                "scope": "group"
+            },
+            {
+                "id": 24,
+                "description": "Taxe de séjour",
+                "has_own_qty": 0,
+                "qty": 1,
+                "product_id": 963,
+                "autosale_list_id": 9,
+                "scope": "group"
+            },
+            {
+                "id": 25,
+                "description": "Carte de membre",
+                "has_own_qty": 1,
+                "qty": 1,
+                "product_id": 945,
+                "autosale_list_id": 10,
+                "scope": "booking"
+            },
+            {
+                "id": 26,
+                "description": "Taxe de séjour",
+                "has_own_qty": 0,
+                "qty": 1,
+                "product_id": 963,
+                "autosale_list_id": 10,
+                "scope": "group"
+            },
+            {
+                "id": 27,
+                "description": "Carte de membre",
+                "has_own_qty": 1,
+                "qty": 1,
+                "product_id": 945,
+                "autosale_list_id": 11,
+                "scope": "booking"
+            },
+            {
+                "id": 28,
+                "description": "Taxe de séjour",
+                "has_own_qty": 0,
+                "qty": 1,
+                "product_id": 963,
+                "autosale_list_id": 11,
+                "scope": "group"
+            },
+            {
+                "id": 29,
+                "description": "Frais de dossier",
+                "has_own_qty": 1,
+                "qty": 1,
+                "product_id": 1392,
+                "autosale_list_id": 0,
+                "scope": "booking"
+            },
+            {
+                "id": 30,
+                "description": "Carte grand gîte",
+                "has_own_qty": 1,
+                "qty": 1,
+                "product_id": 1393,
+                "autosale_list_id": 0,
+                "scope": "group"
+            },
+            {
+                "id": 31,
+                "description": "Carte petit gîte",
+                "has_own_qty": 1,
+                "qty": 1,
+                "product_id": 1394,
+                "autosale_list_id": 0,
+                "scope": "group"
+            },
+            {
+                "id": 32,
+                "description": "Taxe de séjour",
+                "has_own_qty": 0,
+                "qty": 1,
+                "product_id": 963,
+                "autosale_list_id": 12,
+                "scope": "group"
+            },
+            {
+                "id": 33,
+                "description": "Carte de membre générique",
+                "has_own_qty": 1,
+                "qty": 1,
+                "product_id": 945,
+                "autosale_list_id": 12,
+                "scope": "booking"
+            }
+        ]
+    }
+]

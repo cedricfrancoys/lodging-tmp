@@ -1,0 +1,58 @@
+{
+    "name": "Invoices",
+    "description": "List of invoices from the Center Offices.",
+    "access": {
+        "groups": ["finance.default.user", "sale.default.user"]
+    },
+    "order": "date",
+    "sort": "desc",
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "id",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "name",
+                "width": "20%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "value": "date",
+                "width": "20%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "value": "center_office_id",
+                "width": "20%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "value": "type",
+                "width": "15%"
+            },
+            {
+                "type": "field",
+                "value": "status",
+                "width": "15%"
+            },
+            {
+                "type": "field",
+                "value": "is_paid",
+                "width": "20%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "value": "display_price",
+                "width": "15%",
+                "sortable": true
+            }
+        ]
+    }
+}

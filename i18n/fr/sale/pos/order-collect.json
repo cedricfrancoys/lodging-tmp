@@ -1,0 +1,41 @@
+{
+    "name": "Recherche avancée de commande.",
+    "description": "Contrôleur proposant une recherche avancée des commandes.",
+    "model": {
+        "name": {
+            "label": "libellé",
+            "description": "Le mom de la commande.",
+            "help": ""
+        },
+        "cashdesk_id": {
+            "label": "Caisse",
+            "description": "La caisse associée à la commande.",
+            "help": ""
+        },
+        "center_id": {
+            "label": "Centre",
+            "description": "Le centre associé à la commande.",
+            "help": ""
+        },
+        "user_id": {
+            "label": "Utilisateur",
+            "description": "L'utilisateur associé à la commande.",
+            "help": ""
+        },
+        "funding_id": {
+            "label": "Financement",
+            "description": "Le financement associé à la commande",
+            "help": ""
+        },
+        "date_from": {
+            "label": "Date de début",
+            "description": "Date de début de l'intervalle de temps.",
+            "help": ""
+        },
+        "date_to": {
+            "label": "Date de fin ",
+            "description": "Date de fin de l'intervalle de temps.",
+            "help": ""
+        }
+    }
+}

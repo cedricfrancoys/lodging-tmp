@@ -1,0 +1,30 @@
+{
+    "name": "Product Models",
+    "description": "This view is intended for displaying the list of product models.",
+    "access": {
+        "groups": ["pos.default.user", "sale.default.user"]
+    },
+    "domain": [["can_sell", "=", true], ["categories_ids", "contains", 2]],
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "name",
+                "width": "40%"
+            },
+            {
+                "type": "field",
+                "value": "type",
+                "width": "15%",
+                "sortable": true,
+                "readonly": true
+            },
+            {
+                "type": "field",
+                "value": "can_sell",
+                "width": "10%",
+                "sortable": true
+            }
+        ]
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "name": "Cashdesk Sessions",
+    "description": "List of cashdesk logs (sessions).",
+    "access": {
+        "groups": ["pos.default.user"]
+    },
+    "domain": ["center_id", "in", "user.centers_ids"],
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "created",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "amount",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "user_id",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "cashdesk_id",
+                "width": "20%"
+            }
+        ]
+    }
+}

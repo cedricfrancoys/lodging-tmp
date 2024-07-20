@@ -1,0 +1,32 @@
+[
+    {
+        "name": "sale\\pos\\CashdeskSession",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 224,
+                "name": "Vincent Exsteen - Caisse Ovifat",
+                "amount": null,
+                "user_id": 76,
+                "cashdesk_id": 4,
+                "status": "pending",
+                "center_id": 27,
+                "amount_opening": 297.75,
+                "amount_closing": 0.00,
+                "note": ""
+            },
+            {
+                "id": 225,
+                "name": "Yvonne Vögel - Caisse Eupen",
+                "amount": null,
+                "user_id": 95,
+                "cashdesk_id": 1,
+                "status": "closed",
+                "center_id": 24,
+                "amount_opening": 185.50,
+                "amount_closing": 200.00,
+                "note": "Note de fermeture: \n12x0.1€\n9x0.2€\n18x0.5€\n15x1€\n19x2€\n5x5€\n4x10€\n1x20€\n1x50€\n"
+            }
+        ]
+    }
+]

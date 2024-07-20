@@ -1,0 +1,38 @@
+{
+    "name": "Calendrier RoomTypes",
+    "description": "",
+    "controller": "lodging_stats_stat-roomtypes",
+    "header": {
+        "actions": {
+            "ACTION.CREATE" : false
+        }
+    },
+    "group_by": ["date", {"field": "room_type", "operation": ["SUM", "object.availability"]}],
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "date",
+                "width": "15%",
+                "widget": {
+                    "usage": "datetime/short"
+                }
+            },
+            {
+                "type": "field",
+                "value": "room_type",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "availability",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "property",
+                "width": "20%"
+            }
+        ]
+    }
+}

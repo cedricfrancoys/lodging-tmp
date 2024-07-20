@@ -1,0 +1,720 @@
+[
+    {
+        "name": "sale\\discount\\Condition",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "name": "duration >= 3",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "3",
+                "discount_id": 1
+            },
+            {
+                "id": 2,
+                "name": "nb_pers >= 30",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "30",
+                "discount_id": 2
+            },
+            {
+                "id": 3,
+                "name": "nb_pers >= 30",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "30",
+                "discount_id": 3
+            },
+            {
+                "id": 4,
+                "name": "season = BS",
+                "operand": "season",
+                "operator": "=",
+                "value": "BS",
+                "discount_id": 4
+            },
+            {
+                "id": 5,
+                "name": "nb_pers >= 30",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "30",
+                "discount_id": 5
+            },
+            {
+                "id": 6,
+                "name": "nb_pers >= 30",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "30",
+                "discount_id": 6
+            },
+            {
+                "id": 7,
+                "name": "season = BS",
+                "operand": "season",
+                "operator": "=",
+                "value": "BS",
+                "discount_id": 7
+            },
+            {
+                "id": 8,
+                "name": "season = MS",
+                "operand": "season",
+                "operator": "=",
+                "value": "MS",
+                "discount_id": 8
+            },
+            {
+                "id": 9,
+                "name": "duration >= 3",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "3",
+                "discount_id": 9
+            },
+            {
+                "id": 10,
+                "name": "season = BS",
+                "operand": "season",
+                "operator": "=",
+                "value": "BS",
+                "discount_id": 10
+            },
+            {
+                "id": 143,
+                "name": "",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "10",
+                "discount_id": 143
+            },
+            {
+                "id": 144,
+                "name": "",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "20",
+                "discount_id": 143
+            },
+            {
+                "id": 145,
+                "name": "",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "20",
+                "discount_id": 144
+            },
+            {
+                "id": 146,
+                "name": "",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "30",
+                "discount_id": 144
+            },
+            {
+                "id": 147,
+                "name": "",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "30",
+                "discount_id": 145
+            },
+            {
+                "id": 148,
+                "name": "",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "40",
+                "discount_id": 145
+            },
+            {
+                "id": 149,
+                "name": "",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "40",
+                "discount_id": 146
+            },
+            {
+                "id": 150,
+                "name": "",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "50",
+                "discount_id": 146
+            },
+            {
+                "id": 151,
+                "name": "",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "50",
+                "discount_id": 147
+            },
+            {
+                "id": 152,
+                "name": "",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "60",
+                "discount_id": 147
+            },
+            {
+                "id": 153,
+                "name": "",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "60",
+                "discount_id": 148
+            },
+            {
+                "id": 154,
+                "name": "",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "70",
+                "discount_id": 148
+            },
+            {
+                "id": 155,
+                "name": "",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "70",
+                "discount_id": 149
+            },
+            {
+                "id": 156,
+                "name": "",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "80",
+                "discount_id": 149
+            },
+            {
+                "id": 157,
+                "name": "",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "80",
+                "discount_id": 150
+            },
+            {
+                "id": 158,
+                "name": "",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "90",
+                "discount_id": 150
+            },
+            {
+                "id": 159,
+                "name": "",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "90",
+                "discount_id": 151
+            },
+            {
+                "id": 160,
+                "name": "",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "100",
+                "discount_id": 151
+            },
+            {
+                "id": 161,
+                "name": "",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "100",
+                "discount_id": 152
+            },
+            {
+                "id": 162,
+                "name": "",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "2",
+                "discount_id": 152
+            },
+            {
+                "id": 163,
+                "name": "",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "2",
+                "discount_id": 143
+            },
+            {
+                "id": 164,
+                "name": "",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "2",
+                "discount_id": 144
+            },
+            {
+                "id": 165,
+                "name": "",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "2",
+                "discount_id": 145
+            },
+            {
+                "id": 166,
+                "name": "",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "2",
+                "discount_id": 146
+            },
+            {
+                "id": 167,
+                "name": "",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "2",
+                "discount_id": 147
+            },
+            {
+                "id": 168,
+                "name": "",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "2",
+                "discount_id": 148
+            },
+            {
+                "id": 169,
+                "name": "",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "2",
+                "discount_id": 149
+            },
+            {
+                "id": 170,
+                "name": "",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "2",
+                "discount_id": 150
+            },
+            {
+                "id": 171,
+                "name": "",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "2",
+                "discount_id": 151
+            },
+            {
+                "id": 172,
+                "name": "",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "110",
+                "discount_id": 152
+            },
+            {
+                "id" : 602,
+                "name" : "nb_pers >= 30",
+                "operand" : "nb_pers",
+                "operator" : ">=",
+                "value" : "30",
+                "discount_id" : 304
+            },
+            {
+                "id": 603,
+                "name": "season = BS",
+                "operand": "season",
+                "operator": "=",
+                "value": "BS",
+                "discount_id": 305
+            },
+            {
+                "id": 604,
+                "name": "season = MS",
+                "operand": "season",
+                "operator": "=",
+                "value": "MS",
+                "discount_id": 306
+            },
+            {
+                "id": 605,
+                "name": "duration >= 3",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "3",
+                "discount_id": 307
+            },
+            {
+                "id": 606,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "10",
+                "discount_id": 308
+            },
+            {
+                "id": 607,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "20",
+                "discount_id": 308
+            },
+            {
+                "id": 608,
+                "name": "  ",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "2",
+                "discount_id": 308
+            },
+            {
+                "id": 609,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "20",
+                "discount_id": 309
+            },
+            {
+                "id": 610,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "30",
+                "discount_id": 309
+            },
+            {
+                "id": 611,
+                "name": "  ",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "2",
+                "discount_id": 309
+            },
+            {
+                "id": 612,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "30",
+                "discount_id": 310
+            },
+            {
+                "id": 613,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "40",
+                "discount_id": 310
+            },
+            {
+                "id": 614,
+                "name": "  ",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "2",
+                "discount_id": 310
+            },
+            {
+                "id": 615,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "40",
+                "discount_id": 311
+            },
+            {
+                "id": 616,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "50",
+                "discount_id": 311
+            },
+            {
+                "id": 617,
+                "name": "  ",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "2",
+                "discount_id": 311
+            },
+            {
+                "id": 618,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "50",
+                "discount_id": 312
+            },
+            {
+                "id": 619,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "60",
+                "discount_id": 312
+            },
+            {
+                "id": 620,
+                "name": "  ",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "2",
+                "discount_id": 312
+            },
+            {
+                "id": 621,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "60",
+                "discount_id": 313
+            },
+            {
+                "id": 622,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "70",
+                "discount_id": 313
+            },
+            {
+                "id": 623,
+                "name": "  ",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "2",
+                "discount_id": 313
+            },
+            {
+                "id": 624,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "70",
+                "discount_id": 314
+            },
+            {
+                "id": 625,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "80",
+                "discount_id": 314
+            },
+            {
+                "id": 626,
+                "name": "  ",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "2",
+                "discount_id": 314
+            },
+            {
+                "id": 627,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "80",
+                "discount_id": 315
+            },
+            {
+                "id": 628,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "90",
+                "discount_id": 315
+            },
+            {
+                "id": 629,
+                "name": "  ",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "2",
+                "discount_id": 315
+            },
+            {
+                "id": 630,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "90",
+                "discount_id": 316
+            },
+            {
+                "id": 631,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "100",
+                "discount_id": 316
+            },
+            {
+                "id": 632,
+                "name": "  ",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "2",
+                "discount_id": 316
+            },
+            {
+                "id": 633,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "100",
+                "discount_id": 317
+            },
+            {
+                "id": 634,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "110",
+                "discount_id": 317
+            },
+            {
+                "id": 635,
+                "name": "  ",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "2",
+                "discount_id": 317
+            },
+            {
+                "id": 636,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "110",
+                "discount_id": 318
+            },
+            {
+                "id": 637,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "120",
+                "discount_id": 318
+            },
+            {
+                "id": 638,
+                "name": "  ",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "2",
+                "discount_id": 318
+            },
+            {
+                "id": 639,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "120",
+                "discount_id": 319
+            },
+            {
+                "id": 640,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "130",
+                "discount_id": 319
+            },
+            {
+                "id": 641,
+                "name": "  ",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "2",
+                "discount_id": 319
+            },
+            {
+                "id": 642,
+                "name": "  ",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "130",
+                "discount_id": 320
+            },
+            {
+                "id": 643,
+                "name": "  ",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "2",
+                "discount_id": 320
+            },
+            {
+                "id": 702,
+                "name": "season = BS",
+                "operand": "season",
+                "operator": "=",
+                "value": "BS",
+                "discount_id": 355
+            },
+            {
+                "id": 703,
+                "name": "season = MS",
+                "operand": "season",
+                "operator": "=",
+                "value": "MS",
+                "discount_id": 356
+            },
+            {
+                "id": 704,
+                "name": "season = HS",
+                "operand": "season",
+                "operator": "=",
+                "value": "HS",
+                "discount_id": 357
+            },
+            {
+                "id": 705,
+                "name": "duration >= 4",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "4",
+                "discount_id": 358
+            },
+            {
+                "id": 706,
+                "name": "duration >= 8",
+                "operand": "duration",
+                "operator": ">=",
+                "value": "8",
+                "discount_id": 359
+            },
+            {
+                "id": 707,
+                "name": "count_booking_24 > ",
+                "operand": "count_booking_24",
+                "operator": ">",
+                "value": null,
+                "discount_id": 360
+            },
+            {
+                "id": 910,
+                "name": "duration < 8",
+                "operand": "duration",
+                "operator": "<",
+                "value": "8",
+                "discount_id": 358
+            }
+        ]
+    }
+]

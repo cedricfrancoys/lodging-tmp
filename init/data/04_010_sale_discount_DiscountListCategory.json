@@ -1,0 +1,28 @@
+[
+    {
+        "name": "sale\\discount\\DiscountListCategory",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "name": "GA",
+                "description": "Listes de réduction Gites Auberges"
+            },
+            {
+                "id": 2,
+                "name": "GG",
+                "description": "Listes de réduction Gites de Groupe"
+            },
+            {
+                "id": 3,
+                "name": "VSG",
+                "description": "Listes de réduction Villers-Sainte-Gertrude"
+            },
+            {
+                "id": 4,
+                "name": "VG",
+                "description": "Van Gogh"
+            }
+        ]
+    }
+]

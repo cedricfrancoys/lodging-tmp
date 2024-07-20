@@ -1,0 +1,132 @@
+{
+    "name": "Contrats & Réservations",
+    "plural": "Contrats & Réservations",
+    "description": "",
+    "model": {
+        "center_id": {
+            "label": "Centre",
+            "description": "Centre pour lequel obtenir les stats.",
+            "help": ""
+        },
+        "organisation_id": {
+            "label": "Organisation",
+            "description": "Organisation pour lequel obtenir les stats.",
+            "help": ""
+        },
+        "center": {
+            "label": "Centre",
+            "description": "Centre auquel est assignée le séjour.",
+            "help": ""
+        },
+        "center_type": {
+            "label": "Type",
+            "description": "Centre auquel est assignée le séjour.",
+            "help": ""
+        },
+        "created": {
+            "label": "Créé",
+            "description": "Date de création de la réservation.",
+            "help": ""
+        },
+        "created_aamm": {
+            "label": "C. mois",
+            "description": "Index de la date de création de la réservation.",
+            "help": ""
+        },
+        "date_from": {
+            "label": "Du",
+            "description": "Date de début du séjour.",
+            "help": ""
+        },
+        "date_to": {
+            "label": "Au",
+            "description": "Date de fin du séjour.",
+            "help": ""
+        },
+        "aamm": {
+            "label": "mois",
+            "description": "Index de la date de début du séjour.",
+            "help": ""
+        },
+        "year": {
+            "label": "année",
+            "description": "Année de la réservation.",
+            "help": ""
+        },
+        "booking": {
+            "label": "Résa",
+            "description": "Réservation.",
+            "help": ""
+        },
+        "nb_pers": {
+            "label": "#pers",
+            "description": "Nombre de personnes.",
+            "help": ""
+        },
+        "nb_nights": {
+            "label": "#nuits",
+            "description": "Durée du séjour (en nuits).",
+            "help": ""
+        },
+        "nb_rental_units": {
+            "label": "#UL",
+            "description": "Nombre d'unités locatives.",
+            "help": ""
+        },
+        "nb_pers_nights": {
+            "label": "pers·nuit",
+            "description": "Nombre d'unités locatives.",
+            "help": ""
+        },
+        "nb_room_nights": {
+            "label": "UL·nuit",
+            "description": "Nombre d'unités locatives.",
+            "help": ""
+        },
+        "rate_class": {
+            "label": "Cat. Tarif",
+            "description": "Catégorie tarifaire.",
+            "help": ""
+        },
+        "customer_name": {
+            "label": "Client",
+            "description": "Nom du client.",
+            "help": ""
+        },
+        "customer_lang": {
+            "label": "Langue",
+            "description": "Langue parlée du client.",
+            "help": ""
+        },
+        "customer_zip": {
+            "label": "CP",
+            "description": "Code postal du client.",
+            "help": ""
+        },
+        "customer_country": {
+            "label": "Pays",
+            "description": "Pays d'origine du client.",
+            "help": ""
+        },
+        "price_vate": {
+            "label": "Prix HT",
+            "description": "Prix HTVA.",
+            "help": ""
+        },
+        "price_vati": {
+            "label": "Prix TTC",
+            "description": "Prix TVAC.",
+            "help": ""
+        }
+    },
+    "view": {
+        "search.default": {
+        },
+        "list.default": {
+        }
+    },
+    "error": {
+        "errors": {
+        }
+    }
+}

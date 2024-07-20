@@ -1,0 +1,30 @@
+{
+    "name": "Recherche avancé de finacement",
+    "description": "Contrôleur proposant une recherche avancée de financement..",
+    "model": {
+        "booking_id": {
+            "label": "Réservation",
+            "description": "La réservation est liéele au financement.",
+            "help": ""
+        },
+        "due_amount_min": {
+            "label": "Montant minimal",
+            "description": "Montant minimal attendu pour le financement.",
+            "help": ""
+        },
+        "due_amount_max": {
+            "label": "Montant maximum",
+            "description": "Montant maximum attendu pour le financement.",
+            "help": ""
+        },
+        "center_id": {
+            "label": "Center",
+            "description": "Le centre qui gère le financement",
+            "help": ""
+        },
+        "payment_reference": {
+            "label": "Réréference",
+            "description": "Message permettant d'identifier la raison de la transaction"
+        }
+    }
+}

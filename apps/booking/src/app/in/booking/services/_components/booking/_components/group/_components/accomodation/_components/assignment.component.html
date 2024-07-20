@@ -1,0 +1,25 @@
+<ng-container *ngIf="mode == 'view'">
+    <div style="flex: 1; display: flex;">
+        <div style="flex: 1; overflow: hidden;">{{instance.rental_unit_id?.name}} <small *ngIf="instance.rental_unit_id?.is_accomodation">({{instance.rental_unit_id?.capacity}})</small></div>
+        <div class="qty" >{{instance.qty}}</div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="mode == 'edit'">
+    <div style="flex: 1; display: flex;" class="editable">
+        <div style="flex: 1; overflow: hidden;">{{instance.rental_unit_id?.name}} <small *ngIf="instance.rental_unit_id?.is_accomodation">({{instance.rental_unit_id?.capacity}})</small></div>
+        <div *ngIf="!assignmentQtyOpen" class="qty" (click)="onclickAssignmentQty()">{{instance.qty}}</div>
+        <div *ngIf="assignmentQtyOpen" style="margin-left: auto;">
+            <mat-form-field style="max-width: 50px; transform: translateY(-17px);">
+                <input type="number" min="1" matInput (keyup.enter)="onchangeQty($event)" (blur)="onchangeQty($event)" [formControl]="qtyFormControl">
+            </mat-form-field>
+        </div>
+    </div>
+    <div style="margin-left: auto;">
+        <button style="transform: scale(0.75) translateY(-10px);" mat-icon-button (click)="ondelete()">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
+</ng-container>
+
+

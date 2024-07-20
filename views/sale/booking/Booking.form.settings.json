@@ -1,0 +1,565 @@
+{
+    "name": "Booking",
+    "description": "",
+    "access": {
+        "groups": ["booking.default.user"]
+    },
+    "header": {
+        "actions": {
+            "ACTION.SAVE": [
+                {
+                    "id": "SAVE_AND_CONTINUE"
+                },
+                {
+                    "id": "SAVE_AND_CLOSE"
+                }
+            ]
+        }
+    },
+    "actions": [
+        {
+            "id": "action.delete",
+            "label": "Delete",
+            "description": "This action is made for booking that were erroneously imported while not yet validated at channelmanager side. WARNING: this cannot be undone (double-check with Channel Manager).",
+            "controller": "lodging_booking_do-delete",
+            "confirm": true,
+            "visible": [ ["is_from_channelmanager", "=", true] ]
+        },
+        {
+            "id": "action.quote",
+            "label": "Revert to Quote",
+            "description": "Rental units will no longer be reserved and will be available for other bookings.",
+            "controller": "lodging_booking_do-quote",
+            "confirm": true,
+            "visible": [ ["status", "in", ["option", "confirmed", "validated"]], ["is_from_channelmanager", "=", false] ]
+        },
+        {
+            "id": "action.option",
+            "label": "Set as Option",
+            "description": "Rental units will be reserved but no funding will be claimed yet.",
+            "controller": "lodging_booking_do-option",
+            "confirm": true,
+            "visible": ["status", "=", "quote"]
+        },
+        {
+            "id": "action.option-confirm",
+            "label": "Confirm Booking",
+            "description": "Rental units will be reserved and the invoicing plan will be set up.",
+            "controller": "lodging_booking_do-option-confirm",
+            "confirm": true,
+            "visible": ["status", "=", "quote"]
+        },
+        {
+            "id": "action.confirm",
+            "label": "Confirm Booking",
+            "description": "Rental units will be reserved and the invoicing plan will be set up.",
+            "controller": "lodging_booking_do-confirm",
+            "confirm": true,
+            "visible": ["status", "=", "option"]
+        },
+        {
+            "id": "action.checkin",
+            "label": "Check In",
+            "description": "The host has arrived: the rental units will be marked as occupied.",
+            "controller": "lodging_booking_do-checkin",
+            "confirm": true,
+            "visible": ["status", "in", ["confirmed", "validated"]]
+        },
+        {
+            "id": "action.checkout",
+            "label": "Check Out",
+            "description": "The host is leaving: the rental units will be marked for cleaning.",
+            "controller": "lodging_booking_do-checkout",
+            "confirm": true,
+            "visible": ["status", "in", ["checkedin"]]
+        },
+        {
+            "id": "action.invoice",
+            "label": "Invoice",
+            "description": "All additional consumptions have been added. A proforma invoice will be generated.",
+            "controller": "lodging_booking_do-invoice",
+            "confirm": true,
+            "visible": ["status", "=", "checkedout"]
+        },
+        {
+            "id": "action.invoice-back",
+            "label": "Back to Check Out",
+            "description": "Adaptations are still required and the proforma invoice will have to be regenerated.",
+            "controller": "lodging_booking_do-checkout",
+            "confirm": true,
+            "visible": [["is_invoiced", "=", false], ["status", "in", ["invoiced", "debit_balance", "credit_balance", "balanced"]]]
+        },
+        {
+            "id": "action.cancel",
+            "label": "Cancel",
+            "description": "The booking will be cancelled and rental units will be freed. Possible cancellation fee will be applied.",
+            "controller": "lodging_booking_do-cancel",
+            "params": {
+                "id": "object.id"
+            },
+            "confirm": true,
+            "visible": [ ["status", "not in", ["invoiced", "debit_balance", "credit_balance", "balanced"]], ["is_from_channelmanager", "=", false] ]
+        },
+        {
+            "id": "action.import-contacts",
+            "label": "Import contacts",
+            "description": "The contacts from the selected customer will be (re) imported to the booking.",
+            "controller": "lodging_booking_import-contacts",
+            "params": {
+                "id": "object.id"
+            },
+            "confirm": true
+        },
+        {
+            "id": "action.release-rentalunits",
+            "label": "Release rental units",
+            "description": "Rental units will be released if they haven't been yet.",
+            "controller": "lodging_booking_release-rentalunits",
+            "confirm": true,
+            "visible": ["status", "=", "quote"]
+        },
+        {
+            "id": "action.reimbursed",
+            "label": "Mark as reimbursed",
+            "description": "The booking will be closed and marked as balanced (the amount already paid by the customer has been reimbursed).",
+            "controller": "lodging_booking_reimbursed",
+            "visible": ["status", "=", "credit_balance"]
+        },
+        {
+            "id": "action.update-status",
+            "label": "Update status",
+            "description": "The status of the booking will be adapted according to the status of its fundings.",
+            "controller": "lodging_booking_update-status",
+            "visible": [ ["status", "in", ["invoiced", "debit_balance", "credit_balance"]] ]
+        }
+    ],
+    "layout": {
+        "groups": [
+            {
+                "sections": [
+                    {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "50%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "label": "Reference",
+                                                "value": "name",
+                                                "width": "0%",
+                                                "visible": false
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "display_name",
+                                                "width": "50%",
+                                                "widget": {
+                                                    "heading": true
+                                                }
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "type_id",
+                                                "width": "30%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "price",
+                                                "width": "20%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "status",
+                                                "width": "25%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "nb_pers",
+                                                "width": "25%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "date_expiry",
+                                                "width": "25%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "is_noexpiry",
+                                                "width": "25%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "is_price_tbc",
+                                                "width": "33%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "is_locked",
+                                                "width": "33%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "is_cancelled",
+                                                "width": "30%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "is_invoiced",
+                                                "width": "30%"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "width": "50%",
+                                        "items": [
+                                            {
+                                                "type": "label",
+                                                "value": "",
+                                                "width": "50%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "date_from",
+                                                "width": "25%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "date_to",
+                                                "width": "25%"
+                                            },
+                                            {
+                                                "type": "label",
+                                                "value": "",
+                                                "width": "50%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "time_from",
+                                                "width": "25%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "time_to",
+                                                "width": "25%"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "sections": [
+                    {
+                        "label": "General info",
+                        "id": "section.booking_info",
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "50%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "label": "Center",
+                                                "value": "center_id",
+                                                "width": "100%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "customer_id",
+                                                "width": "100%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "center_office_id",
+                                                "width": "50%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "customer_identity_id",
+                                                "width": "50%"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "width": "50%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "label": "Via Tour Operator?",
+                                                "value": "has_tour_operator",
+                                                "width": "100%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "label": "Tour Operator",
+                                                "value": "tour_operator_id",
+                                                "width": "50%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "label": "Reference",
+                                                "value": "tour_operator_ref",
+                                                "width": "50%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "is_from_channelmanager",
+                                                "label": "Channel manager",
+                                                "width": "33%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "extref_reservation_id",
+                                                "label": "Channel manager",
+                                                "width": "50%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "guarantee_id",
+                                                "label": "Guarantee",
+                                                "width": "50%"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "description",
+                                                "width": "100%"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Booking Line Groups",
+                        "id": "section.bookingLineGroups_section",
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "booking_lines_groups_ids",
+                                                "width": "100%",
+                                                "widget": {
+                                                    "view": "list.settings"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Booking Lines",
+                        "id": "section.bookingLine_section",
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "booking_lines_ids",
+                                                "width": "100%",
+                                                "widget": {
+                                                    "view": "list.settings"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Contacts",
+                        "id": "section.booking_contacts",
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "contacts_ids",
+                                                "width": "100%",
+                                                "widget": {
+                                                    "view": "list.settings"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Contracts",
+                        "id": "section.booking_contracts",
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "contracts_ids",
+                                                "width": "100%",
+                                                "widget": {
+                                                    "view": "list.settings"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Consumptions",
+                        "id": "section.booking_consumptions",
+                        "comment": "",
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "consumptions_ids",
+                                                "width": "100%"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Composition",
+                        "id": "section.booking_composition",
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "composition_items_ids",
+                                                "width": "100%"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Fundings",
+                        "id": "section.booking_fundings",
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "payment_plan_id",
+                                                "width": "50%"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "fundings_ids",
+                                                "width": "100%",
+                                                "widget": {
+                                                    "view": "list.settings"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Invoices",
+                        "id": "section.booking_invoices",
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "invoices_ids",
+                                                "width": "100%",
+                                                "widget": {
+                                                    "view": "list.settings"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Mails",
+                        "id": "section.mails",
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "mails_ids",
+                                                "width": "100%"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

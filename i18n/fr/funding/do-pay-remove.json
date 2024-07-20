@@ -1,0 +1,18 @@
+{
+    "name": "Retirer les paiements manuels",
+    "description": "Le financement sera marqué comme non-payé et les paiements manuels seront supprimés.",
+    "model": {
+        "id": {
+            "label": "Identifiant",
+            "description": "Identifiant de la réservation ciblée.",
+            "help": ""
+        }
+    },
+    "error": {
+        "errors": {
+            "unknown_funding": "Réservation inconnue.",
+            "funding_not_paid": "La financement n'est pas marqué comme payé.",
+            "booking_balanced": "La réservation est clôturée"
+        }
+    }
+}

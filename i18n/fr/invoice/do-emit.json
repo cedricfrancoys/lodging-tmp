@@ -1,0 +1,21 @@
+{
+    "name": "Emission de la facture",
+    "description": "Une nouvelle facture sera générée sur base de la version proforma. Après cette opération, la factue sera en lecture seule et la réservation ne pourra plus être modifiée.",
+    "model": {
+        "id": {
+            "label": "Identifiant",
+            "description": "Identifiant de la facture proforma à émettre.",
+            "help": ""
+        }
+    },
+    "error": {
+        "errors": {
+            "unknown_booking": "Facture non rattachée à une réservation.",
+            "incompatible_status": "L'état de la réservation ne permet pas l'émission de facture.",
+            "pending_credit_note": "Une note de crédit est toujours en attente d'émission.",
+            "existing_previous_invoice": "Il y a une proforma pour le mois précédent.",
+            "incompatible_booking_status" : "La factura ne peut pas être émise dans l'état actuel de la réservation.",
+            "exceeding_booking_price": "Le total des factures dépasse le prix de la réservation."
+        }
+    }
+}

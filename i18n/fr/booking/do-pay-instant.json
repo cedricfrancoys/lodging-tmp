@@ -1,0 +1,17 @@
+{
+    "name": "Paiement rapide",
+    "description": "La réservation sera marquée comme payée via un paiement par carte bancaire.\n\nATTENTION: Lorsqu'elle aboutit à la clôture de la réservation, cette action ne peut plus être annulée.",
+    "model": {
+        "id": {
+            "label": "Identifiant",
+            "description": "Identifiant de la réservation ciblée.",
+            "help": ""
+        }
+    },
+    "error": {
+        "errors": {
+            "unknown_booking": "Réservation inconnue.",
+            "incompatible_status": "La réservation est clôturée."
+        }
+    }
+}

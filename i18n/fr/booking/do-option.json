@@ -1,0 +1,34 @@
+{
+    "name": "Prise d'option",
+    "description": "Le statut de la réservation sera mis à 'option' et les consommations seront ajoutées au planning. \nAucun paiement ne sera demandé, et une expiration automatique de l'option sera planifiée.",
+    "model": {
+        "id": {
+            "label": "Identifiant",
+            "description": "Identifiant de la réservation ciblée.",
+            "help": ""
+        },
+        "no_expiry": {
+            "label": "Pas d'expiration",
+            "description": "Si oui, la réservation restera en option sans limite de temps.",
+            "help": ""
+        },
+        "days_expiry": {
+            "label": "Jours d'expiration",
+            "description": "Nombre de jours d'expiration de la réservation en option.",
+            "help": ""
+        },
+        "free_rental_units": {
+            "label": "Libération auto des unités locatives",
+            "description": "Si oui, à l'expiration, les unités locatives seront libérées.",
+            "help": ""
+        }
+    },
+    "error": {
+        "errors": {
+            "overbooking_detected": "Surbooking détecté",
+            "invalid_accommodation_detected": "Assignation invalide détectée",
+            "empty_booking": "Réservation vide",
+            "invalid_booking": "Résevation invalide"
+        }
+    }
+}

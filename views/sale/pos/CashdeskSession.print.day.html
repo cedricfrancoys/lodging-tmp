@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+<title>Feuille de caisse</title>
+<style type="text/css">
+@page {
+  margin: 1cm;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.7em;
+    text-align: justify;
+    width: 100%;
+}
+
+h1 {
+    margin: 0;
+    font-size: 21px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+h3 {
+    margin: 0;
+    font-size: 15px;
+}
+
+table {
+    width: 100%;
+}
+
+table tr td, table tr th {
+    text-align: left;;
+}
+
+div, table, table tr td {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+hr {
+    border: 0;
+    margin: 10px 0;
+}
+
+.highlight {
+    padding: 5px;
+    background-color: rgb(221, 221, 221);
+}
+div.booking {
+    page-break-inside: avoid;
+}
+blockquote {
+    font-style: italic;
+    margin-left: 0;
+    padding-left: 10px;
+    border-left: solid 2px lightgrey;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li {
+    margin-left: 20px;
+}
+</style>
+
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td style="width: 100%;text-align: right;"><h2>{{cashdesksession.status}}</h2></td>
+        </tr>
+        <tr>
+            <td style="width: 100%;text-align: center;"><h1>Feuille de caisse</h1></td>
+        </tr>
+        <tr>
+            <td style="width: 100%;text-align: center;">{{date|date("d/m/Y H:i:s")}}</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td style="width: 50%;"><h3>Centre: {{cashdesksession.center_id.name}}</h3></td>
+            <td style="width: 50%;text-align: right;">Date d'ouverture: {{cashdesksession.created |date("d/m/Y H:i:s")}}</td>
+        </tr>
+        <tr>
+            <td style="width: 50%;">Caissier·ère: {{cashdesksession.user_id.name}}</td>
+            <td style="width: 50%;text-align: right;">Date de fermeture: {{cashdesksession.modified |date("d/m/Y H:i:s")}}</td>
+        </tr>
+    </table>
+    <br>
+
+    <table>
+        <tr>
+            <td style="width: 50%;">Montant fermeture: {{cashdesksession.amount_closing  | format_money()}}</td>
+            <td style="width: 50%;text-align: right;">Montant ouverture: {{cashdesksession.amount_opening  | format_money()}}</td>
+        </tr>
+        <tr>
+            <td style="width: 50%;">Montant attendu: {{total_expected  | format_money()}} </td>
+            <td style="width: 50%;text-align: right;">Montant reçu: {{total_received  | format_money()}} </td>
+        </tr>
+        <tr>
+            <td style="width: 50%;"><strong>Différence de montant: {{total_remaining  | format_money()}} </strong></td>
+            <td style="width: 50%;text-align: right;">Montant attendu: {{total_expected  | format_money()}} </td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <div >
+        <table style="border: solid 1px black;">
+            <thead>
+                <tr>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Commande</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Mode</th>
+                    <th scope="col">Financement</th>
+                    <th scope="col">Client</th>
+                    <th scope="col" style="text-align: right;" >Montant</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cashdesk_log_entries %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{item.type}}</td>
+                        <td>{{item.order}}</td>
+                        <td>{{item.created | date("d/m/Y H:i")}}</td>
+                        <td>{{item.mode}}</td>
+                        <td>{{item.funding}}</td>
+                        <td>{{item.customer}}</td>
+                        <td style="text-align: right;">{{item.amount  | format_money()}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div>
+        <strong>Légende Type</strong>
+        <ul>
+            <li><strong>C:</strong> Commande</li>
+            <li><strong>M:</strong> Mouvement</li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <strong>Détails du paiement des commandes</strong>
+    <table style="width:45%;">
+        <tr>
+            <td style="width:75%;">Total en espèces:</td>
+            <td style="width:25%;text-align: right;">{{total_cash  | format_money()}}</td>
+        </tr>
+        <tr>
+            <td style="width:75%;">Total par carte bancaire:</td>
+            <td style="width:25%;text-align: right;">{{total_bank_card  | format_money()}}</td>
+        </tr>
+        <tr>
+            <td style="width:75%;">Total voucher:</td>
+            <td style="width:25%;text-align: right;">{{total_voucher | format_money()}}</td>
+        </tr>
+    </table>
+    <br>
+    <strong>Détails des mouvements</strong>
+    <table style="width:45%;">
+        <tr>
+            <td style="width: 75%;">Total mouvements entrées:</td>
+            <td style="width: 25%;text-align: right;">{{total_operations_in | format_money()}}</td>
+        </tr>
+        <tr>
+            <td style="width: 75%;">Total mouvements sorties:</td>
+            <td style="width: 25%;text-align: right;">{{total_operations_out | format_money()}}</td>
+        </tr>
+        <tr>
+            <td style="width: 75%;">Total mouvements :</td>
+            <td style="width: 25%;text-align: right;">{{total_operations | format_money()}}</td>
+        </tr>
+    </table>
+    <br>
+    <strong>Détails des TVA</strong>
+    <table style="width:45%;">
+    {% for total_vat_rule in total_vat_rules %}
+            <tr>
+                <td style="width:75%;">{{total_vat_rule.name}} : </td>
+                <td style="width:25%;text-align: right;">{{total_vat_rule.total | format_money()}}</td>
+            </tr>
+    {% endfor %}
+    </table>
+
+</body>
+</html>

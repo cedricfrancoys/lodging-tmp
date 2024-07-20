@@ -1,0 +1,75 @@
+{
+    "name": "Main dashboard",
+    "description": "",
+    "layout": {
+        "groups": [
+			{
+                "label": "Dashboard",
+                "height": "100%",
+                "sections": [
+                    {
+                        "rows": [
+                            {
+                                "height": "50%",
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "id": "item.pos",
+                                                "label": "Alertes",
+                                                "description": "",
+                                                "width": "50%",
+                                                "entity": "lodging\\core\\alert\\Message",
+                                                "view": "list.dashboard",
+                                                "domain": [ ["object_class", "=", "sale\\pos\\*"], ["group_id", "in", "user.center_offices_ids"] ]
+                                            },
+                                            {
+                                                "id": "item.pos2",
+                                                "label": "Sessions",
+                                                "description": "",
+                                                "width": "50%",
+                                                "entity": "lodging\\sale\\pos\\CashdeskSession",
+                                                "view": "list.dashboard",
+                                                "domain": ["status", "=", "pending"]
+                                            }
+
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "height": "50%",
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "id": "item.pos3",
+                                                "label": "CA POS",
+                                                "description": "",
+                                                "width": "50%",
+                                                "entity": "lodging\\sale\\pos\\CashdeskSession",
+                                                "view": "chart.default",
+                                                "domain": ["center_id", "in", "user.centers_ids"]
+                                            },
+                                            {
+                                                "id": "item.pos4",
+                                                "label": "Méthodes de paiement",
+                                                "description": "",
+                                                "width": "50%",
+                                                "entity": "lodging\\sale\\pos\\CashdeskSession",
+                                                "view": "chart.paymentMethod",
+                                                "domain": ["center_id", "in", "user.centers_ids"]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

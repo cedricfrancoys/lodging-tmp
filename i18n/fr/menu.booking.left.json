@@ -1,0 +1,121 @@
+{
+    "description": "",
+    "view": {
+        "item.bookings": {
+            "label": "Réservations",
+            "help": ""
+        },
+        "item.bookings.new": {
+            "label": "Nouvelle réservation",
+            "help": ""
+        },
+        "item.bookings.all": {
+            "label": "Réservations (toutes)",
+            "help": ""
+        },
+        "item.bookings.quotes": {
+            "label": "Devis",
+            "help": ""
+        },
+        "item.bookings.options": {
+            "label": "Options",
+            "help": ""
+        },
+        "item.bookings.confirmed": {
+            "label": "Confirmées",
+            "help": ""
+        },
+        "item.bookings.in_progress": {
+            "label": "En cours",
+            "help": ""
+        },
+        "item.bookings.checkedout": {
+            "label": "Terminées (toutes)",
+            "help": ""
+        },
+        "item.bookings.checkedout.to-invoice": {
+            "label": "Terminées (OTA)",
+            "help": ""
+        },
+        "item.bookings.checkedout_cancelled": {
+            "label": "Annulées",
+            "help": ""
+        },
+        "item.bookings.invoiced": {
+            "label": "Facturées",
+            "help": ""
+        },
+        "item.bookings.balanced": {
+            "label": "Cloturées",
+            "help": ""
+        },
+        "item.bookings.credit_balance": {
+            "label": "A rembourser",
+            "help": ""
+        },
+        "item.bookings.debit_balance": {
+            "label": "En attente de paiement",
+            "help": ""
+        },
+        "item.bookings.archives": {
+            "label": "Archivées",
+            "help": ""
+        },
+        "item.customers": {
+            "label": "Clients",
+            "help": ""
+        },
+        "item.customers.identity.new": {
+            "label": "Nouvelle identité",
+            "help": ""
+        },
+        "item.customers.all": {
+            "label": "Tous les clients",
+            "help": ""
+        },
+        "item.customers.identities": {
+            "label": "Toutes les identités",
+            "help": ""
+        },
+        "item.customers.partners": {
+            "label": "Toutes les relations",
+            "help": ""
+        },
+        "item.planning.planning": {
+            "label": "Planning",
+            "help": ""
+        },
+        "item.planning.meals": {
+            "label": "Repas",
+            "help": ""
+        },
+        "item.planning.meals.all": {
+            "label": "Repas (tous)",
+            "help": ""
+        },
+        "item.planning.meals.stat": {
+            "label": "Consolidé",
+            "help": ""
+        },
+        "item.planning.cleanups": {
+            "label": "Nettoyages",
+            "help": ""
+        },
+        "item.planning.occupancies": {
+            "label": "Occupations",
+            "help": ""
+        },
+        "item.planning.roomtypes": {
+            "label": "Calendrier Cubilis",
+            "help": ""
+        },
+        "item.repairings": {
+            "label": "Réparation & Maintenance",
+            "help": ""
+        },
+        "item.repairings.repairings": {
+            "label": "Réparations",
+            "help": ""
+        }
+    }
+}

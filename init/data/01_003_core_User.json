@@ -1,0 +1,28 @@
+[
+    {
+        "name": "core\\User",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "login": "root@host.local",
+                "firstname": "root",
+                "lastname": "@system",
+                "language": "en",
+                "validated": 1,
+                "name": "root@host.local",
+                "groups_ids": [1, 2, 25, 33, 37, 38, 41]
+            },
+            {
+                "id": 2,
+                "login": "dev@equal.run",
+                "firstname": "Dev",
+                "lastname": "eQual",
+                "language": "en",
+                "validated": 1,
+                "name": "Dev eQual",
+                "groups_ids": [2, 25, 27, 28, 33, 35, 37, 38, 41, 44, 45]
+            }
+        ]
+    }
+]

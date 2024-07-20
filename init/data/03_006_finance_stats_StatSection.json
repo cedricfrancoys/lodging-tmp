@@ -1,0 +1,92 @@
+[
+    {
+        "name": "finance\\stats\\StatSection",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "code": "ANIM",
+                "description": null,
+                "label": null,
+                "stat_chart_id": null
+            },
+            {
+                "id": 2,
+                "code": "BAR",
+                "description": null,
+                "label": null,
+                "stat_chart_id": null
+            },
+            {
+                "id": 3,
+                "code": "BOU",
+                "description": null,
+                "label": null,
+                "stat_chart_id": null
+            },
+            {
+                "id": 4,
+                "code": "CAMP",
+                "description": null,
+                "label": null,
+                "stat_chart_id": null
+            },
+            {
+                "id": 5,
+                "code": "DIV",
+                "description": null,
+                "label": null,
+                "stat_chart_id": null
+            },
+            {
+                "id": 6,
+                "code": "FRAI",
+                "description": null,
+                "label": null,
+                "stat_chart_id": null
+            },
+            {
+                "id": 7,
+                "code": "GITE",
+                "description": null,
+                "label": null,
+                "stat_chart_id": null
+            },
+            {
+                "id": 8,
+                "code": "LOCS",
+                "description": null,
+                "label": null,
+                "stat_chart_id": null
+            },
+            {
+                "id": 9,
+                "code": "RST",
+                "description": null,
+                "label": null,
+                "stat_chart_id": null
+            },
+            {
+                "id": 10,
+                "code": "SEJ",
+                "description": null,
+                "label": null,
+                "stat_chart_id": null
+            },
+            {
+                "id": 11,
+                "code": "VOY",
+                "description": null,
+                "label": null,
+                "stat_chart_id": null
+            },
+            {
+                "id": 12,
+                "code": "STAG",
+                "description": null,
+                "label": null,
+                "stat_chart_id": null
+            }
+        ]
+    }
+]

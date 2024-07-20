@@ -1,0 +1,275 @@
+{
+    "name": "Stats menu",
+    "access": {
+      "groups": ["stats.default.user"]
+    },
+    "layout": {
+        "items": [
+            {
+                "id": "stats.booking",
+                "icon": "query_stats",
+                "type": "parent",
+                "label": "Bookings values",
+                "description": "",
+                "children": [
+                    {
+                        "id": "stats.turnover",
+                        "icon": "business",
+                        "type": "parent",
+                        "label": "Chiffre d’affaires",
+                        "description": "",
+                        "children": [
+                            {
+                                "id": "stats.booking.total_bookings.revenue",
+                                "type": "entry",
+                                "label": "CA facturé",
+                                "description": "",
+                                "context": {
+                                    "entity": "lodging\\stats\\stat-revenue",
+                                    "view": "list.default"
+                                }
+                            },
+                            {
+                                "id": "stats.booking.total_bookings.noInvoice",
+                                "type": "entry",
+                                "label": "CA non facturé",
+                                "description": "",
+                                "context": {
+                                    "entity": "lodging\\stats\\stat-notrevenue",
+                                    "view": "list.default"
+                                }
+                            },
+                            {
+                                "id": "stats.booking.bookings",
+                                "type": "entry",
+                                "label": "CA théorique",
+                                "description": "",
+                                "context": {
+                                    "entity": "lodging\\stats\\stat-estimate",
+                                    "view": "list.default"
+                                }
+                            },
+                            {
+                                "id": "stats.booking.total_bookings.provisional",
+                                "type": "entry",
+                                "label": "CA prévisionnel",
+                                "description": "",
+                                "context": {
+                                    "entity": "lodging\\stats\\stat-forecast",
+                                    "view": "list.default"
+                                }
+                            },
+                            {
+                                "id": "stats.booking.total_bookings.invoicelines",
+                                "type": "entry",
+                                "label": "CA par produit",
+                                "description": "",
+                                "context": {
+                                    "entity": "lodging\\stats\\stat-products",
+                                    "view": "list.default"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "stats.booking.total_bookings.ins",
+                        "type": "entry",
+                        "label": "I.N.S. - Statbel",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\stats\\stat-ins",
+                            "view": "list.default"
+                        }
+                    },
+                    {
+                        "id": "stats.booking.total_bookings.contracts",
+                        "type": "entry",
+                        "label": "Contrats & Réservations",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\stats\\stat-contracts",
+                            "view": "list.default"
+                        }
+                    },
+                    {
+                        "id": "stats.booking.total_bookings.agerange",
+                        "type": "entry",
+                        "label": "Nuitées par tranche d'âge",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\stats\\stat-nightsagerange",
+                            "view": "list.default"
+                        }
+                    },
+                    {
+                        "id": "stats.booking.total_bookings.capacity",
+                        "type": "entry",
+                        "label": "Capacités des Centres",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\stats\\stat-capacity",
+                            "view": "list.default"
+                        }
+                    },
+                    {
+                        "id": "stats.booking.total_bookings.theorical_max",
+                        "type": "entry",
+                        "label": "Nuitées Max Théorique",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\stats\\stat-nights-max",
+                            "view": "list.default"
+                        }
+                    },
+                    {
+                        "id": "stats.booking.total_bookings.nights",
+                        "type": "entry",
+                        "label": "Nombre de nuitées",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\stats\\stat-nights",
+                            "view": "list.default"
+                        }
+                    },
+                    {
+                        "id": "stats.booking.total_bookings.occupancies",
+                        "type": "entry",
+                        "label": "Taux d'occupation",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\sale\\booking\\Booking",
+                            "view": "chart.occupancy",
+                            "mode": "grid"
+                        }
+                    },
+                    {
+                        "id": "stats.booking.total_bookings",
+                        "type": "entry",
+                        "label": "Nombre de réservations",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\sale\\booking\\Booking",
+                            "view": "chart.bookingCount",
+                            "mode": "grid"
+                        }
+                    },
+                    {
+                        "id": "stats.booking.compositionItem",
+                        "type": "entry",
+                        "label": "Nombre de personnes",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\sale\\booking\\Booking",
+                            "view": "chart.compositionItem",
+                            "mode": "grid"
+                        }
+                    },
+                    {
+                        "id": "stats.booking.total_bookings.sojournType",
+                        "type": "entry",
+                        "label": "Type de séjour",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\sale\\booking\\Booking",
+                            "view": "chart.sojournType",
+                            "mode": "grid"
+                        }
+                    },
+                    {
+                        "id": "stats.booking.total_bookings.taxes",
+                        "type": "entry",
+                        "label": "Taxes de séjour",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\sale\\booking\\BookingLine",
+                            "view": "chart.taxes",
+                            "mode": "grid"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "stats.documents",
+                "icon": "query_stats",
+                "type": "parent",
+                "label": "Documents values",
+                "description": "",
+                "children": [
+                    {
+                        "id": "stats.all_documents.size_documents",
+                        "type": "entry",
+                        "label": "Taille des documents",
+                        "description": "",
+                        "context": {
+                            "entity": "documents\\Document",
+                            "view": "chart.default",
+                            "mode": "grid"
+                        }
+                    },
+                    {
+                        "id": "stats.all_documents.categories",
+                        "type": "entry",
+                        "label": "Catégories des documents",
+                        "description": "",
+                        "context": {
+                            "entity": "documents\\DocumentCategory",
+                            "view": "chart.default",
+                            "mode": "grid"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "stats.sale",
+                "icon": "query_stats",
+                "type": "parent",
+                "label": "Sales values",
+                "description": "",
+                "children": [
+                    {
+                        "id": "stats.sales",
+                        "type": "entry",
+                        "label": "CA pos",
+                        "description": "",
+                        "context": {
+                            "entity": "sale\\pos\\CashdeskSession",
+                            "view": "chart.default",
+                            "mode": "grid"
+                        }
+                    },
+                    {
+                        "id": "stats.payment_methods",
+                        "type": "entry",
+                        "label": "Moyens de paiement",
+                        "description": "",
+                        "context": {
+                            "entity": "sale\\pos\\CashdeskSession",
+                            "view": "chart.paymentMethod",
+                            "mode": "grid"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "stats.finance",
+                "icon": "query_stats",
+                "type": "parent",
+                "label": "Finance values",
+                "description": "",
+                "children": [
+                    {
+                        "id": "stats.finance_funding",
+                        "type": "entry",
+                        "label": "Total Reimbursements",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\sale\\booking\\Funding",
+                            "view": "chart.default",
+                            "mode": "grid"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,73 @@
+{
+    "name": "Messages list",
+    "description": "Listing of pending messages.",
+    "domain":  [ ["object_class", "=", "lodging\\sale\\booking\\Booking"], ["group_id", "in", "user.center_offices_ids"], ["severity", "=", "important"] ],
+    "header": {
+        "actions": {
+            "ACTION.CREATE": false
+        },
+        "selection": {
+            "default" : false,
+            "actions" : [
+                {
+                    "id": "header.selection.actions.bulk_dismiss",
+                    "label": "Revérifier",
+                    "icon": "replay",
+                    "controller": "core_alert_bulk-dismiss"
+                }
+            ]
+        }
+    },
+    "order": "created",
+    "sort": "asc",
+    "controller": "lodging_core_alert_collect",
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "object_link",
+                "width": "25%"
+            },
+            {
+                "type": "field",
+                "value": "created",
+                "width": "10%",
+                "widget": {
+                    "sortable": true,
+                    "usage": "datetime/short"
+                }
+            },
+            {
+                "type": "field",
+                "value": "label",
+                "width": "15%"
+            },
+            {
+                "type": "field",
+                "value": "alert",
+                "width": "15%",
+                "widget": {
+                    "type": "string",
+                    "usage": "icon"
+                }
+            },
+            {
+                "type": "field",
+                "value": "description",
+                "label": "Name",
+                "width": "50%"
+            },
+            {
+                "type": "field",
+                "value": "center_office_id",
+                "visible": false
+            },
+            {
+                "type": "field",
+                "value": "object_id",
+                "visible": false
+            }
+
+        ]
+    }
+}

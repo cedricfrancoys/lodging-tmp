@@ -1,0 +1,372 @@
+[
+    {
+        "name": "lodging\\sale\\catalog\\PosPriceList",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 144,
+                "name": "EU 2023",
+                "date_from": "2023-01-01",
+                "date_to": "2023-12-31",
+                "duration": 364,
+                "is_active": 0,
+                "price_list_category_id": 2,
+                "status": "published"
+            },
+            {
+                "id": 144,
+                "is_active": 1
+            },
+            {
+                "id": 145,
+                "name": "GG 2023",
+                "date_from": "2023-01-01",
+                "date_to": "2023-12-31",
+                "duration": 364,
+                "is_active": 0,
+                "price_list_category_id": 1,
+                "status": "published"
+            },
+            {
+                "id": 145,
+                "is_active": 1
+            },
+            {
+                "id": 146,
+                "name": "HL 2023",
+                "date_from": "2023-01-01",
+                "date_to": "2023-12-31",
+                "duration": 364,
+                "is_active": 0,
+                "price_list_category_id": 3,
+                "status": "published"
+            },
+            {
+                "id": 146,
+                "is_active": 1
+            },
+            {
+                "id": 147,
+                "name": "LO 2023",
+                "date_from": "2023-01-01",
+                "date_to": "2023-12-31",
+                "duration": 364,
+                "is_active": 0,
+                "price_list_category_id": 5,
+                "status": "published"
+            },
+            {
+                "id": 147,
+                "is_active": 1
+            },
+            {
+                "id": 148,
+                "name": "OV 2023",
+                "date_from": "2023-01-01",
+                "date_to": "2023-12-31",
+                "duration": 364,
+                "is_active": 0,
+                "price_list_category_id": 4,
+                "status": "published"
+            },
+            {
+                "id": 148,
+                "is_active": 1
+            },
+            {
+                "id": 149,
+                "name": "RO 2023",
+                "date_from": "2023-01-01",
+                "date_to": "2023-12-31",
+                "duration": 364,
+                "is_active": 0,
+                "price_list_category_id": 6,
+                "status": "published"
+            },
+            {
+                "id": 149,
+                "is_active": 1
+            },
+            {
+                "id": 150,
+                "name": "VS 2023",
+                "date_from": "2023-01-01",
+                "date_to": "2023-12-31",
+                "duration": 364,
+                "is_active": 0,
+                "price_list_category_id": 7,
+                "status": "published"
+            },
+            {
+                "id": 150,
+                "is_active": 1
+            },
+            {
+                "id": 151,
+                "name": "WA 2023",
+                "date_from": "2023-01-01",
+                "date_to": "2023-12-31",
+                "duration": 364,
+                "is_active": 0,
+                "price_list_category_id": 8,
+                "status": "published"
+            },
+            {
+                "id": 151,
+                "is_active": 1
+            },
+            {
+                "id": 153,
+                "name": "EU 2024",
+                "date_from": "2024-01-01",
+                "date_to": "2024-12-31",
+                "duration": 364,
+                "is_active": 0,
+                "price_list_category_id": 2,
+                "status": "published"
+            },
+            {
+                "id": 153,
+                "is_active": 1
+            },
+            {
+                "id": 154,
+                "name": "GG 2024",
+                "date_from": "2024-01-01",
+                "date_to": "2024-12-31",
+                "duration": 364,
+                "is_active": 0,
+                "price_list_category_id": 1,
+                "status": "published"
+            },
+            {
+                "id": 154,
+                "is_active": 1
+            },
+            {
+                "id": 155,
+                "name": "HL 2024",
+                "date_from": "2024-01-01",
+                "date_to": "2024-12-31",
+                "duration": 364,
+                "is_active": 0,
+                "price_list_category_id": 3,
+                "status": "published"
+            },
+            {
+                "id": 155,
+                "is_active": 1
+            },
+            {
+                "id": 156,
+                "name": "LO 2024",
+                "date_from": "2024-01-01",
+                "date_to": "2024-12-31",
+                "duration": 364,
+                "is_active": 0,
+                "price_list_category_id": 5,
+                "status": "published"
+            },
+            {
+                "id": 156,
+                "is_active": 1
+            },
+            {
+                "id": 157,
+                "name": "OV 2024",
+                "date_from": "2024-01-01",
+                "date_to": "2024-12-31",
+                "duration": 364,
+                "is_active": 0,
+                "price_list_category_id": 4,
+                "status": "published"
+            },
+            {
+                "id": 157,
+                "is_active": 1
+            },
+            {
+                "id": 158,
+                "name": "RO 2024",
+                "date_from": "2024-01-01",
+                "date_to": "2024-12-31",
+                "duration": 364,
+                "is_active": 0,
+                "price_list_category_id": 6,
+                "status": "published"
+            },
+            {
+                "id": 158,
+                "is_active": 1
+            },
+            {
+                "id": 159,
+                "name": "VS 2024",
+                "date_from": "2024-01-01",
+                "date_to": "2024-12-31",
+                "duration": 364,
+                "is_active": 0,
+                "price_list_category_id": 7,
+                "status": "published"
+            },
+            {
+                "id": 159,
+                "is_active": 1
+            },
+            {
+                "id": 160,
+                "name": "WA 2024",
+                "date_from": "2024-01-01",
+                "date_to": "2024-12-31",
+                "duration": 364,
+                "is_active": 0,
+                "price_list_category_id": 8,
+                "status": "published"
+            },
+            {
+                "id": 160,
+                "is_active": 1
+            },
+            {
+                "id": 161,
+                "name": "GA 2024",
+                "date_from": "2024-01-01",
+                "date_to": "2024-12-31",
+                "duration": 364,
+                "is_active": 0,
+                "price_list_category_id": 9,
+                "status": "published"
+            },
+            {
+                "id": 161,
+                "is_active": 1
+            },
+            {
+                "id": 152,
+                "name": "GA 2023",
+                "date_from": "2023-01-01",
+                "date_to": "2023-12-31",
+                "duration": 364,
+                "is_active": 0,
+                "price_list_category_id": 9,
+                "status": "published"
+            },
+            {
+                "id": 152,
+                "is_active": 1
+            },
+            {
+                "id": 173,
+                "name": "EU 2023 V2.0",
+                "date_from": "2023-09-01",
+                "date_to": "2023-12-31",
+                "duration": 121,
+                "is_active": 0,
+                "price_list_category_id": 2,
+                "status": "published"
+            },
+            {
+                "id": 173,
+                "is_active": 1
+            },
+            {
+                "id": 174,
+                "name": "HL 2023 V2.0",
+                "date_from": "2023-09-01",
+                "date_to": "2023-12-31",
+                "duration": 121,
+                "is_active": 0,
+                "price_list_category_id": 3,
+                "status": "published"
+            },
+            {
+                "id": 174,
+                "is_active": 1
+            },
+            {
+                "id": 175,
+                "name": "LO 2023 V2.0",
+                "date_from": "2023-09-01",
+                "date_to": "2023-12-31",
+                "duration": 121,
+                "is_active": 0,
+                "price_list_category_id": 5,
+                "status": "published"
+            },
+            {
+                "id": 175,
+                "is_active": 1
+            },
+            {
+                "id": 176,
+                "name": "OV 2023 V2.0",
+                "date_from": "2023-09-01",
+                "date_to": "2023-12-31",
+                "duration": 121,
+                "is_active": 0,
+                "price_list_category_id": 4,
+                "status": "published"
+            },
+            {
+                "id": 176,
+                "is_active": 1
+            },
+            {
+                "id": 177,
+                "name": "RO 2023 V2.0",
+                "date_from": "2023-09-01",
+                "date_to": "2023-12-31",
+                "duration": 121,
+                "is_active": 0,
+                "price_list_category_id": 6,
+                "status": "published"
+            },
+            {
+                "id": 177,
+                "is_active": 1
+            },
+            {
+                "id": 178,
+                "name": "WA 2023 V2.0",
+                "date_from": "2023-09-01",
+                "date_to": "2023-12-31",
+                "duration": 121,
+                "is_active": 0,
+                "price_list_category_id": 8,
+                "status": "published"
+            },
+            {
+                "id": 178,
+                "is_active": 1
+            },
+            {
+                "id": 179,
+                "name": "GG 2023 V2.0",
+                "date_from": "2023-09-01",
+                "date_to": "2023-12-31",
+                "duration": 121,
+                "is_active": 0,
+                "price_list_category_id": 1,
+                "status": "published"
+            },
+            {
+                "id": 179,
+                "is_active": 1
+            },
+            {
+                "id": 180,
+                "name": "VS 2023 V2.0",
+                "date_from": "2023-09-01",
+                "date_to": "2023-12-31",
+                "duration": 121,
+                "is_active": 0,
+                "price_list_category_id": 7,
+                "status": "published"
+            },
+            {
+                "id": 180,
+                "is_active": 1
+            }
+        ]
+    }
+]

@@ -1,0 +1,48 @@
+[
+    {
+        "name": "lodging\\identity\\Contact",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "owner_identity_id": 5,
+                "partner_identity_id": null,
+                "relationship": "contact",
+                "is_active": true,
+                "name": "John Doe"
+            },
+            {
+                "id": 2,
+                "owner_identity_id": 1,
+                "partner_identity_id": 2,
+                "relationship": "customer",
+                "is_active": true,
+                "name": "Villers-Sainte-Gertrude"
+            },
+            {
+                "id": 3,
+                "owner_identity_id": 1,
+                "partner_identity_id": 3,
+                "relationship": "customer",
+                "is_active": true,
+                "name": "Mozaik"
+            },
+            {
+                "id": 4,
+                "owner_identity_id": 1,
+                "partner_identity_id": 4,
+                "relationship": "customer",
+                "is_active": true,
+                "name": "Hostel Van Gogh"
+            },
+            {
+                "id": 5,
+                "owner_identity_id": 1,
+                "partner_identity_id": 1,
+                "relationship": "employee",
+                "is_active": true,
+                "name": "Kaleo"
+            }
+        ]
+    }
+]

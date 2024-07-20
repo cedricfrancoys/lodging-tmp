@@ -1,0 +1,67 @@
+{
+    "name": "Funding",
+    "description": "List of Fundings.",
+    "access": {
+        "groups": ["booking.default.user"]
+    },
+    "domain": ["center_office_id", "in", "user.center_offices_ids"],
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "name",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "description",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "center_office_id",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "invoice_id",
+                "width": "15%"
+            },
+            {
+                "type": "field",
+                "value": "type",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "due_date",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "is_paid",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "amount_share",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "payment_reference",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "due_amount",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "paid_amount",
+                "width": "10%"
+            }
+        ]
+    }
+}

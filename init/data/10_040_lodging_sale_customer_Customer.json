@@ -1,0 +1,31 @@
+[
+    {
+        "name": "lodging\\sale\\customer\\Customer",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "state": "instance",
+                "name": "John Doe",
+                "owner_identity_id": 1,
+                "partner_identity_id": 5,
+                "relationship": "customer",
+                "partner_organisation_id": null,
+                "partner_position": null,
+                "customer_external_ref": null,
+                "booking_id": null,
+                "type": null,
+                "rate_class_id": 4,
+                "customer_nature_id": 30,
+                "customer_type_id": 1,
+                "address": "Avenue Louise 123",
+                "lang_id": 2,
+                "ref_account": null,
+                "to_code": null,
+                "to_commission_rate": null,
+                "is_tour_operator": 0,
+                "is_active": 1
+            }
+        ]
+    }
+]

@@ -1,0 +1,274 @@
+[
+    {
+        "name": "sale\\customer\\CustomerNature",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "code": "IN",
+                "description": "Individuels (particuliers)",
+                "rate_class_id": 4,
+                "customer_type_id": 1
+            },
+            {
+                "id": 2,
+                "code": "AC",
+                "description": "Administration publique",
+                "rate_class_id": 4,
+                "customer_type_id": 5
+            },
+            {
+                "id": 3,
+                "code": "AD",
+                "description": "Administrateur ",
+                "rate_class_id": 3,
+                "customer_type_id": 1
+            },
+            {
+                "id": 4,
+                "code": "AL",
+                "description": "ATL (Accueil Temps Libre, Ecole de devoirs)",
+                "rate_class_id": 1,
+                "customer_type_id": 4
+            },
+            {
+                "id": 5,
+                "code": "AM",
+                "description": "Groupe d'amis",
+                "rate_class_id": 4,
+                "customer_type_id": 1
+            },
+            {
+                "id": 8,
+                "code": "JE",
+                "description": "Jeugdhuis Maison de Jeunes Flandres ",
+                "rate_class_id": 1,
+                "customer_type_id": 4
+            },
+            {
+                "id": 10,
+                "code": "CC",
+                "description": "Centre culturel",
+                "rate_class_id": 4,
+                "customer_type_id": 4
+            },
+            {
+                "id": 11,
+                "code": "CE",
+                "description": "CEC et organisme de formation",
+                "rate_class_id": 1,
+                "customer_type_id": 4
+            },
+            {
+                "id": 12,
+                "code": "CH",
+                "description": "Académie de musique",
+                "rate_class_id": 2,
+                "customer_type_id": 4
+            },
+            {
+                "id": 13,
+                "code": "CP",
+                "description": "CPAS - aide aux défavorisés",
+                "rate_class_id": 1,
+                "customer_type_id": 5
+            },
+            {
+                "id": 14,
+                "code": "CS",
+                "description": "Club sportif \/ Fédération",
+                "rate_class_id": 2,
+                "customer_type_id": 4
+            },
+            {
+                "id": 17,
+                "code": "EG",
+                "description": "Eglise - groupe religieux",
+                "rate_class_id": 4,
+                "customer_type_id": 4
+            },
+            {
+                "id": 18,
+                "code": "EM",
+                "description": "Ecole maternelle",
+                "rate_class_id": 7,
+                "customer_type_id": 4
+            },
+            {
+                "id": 19,
+                "code": "EN",
+                "description": "Entreprise (société privée)",
+                "rate_class_id": 4,
+                "customer_type_id": 3
+            },
+            {
+                "id": 20,
+                "code": "EP",
+                "description": "Ecole primaire",
+                "rate_class_id": 5,
+                "customer_type_id": 4
+            },
+            {
+                "id": 21,
+                "code": "ES",
+                "description": "Ecole secondaire",
+                "rate_class_id": 5,
+                "customer_type_id": 4
+            },
+            {
+                "id": 22,
+                "code": "FA",
+                "description": "Famille",
+                "rate_class_id": 4,
+                "customer_type_id": 1
+            },
+            {
+                "id": 23,
+                "code": "FM",
+                "description": "Fanfare - groupe musique - chorale",
+                "rate_class_id": 4,
+                "customer_type_id": 4
+            },
+            {
+                "id": 26,
+                "code": "HA",
+                "description": "Home pour adultes",
+                "rate_class_id": 1,
+                "customer_type_id": 4
+            },
+            {
+                "id": 28,
+                "code": "HO",
+                "description": "Home pour enfants (Maison d'Accueil)",
+                "rate_class_id": 1,
+                "customer_type_id": 4
+            },
+            {
+                "id": 30,
+                "code": "IN",
+                "description": "Individuels (particuliers)",
+                "rate_class_id": 4,
+                "customer_type_id": 1
+            },
+            {
+                "id": 31,
+                "code": "IP",
+                "description": "SAJ\/SPJ\/IPPJ (Institution publique de protection de la jeunesse)",
+                "rate_class_id": 1,
+                "customer_type_id": 4
+            },
+            {
+                "id": 34,
+                "code": "M3",
+                "description": "Maison de Quartier\t",
+                "rate_class_id": 4,
+                "customer_type_id": 4
+            },
+            {
+                "id": 35,
+                "code": "MJ",
+                "description": "Maison de Jeunes Wallonie",
+                "rate_class_id": 1,
+                "customer_type_id": 4
+            },
+            {
+                "id": 36,
+                "code": "MO",
+                "description": "AMO (Aide en Milieu Ouvert)",
+                "rate_class_id": 1,
+                "customer_type_id": 4
+            },
+            {
+                "id": 38,
+                "code": "OF",
+                "description": "Officiels (délégation politique)",
+                "rate_class_id": 4,
+                "customer_type_id": 5
+            },
+            {
+                "id": 39,
+                "code": "OJ",
+                "description": "Organisation de jeunesse (OJ)",
+                "rate_class_id": 1,
+                "customer_type_id": 4
+            },
+            {
+                "id": 40,
+                "code": "PR",
+                "description": "Presse",
+                "rate_class_id": 4,
+                "customer_type_id": 3
+            },
+            {
+                "id": 41,
+                "code": "SC",
+                "description": "Mouvement de Jeunesse (OJ)",
+                "rate_class_id": 1,
+                "customer_type_id": 4
+            },
+            {
+                "id": 42,
+                "code": "SI",
+                "description": "Syndicat Initiative - Maison du Tourisme",
+                "rate_class_id": 4,
+                "customer_type_id": 4
+            },
+            {
+                "id": 45,
+                "code": "SP",
+                "description": "Ecole spéciale (handicap)",
+                "rate_class_id": 5,
+                "customer_type_id": 4
+            },
+            {
+                "id": 46,
+                "code": "TC",
+                "description": "Travailleur Kaleo",
+                "rate_class_id": 3,
+                "customer_type_id": 1
+            },
+            {
+                "id": 47,
+                "code": "TO",
+                "description": "Tour opérateur",
+                "rate_class_id": 6,
+                "customer_type_id": 3
+            },
+            {
+                "id": 48,
+                "code": "UC",
+                "description": "Groupe estudiantin",
+                "rate_class_id": 4,
+                "customer_type_id": 4
+            },
+            {
+                "id": 49,
+                "code": "US",
+                "description": "Université - enseignement Supérieur - hautes écoles",
+                "rate_class_id": 2,
+                "customer_type_id": 4
+            },
+            {
+                "id": 50,
+                "code": "PP",
+                "description": "Parti politque",
+                "rate_class_id": 4,
+                "customer_type_id": 4
+            },
+            {
+                "id": 52,
+                "code": "ON",
+                "description": "ONG",
+                "rate_class_id": 4,
+                "customer_type_id": 4
+            },
+            {
+                "id": 53,
+                "code": "PM",
+                "description": "PMS - Centres psycho-médico-sociaux",
+                "rate_class_id": 2,
+                "customer_type_id": 4
+            }
+        ]
+    }
+]

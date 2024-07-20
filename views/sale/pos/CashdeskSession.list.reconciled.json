@@ -1,0 +1,66 @@
+{
+    "name": "Cashdesk Sessions",
+    "description": "List of cashdesk logs (sessions).",
+    "access": {
+        "groups": ["pos.default.user"]
+    },
+    "domain": [ ["status", "=", "closed"], ["center_id", "in", "user.centers_ids"] ],
+    "controller": "lodging_sale_pos_cashdeskSession-collect",
+    "header": {
+        "actions": {
+            "ACTION.CREATE": false
+        },
+        "selection": false,
+        "advanced_search": {
+            "open": true
+        }
+    },
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "id",
+                "width": "10%",
+                "visible": false
+            },
+            {
+                "type": "field",
+                "value": "name",
+                "width": "30%"
+            },
+            {
+                "type": "field",
+                "value": "center_id",
+                "width": "25%"
+            },
+            {
+                "type": "field",
+                "value": "created",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "status",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "amount_opening",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "amount_closing",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "link_sheet",
+                "width": "10%",
+                "widget": {
+                    "link": "icon"
+                }
+            }
+        ]
+    }
+}

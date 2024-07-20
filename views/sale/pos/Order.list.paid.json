@@ -1,0 +1,86 @@
+{
+    "name": "Orders",
+    "description": "List of Point of Sale orders.",
+    "header": {
+        "actions": {
+            "ACTION.CREATE": false
+        },
+        "selection": {
+            "default": false
+        }
+    },
+    "access": {
+        "groups": ["pos.default.user"]
+    },
+    "domain": [ ["status", "=", "paid"], ["center_id", "in", "user.centers_ids"] ],
+    "controller": "lodging_sale_pos_order-collect",
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "id",
+                "width": "8%"
+            },
+            {
+                "type": "field",
+                "value": "name",
+                "width": "15%"
+            },
+            {
+                "type": "field",
+                "label": "Date",
+                "value": "created",
+                "width": "20%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "label": "Session",
+                "value": "session_id",
+                "width": "33%"
+            },
+            {
+                "type": "field",
+                "label": "Center",
+                "value": "center_id",
+                "width": "20%",
+                "visible": false
+
+            },
+            {
+                "type": "field",
+                "label": "Funding",
+                "value": "funding_id",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "label": "Customer",
+                "value": "customer_id",
+                "width": "20%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "label": "Invoice",
+                "value": "invoice_id",
+                "width": "20%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "label": "Total",
+                "value": "total",
+                "width": "13%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "label": "Price",
+                "value": "price",
+                "width": "13%",
+                "sortable": true
+            }
+        ]
+    }
+}

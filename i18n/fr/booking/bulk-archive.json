@@ -1,0 +1,22 @@
+{
+    "name": "Archiver toutes",
+    "description": "Les réservations seront archivés et vous n'y aurez peut-être plus accès. Voulez-vous continuer ?.",
+    "model": {
+        "ids": {
+            "label": "Identifiantes",
+            "description": "Liste des identifiants de réservation.",
+            "help": ""
+        }
+    },
+    "error": {
+        "errors": {
+            "invalid_booking": "Identifiant de la réservation incorrecte.",
+            "unknown_booking": "Réservation inconnue.",
+            "invalid_states_booking": "La réservation est déjà archive.",
+            "invalid_quote_booking": "La réservation est trop récente pour être archivée ou a déjà été payée.",
+            "non_cancelled_booking": "La réservation ne peut pas être archivée car elle est toujours active.",
+            "invalid_status_booking": "La réservation doit être en état de devis ou terminée.",
+            "invalid_checkout_booking": "La réservation est trop récente pour être archivée ou a déjà été payée."
+        }
+    }
+}

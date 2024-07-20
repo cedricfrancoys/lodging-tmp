@@ -1,0 +1,26 @@
+{
+    "name": "Recherche avancé d'identités",
+    "description": "Contrôleur proposant des champs avec des relations indirectes.",
+    "model": {
+        "identifier": {
+            "label": "Identifiant",
+            "description": "Identifiant (numéro client) de l'identité recherchée.",
+            "help": ""
+        },
+        "query": {
+            "label": "Nom (partiel)",
+            "description": "Mots-clés non contigüs présents dans le nom.",
+            "help": ""
+        },
+        "contact_identity_id": {
+            "label": "Contact",
+            "description": "Contact lié à l'identité recherchée.",
+            "help": ""
+        }
+    },
+    "error": {
+        "errors": {
+
+        }
+    }
+}

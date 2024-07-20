@@ -1,0 +1,530 @@
+[
+    {
+        "name": "core\\setting\\SettingChoice",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "name": "virgule",
+                "setting_id": 1,
+                "value": ","
+            },
+            {
+                "id": 2,
+                "name": "point",
+                "setting_id": 1,
+                "value": "."
+            },
+            {
+                "id": 3,
+                "name": "avant",
+                "setting_id": 2,
+                "value": "before"
+            },
+            {
+                "id": 4,
+                "name": "après",
+                "setting_id": 2,
+                "value": "after"
+            },
+            {
+                "id": 5,
+                "name": "",
+                "setting_id": 3,
+                "value": "1"
+            },
+            {
+                "id": 6,
+                "name": "",
+                "setting_id": 3,
+                "value": "2"
+            },
+            {
+                "id": 7,
+                "name": "",
+                "setting_id": 3,
+                "value": "3"
+            },
+            {
+                "id": 8,
+                "name": "virgule",
+                "setting_id": 4,
+                "value": ","
+            },
+            {
+                "id": 9,
+                "name": "point",
+                "setting_id": 4,
+                "value": "."
+            },
+            {
+                "id": 10,
+                "name": "",
+                "setting_id": 5,
+                "value": "1"
+            },
+            {
+                "id": 11,
+                "name": "",
+                "setting_id": 5,
+                "value": "2"
+            },
+            {
+                "id": 12,
+                "name": "",
+                "setting_id": 5,
+                "value": "3"
+            },
+            {
+                "id": 13,
+                "name": "",
+                "setting_id": 6,
+                "value": "d\/m\/Y"
+            },
+            {
+                "id": 14,
+                "name": "",
+                "setting_id": 6,
+                "value": "Y-m-d"
+            },
+            {
+                "id": 15,
+                "name": "",
+                "setting_id": 6,
+                "value": "m\/d\/Y"
+            },
+            {
+                "id": 16,
+                "name": "",
+                "setting_id": 7,
+                "value": "H:i"
+            },
+            {
+                "id": 17,
+                "name": "",
+                "setting_id": 8,
+                "value": "1"
+            },
+            {
+                "id": 18,
+                "name": "21,59 x 27,74",
+                "setting_id": 9,
+                "value": "US"
+            },
+            {
+                "id": 19,
+                "name": "21 x 29,7",
+                "setting_id": 9,
+                "value": "A4"
+            },
+            {
+                "id": 20,
+                "name": "29,7 x 41,99",
+                "setting_id": 9,
+                "value": "A3"
+            },
+            {
+                "id": 21,
+                "name": "14,8 x 21",
+                "setting_id": 9,
+                "value": "A5"
+            },
+            {
+                "id": 22,
+                "name": "USD",
+                "setting_id": 13,
+                "value": "$"
+            },
+            {
+                "id": 23,
+                "name": "EUR",
+                "setting_id": 13,
+                "value": "€"
+            },
+            {
+                "id": 24,
+                "name": "mètre",
+                "setting_id": 14,
+                "value": "m"
+            },
+            {
+                "id": 25,
+                "name": "kilogramme",
+                "setting_id": 15,
+                "value": "kg"
+            },
+            {
+                "id": 26,
+                "name": "mètre cube",
+                "setting_id": 16,
+                "value": "m3"
+            },
+            {
+                "id": 27,
+                "name": "mètre carré",
+                "setting_id": 17,
+                "value": "m2"
+            },
+            {
+                "id": 28,
+                "name": "",
+                "setting_id": 22,
+                "value": "%4d{year}-%02d{org}-%03d{sequence}"
+            },
+            {
+                "id": 29,
+                "name": "",
+                "setting_id": 23,
+                "value": "%1d{center}%05d{sequence}"
+            },
+            {
+                "id": 30,
+                "name": "",
+                "setting_id": 18,
+                "value": "111"
+            },
+            {
+                "id": 31,
+                "name": "",
+                "setting_id": 19,
+                "value": "111"
+            },
+            {
+                "id": 32,
+                "name": "",
+                "setting_id": 20,
+                "value": "111"
+            },
+            {
+                "id": 33,
+                "name": "",
+                "setting_id": 21,
+                "value": "2021"
+            },
+            {
+                "id": 34,
+                "name": "",
+                "setting_id": 21,
+                "value": "2022"
+            },
+            {
+                "id": 35,
+                "name": "",
+                "setting_id": 24,
+                "value": "11117"
+            },
+            {
+                "id": 36,
+                "name": "",
+                "setting_id": 25,
+                "value": "11111"
+            },
+            {
+                "id": 37,
+                "name": "",
+                "setting_id": 26,
+                "value": "11111"
+            },
+            {
+                "id": 38,
+                "name": "",
+                "setting_id": 27,
+                "value": "11113"
+            },
+            {
+                "id": 39,
+                "name": "",
+                "setting_id": 28,
+                "value": "11112"
+            },
+            {
+                "id": 40,
+                "name": "",
+                "setting_id": 29,
+                "value": "11111"
+            },
+            {
+                "id": 41,
+                "name": "",
+                "setting_id": 30,
+                "value": "11111"
+            },
+            {
+                "id": 42,
+                "name": "",
+                "setting_id": 31,
+                "value": "11111"
+            },
+            {
+                "id": 43,
+                "name": "",
+                "setting_id": 32,
+                "value": "10"
+            },
+            {
+                "id": 87,
+                "name": "",
+                "setting_id": 48,
+                "value": "11111"
+            },
+            {
+                "id": 88,
+                "name": "",
+                "setting_id": 50,
+                "value": "111"
+            },
+            {
+                "id": 101,
+                "name": "virgule",
+                "setting_id": 1,
+                "value": ","
+            },
+            {
+                "id": 102,
+                "name": "point",
+                "setting_id": 1,
+                "value": "."
+            },
+            {
+                "id": 201,
+                "name": "avant",
+                "setting_id": 2,
+                "value": "before"
+            },
+            {
+                "id": 202,
+                "name": "après",
+                "setting_id": 2,
+                "value": "after"
+            },
+            {
+                "id": 301,
+                "name": "",
+                "setting_id": 3,
+                "value": "1"
+            },
+            {
+                "id": 302,
+                "name": "",
+                "setting_id": 3,
+                "value": "2"
+            },
+            {
+                "id": 303,
+                "name": "",
+                "setting_id": 3,
+                "value": "3"
+            },
+            {
+                "id": 401,
+                "name": "virgule",
+                "setting_id": 4,
+                "value": ","
+            },
+            {
+                "id": 402,
+                "name": "point",
+                "setting_id": 4,
+                "value": "."
+            },
+            {
+                "id": 501,
+                "name": "",
+                "setting_id": 5,
+                "value": "1"
+            },
+            {
+                "id": 502,
+                "name": "",
+                "setting_id": 5,
+                "value": "2"
+            },
+            {
+                "id": 503,
+                "name": "",
+                "setting_id": 5,
+                "value": "3"
+            },
+            {
+                "id": 601,
+                "name": "",
+                "setting_id": 6,
+                "value": "d\/m\/Y"
+            },
+            {
+                "id": 602,
+                "name": "",
+                "setting_id": 6,
+                "value": "Y-m-d"
+            },
+            {
+                "id": 603,
+                "name": "",
+                "setting_id": 6,
+                "value": "m\/d\/Y"
+            },
+            {
+                "id": 701,
+                "name": "",
+                "setting_id": 7,
+                "value": "H:i"
+            },
+            {
+                "id": 801,
+                "name": "",
+                "setting_id": 8,
+                "value": "1"
+            },
+            {
+                "id": 901,
+                "name": "21,59 x 27,74",
+                "setting_id": 9,
+                "value": "US"
+            },
+            {
+                "id": 902,
+                "name": "21 x 29,7",
+                "setting_id": 9,
+                "value": "A4"
+            },
+            {
+                "id": 903,
+                "name": "29,7 x 41,99",
+                "setting_id": 9,
+                "value": "A3"
+            },
+            {
+                "id": 904,
+                "name": "14,8 x 21",
+                "setting_id": 9,
+                "value": "A5"
+            },
+            {
+                "id": 1301,
+                "name": "USD",
+                "setting_id": 13,
+                "value": "$"
+            },
+            {
+                "id": 1302,
+                "name": "EUR",
+                "setting_id": 13,
+                "value": "€"
+            },
+            {
+                "id": 1401,
+                "name": "mètre",
+                "setting_id": 14,
+                "value": "m"
+            },
+            {
+                "id": 1501,
+                "name": "kilogramme",
+                "setting_id": 15,
+                "value": "kg"
+            },
+            {
+                "id": 1601,
+                "name": "mètre cube",
+                "setting_id": 16,
+                "value": "m3"
+            },
+            {
+                "id": 1701,
+                "name": "mètre carré",
+                "setting_id": 17,
+                "value": "m2"
+            },
+            {
+                "id": 1801,
+                "name": "",
+                "setting_id": 18,
+                "value": "111"
+            },
+            {
+                "id": 1901,
+                "name": "",
+                "setting_id": 19,
+                "value": "111"
+            },
+            {
+                "id": 2001,
+                "name": "",
+                "setting_id": 20,
+                "value": "111"
+            },
+            {
+                "id": 2101,
+                "name": "",
+                "setting_id": 21,
+                "value": "2022"
+            },
+            {
+                "id": 2201,
+                "name": "",
+                "setting_id": 22,
+                "value": "%4d(year)-%02d(org)-%03d(sequence)"
+            },
+            {
+                "id": 2301,
+                "name": "",
+                "setting_id": 23,
+                "value": "%1d{center}%05d{sequence}"
+            },
+            {
+                "id": 2401,
+                "name": "",
+                "setting_id": 24,
+                "value": "11117"
+            },
+            {
+                "id": 2501,
+                "name": "",
+                "setting_id": 25,
+                "value": "11111"
+            },
+            {
+                "id": 2601,
+                "name": "",
+                "setting_id": 26,
+                "value": "11111"
+            },
+            {
+                "id": 2701,
+                "name": "",
+                "setting_id": 27,
+                "value": "11113"
+            },
+            {
+                "id": 2801,
+                "name": "",
+                "setting_id": 28,
+                "value": "11112"
+            },
+            {
+                "id": 2901,
+                "name": "",
+                "setting_id": 29,
+                "value": "11111"
+            },
+            {
+                "id": 3001,
+                "name": "",
+                "setting_id": 30,
+                "value": "11111"
+            },
+            {
+                "id": 3101,
+                "name": "",
+                "setting_id": 31,
+                "value": "11111"
+            },
+            {
+                "id": 3201,
+                "name": "",
+                "setting_id": 32,
+                "value": "10"
+            }
+        ]
+    }
+]

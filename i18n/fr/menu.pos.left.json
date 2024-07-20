@@ -1,0 +1,53 @@
+{
+    "description": "",
+    "view": {
+        "pos.sessions": {
+            "label": "Sessions",
+            "help": ""
+        },
+        "pos.sessions.pending": {
+            "label": "Sessions en cours",
+            "help": ""
+        },
+        "pos.sessions.history": {
+            "label": "Historique",
+            "help": ""
+        },
+        "pos.sessions.history.cashdeskSession": {
+            "label": "Session",
+            "help": ""
+        },
+        "pos.sessions.history.orders": {
+            "label": "Commandes (toutes)",
+            "help": ""
+        },
+        "pos.catalog": {
+            "label": "Catalogue",
+            "help": ""
+        },
+        "pos.catalog.products": {
+            "label": "Produits",
+            "help": ""
+        },
+        "pos.catalog.pricelists": {
+            "label": "Listes de prix",
+            "help": ""
+        },
+        "pos.sessions.invoicing": {
+            "label": "Facturation",
+            "help": ""
+        },
+        "pos.order.toinvoice": {
+            "label": "Commandes à facturer",
+            "help": ""
+        },
+        "pos.sessions.invoicing.waiting": {
+            "label": "Factures en attente",
+            "help": ""
+        },
+        "pos.sessions.invoicing.all": {
+            "label": "Toutes les factures",
+            "help": ""
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "name": "Recherche avancée de sessions de caisse.",
+    "description": "Contrôleur proposant une recherche avancée des sessions des caisses.",
+    "model": {
+        "order_name": {
+            "label": "Commande",
+            "description": "La commande de sessions de caisse.",
+            "help": ""
+        },
+        "center_id": {
+            "label": "Centre",
+            "description": "Le centre de sessions de caisse.",
+            "help": ""
+        },
+        "user_id": {
+            "label": "Utilisateur",
+            "description": "L'utilisateur de sessions de caisse.",
+            "help": ""
+        },
+        "date_from": {
+            "label": "Date de début",
+            "description": "Date de début de l'intervalle de temps.",
+            "help": ""
+        },
+        "date_to": {
+            "label": "Date de fin ",
+            "description": "Date de fin de l'intervalle de temps.",
+            "help": ""
+        }
+    }
+}

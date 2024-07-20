@@ -1,0 +1,47 @@
+{
+    "name": "Properties",
+    "description": "List of properties.",
+    "access": {
+        "groups": ["setting.default.user"]
+    },
+    "actions": [
+        {
+            "id": "action.resync",
+            "label": "Synchroniser",
+            "description": "Forcer la resynchronisation.",
+            "confirm": true,
+            "controller": "lodging_booking_sync-contingencies"
+        }
+    ],
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "id",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "extref_property_id",
+                "width": "20%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "value": "center_id",
+                "width": "15%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "value": "center_office_id",
+                "width": "15%"
+            },
+            {
+                "type": "field",
+                "value": "is_active",
+                "width": "10%"
+            }
+        ]
+    }
+}

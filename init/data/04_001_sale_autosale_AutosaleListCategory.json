@@ -1,0 +1,23 @@
+[
+    {
+        "name": "sale\\autosale\\AutosaleListCategory",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "name": "GA",
+                "description": "Produits auto Gites Auberges"
+            },
+            {
+                "id": 2,
+                "name": "GG",
+                "description": "Produits auto Gites de Groupe"
+            },
+            {
+                "id": 3,
+                "name": "VSG",
+                "description": "Produits auto Villers-Sainte-Gertrude"
+            }
+        ]
+    }
+]

@@ -1,0 +1,37 @@
+app-menu-list-item.hidden {
+    display: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.app-body {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    overflow: hidden;
+
+    mat-nav-list {
+        padding: 0px 1px 0 0;
+        margin-top: -1px;
+    }
+}
+
+.app-body .app-main {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    order: 2;
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: calc(100vh);
+
+/* 2 modes for this : either SB list view or any other type of view */
+/* this will prevent global scrollbar and add a specific scrollbar for table */
+    height: calc(100vh);
+/* this will end-up in a global scrollbar only if the content is higher than the viewport */
+    height: 100%;
+}

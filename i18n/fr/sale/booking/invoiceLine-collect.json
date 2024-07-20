@@ -1,0 +1,36 @@
+{
+    "name": "Recherche avancé des lignes de facture",
+    "description": "Contrôleur proposant une recherche avancée des lignes de facture.",
+    "model": {
+        "center_office_id": {
+            "label": "Equipe de gestion",
+            "description": "Le centre de gestion à l'origine de la facture.",
+            "help": ""
+        },
+        "organisation_id": {
+            "label": "Organisation émettrice",
+            "description": "Organisation à l'origine de la facture.",
+            "help": ""
+        },
+        "customer_identity_id": {
+            "label": "Destinataire",
+            "description": "Destinataire à l'origine de la facture.",
+            "help": ""
+        },
+        "product_id": {
+            "label": "Produit",
+            "description": "Produit de la ligne de la facture.",
+            "help": ""
+        },
+        "date_from": {
+            "label": "Date de début",
+            "description": "Date de début de l'intervalle de temps.",
+            "help": ""
+        },
+        "date_to": {
+            "label": "Date de fin ",
+            "description": "Date de fin de l'intervalle de temps.",
+            "help": ""
+        }
+    }
+}

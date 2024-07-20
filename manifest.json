@@ -1,0 +1,16 @@
+{
+    "name": "lodging",
+    "author": "Yesbabylon SRL",
+    "version": "1.0",
+	"version_name": "Discope",
+    "depends_on": [
+        "core",
+        "documents",
+        "finance",
+        "identity",
+        "realestate",
+        "sale",
+        "support"
+    ],
+    "apps": ["auth", "apps", "accounting", "booking", "planning", "documents", "pos", "sale", "settings", "stats", "calstatic", "support"]
+}

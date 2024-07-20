@@ -1,0 +1,17 @@
+{
+    "name": "Paiement rapide",
+    "description": "Un paiement manuel par carte de crédit sera ajouté pour compléter le financement, et le financement sera marqué comme payé. Lorsqu'elle aboutit à la clôture de la réservation, cette action ne peut plus être annulée.",
+    "model": {
+        "id": {
+            "label": "Identifiant",
+            "description": "Identifiant de la réservation ciblée.",
+            "help": ""
+        }
+    },
+    "error": {
+        "errors": {
+            "unknown_booking": "Réservation inconnue.",
+            "incompatible_status": "La réservation est clôturée."
+        }
+    }
+}

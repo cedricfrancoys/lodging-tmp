@@ -1,0 +1,33 @@
+{
+    "name": "Center therical capacity (in nights)",
+    "description": "",
+    "controller": "lodging_stats_stat-nights-max",
+    "header": {
+        "actions": {
+            "ACTION.CREATE" : false
+        }
+    },
+    "operations": {
+        "total": {
+            "total": {
+                "operation": "SUM",
+                "usage": "numeric/integer",
+                "suffix": " nuitées"
+            }
+        }
+    },
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "center",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "total",
+                "width": "20%"
+            }
+        ]
+    }
+}

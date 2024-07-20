@@ -1,0 +1,130 @@
+{
+    "name": "Cashdesk Sheet total",
+    "description": "",
+    "controller": "lodging_sale_pos_stat-cashdeskSession",
+    "header": {
+        "actions": {
+            "ACTION.CREATE" : false
+        }
+    },
+    "group_by": ["center", "date_closing"],
+    "operations": {
+        "Total": {
+            "total_remaining":{
+                "operation": "SUM",
+                "usage": "amount/money:2"
+            },
+            "total_expected":{
+                "operation": "SUM",
+                "usage": "amount/money:2"
+            },
+            "total_closing":{
+                "operation": "SUM",
+                "usage": "amount/money:2"
+            },
+            "total_opening":{
+                "operation": "SUM",
+                "usage": "amount/money:2"
+            }
+        }
+    },
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "center",
+                "width": "25%"
+            },
+            {
+                "type": "field",
+                "value": "total_voucher",
+                "label": "Voucher",
+                "width": "15%",
+                "widget": {
+                    "type": "float",
+                    "usage": "amount/money:2"
+                }
+            },
+            {
+                "type": "field",
+                "value": "total_bank_card",
+                "label": "Carte Bancaire",
+                "width": "15%",
+                "widget": {
+                    "type": "float",
+                    "usage": "amount/money:2"
+                }
+            },
+            {
+                "type": "field",
+                "value": "total_cash",
+                "label": "Espèces",
+                "width": "15%",
+                "widget": {
+                    "type": "float",
+                    "usage": "amount/money:2"
+                }
+            },
+            {
+                "type": "field",
+                "value": "total_operations_in",
+                "label": "Mouv. entrées",
+                "width": "15%",
+                "widget": {
+                    "type": "float",
+                    "usage": "amount/money:2"
+                }
+            },
+            {
+                "type": "field",
+                "value": "total_operations_out",
+                "label": "Mouv. sorties",
+                "width": "15%",
+                "widget": {
+                    "type": "float",
+                    "usage": "amount/money:2"
+                }
+            },
+            {
+                "type": "field",
+                "value": "total_opening",
+                "label": "Ouverture",
+                "width": "15%",
+                "widget": {
+                    "type": "float",
+                    "usage": "amount/money:2"
+                }
+            },
+            {
+                "type": "field",
+                "value": "total_closing",
+                "label": "Fermeture",
+                "width": "15%",
+                "widget": {
+                    "type": "float",
+                    "usage": "amount/money:2"
+                }
+            },
+            {
+                "type": "field",
+                "value": "total_expected",
+                "label" : "Attendu",
+                "width": "15%",
+                "widget": {
+                    "type": "float",
+                    "usage": "amount/money:2"
+                }
+            },
+            {
+                "type": "field",
+                "value": "total_remaining",
+                "label" : "Différence",
+                "width": "15%",
+                "widget": {
+                    "type": "float",
+                    "usage": "amount/money:2"
+                }
+            }
+        ]
+    }
+}

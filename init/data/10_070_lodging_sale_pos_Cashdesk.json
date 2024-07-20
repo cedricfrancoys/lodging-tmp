@@ -1,0 +1,56 @@
+[
+    {
+        "name": "sale\\pos\\Cashdesk",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "name": "Caisse Eupen",
+                "center_id": 24,
+                "establishment_id": null
+            },
+            {
+                "id": 2,
+                "name": "Caisse Villers",
+                "center_id": 25,
+                "establishment_id": null
+            },
+            {
+                "id": 3,
+                "name": "Caisse Han",
+                "center_id": 26,
+                "establishment_id": null
+            },
+            {
+                "id": 4,
+                "name": "Caisse Ovifat",
+                "center_id": 27,
+                "establishment_id": null
+            },
+            {
+                "id": 5,
+                "name": "Caisse Mozaïk",
+                "center_id": 28,
+                "establishment_id": null
+            },
+            {
+                "id": 6,
+                "name": "Caisse Rochefort",
+                "center_id": 29,
+                "establishment_id": null
+            },
+            {
+                "id": 7,
+                "name": "Caisse Wanne - Accueil",
+                "center_id": 30,
+                "establishment_id": null
+            },
+            {
+                "id": 8,
+                "name": "Caisse Wanne - Bar",
+                "center_id": 30,
+                "establishment_id": null
+            }
+        ]
+    }
+]

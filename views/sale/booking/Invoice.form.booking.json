@@ -1,0 +1,256 @@
+{
+    "name": "Invoice",
+    "description": "An invoice is a legal document issued by a seller to a buyer that relates to a sale, and is part of the accounting system.",
+    "header": {
+        "actions": {
+            "ACTION.SAVE": [
+                {
+                    "id": "SAVE_AND_VIEW"
+                },
+                {
+                    "id": "SAVE_AND_CLOSE"
+                }
+            ]
+        }
+    },
+    "actions": [
+        {
+            "id": "action.invoice",
+            "label": "Emit invoice",
+            "description": "A new invoice will be generated from the proforma version. A number will be assigned to the invoice which will become read-only.",
+            "controller": "lodging_invoice_do-emit",
+            "confirm": true,
+            "visible": ["status", "=", "proforma"]
+        },
+        {
+            "id": "action.remove",
+            "label": "Delete invoice",
+            "description": "The proforma invoice will be deleted.",
+            "controller": "lodging_invoice_do-delete",
+            "confirm": true,
+            "visible": ["status", "=", "proforma"],
+            "access": {
+                "groups": ["admins", "booking.default.administrator", "sale.default.administrator", "finance.default.administrator"]
+            }
+        },
+        {
+            "id": "action.reverse",
+            "label": "Reverse",
+            "description": "A new credit note will be generated from the invoice. The invoice will be cancelled and reversing accounting entries will be created.",
+            "controller": "lodging_invoice_do-reverse",
+            "confirm": true,
+            "visible": [["status", "=", "invoice"], ["type", "=", "invoice"]]
+        },
+        {
+            "id": "action.refresh_paid",
+            "label": "Refresh",
+            "description": "A new credit note will be generated from the invoice. The invoice will be cancelled and reversing accounting entries will be created.",
+            "controller": "lodging_invoice_do-refresh",
+            "confirm": false,
+            "visible": [["is_paid", "=", false]]
+        },
+        {
+            "id": "action.refresh_fundings",
+            "label": "(Re)generate funding",
+            "description": "A check will be made on the invoice and funding will be generated if missing. And the non-invoiced (partially) paid fundings will be attached to it.",
+            "controller": "lodging_invoice_do-funding",
+            "confirm": false,
+            "visible": [["status", "=", "invoice"], ["type", "=", "invoice"]],
+            "access": {
+                "groups": ["booking.default.administrator", "sale.default.administrator", "finance.default.administrator"]
+            }
+        }
+    ],
+    "routes": [
+        {
+            "id": "item.invoice.booking.file",
+            "label": "Fiche de réservation",
+            "description": "",
+            "icon": "library_books",
+            "app": "booking",
+            "route": "/booking/object.booking_id"
+        },
+        {
+            "id": "item.invoice.send",
+            "label": "Imprimer/Envoyer",
+            "description": "",
+            "icon": "print",
+            "app": "booking",
+            "route": "/booking/object.booking_id/invoice/object.id"
+        }
+    ],
+    "layout": {
+        "groups": [
+            {
+                "sections": [
+                    {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "50%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "number",
+                                                "width": "33%",
+                                                "widget": {
+                                                    "heading": true,
+                                                    "readonly": true
+                                                }
+                                            },
+                                            {
+                                                "type": "field",
+                                                "label": "Partner",
+                                                "value": "partner_id",
+                                                "width": "33%",
+                                                "widget": {
+                                                    "readonly": true
+                                                }
+                                            },
+                                            {
+                                                "type": "field",
+                                                "label": "Booking",
+                                                "value": "booking_id",
+                                                "width": "33%",
+                                                "widget": {
+                                                    "readonly": true
+                                                }
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "status",
+                                                "width": "25%",
+                                                "widget": {
+                                                    "readonly": true
+                                                }
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "type",
+                                                "width": "25%",
+                                                "widget": {
+                                                    "readonly": true
+                                                }
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "due_date",
+                                                "width": "25%",
+                                                "visible": ["status", "<>", "cancelled"],
+                                                "widget": {
+                                                    "readonly": true
+                                                }
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "is_paid",
+                                                "width": "25%",
+                                                "visible": ["status", "<>", "cancelled"],
+                                                "widget": {
+                                                    "readonly": true
+                                                }
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "reversed_invoice_id",
+                                                "width": "33%",
+                                                "widget": {
+                                                    "readonly": true
+                                                }
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "customer_ref",
+                                                "width": "100%"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "width": "50%",
+                                        "items": [
+                                            {
+                                                "type": "label",
+                                                "value": "",
+                                                "width": "33%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "label": "Organisation",
+                                                "value": "organisation_id",
+                                                "width": "33%",
+                                                "widget": {
+                                                    "readonly": true
+                                                }
+                                            },
+                                            {
+                                                "type": "field",
+                                                "label": "Management",
+                                                "value": "center_office_id",
+                                                "width": "33%",
+                                                "widget": {
+                                                    "header": {
+                                                        "ACTION.CREATE": false
+                                                    },
+                                                    "readonly": true
+                                                }
+                                            },
+                                            {
+                                                "type": "label",
+                                                "value": "",
+                                                "width": "66%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "date",
+                                                "width": "33%",
+                                                "widget": {
+                                                    "type": "date"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "sections": [
+                    {
+                        "id": "sections.invoice.lines",
+                        "label": "Invoice Lines",
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "invoice_lines_ids",
+                                                "width": "100%",
+                                                "widget": {
+                                                    "header": {
+                                                        "selection": {
+                                                            "default":false
+                                                        },
+                                                        "actions": {
+                                                            "ACTION.SELECT": false,
+                                                            "ACTION.CREATE": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

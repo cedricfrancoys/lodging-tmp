@@ -1,0 +1,194 @@
+<div>
+    <planning-calendar-navbar (refresh)="onRefresh()" [consumption]="hovered_consumption" [rental_unit]="hovered_rental_unit" [holidays]="hovered_holidays"></planning-calendar-navbar>
+</div>
+
+<div class="container">
+    <mat-progress-bar [class.hidden]="!loading" mode="indeterminate"></mat-progress-bar>
+    <table #calTable class="cal-table">
+        <!-- header -->
+        <thead>
+            <tr class="head">
+                <th #calTableRefColumn class="ref-column cell-room" rowspan="2">ref.</th>
+                <th class="stat-column cell-room" rowspan="2">stat.</th>
+                <th class="head-months" *ngFor="let month of headers.months" [attr.colspan]="month.days.length">
+                    {{ month.date | date : 'MMMM y' }}
+                </th>
+            </tr>
+            <tr class="head">
+                <ng-container *ngFor="let day of headers.days" >
+                    <th #calTableHeadCells
+                        (mouseenter)="onhoverDate(day)"
+                        (mouseleave)="onhoverDate(null)"
+                        class="head-days"
+                        [class.small]="cellsWidth <= 26"
+                        [class.hidden]="cellsWidth < 10"
+                        [ngClass]="getHolidayClasses(day)">
+                            <div *ngIf="cellsWidth > 26" class="week-day">{{ day | date: 'EEE'}}</div>
+                            <div *ngIf="cellsWidth <= 26" class="week-day">{{ day | date: 'EEEEE'}}</div>
+                            <div class="month-day">{{ day | date: 'd'}}</div>
+                    </th>
+                </ng-container>
+            </tr>
+        </thead>
+        <tbody (mouseleave)="onmouseleaveTable()" >
+            <!-- body -->
+            <tr class="rows days cdk-drag-disabled" (dragstart)="preventDrag($event)"  *ngFor="let rental_unit of rental_units; let index = index;" >
+                <td class="cell-room rental-unit"
+                    (mouseenter)="onhoverRentalUnit(rental_unit); hover_row_index = index"
+                    (mouseleave)="onhoverRentalUnit(null); hover_row_index = -1"
+                    [style.background]="rental_unit.color"
+                    (click)="onSelectedRentalUnit(rental_unit)"><span class="rental-unit-name">{{ rental_unit.code }} ({{ rental_unit.capacity }})</span>
+                    <span *ngIf="rental_unit == hovered_rental_unit" class="cell-hint"><span>{{ rental_unit.name }} ({{ rental_unit.capacity }})</span></span>
+                </td>
+                <td class="cell-room status">
+                    <i *ngIf="rental_unit.status == 'ready'" class="material-icons" style="color: green;">check</i>
+                    <i *ngIf="rental_unit.status == 'busy_part'" class="material-icons" >add_home</i>
+                    <i *ngIf="rental_unit.status == 'busy_full'" class="material-icons" >home_filled</i>
+                    <i *ngIf="rental_unit.status == 'ooo'" class="material-icons">block</i>
+                </td>
+
+                <!-- #debug - for debugging, add [attr.data-date]="day" -->
+                <td *ngFor="let day of headers.days; let i = index"
+                    (dragstart)="preventDrag($event)"
+                    class="cell-days cdk-drag-disabled"
+                    [class.is-weekend]="isWeekEnd(day)"
+                    (mousedown)="onmousedown($event, rental_unit, day)"
+                    (mouseup)="onmouseup()"
+                    (mouseover)="onmouseover($event, day)"
+                    (mouseenter)="hover_row_index = index"
+                    (mouseleave)="hover_row_index = -1">
+                    <!-- vertical indicator -->
+                    <div *ngIf="isToday(day)" class="is-today"></div>
+                    <!-- consumption cell -->
+                    <ng-container *ngIf="hasConsumption(rental_unit, headers.days_indexes[i])">
+                        <div class="cell-consumptions">
+                            <ng-container *ngFor="let consumption of getConsumptions(rental_unit, day)">
+                                <planning-calendar-booking
+                                    [height]="rowsHeight"
+                                    [width]="cellsWidth"
+                                    [day]="day"
+                                    [consumption]="consumption"
+                                    (hover)="onhoverBooking($event); onhoverDay(rental_unit, day)"
+                                    (mouseleave)="onhoverBooking(null); onhoverDay(null, null)"
+                                    (selected)="onSelectedBooking($event)">
+                                </planning-calendar-booking>
+                                <span *ngIf="hovered_consumption == consumption" class="cell-hint" #vDescription="var" [var]="{value: getDescription(consumption)}">
+                                    <span *ngIf="vDescription?.value?.length" style="margin: 0 !important;" [innerHTML]="vDescription.value"></span>
+                                </span>
+                            </ng-container>
+                        </div>
+                    </ng-container>
+                </td>
+
+            </tr>
+
+            <!-- stats -->
+            <tr class="rows stats days">
+                <td colspan="2" style="padding-left: 5px; text-align: left;">{{count_rental_units}} unités</td>
+                <ng-container *ngFor="let day of headers.days" >
+                    <td
+                        class="head-days"
+                        [class.small]="cellsWidth <= 26"
+                        [class.hidden]="cellsWidth < 10">
+                            <div *ngIf="cellsWidth > 26" class="week-day">{{ day | date: 'EEE'}}</div>
+                            <div *ngIf="cellsWidth <= 26" class="week-day">{{ day | date: 'EEEEE'}}</div>
+                    </td>
+                </ng-container>
+            </tr>
+
+            <tr class="rows" >
+                <td class="cell-stat cell-title">
+                    Capacité
+                </td>
+                <td class="cell-stat empty"></td>
+                <!-- #debug - for debugging, add [attr.data-date]="day" -->
+                <td *ngFor="let day_index of headers.days_indexes; let i = index"
+                    class="cell-stat cell-days"
+                    [class.is-weekend]="isWeekEnd(headers.days[i])"
+                    [class.small]="cellsWidth <= 26"
+                    [class.hidden]="cellsWidth < 10">
+                        {{mapStats['capacity'][day_index]}}
+                </td>
+            </tr>
+            <tr class="rows" >
+                <td class="cell-stat cell-title">
+                    Bloquées
+                </td>
+                <td class="cell-stat empty"></td>
+                <!-- #debug - for debugging, add [attr.data-date]="day" -->
+                <td *ngFor="let day_index of headers.days_indexes; let i = index"
+                    class="cell-stat cell-days"
+                    [class.is-weekend]="isWeekEnd(headers.days[i])"
+                    [class.small]="cellsWidth <= 26"
+                    [class.hidden]="cellsWidth < 10">
+                        {{mapStats['blocked'][day_index]}}
+                </td>
+            </tr>
+            <tr class="rows" >
+                <td class="cell-stat cell-title">
+                    Occupées
+                </td>
+                <td class="cell-stat empty"></td>
+                <!-- #debug - for debugging, add [attr.data-date]="day" -->
+                <td *ngFor="let day_index of headers.days_indexes; let i = index"
+                    class="cell-stat cell-days"
+                    [class.is-weekend]="isWeekEnd(headers.days[i])"
+                    [class.small]="cellsWidth <= 26"
+                    [class.hidden]="cellsWidth < 10">
+                        {{mapStats['occupied'][day_index]}}
+                </td>
+            </tr>
+            <tr class="rows">
+                <td class="cell-stat cell-title">
+                    Taux occupation
+                </td>
+                <td class="cell-stat empty"></td>
+                <!-- #debug - for debugging, add [attr.data-date]="day" -->
+                <td *ngFor="let day_index of headers.days_indexes"
+                    class="cell-stat cell-days status"
+                    [class.low]="mapStats['occupancy'][day_index] < 30"
+                    [class.medium]="mapStats['occupancy'][day_index] >= 30 && mapStats['occupancy'][day_index] < 50 "
+                    [class.high]="mapStats['occupancy'][day_index] >= 50 && mapStats['occupancy'][day_index] < 80 "
+                    [class.critical]="mapStats['occupancy'][day_index] >= 80 "
+                    [class.small]="cellsWidth <= 26">
+                        <ng-container *ngIf="cellsWidth >= 10">
+                            {{mapStats['occupancy'][day_index]}}<ng-container *ngIf="cellsWidth > 26">%</ng-container>
+                        </ng-container>
+                </td>
+            </tr>
+            <tr class="rows">
+                <td class="cell-stat cell-title">
+                    Arrivées
+                </td>
+                <td class="cell-stat empty"></td>
+                <!-- #debug - for debugging, add [attr.data-date]="day" -->
+                <td *ngFor="let day_index of headers.days_indexes; let i = index"
+                    class="cell-stat cell-days"
+                    [class.is-weekend]="isWeekEnd(headers.days[i])"
+                    [class.small]="(cellsWidth <= 50 && isToday(headers.days[i])) || cellsWidth <= 26"
+                    [class.hidden]="cellsWidth < 10">
+                        <ng-container *ngIf="isToday(headers.days[i])">{{mapStats['arrivals_confirmed'][day_index]}} / </ng-container>{{mapStats['arrivals_expected'][day_index]}}
+                </td>
+            </tr>
+            <tr class="rows">
+                <td class="cell-stat cell-title">
+                    Départs
+                </td>
+                <td class="cell-stat empty"></td>
+                <!-- #debug - for debugging, add [attr.data-date]="day" -->
+                <td *ngFor="let day_index of headers.days_indexes; let i = index"
+                    class="cell-stat cell-days"
+                    [class.is-weekend]="isWeekEnd(headers.days[i])"
+                    [class.small]="(cellsWidth <= 50 && isToday(headers.days[i])) || cellsWidth <= 26"
+                    [class.hidden]="cellsWidth < 10">
+                        <ng-container *ngIf="isToday(headers.days[i])">{{mapStats['departures_confirmed'][day_index]}} / </ng-container>{{mapStats['departures_expected'][day_index]}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div #selector style="position: absolute; background-color: #ff4081; z-index: 0;"
+        [style.left.px]="selection.left"
+        [style.top.px]="selection.top"
+        [style.width.px]="selection.width"
+        [style.height.px]="selection.height"></div>
+</div>

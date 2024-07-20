@@ -1,0 +1,28 @@
+[
+    {
+        "name": "sale\\discount\\DiscountCategory",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "name": "saison",
+                "description": "réductions liées à la saisonnalité"
+            },
+            {
+                "id": 2,
+                "name": "durée",
+                "description": "réductions liées à la durée du séjour"
+            },
+            {
+                "id": 3,
+                "name": "taille",
+                "description": "réductions liées à la taille du groupe"
+            },
+            {
+                "id": 4,
+                "name": "fidélité",
+                "description": "réductions liées à la fidélité du client"
+            }
+        ]
+    }
+]

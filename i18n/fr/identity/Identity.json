@@ -1,0 +1,115 @@
+{
+    "name": "Identité",
+    "plural": "Identités",
+    "description": "Une Identité est soit une personne morale soit une personne physique : les organisations sont des personnes morales et les utilisateurs, les contacts et les employés sont des personnes physiques.",
+    "model": {
+        "description": {
+            "label": "Observations",
+            "description": "Notes spécifiques au client (non visible par le client), ajoutées aux observation des réservations liées.",
+            "help": ""
+        },
+        "contacts_ids": {
+            "label": "Contacts",
+            "description": "Contacts liés à l'identité.",
+            "help": ""
+        },
+        "flag_latepayer": {
+            "label": "Mauvais payeur",
+            "description": "Le client est un payeur lent ou difficile.",
+            "help": ""
+        },
+        "flag_damage": {
+            "label": "Attention dégâts",
+            "description": "Le client a déjà occasionné des dégâts lors de ses réservations.",
+            "help": ""
+        },
+        "flag_nuisance": {
+            "label": "Attention nuisances",
+            "description": "Le client a déjà occasionné des nuisances lors de ses réservations",
+            "help": ""
+        },
+        "email_secondary": {
+            "label": "Email secondaire",
+            "description": "Adresse e-mail secondaire.",
+            "help": ""
+        },
+        "invoices_ids": {
+            "label": "Factures",
+            "description": "Le client a déjà occasionné des nuisances lors de ses réservations",
+            "help": ""
+        },
+        "has_duplicate_clue": {
+            "label": "Risque de doublon",
+            "description": "Décocher pour forcer la création.",
+            "help": "Alerte que l'identité en cours de création ressemble à une ou plusieurs identités existantes."
+        },
+        "duplicate_clue_identity_id": {
+            "label": "Doublon possible",
+            "description": "Identité similaire (doublon?).",
+            "help": "Identité dont la fiche en cours est très ressemblante."
+        },
+        "duplicate_identity_id": {
+            "label": "Doublon de",
+            "description": "Identité dont cette identité est un doublon."
+        },
+        "is_duplicate": {
+            "label": "Est un doublon",
+            "description": "Identité qui est un doublon."
+        },
+        "is_ota": {
+            "label": "Origine OTA",
+            "description": "Est-ce que l'identité est originaire d'un OTA.",
+            "help": ""
+        }
+    },
+    "view": {
+        "form.default": {
+            "name": "Identité",
+            "description": "Formulaire de base pour l'affichage du groupe.",
+            "layout": {
+                "section.identity_info": {
+                    "label": "Infos générales"
+                },
+                "section.history": {
+                    "label": "Suivi"
+                },
+                "section.identity_invoices": {
+                    "label": "Factures"
+                },
+                "section.settings": {
+                    "label": "Paramètres"
+                },
+                "section.identity_main_address": {
+                    "label": "Adresse principale"
+                },
+                "section.identity_addresses": {
+                    "label": "Autres adresses"
+                },
+                "section.identity_description": {
+                    "label": "Description"
+                },
+                "section.identity_bookings": {
+                    "label": "Réservation",
+                    "description": "Historique des réservations"
+                },
+                "section.identity_duplicates": {
+                    "label": "Doublons",
+                    "description": "Liste des doublons possibles"
+                }
+            }
+        },
+        "list.default": {
+            "name": "Liste d'Identité",
+            "description": "Liste de base des identités existantes.",
+            "layout": {}
+        }
+    },
+    "error": {
+        "bookings_ids": {
+            "non_removable_identity": "Les identités liées à des réservations ne peuvent pas être supprimées."
+        },
+        "has_duplicate_clue": {
+            "might_be_duplicate": "Décocher pour forcer la création d'un possible doublon."
+        }
+    }
+}

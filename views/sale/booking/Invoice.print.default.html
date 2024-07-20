@@ -1,0 +1,549 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+<title>
+{% if type == 'invoice'  %}
+    {{i18n['booking_invoice']}}
+{% else %}
+    {{i18n['credit_note']}}
+{% endif %}
+</title>
+<style type="text/css">
+@page {
+  margin: 1cm;
+}
+body {
+    margin: 0;
+    padding: 0;
+    margin-top: 280px;
+    margin-bottom: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.7em;
+    text-align: justify;
+    width: 100%;
+}
+
+h2 {
+    margin-top: 8px;
+    margin-bottom: 0;
+    font-size: 21px;
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 15px;
+}
+
+div, table, table tr td {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div.header,
+div.footer {
+    box-sizing: border-box;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+    background-color: white;
+}
+
+div.inner {
+    height: auto;
+    box-sizing: border-box;
+    border: none;
+}
+
+div.inner p {
+    margin: 0;
+}
+
+div.inner .wrapper {
+    margin: 0px;
+    margin-top: 20px;
+    padding: 0px;
+    border: none;
+}
+
+div.inner .wrapper table {
+    page-break-inside: auto;
+    border: solid 1px black;
+}
+
+div.inner .wrapper table tr td {
+    border-right: solid 1px black;
+    border-bottom: solid 1px lightgrey;
+}
+
+div.inner .wrapper table tr td:last-child {
+    border-right: none;
+}
+
+div.inner .wrapper table tr:last-child td {
+    border-bottom: none;
+    border-bottom: solid 1px black;
+}
+
+div.trailer {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: visible;
+    z-index: 100;
+}
+
+div.trailer .wrapper table {
+    page-break-inside: avoid;
+}
+
+div.header {
+    top: 0;
+    left: 0;
+    height: 280px;
+}
+
+div.header table.header {
+    width: 100%;
+    border-spacing: 0px;
+    border-collapse: separate;
+}
+
+div.footer {
+    bottom: 0;
+    left: 0;
+    height: 30px;
+    overflow: visible;
+    z-index: 200;
+    font-size: 0.8em !important;
+}
+
+hr {
+    page-break-after: always;
+    border: 0;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+    <div style="position: absolute; height: 150px; width: 350px; z-index: -1;">
+        <img src="{{ header_img_url }}" width="350" height="100" border="0" />
+        <div style="margin-left: 8px;">
+            <h3>{{ company_name}}</h3>
+            {{ company_address }}<br />
+            {{i18n['company_registry']}}: {{ company_reg_number }}<br />
+            {{i18n['vat_number']}}:
+            {% if (company_has_vat == false) or (company_vat_number is null) or (company_vat_number == '') %}
+                N/A
+            {% else %}
+                {{ company_vat_number }}
+            {% endif %}
+        </div>
+    </div>
+    <div style="position: absolute; top: 20px; right: 0px; width: 350px; height: 123px; font-size: 13px; text-align: left;">
+        <table>
+            <tr>
+                <td style="width: 70px; vertical-align: top;">
+                    <b>{{i18n['customer_name']}}:</b><br />
+                    <b>{{i18n['customer_address']}}:</b><br />
+                </td>
+                <td>
+                    {{ customer_name }}<br />
+                    {% if customer_address1|length > 0 %}
+                        {{ customer_address1 }}<br />
+                    {% endif %}
+                    {% if customer_address_dispatch|length > 0 %}
+                        {{ customer_address_dispatch }}<br />
+                    {% endif %}
+                    {% if customer_address2|length > 0 %}
+                        {{ customer_address2 }}<br />
+                    {% endif %}
+                    {% if customer_has_vat > 0 %}
+                        {{i18n['vat']}} {{ customer_vat }}<br />
+                    {% endif %}
+                </td>
+            </tr>
+            {% if attn_name|length > 0 %}
+            <tr>
+                <td colspan="2" style="margin-top: 10px;"></td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;">
+                    <b>ATTN:</b>
+                </td>
+                <td>
+                    {{ attn_name }}<br />
+                    {{ attn_address1 }}<br />
+                    {{ attn_address2 }}
+                </td>
+            </tr>
+            {% endif %}
+        </table>
+    </div>
+
+    <!-- spacer -->
+    <div style="position: relative; height: 140px; width: 100%;"></div>
+
+    <table class="header" cellpadding="0" cellspacing="0">
+        <tr valign="top">
+            <td style="width: 77%; padding: 15px 5px; padding-top: 25px;">
+                {% if center %}
+                <div style="margin-top: 5px;">
+                    <div style="display: inline-block; width: 100%;"><b>{{i18n['your_stay_at']}} {{ center }} {{ period }}</b></div>
+                </div>
+                <div style="margin-top: 5px;">
+                    <div style="display: inline-block; width: 100%;">{{i18n['booking_ref']}}: <b>{{ booking_code }}</b></div>
+                </div>
+                <div>
+                    <div style="display: inline-block; width: 100%;">{{i18n['customer_num']}}: <b>{{ customer_id }}</b></div>
+                </div>
+                {% endif %}
+                <div>
+                    <div class="fa fa-phone" style="display: inline-block;"></div>
+                    <div style="display: inline-block;">{{center_phone}}</div>
+                </div>
+                <div>
+                    <div class="fa fa-envelope-o" style="display: inline-block;"></div>
+                    <div style="display: inline-block;">{{center_email}}</div>
+                </div>
+                {% if customer_ref|length > 0 %}
+                <table style="margin-top: 5px; width: 100%;">
+                    <tr>
+                        <td style="width: 24%; vertical-align: top;"><b style="text-transform: uppercase;">{{i18n['your_reference']}}:</b></td>
+                        <td style="width: 76%;">
+                            <div style="width: 300px;">{{ customer_ref }}</div>
+                        </td>
+                    </tr>
+                </table>
+                {% endif %}
+            </td>
+            <td style="width: 23%; padding: 5px;">
+                <div style="margin-top: 20px;">
+                    <h2 style="text-transform: capitalize;">
+                    {% if type == 'invoice' %}
+                        {{i18n['invoice']}}
+                    {% else %}
+                        {{i18n['credit_note']}}
+                    {% endif %}
+                    </h2>
+                </div>
+                <div style="margin-bottom: 5px; margin-top: 5px; text-transform: uppercase; font-size: 13px;">
+                    {{i18n['number_short']}}: <strong>{{ code }}</strong>
+                </div>
+                <div style="margin-bottom: 5px; text-transform: uppercase; font-size: 13px;">
+                    {{i18n['date']}}: <strong>{{ date }}</strong>
+                </div>
+                {% if status != 'proforma' %}
+                <div style="margin-bottom: 5px; text-transform: uppercase; font-size: 13px; white-space: nowrap;">
+                    <span>{{i18n['status']}}:</span>
+                    <strong style="font-size: 13px;">
+                    {% if is_paid  %}
+                        {{i18n['paid']}}
+                    {% else %}
+                        {% if type == 'invoice' %}
+                            {{i18n['to_pay']}}
+                        {% else %}
+                            {{i18n['to_refund']}}
+                        {% endif %}
+                    {% endif %}
+                    </strong>
+                </div>
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+<div class="footer">
+    <p style="text-align: center;">
+        {{ company_name}} - {{ company_address }}
+        {% if not company_has_vat %}
+            &nbsp;- ASBL assujettie exemptée en vertu de l’article 44 §2, 2° du Code TVA
+        {% endif %}
+        <br />
+        {{i18n['company_registry']}}: {{ company_reg_number }} - IBAN : {{ company_iban }}
+        <br />
+        Email: {{ company_email }} - Web: {{ company_website }} - Tel {{ company_phone }}
+        {% if company_fax %}
+            - {{ company_fax }}
+        {% endif %}
+    </p>
+</div>
+
+
+<div class="inner">
+    <div class="intro">
+        {{ invoice_header_html | raw }}
+    </div>
+    <div class="wrapper">
+        <table width="100%" cellpadding="4" cellspacing="0">
+            <thead style="border: solid 1px black; border-left: 0px; border-right: 0px;">
+                <tr>
+                <th width="45%" style="padding-left: 7px; font-weight: bold; text-align: left;">
+                    {{i18n['product_label']}}
+                </th>
+                <th width="8%" style="font-weight: bold; text-align: left;  border-left: solid 1px black; padding-right: 7px;">
+                    {{i18n['quantity_short']}}
+                </th>
+                <th width="8%" style="font-weight: bold; text-align: left;  border-left: solid 1px black; padding-right: 7px;">
+                    {{i18n['freebies_short']}}
+                </th>
+                <th width="10%" style="font-weight: bold; text-align: right;  border-left: solid 1px black; padding-right: 7px;">
+                    {{i18n['unit_price']}}
+                </th>
+                <th width="8%" style="font-weight: bold; text-align: right;  border-left: solid 1px black; padding-right: 7px;">
+                    {{i18n['discount_short']}}
+                </th>
+                <th width="8%" style="font-weight: bold; text-align: right;  border-left: solid 1px black; padding-right: 7px;">
+                    {% if (company_has_vat == false) or (company_vat_number is null) or (company_vat_number == '') %}
+                        {{i18n['taxes']}}
+                    {% else %}
+                        {{i18n['vat']}}
+                    {% endif %}
+                </th>
+                <th width="13%" style="font-weight: bold; text-align: right;  border-left: solid 1px black; padding-right: 7px;">
+                    {% if (company_has_vat == false) or (company_vat_number is null) or (company_vat_number == '') %}
+                        {{i18n['price']}}
+                    {% else %}
+                        {{i18n['price_tax_excl']}}
+                    {% endif %}
+                </th>
+            </tr>
+            </thead>
+            <!-- for each line -->
+            {% for line in lines %}
+                <tr valign="top">
+                    <td width="45%">
+                        {% if line.is_group %}
+                            <b>{{ line.name }}</b> <br />
+                            {{ line.description }}
+                        {% else %}
+                            {{ line.name }}
+                        {% endif %}
+                    </td>
+                    <td width="8%" style="text-align: center;">
+                        {{ line.qty }}
+                    </td>
+                    <td width="8%" style="text-align: center;">
+                        {{ line.free_qty }}
+                    </td>
+                    <td width="10%" style="text-align: right;">
+                        {% if line.unit_price is not null %}
+                            {{ line.unit_price | format_money() }}
+                        {% endif %}
+                    </td>
+                    <td width="8%" style="text-align: right;">
+                        {% if line.discount is not null and line.discount > 0 %}
+                            {{ line.discount | format_number(style='percent') }}
+                        {% endif %}
+                    </td>
+                    <td width="8%" style="text-align: right;">
+                        {% if line.vat_rate is not null and company_has_vat %}
+                            {{ line.vat_rate | format_number(style='percent') }}
+                        {% endif %}
+                    </td>
+                    <td width="13%" style="text-align: right;">
+                        {% if line.total is not null %}
+                            {{ line.total | format_money() }}
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+<div class="trailer">
+    <div class="wrapper" style="margin-top: -1px;">
+        <table width="100%" style="border: 0px; border-right: solid 1px black;" cellpadding="4" cellspacing="0">
+            <tr valign="top">
+                <td width="87%" style="text-align: right; padding-right: 10px;">
+                    {{i18n['total_tax_excl']}}
+                </td>
+                <td width="13%" style="text-align: right; border-left: solid 1px black; border-bottom: solid 1px black;">
+                    {{ total | format_money() }}
+                </td>
+            </tr>
+            {% for tax_label, tax_total in tax_lines %}
+            {% if (tax_total != 0.0) %}
+            <tr>
+                <td style="text-align: right; padding-right: 10px;">
+                    {{ tax_label }}
+                </td>
+                <td style="text-align: right; border-left: solid 1px black; border-bottom: solid 1px black;">
+                    {{ tax_total | format_money() }}
+                </td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+            <tr>
+                <td style="text-align: right; padding-right: 10px;">
+                    <strong>{{i18n['stay_total_tax_incl']}}</strong>
+                </td>
+                <td style="text-align: right; border-left: solid 1px black; border-bottom: solid 1px black;">
+                    <strong>{{ price | format_money() }}</strong>
+                </td>
+            </tr>
+        </table>
+        {% if status != 'proforma' and type != 'credit_note' %}
+        <table width="100%" style="border-right: 1px solid white; border: 0px; margin-top: 20px;" cellpadding="4" cellspacing="0">
+            {% if (total_remaining < 0.0) %}
+            <tr valign="top">
+                <td width="87%" style="text-align: right; padding-right: 10px;">
+                    <strong>{{i18n['amount_to_be_refunded']}}:</strong>
+                </td>
+                <td width="13%" style="text-align: right; border: 0px;">
+                    <strong>{{ total_remaining | abs | format_money() }}</strong>
+                </td>
+            </tr>
+            {% elseif (total_remaining > 0.0) %}
+            <tr valign="top">
+                <td width="87%" style="text-align: right; padding-right: 10px;">
+                    <strong>{{i18n['left_to_pay']}}:</strong>
+                </td>
+                <td width="13%" style="text-align: right; border: 0px;">
+                    <strong>{{ total_remaining | format_money() }}</strong>
+                </td>
+            </tr>
+            {% endif %}
+        </table>
+        {% endif %}
+    </div>
+</div>
+
+<div style="margin-top: 50px; page-break-inside: avoid;"></div>
+
+<div class="notice">
+    {{ invoice_notice_html | raw }}
+</div>
+
+<!-- funding plan -->
+{% if fundings | length > 0  and (price > 0.0) and (status != 'proforma') %}
+<div style="margin-top: 50px; page-break-inside: avoid;">
+    <div style="margin: 0px 0px 20px 0px;"><b><u>{{i18n['payments_schedule']}} ({{date_fundings_update}}):</u></b></div>
+    <table width="100%" cellpadding="4" cellspacing="0" style="border: solid 1px black; border-collapse: collapse; page-break-inside: avoid;">
+        <tr valign="top">
+            <th width="20%" style="text-align: left;">
+                <b style="text-transform: uppercase;">{{i18n['payment']}}</b>
+            </th>
+            <th width="15%">
+                <b style="text-transform: uppercase;">{{i18n['amount']}}</b>
+            </th>
+            <th width="15%">
+                <b style="text-transform: uppercase;">{{i18n['to_be_paid_before']}}</b>
+            </th>
+            <th width="20%" style="text-align: right;">
+                <b style="text-transform: uppercase;">{{i18n['already_paid']}}</b>
+            </th>
+            <th width="20%" style="text-align: right;">
+                <b style="text-transform: uppercase;">{{i18n['left_to_pay']}}</b>
+            </th>
+        </tr>
+
+        <!-- for each line -->
+        {% for funding in fundings %}
+            <tr valign="top">
+                <td width="20%">
+                    {{ funding.name }}
+                </td>
+                <td width="15%" style="text-align: center;">
+                    {{ funding.due_amount | format_money() }}
+                </td>
+                <td width="15%" style="text-align: center;">
+                    {{ funding.due_date }}
+                </td>
+                <td width="20%" style="text-align: right;">
+                    {{ funding.paid_amount | format_money() }}
+                </td>
+                <td width="20%" style="text-align: right;">
+                    {{ funding.remaining | format_money() }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endif %}
+
+{% if (total_remaining > 0.0) and (status != 'proforma') and (type != 'credit_note') %}
+<div style="position: relative; margin-top: 40px; border: solid 2px black; height: 180px; page-break-inside: avoid;">
+    <div style="font-size: 15px; padding-left: 15px; padding-top: 15px;">
+        {{i18n['balance_of']}} <b>{{ total_remaining | format_money() }}</b> {{i18n['must_be_paid_before']}} <b>{{ payment_deadline }}</b>
+    </div>
+    <div style="padding-top: 20px; padding-left: 15px; font-size: 15px;">
+        <b style="text-transform: uppercase;">{{i18n['communication']}}</b><b> : {{ payment_reference }}</b><br />
+        IBAN : {{ company_iban }}<br />
+        BIC : {{ company_bic }}<br />
+        <br />
+        {{ company_name }}<br />
+        {{ company_address }}<br />
+    </div>
+    <div style="position: absolute; right: 10px; top: 15px;">
+        <img src="{{ payment_qr_uri }}" width= "150" height="150" />
+    </div>
+</div>
+{% endif %}
+
+{% if status == 'proforma' %}
+<div style="position: relative; margin-top: 40px; page-break-inside: avoid;">
+    <div style="font-size: 13px; padding: 10px 35px; border: solid 1px black;">
+        {{ invoice_proforma_notice_html | raw }}
+    </div>
+</div>
+{% endif %}
+
+
+<!-- payments history -->
+{% if fundings_payments | length > 0  and (price > 0.0) %}
+<div style="margin-top: 50px; page-break-inside: avoid;">
+    <div style="margin: 0px 0px 20px 0px;"><b><u>{{i18n['payments_history']}} ({{date_fundings_update}}):</u></b></div>
+    <table width="100%" cellpadding="4" cellspacing="0" style="border: solid 1px black; border-collapse: collapse; page-break-inside: avoid;">
+        <tr valign="top">
+            <th width="25%" style="text-align: left;">
+                <b style="text-transform: uppercase;">{{i18n['date']}}</b>
+            </th>
+            <th width="20%">
+                <b style="text-transform: uppercase;">{{i18n['origin']}}</b>
+            </th>
+            <th width="65%" style="text-align: right;">
+                <b style="text-transform: uppercase;">{{i18n['received']}}</b>
+            </th>
+        </tr>
+
+        <!-- for each line -->
+        {% for payment in fundings_payments %}
+            <tr valign="top">
+                <td width="25%">
+                    {{ payment.receipt_date }}
+                </td>
+                <td width="20%" style="text-align: center;">
+                    {{ payment.payment_origin }}
+                </td>
+                <td width="65%" style="text-align: right;">
+                    {{ payment.amount | format_money() }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endif %}
+
+<div style="margin-top: 50px;">
+    <table style="width: 100%; page-break-inside: avoid;">
+        <tr>
+            <td style="width: 60%;"></td>
+            <td style="width: 40%;"></td>
+        </tr>
+    </table>
+</div>
+
+
+</body>
+</html>

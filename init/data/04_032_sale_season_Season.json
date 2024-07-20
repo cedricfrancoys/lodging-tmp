@@ -1,0 +1,32 @@
+[
+    {
+        "name": "sale\\season\\Season",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 7,
+                "name": "GG 2023",
+                "year": 2023,
+                "season_category_id": 2,
+                "has_rate_class": 0,
+                "rate_class_id": null
+            },
+            {
+                "id": 8,
+                "name": "VS 2023",
+                "year": 2023,
+                "season_category_id": 3,
+                "has_rate_class": 0,
+                "rate_class_id": null
+            },
+            {
+                "id": 9,
+                "name": "GA 2023",
+                "year": 2023,
+                "season_category_id": 1,
+                "has_rate_class": 0,
+                "rate_class_id": null
+            }
+        ]
+    }
+]

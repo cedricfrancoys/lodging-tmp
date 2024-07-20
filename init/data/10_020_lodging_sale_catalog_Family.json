@@ -1,0 +1,200 @@
+[
+    {
+        "name": "lodging\\sale\\catalog\\Family",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "name": "Kaleo",
+                "parent_id": null,
+                "centers_ids": [3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,23,24,25,26,27,28,29,30,32]
+            },
+            {
+                "id": 2,
+                "name": "GA",
+                "parent_id": 1,
+                "centers_ids": [24,25,26,27,28,29,30,32]
+            },
+            {
+                "id": 3,
+                "name": "GG",
+                "parent_id": 1,
+                "centers_ids": [3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,23]
+            },
+            {
+                "id": 4,
+                "name": "Villers-Sainte-Gertrude",
+                "parent_id": 2,
+                "centers_ids": [25]
+            },
+            {
+                "id": 5,
+                "name": "Louvain-la-Neuve",
+                "parent_id": 2,
+                "centers_ids": [28]
+            },
+            {
+                "id": 6,
+                "name": "Eupen",
+                "parent_id": 2,
+                "centers_ids": [24]
+            },
+            {
+                "id": 7,
+                "name": "Han-sur-Lesse",
+                "parent_id": 2,
+                "centers_ids": [26]
+            },
+            {
+                "id": 8,
+                "name": "Ovifat",
+                "parent_id": 2,
+                "centers_ids": [27]
+            },
+            {
+                "id": 9,
+                "name": "Rochefort",
+                "parent_id": 2,
+                "centers_ids": [29]
+            },
+            {
+                "id": 10,
+                "name": "Wanne",
+                "parent_id": 2,
+                "centers_ids": [30]
+            },
+            {
+                "id": 11,
+                "name": "Arbrefontaine - École",
+                "parent_id": 3,
+                "centers_ids": [3]
+            },
+            {
+                "id": 12,
+                "name": "Arbrefontaine - Petite maison",
+                "parent_id": 3,
+                "centers_ids": [4]
+            },
+            {
+                "id": 13,
+                "name": "Basseilles",
+                "parent_id": 3,
+                "centers_ids": [5]
+            },
+            {
+                "id": 14,
+                "name": "Bastogne",
+                "parent_id": 3,
+                "centers_ids": [6]
+            },
+            {
+                "id": 15,
+                "name": "Bohan",
+                "parent_id": 3,
+                "centers_ids": [7]
+            },
+            {
+                "id": 16,
+                "name": "Bruly - Presbytère",
+                "parent_id": 3,
+                "centers_ids": [8]
+            },
+            {
+                "id": 17,
+                "name": "Bruly - école",
+                "parent_id": 3,
+                "centers_ids": [9]
+            },
+            {
+                "id": 18,
+                "name": "Chassepierre",
+                "parent_id": 3,
+                "centers_ids": [10]
+            },
+            {
+                "id": 19,
+                "name": "Cornimont",
+                "parent_id": 3,
+                "centers_ids": [11]
+            },
+            {
+                "id": 20,
+                "name": "Daverdisse",
+                "parent_id": 3,
+                "centers_ids": [12]
+            },
+            {
+                "id": 21,
+                "name": "Hastière",
+                "parent_id": 3,
+                "centers_ids": [13]
+            },
+            {
+                "id": 22,
+                "name": "Haus-stockem",
+                "parent_id": 3,
+                "centers_ids": [14]
+            },
+            {
+                "id": 23,
+                "name": "La Reid",
+                "parent_id": 3,
+                "centers_ids": [15]
+            },
+            {
+                "id": 24,
+                "name": "Latour",
+                "parent_id": 3,
+                "centers_ids": [16]
+            },
+            {
+                "id": 25,
+                "name": "Louette-St-Pierre",
+                "parent_id": 3,
+                "centers_ids": [17]
+            },
+            {
+                "id": 26,
+                "name": "Lesse-Redu",
+                "parent_id": 3,
+                "centers_ids": [18]
+            },
+            {
+                "id": 27,
+                "name": "Maboge",
+                "parent_id": 3,
+                "centers_ids": [19]
+            },
+            {
+                "id": 28,
+                "name": "Mormont",
+                "parent_id": 3,
+                "centers_ids": [20]
+            },
+            {
+                "id": 29,
+                "name": "Vergnies",
+                "parent_id": 3,
+                "centers_ids": [21]
+            },
+            {
+                "id": 30,
+                "name": "Wauthier-Collipain",
+                "parent_id": 3,
+                "centers_ids": []
+            },
+            {
+                "id": 31,
+                "name": "Werbomont",
+                "parent_id": 3,
+                "centers_ids": [23]
+            },
+            {
+                "id": 33,
+                "name": "Van Gogh",
+                "parent_id": 2,
+                "centers_ids": [32]
+            }
+        ]
+    }
+]

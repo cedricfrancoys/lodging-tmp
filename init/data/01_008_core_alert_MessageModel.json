@@ -1,0 +1,141 @@
+[
+    {
+        "name": "core\\alert\\MessageModel",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "name": "lodging.booking.overbooking",
+                "label": "Surbooking détecté",
+                "description": "Certaines unités locatives ne sont plus disponibles pour les dates spécifiées.",
+                "type": "booking"
+            },
+            {
+                "id": 2,
+                "name": "lodging.booking.ready",
+                "label": "Prêt à confirmer",
+                "description": "La réservation est prête à être confirmée: le montant du devis se base sur une liste de prix publiée.",
+                "type": "booking"
+            },
+            {
+                "id": 3,
+                "name": "lodging.booking.payments",
+                "label": "Paiement en attente",
+                "description": "Un ou plusieurs paiements dus sont en retard pour cette réservation.",
+                "type": "booking"
+            },
+            {
+                "id": 4,
+                "name": "lodging.booking.composition",
+                "label": "Composition incomplète",
+                "description": "La composition de la réservation est manquante ou incomplète.",
+                "type": "booking"
+            },
+            {
+                "id": 5,
+                "name": "lodging.booking.empty",
+                "label": "Réservation vide",
+                "description": "La réservation ne comporte aucun service.",
+                "type": "booking"
+            },
+            {
+                "id": 6,
+                "name": "lodging.booking.option.expired",
+                "label": "Option expirée",
+                "description": "L'option est expirée. La réservation est repassée en devis et les unités locatives associées ont été libérées.",
+                "type": "booking"
+            },
+            {
+                "id": 7,
+                "name": "lodging.booking.quote.blocking",
+                "label": "Unités locatives bloquées",
+                "description": "Cette réservation est en devis et bloque des unités locatives. (Passer la réservation en option ?)",
+                "type": "booking"
+            },
+            {
+                "id": 8,
+                "name": "lodging.booking.rental_units_assignment",
+                "label": "Allocation incorrecte",
+                "description": "L'assignation des unités locatives du séjour est erronée: le nombre d'hôtes ne correspond pas.",
+                "type": "booking"
+            },
+            {
+                "id": 9,
+                "name": "lodging.booking.ages_assignment",
+                "label": "Répartition des âges incorrecte",
+                "description": "La composition des âges des hôtes est erronée: le nombre d'hôtes ne correspond pas.",
+                "type": "booking"
+            },
+            {
+                "id": 10,
+                "name": "lodging.booking.contract.unsigned",
+                "label": "Contrat non signé",
+                "description": "Le contrat lié à la réservation n'a pas encore été marqué comme signé.",
+                "type": "booking"
+            },
+            {
+                "id": 11,
+                "name": "lodging.booking.customer.uncomplete",
+                "label": "Données client incomplètes",
+                "description": "Des données client de facturation sont manquantes. Vérifiez les coordonnées et l'adresse du client.",
+                "type": "booking"
+            },
+            {
+                "id": 12,
+                "name": "lodging.booking.mealprefs_assignment",
+                "label": "Répartition des spécificités alimentaires incorrecte",
+                "description": "La liste des spécificités alimentaires des hôtes est erronée: le nombre d'hôtes ne correspond pas.",
+                "type": "booking"
+            },
+            {
+                "id": 13,
+                "name": "lodging.booking.sojourns_accomodations",
+                "label": "Logements multiples",
+                "description": "Un (ou plusieurs) séjour compte plus d'un type de logement (un seul type de logement est autorisé par séjour).",
+                "type": "booking"
+            },
+            {
+                "id": 14,
+                "name": "lodging.booking.debtor_customer",
+                "label": "Solde restant dû",
+                "description": "Ce client a au moins une réservation présentant un solde restant du.",
+                "type": "booking"
+            },
+            {
+                "id": 15,
+                "name": "lodging.booking.latepayer_customer",
+                "label": "Mauvais payeur",
+                "description": "L'historique de ce client renseigne des retards de paiement.",
+                "type": "booking"
+            },
+            {
+                "id": 16,
+                "name": "lodging.booking.damage_customer",
+                "label": "Dommages matériels",
+                "description": "L'historique de ce client renseigne des dégâts lors de réservations précédentes.",
+                "type": "booking"
+            },
+            {
+                "id": 17,
+                "name": "lodging.booking.nuisance_customer",
+                "label": "Nuisances",
+                "description": "L'historique de ce client renseigne des nuisances lors de réservations précédentes.",
+                "type": "booking"
+            },
+            {
+                "id": 18,
+                "name": "lodging.booking.consistency",
+                "label": "Erreur détectée",
+                "description": "Un problème de cohérence a été détecté dans la réservation (unités locatives non-assignées ?).",
+                "type": "booking"
+            },
+            {
+                "id": 19,
+                "name": "lodging.accounting.invoice.invalid",
+                "label": "Facture invalide",
+                "description": "Une des lignes n'a pas de correspondance de prix ou de règle comptable.",
+                "type": "invoice"
+            }
+        ]
+    }
+]

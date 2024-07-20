@@ -1,0 +1,21 @@
+{
+    "name": "Recherche avancé des Départs",
+    "description": "Contrôleur pour la recherche avancée des Départs (réservations).",
+    "model": {
+        "center_id": {
+            "label": "Centre",
+            "description": "Centre pour lequel faire la recherche.",
+            "help": ""
+        },
+        "date_from": {
+            "label": "Date de début",
+            "description": "Date de début de l'intervalle de temps.",
+            "help": ""
+        },
+        "date_to": {
+            "label": "Date de fin ",
+            "description": "Date de fin de l'intervalle de temps.",
+            "help": ""
+        }
+    }
+}

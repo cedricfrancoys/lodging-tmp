@@ -1,0 +1,21 @@
+{
+    "name": "Recherche avancé de alertes",
+    "description": "Contrôleur proposant des champs avec des relations indirectes.",
+    "model": {
+        "center_office_id": {
+            "label": "Centre de gestion",
+            "description": "Centre de gestion lié à des alertes",
+            "help": ""
+        },
+        "booking_id": {
+            "label": "Réservation",
+            "description": "Réservation lié à des alertes.",
+            "help": ""
+        }
+    },
+    "error": {
+        "errors": {
+
+        }
+    }
+}

@@ -1,0 +1,93 @@
+{
+    "name": "Orders",
+    "description": "List of Point of Sale orders.",
+    "access": {
+        "groups": [
+            "pos.default.user"
+        ]
+    },
+    "header": {
+        "selection": {
+            "default": false
+        },
+        "actions": {
+            "ACTION.CREATE": false
+        },
+        "advanced_search": {
+            "open": true
+        }
+    },
+    "operations": {
+        "total": {
+            "total": {
+                "operation": "SUM",
+                "usage": "amount/money:2"
+            },
+            "price": {
+                "operation": "SUM",
+                "usage": "amount/money:2"
+            }
+        }
+    },
+    "limit": 100,
+    "actions": [
+        {
+            "id": "bulk_invoice",
+            "label": "Facturer",
+            "controller": "lodging_sale_pos_orders_invoice",
+            "confirm": false
+        }
+    ],
+    "domain": [
+        ["status","=","paid"],
+        ["booking_id","=","null"],
+        ["funding_id","=","null"],
+        ["invoice_id","=","null"],
+        ["price",">",0]
+    ],
+    "order": "created",
+    "sort": "desc",
+    "controller": "lodging_sale_pos_order_invoiceable-collect",
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "id",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "name",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "label": "Date",
+                "value": "created",
+                "width": "15%"
+            },
+            {
+                "type": "field",
+                "value": "center_id",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "status",
+                "width": "15%"
+            },
+            {
+                "type": "field",
+                "label": "Total",
+                "value": "total",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "label": "Price",
+                "value": "price",
+                "width": "20%"
+            }
+        ]
+    }
+}

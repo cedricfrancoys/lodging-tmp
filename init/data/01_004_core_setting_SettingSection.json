@@ -1,0 +1,44 @@
+[
+    {
+        "name": "core\\setting\\SettingSection",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "name": "Locale",
+                "description": "Paramètres régioniaux",
+                "code": "locale"
+            },
+            {
+                "id": 2,
+                "name": "Général",
+                "description": "Paramètres généraux et de formats",
+                "code": "main"
+            },
+            {
+                "id": 3,
+                "name": "Sécurité",
+                "description": "Paramètres de sécurité",
+                "code": "security"
+            },
+            {
+                "id": 4,
+                "name": "Unités",
+                "description": "Unités de mesures et systèmes d'unités",
+                "code": "units"
+            },
+            {
+                "id": 5,
+                "name": "Facturation",
+                "description": "Paramètres pour la création des factures",
+                "code": "invoice"
+            },
+            {
+                "id": 6,
+                "name": "Réservation",
+                "description": "Paramètres pour la création des réservations",
+                "code": "booking"
+            }
+        ]
+    }
+]

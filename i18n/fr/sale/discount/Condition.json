@@ -1,0 +1,60 @@
+{
+    "name": "Condition",
+    "plural": "Conditions",
+    "description": "",
+    "model": {
+        "name": {
+            "label": "Identification",
+            "description": "Nom de la condition.",
+            "help": ""
+        },
+        "operand": {
+            "label": "Opérande",
+            "description": "L'opérande de la condition.",
+            "help": "",
+            "selection": {
+                "season": "saison",
+                "nb_pers": "nombre de personnes",
+                "nb_children": "nombre d'enfants",
+                "nb_adults": "nombre d'adultes",
+                "duration": "durée",
+                "count_booking_24": "count_booking_24"
+            }
+        },
+        "operator": {
+            "label": "Opérateur",
+            "description": "L'opérateur à appliquer.",
+            "help": "",
+            "selection": {
+                "=": "=",
+                ">": ">",
+                ">=": ">=",
+                "<": "<",
+                "<=": "<="
+            }
+        },
+        "value": {
+            "label": "Valeur",
+            "description": "Valeur de la condition.",
+            "help": ""
+        },
+        "discount_id": {
+            "label": "Remise",
+            "description": "La liste de remises à laquelle appartient la remise.",
+            "help": ""
+        }
+    },
+    "view": {
+        "form.default": {
+            "name": "Condition",
+            "description": "",
+            "layout": {}
+        },
+        "list.default": {
+            "name": "Liste des Conditions",
+            "description": "Liste des conditions.",
+            "layout": {}
+        }
+    },
+    "error": {}
+}

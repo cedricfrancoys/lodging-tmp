@@ -1,0 +1,278 @@
+[
+    {
+        "name": "lodging\\finance\\accounting\\AccountingJournal",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "name": "Opérations diverses",
+                "description": "Journal des opérations diverses Gîtes de Groupes",
+                "code": "ODGG",
+                "organisation_id": 1,
+                "center_office_id": 1,
+                "type": "miscellaneous",
+                "index": 122664
+            },
+            {
+                "id": 2,
+                "name": "Opérations diverses",
+                "description": "Journal des opérations diverses Eupen",
+                "code": "ODHE",
+                "organisation_id": 1,
+                "center_office_id": 2,
+                "type": "miscellaneous",
+                "index": 120523
+            },
+            {
+                "id": 3,
+                "name": "Opérations diverses",
+                "description": "Journal des opérations diverses Han-sur-Lesse",
+                "code": "ODHH",
+                "organisation_id": 1,
+                "center_office_id": 3,
+                "type": "miscellaneous",
+                "index": 120255
+            },
+            {
+                "id": 4,
+                "name": "Opérations diverses",
+                "description": "Journal des opérations diverses du Gîte Mozaik",
+                "code": "ODHL",
+                "organisation_id": 3,
+                "center_office_id": 4,
+                "type": "miscellaneous",
+                "index": 121031
+            },
+            {
+                "id": 5,
+                "name": "Opérations diverses",
+                "description": "Journal des opérations diverses de Ovifat",
+                "code": "ODHO",
+                "organisation_id": 1,
+                "center_office_id": 5,
+                "type": "miscellaneous",
+                "index": 120854
+            },
+            {
+                "id": 6,
+                "name": "Opérations diverses",
+                "description": "Journal des opérations diverses de Rochefort",
+                "code": "ODHR",
+                "organisation_id": 1,
+                "center_office_id": 6,
+                "type": "miscellaneous",
+                "index": 120000
+            },
+            {
+                "id": 7,
+                "name": "Opérations diverses",
+                "description": "Journal des opérations diverses de Wanne",
+                "code": "ODHW",
+                "organisation_id": 1,
+                "center_office_id": 8,
+                "type": "miscellaneous",
+                "index": 120570
+            },
+            {
+                "id": 8,
+                "name": "Opérations diverses",
+                "description": "Journal des opérations diverses de Villers-Ste-Gertrude",
+                "code": "ODVI",
+                "organisation_id": 2,
+                "center_office_id": 7,
+                "type": "miscellaneous",
+                "index": 120000
+            },
+            {
+                "id": 9,
+                "name": "Journal de caisse",
+                "description": "Journal de caisse des Gîtes de Groupes",
+                "code": "CAGG",
+                "organisation_id": 1,
+                "center_office_id": 1,
+                "type": "bank_cash",
+                "index": 120000
+            },
+            {
+                "id": 10,
+                "name": "Journal de caisse",
+                "description": "Journal de caisse de Eupen",
+                "code": "CAE1",
+                "organisation_id": 1,
+                "center_office_id": 2,
+                "type": "bank_cash",
+                "index": 120000
+            },
+            {
+                "id": 11,
+                "name": "Journal de caisse",
+                "description": "Journal de caisse de Han-sur-Lesse",
+                "code": "CAH1",
+                "organisation_id": 1,
+                "center_office_id": 3,
+                "type": "bank_cash",
+                "index": 120000
+            },
+            {
+                "id": 12,
+                "name": "Journal de caisse",
+                "description": "Journal de caisse du Gîte Mozaik",
+                "code": "CAL1",
+                "organisation_id": 3,
+                "center_office_id": 4,
+                "type": "bank_cash",
+                "index": 120000
+            },
+            {
+                "id": 13,
+                "name": "Journal de caisse",
+                "description": "Journal de caisse de Ovifat",
+                "code": "CAO1",
+                "organisation_id": 1,
+                "center_office_id": 5,
+                "type": "bank_cash",
+                "index": 120000
+            },
+            {
+                "id": 14,
+                "name": "Journal de caisse",
+                "description": "Journal de caisse de Rochefort",
+                "code": "CAR1",
+                "organisation_id": 1,
+                "center_office_id": 6,
+                "type": "bank_cash",
+                "index": 120000
+            },
+            {
+                "id": 15,
+                "name": "Journal de caisse",
+                "description": "Journal de caisse de Wanne",
+                "code": "CAW1",
+                "organisation_id": 1,
+                "center_office_id": 8,
+                "type": "bank_cash",
+                "index": 120000
+            },
+            {
+                "id": 16,
+                "name": "Journal de caisse",
+                "description": "Journal de caisse de Villers-Ste-Gertrude",
+                "code": "CAVI",
+                "organisation_id": 2,
+                "center_office_id": 7,
+                "type": "bank_cash",
+                "index": 120000
+            },
+            {
+                "id": 17,
+                "name": "Journal des ventes",
+                "description": "Journal des ventes des Gîtes de Groupes",
+                "code": "VEGG",
+                "organisation_id": 1,
+                "center_office_id": 1,
+                "type": "sales",
+                "index": 120000
+            },
+            {
+                "id": 18,
+                "name": "Journal des ventes",
+                "description": "Journal des ventes de Eupen",
+                "code": "VEE1",
+                "organisation_id": 1,
+                "center_office_id": 2,
+                "type": "sales",
+                "index": 120000
+            },
+            {
+                "id": 19,
+                "name": "Journal des ventes",
+                "description": "Journal des ventes de Han-sur-Lesse",
+                "code": "VEH1",
+                "organisation_id": 1,
+                "center_office_id": 3,
+                "type": "sales",
+                "index": 120000
+            },
+            {
+                "id": 20,
+                "name": "Journal des ventes",
+                "description": "Journal des ventes du Gîte Mozaik",
+                "code": "VEL1",
+                "organisation_id": 3,
+                "center_office_id": 4,
+                "type": "sales",
+                "index": 120000
+            },
+            {
+                "id": 21,
+                "name": "Journal des ventes",
+                "description": "Journal des ventes de Ovifat",
+                "code": "VEO1",
+                "organisation_id": 1,
+                "center_office_id": 5,
+                "type": "sales",
+                "index": 120000
+            },
+            {
+                "id": 22,
+                "name": "Journal des ventes",
+                "description": "Journal des ventes de Rochefort",
+                "code": "VER1",
+                "organisation_id": 1,
+                "center_office_id": 6,
+                "type": "sales",
+                "index": 120000
+            },
+            {
+                "id": 23,
+                "name": "Journal des ventes",
+                "description": "Journal des ventes de Wanne",
+                "code": "VEW1",
+                "organisation_id": 1,
+                "center_office_id": 8,
+                "type": "sales",
+                "index": 120000
+            },
+            {
+                "id": 24,
+                "name": "Journal des ventes",
+                "description": "Journal des ventes de Villers-Ste-Gertrude",
+                "code": "VEVI",
+                "organisation_id": 2,
+                "center_office_id": 7,
+                "type": "sales",
+                "index": 120000
+            },
+            {
+                "id": 25,
+                "name": "Opérations diverses",
+                "description": "Journal des opérations diverses Van Gogh",
+                "code": "ODVG",
+                "organisation_id": 4,
+                "center_office_id": 9,
+                "type": "miscellaneous",
+                "index": 120000
+            },
+            {
+                "id": 26,
+                "name": "Journal de caisse",
+                "description": "Journal de trésorerie Van Gogh",
+                "code": "CAVG",
+                "organisation_id": 4,
+                "center_office_id": 9,
+                "type": "bank_cash",
+                "index": 120000
+            },
+            {
+                "id": 27,
+                "name": "Journal des ventes",
+                "description": "Journal des ventes Van Gogh",
+                "code": "VEVG",
+                "organisation_id": 4,
+                "center_office_id": 9,
+                "type": "sales",
+                "index": 120000
+            }
+        ]
+    }
+]

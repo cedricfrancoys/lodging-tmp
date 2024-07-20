@@ -1,0 +1,17 @@
+{
+    "name": "Plan repair",
+    "description": "Créer une réparation à partir de la planification, en fournissant une plage de dates, un client et une unité de location",
+    "model": {
+        "id": {
+            "label": "Identifiant",
+            "description": "Identifiant de la unité locative.",
+            "help": ""
+        }
+    },
+    "error": {
+        "id": {
+            "invalid_rental_unit_repairing": "Le blocage  peut pas être effectué car il existe déjà un blocage pour cette unité de location.",
+            "invalid_rental_unit_booking": "Le blocage  peut pas être effectué car il existe une réservation existante."
+        }
+    }
+}

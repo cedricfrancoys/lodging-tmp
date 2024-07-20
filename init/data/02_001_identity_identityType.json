@@ -1,0 +1,33 @@
+[
+    {
+        "name": "identity\\IdentityType",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "code": "I",
+                "description": "Particulier (personne physique)"
+            },
+            {
+                "id": 2,
+                "code": "SE",
+                "description": "Indépendant"
+            },
+            {
+                "id": 3,
+                "code": "C",
+                "description": "Société"
+            },
+            {
+                "id": 4,
+                "code": "NP",
+                "description": "Groupes, Associations et Écoles (ASBL, association de fait, ..."
+            },
+            {
+                "id": 5,
+                "code": "PA",
+                "description": "Administration publique"
+            }
+        ]
+    }
+]

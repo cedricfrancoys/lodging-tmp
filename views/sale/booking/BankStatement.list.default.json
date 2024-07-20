@@ -1,0 +1,71 @@
+{
+    "name": "Bank Statements",
+    "description": "This view is intended for displaying the list of bank statements.",
+    "access": {
+        "groups": ["sale.default.user"]
+    },
+    "order": "created",
+    "sort": "desc",
+    "domain": ["center_office_id", "in", "user.center_offices_ids"],
+    "controller": "lodging_sale_booking_bankStatement-collect",
+    "actions_disabled": [
+        {
+            "id": "action.import",
+            "label": "Import",
+            "description": "Import from a Bank Statements file.",
+            "help": "This has been disabled since the resulting request in sent using GET which easily hits the max-header limit from NGINX.",
+            "controller": "lodging_payments_import"
+        }
+    ],
+    "header": {
+        "selection": {
+            "default": false
+        },
+        "actions": {
+            "ACTION.CREATE": false
+        }
+    },
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "name",
+                "width": "30%"
+            },
+            {
+                "type": "field",
+                "value": "center_office_id",
+                "width": "20%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "value": "date",
+                "width": "15%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "value": "old_balance",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "new_balance",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "bank_account_iban",
+                "width": "20%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "value": "status",
+                "width": "10%",
+                "sortable": true
+            }
+        ]
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "name": "Checkin",
+    "description": "L'hôte est arrivé. Le paiement de la réservation sera vérifié et les statuts de la réservation et des unités locatives seront mis à jour.",
+    "model": {
+        "id": {
+            "label": "Identifiant",
+            "description": "Identifiant de la réservation ciblée.",
+            "help": ""
+        },
+        "no_payment": {
+            "label": "Pas de vérification des paiements",
+            "description": "Faire le checkin même si des paiements sont dus.",
+            "help": ""
+        },
+        "no_composition": {
+            "label": "Ignorer la composition",
+            "description": "Faire le checkin même sans composition.",
+            "help": ""
+        },
+        "no_rental_unit_cleaned": {
+            "label": "Ignorer le nettoyage des unités locatives",
+            "description": "Faire le checkin même sans nettoyage.",
+            "help": ""
+        }
+    },
+    "error": {
+        "errors": {
+            "unsigned_contract": "Contrat non signé",
+            "due_amount": "Solde dû non nul.",
+            "invalid_accommodation_detected": "Assignation invalide détectée",
+            "incomplete_composition": "La composition est manquante ou incomplète.",
+            "incorrect_date_checkin": "Vérifier que la date d'arrivée soit comprise dans les dates de réservation.",
+            "rental_unit_not_cleaned": "Il faut effectuer le nettoyage pour les unités locatives."
+        }
+    }
+}

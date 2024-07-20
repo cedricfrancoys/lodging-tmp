@@ -1,0 +1,88 @@
+{
+    "name": "Stat INS",
+    "description": "",
+    "controller": "lodging_stats_stat-ins",
+    "header": {
+        "actions": {
+            "ACTION.CREATE" : false
+        }
+    },
+    "order_by": ["date_to"],
+    "exports": [
+        {
+            "id": "export.print.csv",
+            "label": "Export Statbel CSV",
+            "icon": "description",
+            "description": "Export for CSV import through StatBel.",
+            "controller": "lodging_stats_export-stat-ins"
+        }
+    ],
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "center",
+                "sortable" : true,
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "ref_booking",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "customer_name",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "customer_country",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "purpose_of_stay",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "date_to",
+                "width": "15%",
+                "widget": {
+                    "usage": "datetime/short"
+                }
+            },
+            {
+                "type": "field",
+                "value": "nb_nights",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "nb_pers",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "nb_rental_units",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "invoiced_nights",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "customer_region",
+                "width": "15%"
+            },
+            {
+                "type": "field",
+                "value": "customer_lang",
+                "width": "10%"
+            }
+        ]
+    }
+}

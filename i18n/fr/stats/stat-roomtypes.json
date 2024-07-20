@@ -1,0 +1,52 @@
+{
+    "name": "Calendrier de Capacités des Roomtypes",
+    "plural": "Calendrier de Capacités des Roomtypes",
+    "description": "",
+    "model": {
+        "property_id": {
+            "label": "Centre",
+            "description": "Centre pour lequel obtenir les stats.",
+            "help": ""
+        },
+        "date_from": {
+            "label": "Du",
+            "description": "Date de début du séjour.",
+            "help": ""
+        },
+        "date_to": {
+            "label": "Jour de départ",
+            "description": "Date de fin du séjour.",
+            "help": ""
+        },
+        "property": {
+            "label": "propriété",
+            "description": "Nom de la propriété.",
+            "help": ""
+        },
+        "room_type": {
+            "label": "Type de chambre",
+            "description": "Nom du type de chambre.",
+            "help": ""
+        },
+        "date": {
+            "label": "Date",
+            "description": "Date pour la capacité.",
+            "help": ""
+        },
+        "availability": {
+            "label": "Disponibilité",
+            "description": "Nombre d'unités locatives disponibles pour ce type de chambre.",
+            "help": ""
+        }
+    },
+    "view": {
+        "search.default": {
+        },
+        "list.default": {
+        }
+    },
+    "error": {
+        "errors": {
+        }
+    }
+}

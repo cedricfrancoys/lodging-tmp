@@ -1,0 +1,278 @@
+{
+    "name": "Sale menu",
+    "access": {
+        "groups": ["sale.default.user"]
+    },
+    "layout": {
+        "items": [
+            {
+                "id": "item.bank_statements",
+                "label": "Statements",
+                "description": "",
+                "icon": "list_alt",
+                "type": "parent",
+                "children": [
+                    {
+                        "id": "item.bank_statements.statements_to_process",
+                        "type": "entry",
+                        "label": "Statements to process",
+                        "description": "",
+                        "route": "/",
+                        "context": {
+                            "entity": "lodging\\sale\\booking\\BankStatement",
+                            "view": "list.default",
+                            "order": "date",
+                            "sort": "desc",
+                            "domain": [ ["status", "=", "pending"] ]
+                        }
+                    },
+                    {
+                        "id": "item.bank_statements.all",
+                        "type": "entry",
+                        "label": "All Bank Statements",
+                        "description": "",
+                        "route": "/",
+                        "context": {
+                            "entity": "lodging\\sale\\booking\\BankStatement",
+                            "view": "list.default",
+                            "order": "date",
+                            "sort": "desc"
+                        }
+                    },
+                    {
+                        "id": "item.bank_statements.lines_to_review",
+                        "type": "entry",
+                        "label": "Lines to review",
+                        "description": "",
+                        "route": "/",
+                        "context": {
+                            "entity": "lodging\\sale\\booking\\BankStatementLine",
+                            "view": "list.default",
+                            "order": "date",
+                            "sort": "desc",
+                            "domain": [ ["status", "=", "pending"] ]
+                        }
+                    },
+                    {
+                        "id": "item.bank_statements.all_lines",
+                        "type": "entry",
+                        "label": "All lines",
+                        "description": "",
+                        "route": "/",
+                        "context": {
+                            "entity": "lodging\\sale\\booking\\BankStatementLine",
+                            "view": "list.default",
+                            "order": "date",
+                            "sort": "desc"
+                        }
+                    },
+                    {
+                        "id": "item.bank_statements.statements_ready",
+                        "type": "entry",
+                        "label": "Statements",
+                        "description": "",
+                        "route": "/",
+                        "context": {
+                            "entity": "lodging\\sale\\booking\\BankStatementLine",
+                            "view": "list.reconciled",
+                            "domain": [ ["status", "=", "reconciled"] ]
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "item.customers",
+                "label": "Customers",
+                "description": "",
+                "icon": "person",
+                "type": "parent",
+                "children": [
+                    {
+                        "id": "item.customers_types",
+                        "label": "Types",
+                        "description": "",
+                        "icon": "person_outline",
+                        "type": "parent",
+                        "children": [
+                            {
+                                "id": "item.all_customers_types",
+                                "type": "entry",
+                                "label": "All types",
+                                "description": "",
+                                "route": "/",
+                                "context": {
+                                    "entity": "sale\\customer\\CustomerType",
+                                    "view": "list.default"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "item.customers_natures",
+                        "label": "Natures",
+                        "description": "",
+                        "icon": "person_outline",
+                        "type": "parent",
+                        "children": [
+                            {
+                                "id": "item.all_customers_natures",
+                                "type": "entry",
+                                "label": "All natures",
+                                "description": "",
+                                "route": "/",
+                                "context": {
+                                    "entity": "sale\\customer\\CustomerNature",
+                                    "view": "list.default"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "item.all_customers",
+                        "type": "entry",
+                        "label": "All customers",
+                        "description": "",
+                        "route": "/",
+                        "context": {
+                            "entity": "lodging\\identity\\Identity",
+                            "view": "list.default"
+                        }
+                    },
+                    {
+                        "id": "item.all_partners",
+                        "type": "entry",
+                        "label": "All partners",
+                        "description": "",
+                        "route": "/",
+                        "context": {
+                            "entity": "identity\\Partner",
+                            "view": "list.default"
+                        }
+                    }
+
+                ]
+            },
+            {
+                "id": "item.fundings",
+                "label": "Fundings",
+                "description": "",
+                "icon": "person",
+                "type": "parent",
+                "children": [
+                    {
+                        "id": "item.fundings.all",
+                        "type": "entry",
+                        "label": "All fundings",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\sale\\booking\\Funding",
+                            "view": "list.sale"
+                        }
+                    },
+                    {
+                        "id": "item.fundings.waiting",
+                        "type": "entry",
+                        "label": "Waiting for payment",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\sale\\booking\\Funding",
+                            "view": "list.sale",
+                            "domain": [ ["is_paid", "=", false] ]
+                        }
+                    },
+                    {
+                        "id": "item.fundings.overdue",
+                        "type": "entry",
+                        "label": "Overdue fundings",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\sale\\booking\\Funding",
+                            "view": "list.sale",
+                            "domain": [ ["due_date", "<=", "date.this.day"],  ["is_paid", "=", false] ]
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "item.payments",
+                "label": "Payments",
+                "description": "",
+                "icon": "payments",
+                "type": "parent",
+                "children": [
+                    {
+                        "id": "item.payments.all",
+                        "type": "entry",
+                        "label": "All Payments",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\sale\\booking\\Payment",
+                            "view": "list.default"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "item.invoices",
+                "label": "Invoices",
+                "description": "",
+                "icon": "monetization_on",
+                "type": "parent",
+                "children": [
+                    {
+                        "id": "item.invoices.all",
+                        "type": "entry",
+                        "label": "All invoices",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\sale\\booking\\Invoice",
+                            "view": "list.default",
+                            "domain": [ ["status", "=", "invoice"] ]
+                        }
+                    },
+                    {
+                        "id": "item.invoices.overdue",
+                        "type": "entry",
+                        "label": "Overdue invoices",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\sale\\booking\\Invoice",
+                            "view": "list.default",
+                            "domain": [ ["due_date", "<=", "date.this.day"], ["is_paid", "=", false] ]
+                        }
+                    },
+                    {
+                        "id": "item.invoicesLines.all",
+                        "type": "entry",
+                        "label": "All invoices lines",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\sale\\booking\\InvoiceLine",
+                            "view": "list.settings"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "item.contracts",
+                "label": "Contracts",
+                "description": "",
+                "icon": "drive_file_rename_outline",
+                "type": "parent",
+                "children": [
+                    {
+                        "id": "item.contracts.all",
+                        "type": "entry",
+                        "label": "All contracts",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\sale\\booking\\Contract",
+                            "view": "list.default",
+                            "domain": ["status", "<>", "cancelled"]
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

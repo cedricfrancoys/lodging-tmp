@@ -1,0 +1,21 @@
+{
+    "name": "Recherche avancée de commande.",
+    "description": "Contrôleur proposant une recherche avancée des commandes.",
+    "model": {
+        "center_id": {
+            "label": "Centre",
+            "description": "Le centre associé à la commande.",
+            "help": ""
+        },
+        "all_months": {
+            "label": "Tous les mois",
+            "description": "Les commandes de tous les mois.",
+            "help": ""
+        },
+        "date": {
+            "label": "Date",
+            "description": "Date de la commande.",
+            "help": ""
+        }
+    }
+}

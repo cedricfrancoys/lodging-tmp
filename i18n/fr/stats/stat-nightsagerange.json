@@ -1,0 +1,72 @@
+{
+    "name": "Nuitées par tranche d'âge",
+    "plural": "Nuitées par tranche d'âge",
+    "description": "",
+    "model": {
+        "center_id": {
+            "label": "Centre",
+            "description": "Centre pour lequel obtenir les stats.",
+            "help": ""
+        },
+        "center_office_id": {
+            "label": "Equipe de gestion",
+            "description": "Centre  de gestion pour lequel obtenir les stats.",
+            "help": ""
+        },
+        "rate_class_id": {
+			"label": "Classe Tarifaire",
+			"description": "La classe tarifaire pour lequel obtenir les stats.",
+			"help": ""
+		},
+        "date_from": {
+            "label": "Du",
+            "description": "Date de début du séjour.",
+            "help": ""
+        },
+        "date_to": {
+            "label": "Au",
+            "description": "Date de fin du séjour.",
+            "help": ""
+        },
+        "center": {
+            "label": "Centre",
+            "description": "Centre auquel est assignée le séjour.",
+            "help": ""
+        },
+        "rate_class": {
+			"label": "Classe Tarifaire",
+			"description": "La classe tarifaire qui s'applique au groupe.",
+			"help": ""
+		},
+        "customer_nature": {
+            "label": "Nature client",
+            "description": "Nature applicable au client.",
+            "help": ""
+        },
+        "nb_pers": {
+            "label": "Nombre de personnes",
+            "description": "Nombre de personnes.",
+            "help": ""
+        },
+        "nb_nights": {
+            "label": "Nombre de nuitées",
+            "description": "Durée du séjour (en nuits).",
+            "help": ""
+        },
+        "age_range_id": {
+            "label": "Tranche d'âge",
+            "description": "Tranche d'age.",
+            "help": ""
+        }
+    },
+    "view": {
+        "search.default": {
+        },
+        "list.default": {
+        }
+    },
+    "error": {
+        "errors": {
+        }
+    }
+}

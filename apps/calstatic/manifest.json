@@ -1,0 +1,11 @@
+{
+    "name": "Static calendar",
+    "description": "",
+    "url": "/calstatic",
+    "access": {
+        "groups": [
+            "users"
+        ]
+    },
+    "show_in_apps": false
+}

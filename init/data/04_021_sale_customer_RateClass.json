@@ -1,0 +1,43 @@
+[
+    {
+        "name": "sale\\customer\\RateClass",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "name": "T1",
+                "description": "Institutions privilégiées (reconnues CWB)"
+            },
+            {
+                "id": 2,
+                "name": "T2",
+                "description": "Groupements"
+            },
+            {
+                "id": 3,
+                "name": "T3",
+                "description": "Réseau Kaleo"
+            },
+            {
+                "id": 4,
+                "name": "T4",
+                "description": "Grand public"
+            },
+            {
+                "id": 5,
+                "name": "T5",
+                "description": "Ecoles primaires et secondaires"
+            },
+            {
+                "id": 6,
+                "name": "T6",
+                "description": "TO partenaires"
+            },
+            {
+                "id": 7,
+                "name": "T7",
+                "description": "Ecoles maternelles"
+            }
+        ]
+    }
+]

@@ -1,0 +1,20 @@
+{
+    "name": "Paiement via la compta",
+    "description": "Le financement sera marqué comme payé sans aucun paiement associé.\n\nATTENTION : cette action est possible uniquement pour les Gîtes Auberge et les réservations via tour opérateur (mais pas le channel manager).",
+    "model": {
+        "id": {
+            "label": "Identifiant",
+            "description": "Identifiant de financement.",
+            "help": ""
+        }
+    },
+    "error": {
+        "errors": {
+            "unknown_funding":  "Financement inconnue.",
+            "unknown_booking": "Réservation inconnue.",
+            "funding_already_paid": "Le financement est déjà marqué comme payé.",
+            "nothing_to_pay": "Le financement est déjà payé.",
+            "invalid_booking": "La réservation doit être pour un Gîte Auberge et pas via channel manager."
+        }
+    }
+}

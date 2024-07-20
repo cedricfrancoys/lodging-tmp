@@ -1,0 +1,56 @@
+{
+    "name": "Session de Caisse",
+    "plural": "Sessions de Caisse",
+    "description": "",
+    "model": {
+        "center_id": {
+            "label": "Centre",
+            "description": "Centre auquel est assignée la caisse.",
+            "help": ""
+        },
+        "orders_ids": {
+            "label": "Commandes",
+            "description": "Commandes clients enrgistrées dans la session.",
+            "help": ""
+        },
+        "link_sheet": {
+            "label": "Feuille de caisse",
+            "description": "Lien vers l'export de la feuille de caisse.",
+            "help": ""
+        },
+        "amount_opening": {
+            "label": "Montant d'ouverture",
+            "description": "Liquidités renseignées dans la caisse à l'ouverture'.",
+            "help": ""
+        },
+        "amount_closing": {
+            "label": "Montant de fermeture",
+            "description": "Liquidités renseignées dans la caisse lors de la fermeture.",
+            "help": ""
+        }
+    },
+    "view": {
+        "form.default": {
+            "layout": {
+                "section.orders": {
+                    "label": "Commandes"
+                },
+                "section.operations": {
+                    "label": "Opérations"
+                },
+                "section.notes": {
+                    "label": "Notes de fermeture"
+                }
+            }
+        },
+        "list.default": {
+        }
+    },
+    "error": {
+        "status": {
+            "already_open": "Une session est déjà ouverte pour cette caisse."
+        },
+        "errors": {
+        }
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "name": "Taux d'occupation",
+    "plural": "Taux d'occupation",
+    "description": "",
+    "model": {
+        "center_id": {
+            "label": "Centre",
+            "description": "Centre pour lequel obtenir les stats.",
+            "help": ""
+        },
+        "all_centers": {
+            "label": "Tous les centres",
+            "description": "Tous les centres pour lesquels obtenir les stats.",
+            "help": ""
+        },
+        "range_from": {
+            "label": "Du",
+            "description": "Date de début du séjour.",
+            "help": ""
+        },
+        "range_to": {
+            "label": "Au",
+            "description": "Date de fin du séjour.",
+            "help": ""
+        },
+        "range_interval": {
+            "label": "Intervalle",
+            "description": "Intervalle de plage",
+            "selection": {
+                "week": "semaine",
+                "month": "mois",
+                "year": "année"
+            },
+            "help": ""
+        }
+    },
+    "view": {},
+    "error": {
+        "errors": {}
+    }
+}

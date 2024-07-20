@@ -1,0 +1,88 @@
+{
+    "name": "Paiement",
+    "plural": "Paiements",
+    "description": "",
+    "model": {
+        "booking_id": {
+            "label": "Réservation",
+            "description": "La réservation à laquelle est lié le paiement.",
+            "help": ""
+        },
+        "invoice_id": {
+            "label": "Facture",
+            "description": "La facture à laquelle est lié le paiement.",
+            "help": ""
+        },
+        "funding_id": {
+            "label": "Financement",
+            "description": "Le financement lié au paiement.",
+            "help": ""
+        },
+        "center_office_id": {
+            "label": "Centre de gestion",
+            "description": "Le centre de gestion lié au paiement.",
+            "help": ""
+        },
+        "status": {
+            "label": "Statut",
+            "description": "Statut du paiement.",
+            "selection": {
+                "pending": "en attente",
+                "paid": "payé"
+            },
+            "help": ""
+        },
+        "psp_type": {
+            "label": "Fournisseur",
+            "description": "Code deu fournisseur de paiements (PSP).",
+            "help": ""
+        },
+        "psp_ref": {
+            "label": "Référence",
+            "description": "Identifiant de la transaction auprès du PSP.",
+            "help": ""
+        },
+        "psp_fee_amount": {
+            "label": "Commission",
+            "description": "Montant de la commission du PSP pour le paiement.",
+            "help": ""
+        },
+        "psp_fee_currency": {
+            "label": "Devise",
+            "description": "Code de la devise du montant de la commission.",
+            "help": ""
+        },
+        "is_exported": {
+            "label": "Exporté",
+            "description": "Le paiement a été exporté",
+            "help": ""
+        }
+    },
+    "view": {
+        "form.default": {
+            "actions": {
+                "action.psp": {
+                    "label": "Retrouver les infos PSP",
+                    "description": "Essaie de récupérer des détails de paiement supplémentaires auprès du PSP, le cas échéant."
+                },
+                "action.transfer": {
+                    "label": "Transfert de financement",
+                    "description": "Permet de transférer le paiement vers un autre financement."
+                }
+            }
+        },
+        "form.funding": {
+            "actions": {
+                "action.psp": {
+                    "label": "Retrouver les infos PSP",
+                    "description": "Essaie de récupérer des détails de paiement supplémentaires auprès du PSP, le cas échéant."
+                },
+                "action.transfer": {
+                    "label": "Transfert de financement",
+                    "description": "Permet de transférer le paiement vers un autre financement."
+                }
+            }
+        }
+    },
+    "error": {}
+}

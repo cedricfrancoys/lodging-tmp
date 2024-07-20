@@ -1,0 +1,62 @@
+{
+    "name": "CA par produit",
+    "plural": "CA par produit",
+    "description": "",
+    "model": {
+        "organisation_id": {
+            "label": "Organisation",
+            "description": "Organisation pour laquelle obtenir les stats.",
+            "help": ""
+        },
+        "center_office_id": {
+            "label": "Equipe de gestion",
+            "description": "Equipe pour laquelle obtenir les stats.",
+            "help": ""
+        },
+        "date_from": {
+            "label": "Du",
+            "description": "Date de début de l'intervalle de temps.",
+            "help": ""
+        },
+        "date_to": {
+            "label": "Au",
+            "description": "Date de fin de l'intervalle de temps.",
+            "help": ""
+        },
+        "product_id": {
+            "label": "Produit",
+            "description": "Produit pour lequel obtenir les stats.",
+            "help": ""
+        },
+        "name": {
+            "label": "Nom",
+            "description": "Nom du produit.",
+            "help": ""
+        },
+        "unit_price": {
+            "label": "Prix",
+            "description": "Prix du produit à l'unité.",
+            "help": ""
+        },
+        "qty": {
+            "label": "Qté",
+            "description": "Quantité de produits facturées.",
+            "help": ""
+        },
+        "price": {
+            "label": "Total",
+            "description": "Prix total du facturé.",
+            "help": ""
+        }
+    },
+    "view": {
+        "search.default": {
+        },
+        "list.default": {
+        }
+    },
+    "error": {
+        "errors": {
+        }
+    }
+}

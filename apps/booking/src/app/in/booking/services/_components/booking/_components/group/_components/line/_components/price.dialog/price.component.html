@@ -1,0 +1,51 @@
+<h3 style="display: flex; border-bottom: solid 1px lightgrey; margin-bottom: 0;" mat-dialog-title>Edition de prix</h3>
+<div mat-dialog-content>
+    <div class="inner-container">
+        <div style="display: flex;">
+            <div>
+                <sb-m2o-select style="max-width: 200px"
+                    [entity]="'sale\\price\\Price'"
+                    [id]="this.data.line.price_id"
+                    [placeholder]="'Prix manquant'"
+                    [disabled]="true">
+                    Prix
+                </sb-m2o-select>
+            </div>
+            <div style="margin-left: auto; max-width: 150px;">
+                <mat-form-field>
+                    <mat-label>Prix TVAC appliqué (€)</mat-label>
+                    <input type="number" matInput [ngModel]="price" (ngModelChange)="onchangePrice($event)">
+                </mat-form-field>
+            </div>
+        </div>
+        <div style="display: flex;">
+            <div style="max-width: 150px;">
+                <label style="font-size: 12px;">Prix HTVA original</label>
+                <div>{{priceInstance?.price | number: '1.2-4'}} €</div>
+            </div>
+            <div style="margin-left: auto; max-width: 150px;">
+                <mat-form-field>
+                    <mat-label>Prix HTVA appliqué (€)</mat-label>
+                    <input type="number" matInput [ngModel]="unit_price" (ngModelChange)="onchangeUnitPrice($event)">
+                </mat-form-field>
+            </div>
+        </div>
+        <div style="display: flex;">
+            <div style="max-width: 150px;">
+                <label style="font-size: 12px;">TVA originale</label>
+                <div>{{priceInstance?.vat_rate | number: '1.2-2' }} <small>({{priceInstance?.vat_rate | percent: '1.2-2'}})</small></div>
+            </div>
+            <div style="margin-left: auto; max-width: 150px;">
+                <mat-form-field>
+                    <mat-label>TVA appliquée (virgule)</mat-label>
+                    <input type="number" matInput #vat_rate_input="ngModel" [ngModel]="vat_rate" (ngModelChange)="onchangeVatRate($event)" min="0" max="1">
+                    <mat-error *ngIf="vat_rate_input.invalid && (vat_rate_input.dirty || vat_rate_input.touched)">Valeur invalide</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions style="justify-content: flex-end; border-top: solid 1px lightgrey;">
+    <button  mat-raised-button color="primary" style="float: right;" (click)="onClose()">ANNULER</button>
+    <button  mat-raised-button color="primary" style="float: right;" (click)="onSave()">SAUVER</button>
+</div>

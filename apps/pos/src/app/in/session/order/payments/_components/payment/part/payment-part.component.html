@@ -1,0 +1,81 @@
+<div style="position: absolute; z-index: 2; width: 100%; height: 100%; opacity: 0.2; background: white;" *ngIf="instance.status == 'paid'"></div>
+<button
+    style="position: absolute; z-index: 3; top: 5px; right: 10px"
+    *ngIf="payment.total_due > 0 && (payment.status != 'paid' || instance.status != 'paid')"
+    mat-icon-button
+    (click)="onclickDelete()"
+>
+    <mat-icon>delete</mat-icon>
+</button>
+<mat-accordion>
+    <mat-expansion-panel [expanded]="ready && instance.status != 'paid'" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-description>
+                <p style="text-transform: capitalize;">{{partLabel}}: {{instance.amount | number : '1.2-2'}}€</p>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div style="padding-bottom: 20px; margin: 4px; min-width: 120px;">
+            <mat-button-toggle-group
+                style="display: flex; flex-direction: column;">
+                <mat-button-toggle mat-raised-button
+                    (change)="changePaymentMethod('cash')"
+                    [class.selected]="instance.payment_method == 'cash'"
+                    [disabled]="!allowedPaymentMethods.includes('cash')">Espèces
+                </mat-button-toggle>
+                <mat-button-toggle mat-raised-button
+                    (change)="changePaymentMethod('bank_card')"
+                    [class.selected]="instance.payment_method == 'bank_card'"
+                    [disabled]="!allowedPaymentMethods.includes('bank_card')">Carte
+                </mat-button-toggle>
+                <ng-container *ngIf="!hasFunding()">
+                    <mat-button-toggle mat-raised-button
+                        (change)="changePaymentMethod('booking')"
+                        [class.selected]="instance.payment_method == 'booking'"
+                        [disabled]="!allowedPaymentMethods.includes('booking')">Réservation
+                    </mat-button-toggle>
+                </ng-container>
+                <!--
+                <mat-button-toggle
+                    mat-raised-button value="voucher"
+                    [class.selected]="instance.payment_method == 'voucher'">Voucher
+                </mat-button-toggle>
+                -->
+            </mat-button-toggle-group>
+        </div>
+        <div style="margin: 4px;">
+            <div *ngIf="instance.payment_method != 'booking'">
+                <mat-form-field>
+                    <mat-label>Montant</mat-label>
+                    <input matInput type="number" step='0.01' [formControl]="amount" [max]="maxAmount">
+                </mat-form-field>
+            </div>
+
+            <div>
+                <div *ngIf="instance.payment_method =='booking'" style="max-width: 180px; margin: 0;">
+                    <session-order-payments-select-booking
+                        [id]="instance.booking_id"
+                        [centerId]="order.center_id"
+                        [placeholder]="'Commencez à taper le nom'"
+                        [hint]="'Réservation pour la commande'"
+                        [noResult]="'rien trouvé'"
+                        (itemSelected)="onchangeBookingId($event)"
+                    >
+                        Réservation
+                    </session-order-payments-select-booking>
+                </div>
+                <div *ngIf="instance.payment_method == 'voucher'" style="max-width: 180px; margin: 0;">
+                    <mat-form-field>
+                        <mat-label>Voucher</mat-label>
+                        <input matInput type="number" [formControl]="voucher_ref">
+                    </mat-form-field>
+
+                </div>
+            </div>
+        </div>
+        <div style="max-width: max-content;" *ngIf="instance.status != 'paid'">
+            <button mat-mini-fab color="primary" [disabled]="!canValidate" (click)="onValidate()">
+                <mat-icon>check</mat-icon>
+            </button>
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>

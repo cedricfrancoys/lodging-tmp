@@ -1,0 +1,19 @@
+{
+    "name": "Factures rapides",
+    "description": "Une facture de solde sera émise et le financement correspondant sera généré. Lorsque les paiements ont déjà été reçus, cette action aboutit à la clôture de la réservation.\n\nATTENTION: En cas d'erreur, la facture ne pourra être annulée que via une note de crédit.",
+    "model": {
+        "id": {
+            "label": "Identifiant",
+            "description": "Identifiant de la réservation ciblée.",
+            "help": ""
+        }
+    },
+    "error": {
+        "errors": {
+            "unknown_booking": "Réservation inconnue.",
+            "incompatible_status": "Le statut de la réservation n'est pas 'terminée'.",
+            "incompatible_booking": "Seules les factures OTA et individuel peuvent faire l'objet d'une facturation rapide.",
+            "invoice_not_found": "La facture n'a pas pu être émise."
+        }
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "name": "Nuitées potentielles - max théorique (par Centre)",
+    "plural": "Nuitées potentielles par Centre",
+    "description": "",
+    "model": {
+        "center_id": {
+            "label": "Centre",
+            "description": "Centre pour lequel obtenir les stats.",
+            "help": ""
+        },
+        "all_centers": {
+            "label": "Tous les centres",
+            "description": "Tous les centres pour lesquels obtenir les stats.",
+            "help": ""
+        },
+        "center": {
+            "label": "Centre",
+            "description": "Centre auquel est assignée le séjour.",
+            "help": ""
+        },
+        "date_from": {
+            "label": "Du",
+            "description": "Date de début du séjour.",
+            "help": ""
+        },
+        "date_to": {
+            "label": "Au",
+            "description": "Date de fin du séjour.",
+            "help": ""
+        },
+        "nb_nights": {
+            "label": "Nombre de nuitées",
+            "description": "Durée du séjour (en nuits).",
+            "help": ""
+        }
+    },
+    "view": {
+        "search.default": {
+        },
+        "list.default": {
+        }
+    },
+    "error": {
+        "errors": {
+        }
+    }
+}

@@ -1,0 +1,176 @@
+{
+    "name": "Contract",
+    "description": "",
+    "access": {
+        "groups": ["booking.default.user"]
+    },
+    "actions": [
+        {
+            "id": "action.sent",
+            "label": "Mark as sent",
+            "description": "Contract will be marked as sent and waiting for customer's signature.",
+            "controller": "lodging_contract_sent",
+            "confirm": true,
+            "visible": ["status", "=", "pending"]
+        },
+        {
+            "id": "action.signed",
+            "label": "Mark as signed",
+            "description": "Contract will be marked as signed. Booking will be validated as soon as the payment is received.",
+            "controller": "lodging_contract_signed",
+            "confirm": true,
+            "visible": ["status", "in", ["pending", "sent"]]
+        },
+        {
+            "id": "action.lock",
+            "label": "Lock contract",
+            "description": "Contract will be locked. Users will not be able to updated it nor cancel it (and related booking) while locked.",
+            "controller": "lodging_contract_lock",
+            "confirm": true,
+            "access": {
+                "groups": ["booking.default.administrator", "sale.default.administrator"]
+            },
+            "visible": ["is_locked", "=", false]
+        },
+        {
+            "id": "action.unlock",
+            "label": "Unlock contract",
+            "description": "Contract will be unlocked and users will be able to cancel it when reverting bookings to quotes.",
+            "help": "Unlike the locking feature, unlocking a contract is available to all Booking users.",
+            "controller": "lodging_contract_unlock",
+            "confirm": true,
+            "visible": ["is_locked", "=", true]
+        }
+    ],
+    "routes": [
+        {
+            "id": "item.contract.send",
+            "label": "Envoi du contrat",
+            "description": "",
+            "icon": "drive_file_rename_outline",
+            "route": "/booking/object.booking_id/contract/object.id"
+        }
+    ],
+    "layout": {
+        "groups": [
+            {
+                "sections": [
+                    {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "50%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "label": "Name",
+                                                "value": "name",
+                                                "width": "100%",
+                                                "widget": {
+                                                    "heading": true
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "width": "50%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "customer_id",
+                                                "width": "100%"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+
+                ]
+            },
+            {
+                "sections": [
+                    {
+                        "id": "section.details",
+                        "label": "Details",
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "50%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "label": "Status",
+                                                "value": "status",
+                                                "width": "50%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "label": "Booking",
+                                                "value": "booking_id",
+                                                "width": "50%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "date",
+                                                "width": "50%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "valid_until",
+                                                "width": "50%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "label": "Description",
+                                                "value": "description",
+                                                "width": "100%"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "width": "50%",
+                                        "align": "right",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "is_locked",
+                                                "width": "100%",
+                                                "widget": {
+                                                    "align": "right"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "section.lines",
+                        "label": "Contract Lines",
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "contract_lines_ids",
+                                                "width": "100%"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

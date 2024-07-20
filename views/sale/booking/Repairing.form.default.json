@@ -1,0 +1,135 @@
+{
+    "name": "Repairing",
+    "description": "Scheduled repairs for a Center.",
+    "access": {
+        "groups": ["booking.default.user"]
+    },
+    "actions": [
+        {
+            "id": "action.remove",
+            "label": "Remove",
+            "description": "Repairing episode will be removed. The rental unit will be released and made available for bookings.",
+            "controller": "lodging_repairing_do-remove",
+            "confirm": true,
+            "visible": ["state", "<>", "draft"]
+        }
+    ],
+    "layout": {
+        "groups": [
+            {
+                "sections": [
+                    {
+                        "id": "section.details",
+                        "label": "Details",
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "label": "Reference",
+                                                "value": "name",
+                                                "width": "50%",
+                                                "visible" : ["state", "<>" , "draft"],
+                                                "widget": {
+                                                    "heading": true
+                                                }
+                                            },
+                                            {
+                                                "type": "field",
+                                                "label": "Reference",
+                                                "value": "description",
+                                                "width": "50%",
+                                                "visible" : ["state", "=" , "draft"],
+                                                "widget": {
+                                                    "heading": true,
+                                                    "usage" : "string",
+                                                    "required" : true
+                                                }
+                                            },
+                                            {
+                                                "type": "field",
+                                                "label": "Center",
+                                                "value": "center_id",
+                                                "width": "50%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "date_from",
+                                                "width": "50%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "date_to",
+                                                "width": "50%"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "section.rental_units_ids",
+                        "label": "Rental units",
+                        "visible" : ["state", "<>" , "draft"],
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "rental_units_ids",
+                                                "width": "100%",
+                                                "widget": {
+                                                    "header": {
+                                                        "actions": {
+                                                            "ACTION.SELECT": [
+                                                                {
+                                                                    "domain": ["center_id", "=", "object.center_id"]
+                                                                }
+                                                            ],
+                                                            "ACTION.CREATE": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "section.repairs_ids",
+                        "label": "repairs",
+                        "visible" : ["state", "<>" , "draft"],
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "repairs_ids",
+                                                "width": "100%",
+                                                "widget": {
+                                                    "readonly": true
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

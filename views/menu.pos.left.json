@@ -1,0 +1,151 @@
+{
+    "name": "PoS menu",
+    "access": {
+        "groups": ["pos.default.user"]
+    },
+    "layout": {
+        "items": [
+            {
+                "id": "pos.sessions",
+                "label": "Sessions",
+                "description": "",
+                "icon": "menu_book",
+                "type": "parent",
+                "children": [
+                    {
+                        "id": "pos.sessions.pending",
+                        "type": "entry",
+                        "label": "Pending sessions",
+                        "description": "",
+                        "route": "/sessions",
+                        "context": {
+                            "entity": "lodging\\sale\\pos\\CashdeskSession",
+                            "view": "list.default",
+                            "order": "created",
+                            "sort": "desc",
+                            "domain": [ ["status", "=", "pending"], ["center_id", "in", "user.centers_ids"] ]
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "pos.catalog",
+                "label": "Catalog",
+                "description": "",
+                "icon": "library_books",
+                "type": "parent",
+                "children": [
+                    {
+                        "id": "pos.catalog.products",
+                        "type": "entry",
+                        "label": "Products",
+                        "icon": "style",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\sale\\catalog\\PosProductModel",
+                            "view": "list.default"
+                        }
+                    },
+                    {
+                        "id": "pos.catalog.pricelists",
+                        "type": "entry",
+                        "label": "Price lists",
+                        "icon": "attach_money",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\sale\\catalog\\PosPriceList",
+                            "view": "list.default",
+                            "domain": [["is_active", "=", true], ["price_list_category_id", "in", "user.center_offices_ids"]]
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "pos.sessions.invoicing",
+                "label": "Invoicing",
+                "description": "",
+                "icon": "receipt_long",
+                "type": "parent",
+                "children": [
+                    {
+                        "id": "pos.order.toinvoice",
+                        "type": "entry",
+                        "label": "Order to invoice",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\sale\\pos\\Order",
+                            "view": "list.invoiceable"
+                        }
+                    },
+                    {
+                        "id": "pos.sessions.invoicing.waiting",
+                        "type": "entry",
+                        "label": "Waiting",
+                        "route": "/",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\sale\\booking\\Invoice",
+                            "view": "list.order",
+                            "domain": [ ["status", "=", "proforma"] ]
+                        }
+                    },
+                    {
+                        "id": "pos.sessions.invoicing.all",
+                        "type": "entry",
+                        "label": "All invoices",
+                        "route": "/",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\sale\\booking\\Invoice",
+                            "view": "list.order",
+                            "domain": [ ["status", "=", "invoice"] ]
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "pos.sessions.history",
+                "label": "Sessions",
+                "description": "",
+                "icon": "auto_stories",
+                "type": "parent",
+                "children": [
+                    {
+                        "id": "pos.sessions.history.cashdeskSession",
+                        "type": "entry",
+                        "label": "Reconciled lines",
+                        "description": "",
+                        "route": "/sessions",
+                        "context": {
+                            "entity": "lodging\\sale\\pos\\CashdeskSession",
+                            "view": "list.reconciled",
+                            "order": "created",
+                            "sort": "desc",
+                            "domain": [ ["status", "=", "closed"], ["center_id", "in", "user.centers_ids"] ]
+                        }
+                    },
+                    {
+                        "id": "pos.sessions.consolidated",
+                        "type": "entry",
+                        "label": "Consolidé",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\sale\\pos\\stat-cashdeskSession",
+                            "view": "list.default"
+                        }
+                    },
+                    {
+                        "id": "pos.sessions.history.orders",
+                        "type": "entry",
+                        "label": "Orders",
+                        "description": "",
+                        "context": {
+                            "entity": "lodging\\sale\\pos\\Order",
+                            "view": "list.paid"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

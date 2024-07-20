@@ -1,0 +1,59 @@
+{
+    "name": "Nights by Age range",
+    "description": "",
+    "controller": "lodging_stats_stat-nightsagerange",
+    "header": {
+        "actions": {
+            "ACTION.CREATE" : false
+        }
+    },
+    "group_by": [{"field": "age_range", "operation": ["SUM", "object.nb_nights"]}, {"field": "center", "operation": ["SUM", "object.nb_nights"]}, {"field": "rate_class", "operation": ["SUM", "object.nb_nights"]} ],
+    "operations": {
+        "total": {
+            "nb_pers": {
+                "operation": "SUM",
+                "usage": "numeric/integer",
+                "suffix": " pers."
+            },
+            "nb_nights": {
+                "operation": "SUM",
+                "usage": "numeric/integer",
+                "suffix": " nuitées"
+            }
+        }
+    },
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "age_range",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "center",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "rate_class",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "customer_nature",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "nb_pers",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "nb_nights",
+                "width": "10%"
+            }
+        ]
+    }
+}

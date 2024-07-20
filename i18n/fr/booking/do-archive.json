@@ -1,0 +1,21 @@
+{
+    "name": "Archiver",
+    "description": "Archiver la réservation, si la réservation est en devis ou en terminée, avec une date dans le passé",
+    "model": {
+        "id": {
+            "label": "Identifiant",
+            "description": "Identifiant de la réservation.",
+            "help": ""
+        }
+    },
+    "error": {
+        "errors": {
+            "unknown_booking": "Réservation inconnue.",
+            "invalid_states_booking": "La réservation est déjà archive.",
+            "invalid_quote_booking": "La réservation de devis est invalide. La date de fin doit être d'au moins 1 mois avant aujourd'hui et le montant payé doit être de 0.",
+            "non_cancelled_booking": "La réservation ne peut pas être archivée car elle est toujours active.",
+            "invalid_status_booking": "La réservation doit être en état de devis ou terminée.",
+            "invalid_checkout_booking": "La réservation de terminée est invalide. La date de fin doit être d'au moins 2 mois jours avant aujourd'hui et le montant payé doit être de 0."
+        }
+    }
+}

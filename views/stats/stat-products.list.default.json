@@ -1,0 +1,56 @@
+{
+    "name": "Stat invoiced products",
+    "description": "",
+    "controller": "lodging_stats_stat-products",
+    "header": {
+        "actions": {
+            "ACTION.CREATE" : false
+        },
+        "advanced_search": {
+            "open": true
+        }
+    },
+    "operations": {
+        "total": {
+            "qty": {
+                "usage": "number/integer",
+                "operation": "SUM"
+            },
+            "total": {
+                "usage": "amount/money",
+                "operation": "SUM"
+            }
+        }
+    },
+    "group_by": [
+        { "field": "center_office_id" }
+    ],
+    "limit": 500,
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "center_office_id",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "name",
+                "width": "50%"
+            },
+            {
+                "type": "field",
+                "value": "qty",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "total",
+                "width": "10%",
+                "widget": {
+                    "usage": "amount/money:2"
+                }
+            }
+        ]
+    }
+}

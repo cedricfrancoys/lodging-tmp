@@ -1,0 +1,77 @@
+{
+    "name": "Stat Forecast",
+    "description": "",
+    "controller": "lodging_stats_stat-forecast",
+    "header": {
+        "actions": {
+            "ACTION.CREATE" : false
+        }
+    },
+    "operations": {
+        "Total": {
+            "nights":{
+                "operation": "SUM",
+                "usage": "amount/money:2"
+            },
+            "animations":{
+                "operation": "SUM",
+                "usage": "amount/money:2"
+            },
+            "meals":{
+                "operation": "SUM",
+                "usage": "amount/money:2"
+            },
+            "bookings":{
+                "operation": "SUM",
+                "usage": "amount/money:2"
+            }
+        }
+    },
+    "group_by": [{"field": "center"}],
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "center",
+                "width": "25%"
+            },
+            {
+                "type": "field",
+                "value": "aamm",
+                "width": "8%"
+            },
+            {
+                "type": "field",
+                "value": "nights",
+                "width": "15%",
+                "widget": {
+                    "usage": "amount/money:2"
+                }
+            },
+            {
+                "type": "field",
+                "value": "animations",
+                "width": "15%",
+                "widget": {
+                    "usage": "amount/money:2"
+                }
+            },
+            {
+                "type": "field",
+                "value": "meals",
+                "width": "15%",
+                "widget": {
+                    "usage": "amount/money:2"
+                }
+            },
+            {
+                "type": "field",
+                "value": "bookings",
+                "width": "15%",
+                "widget": {
+                    "usage": "amount/money:2"
+                }
+            }
+        ]
+    }
+}

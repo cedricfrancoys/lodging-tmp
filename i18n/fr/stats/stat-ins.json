@@ -1,0 +1,97 @@
+{
+    "name": "Statistique INS",
+    "plural": "Statistiques INS",
+    "description": "",
+    "model": {
+        "center_id": {
+            "label": "Centre",
+            "description": "Centre pour lequel obtenir les stats.",
+            "help": ""
+        },
+        "all_centers": {
+            "label": "Tous les centres",
+            "description": "Tous les centres pour lesquels obtenir les stats.",
+            "help": ""
+        },
+        "center": {
+            "label": "Centre",
+            "description": "Centre auquel est assignée le séjour.",
+            "help": ""
+        },
+        "date_from": {
+            "label": "Jour de départ min.",
+            "description": "Date de début du séjour.",
+            "help": ""
+        },
+        "date_to": {
+            "label": "Jour de départ max.",
+            "description": "Date de fin du séjour.",
+            "help": ""
+        },
+        "nb_pers": {
+            "label": "# pers",
+            "description": "Nombre de personnes.",
+            "help": ""
+        },
+        "nb_nights": {
+            "label": "Durée",
+            "description": "Durée du séjour (nombre de nuits).",
+            "help": ""
+        },
+        "invoiced_nights": {
+            "label": "# nuitées",
+            "description": "Nombre total de nuitées facturées.",
+            "help": ""
+        },
+        "nb_rental_units": {
+            "label": "# UL",
+            "description": "Nombre d'unités locatives occupées (logements).",
+            "help": ""
+        },
+        "ref_booking": {
+            "label": "Réservation",
+            "description": "Code de la réservation liée.",
+            "help": ""
+        },
+        "customer_name": {
+            "label": "Client",
+            "description": "Nom du client.",
+            "help": ""
+        },
+        "customer_zip": {
+            "label": "CP",
+            "description": "Code postal du client.",
+            "help": ""
+        },
+        "customer_country": {
+            "label": "Pays",
+            "description": "Pays de résidence du client.",
+            "help": ""
+        },
+        "customer_region": {
+            "label": "Région",
+            "description": "Région dans le pays de résidence du client.",
+            "help": ""
+        },
+        "customer_lang": {
+            "label": "Langue",
+            "description": "Langue du client.",
+            "help": ""
+        },
+        "purpose_of_stay": {
+            "label": "But du séjour",
+            "description": "Raison du séjour communiquée par client.",
+            "help": ""
+        }
+    },
+    "view": {
+        "search.default": {
+        },
+        "list.default": {
+        }
+    },
+    "error": {
+        "errors": {
+        }
+    }
+}

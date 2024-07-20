@@ -1,0 +1,94 @@
+{
+    "name": "Facture",
+    "plural": "Factures",
+    "description": "",
+    "model": {
+        "reversed_invoice_id": {
+            "label": "Facture liée",
+            "description": "Facture annulée ou note de crédit.",
+            "help": "La facture symétrique : facture annulée pour une note de crédit; et note de crédit pour facture annulée."
+        },
+        "is_exported": {
+            "label": "Exportée",
+            "description": "La facture a été exportée",
+            "help": ""
+        }
+    },
+    "view": {
+        "form.default": {
+            "name": "Facture",
+            "description": "",
+            "actions": {
+                "action.invoice": {
+                    "label": "Émettre la facture",
+                    "description": "Générer une facture sur base de la version proforma."
+                },
+                "action.reverse": {
+                    "label": "Note de crédit",
+                    "description": "Annuler la facture par une note de crédit."
+                },
+                "action.refresh_paid": {
+                    "label": "Rafraîchir le statut",
+                    "description": "Forcer la vérification du statut des paiements."
+                },
+                "action.remove": {
+                    "label": "Supprimer la proforma",
+                    "description": "La facture proforma sera supprimée."
+                },
+                "action.refresh_fundings": {
+                    "label": "(Re)générer le financement",
+                    "description": "Une vérification sera faire sur la facture et un financement sera créé si nécessaire. Et les acomptes de prépaiement (partiellement) payés y seront rattachés."
+                }
+            },
+            "layout": {
+                "sections.invoice.lines": {
+                    "label": "Lignes de facture"
+                },
+                "sections.invoice.entries": {
+                    "label": "Écritures comptables"
+                }
+            }
+        },
+        "form.booking": {
+            "name": "Facture",
+            "description": "",
+            "actions": {
+                "action.invoice": {
+                    "label": "Émettre la facture",
+                    "description": "Générer une facture sur base de la version proforma."
+                },
+                "action.reverse": {
+                    "label": "Note de crédit",
+                    "description": "Annuler la facture par une note de crédit."
+                },
+                "action.refresh_paid": {
+                    "label": "Rafraîchir le statut",
+                    "description": "Forcer la vérification du statut des paiements."
+                },
+                "action.remove": {
+                    "label": "Supprimer la proforma",
+                    "description": "La facture proforma sera supprimée."
+                },
+                "action.refresh_fundings": {
+                    "label": "(Re)générer le financement",
+                    "description": "Une vérification sera faire sur la facture et un financement sera créé si nécessaire. Et les acomptes de prépaiement (partiellement) payés y seront rattachés."
+                }
+            },
+            "layout": {
+                "sections.invoice.lines": {
+                    "label": "Lignes de facture"
+                },
+                "sections.invoice.entries": {
+                    "label": "Écritures comptables"
+                }
+            }
+        },
+        "list.default": {
+            "name": "Factures",
+            "description": "Liste des factures.",
+            "layout": {
+            }
+        }
+    },
+    "error": {}
+}

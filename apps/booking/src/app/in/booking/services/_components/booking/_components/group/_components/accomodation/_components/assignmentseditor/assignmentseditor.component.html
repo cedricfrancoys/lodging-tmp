@@ -1,0 +1,50 @@
+<div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.3); z-index: 99;">
+
+</div>
+
+<div class="row row-lists" cdkDropListGroup style="z-index: 100; display: flex; width: calc(100% - 20px); height: 200px; justify-content: space-between;">
+    <!-- left pane : list of available rental units for current product model -->
+    <div class="list" cdkDropList cdkDropListSortingDisabled style="flex: 0 1 calc(50% - 10px); border: solid 1px darkgrey;" >
+        <div *ngFor="let unit of availableRentalUnits"
+                class="rentalunit-line line-choice"
+                [class.selected]="selectedRentalUnits.indexOf(unit.id) > -1"
+                cdkDrag
+                [cdkDragData]="unit">
+
+            <div class="drag-preview" *cdkDragPreview>
+                <div class="drag-preview-inner">{{ selectedRentalUnits.length > 0 ? selectedRentalUnits.length : 1 }}</div>
+            </div>
+            <div>
+                <mat-checkbox
+                    [checked]="selectedRentalUnits.indexOf(unit.id) > -1"
+                    (change)="leftSelectRentalUnit($event.checked, unit.id)">
+                </mat-checkbox>
+            </div>
+            <div style="padding: 0 5px;" (mousedown)="leftSelectRentalUnit(true, unit.id)">{{unit.name}} <small *ngIf="unit.is_accomodation">({{unit.capacity}})</small></div>
+        </div>
+    </div>
+    <!-- action area -->
+    <div class="actions">
+        <button mat-mini-fab color="primary" (click)="addSelection()">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+        <button mat-mini-fab color="primary" (click)="addAll()">
+            <mat-icon>keyboard_double_arrow_right</mat-icon>
+        </button>
+    </div>
+    <!-- right pane -->
+    <div class="list" cdkDropList (cdkDropListDropped)="addSelection()" style="flex: 0 1 calc(50% - 10px); border: solid 1px darkgrey;">
+        <div *ngFor="let assignment of rentalUnitsAssignments"
+                class="rentalunit-line line-assignment">
+            <booking-services-booking-group-accomodation-assignmentseditor-assignment
+                [model]="assignment"
+                [accomodation]="accommodation"
+                [booking]="booking"
+                [group]="group"
+                [mode]="'edit'"
+                (updated)="onupdateAssignment($event)"
+                (deleted)="ondeleteAssignment(assignment.id)"
+            ></booking-services-booking-group-accomodation-assignmentseditor-assignment>
+        </div>
+    </div>
+</div>

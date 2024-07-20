@@ -1,0 +1,14 @@
+{
+    "name": "Marquer les unites locatives comme nettoyée",
+    "description": "Les unités locatives seront marquées comme nettoyées.",
+    "model": {
+        "id": {
+            "label": "Identifiant",
+            "description": "Identifiant de la comsuption.",
+            "help": ""
+        }
+    },
+    "error": {
+        "errors": {}
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "name": "SPM Rental Unit Assignment",
+    "description": "List of SPM Rental Unit Assignment.",
+    "access": {
+        "groups": ["booking.default.user"]
+     },
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "booking_line_group_id",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "rental_unit_id",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "qty",
+                "width": "20%"
+            }
+        ]
+    }
+}

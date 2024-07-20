@@ -1,0 +1,44 @@
+[
+    {
+        "name": "realestate\\RentalUnitCategory",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 9,
+                "name": "SR - Salle de réunion",
+                "code": "SR",
+                "description": "Salle de réunion"
+            },
+            {
+                "id": 14,
+                "name": "CH - Chambre",
+                "code": "CH",
+                "description": "Chambre commune ou privative, avec ou sans équipements"
+            },
+            {
+                "id": 15,
+                "name": "AH - Appart'hôtel",
+                "code": "AH",
+                "description": "Appart'hôtel"
+            },
+            {
+                "id": 16,
+                "name": "RE - Réfectoire",
+                "code": "RE",
+                "description": "Réfectoire"
+            },
+            {
+                "id": 17,
+                "name": "SA - Salle",
+                "code": "SA",
+                "description": "Salle"
+            },
+            {
+                "id": 18,
+                "name": "AC - Mobilier, accessoires et équipement",
+                "code": "AC",
+                "description": "Mobilier, accessoires et équipement"
+            }
+        ]
+    }
+]

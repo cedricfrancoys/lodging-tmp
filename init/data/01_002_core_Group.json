@@ -1,0 +1,128 @@
+[
+    {
+        "name": "core\\Group",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "name": "admin",
+                "display_name": "*",
+                "description": "Administrateur système"
+            },
+            {
+                "id": 2,
+                "name": "users",
+                "display_name": null,
+                "description": null
+            },
+            {
+                "id": 24,
+                "name": "sale.default.administrator",
+                "display_name": "Vente \/ * \/ Administateur",
+                "description": ""
+            },
+            {
+                "id": 25,
+                "name": "sale.default.user",
+                "display_name": "Vente \/ * \/ Utilisateur",
+                "description": ""
+            },
+            {
+                "id": 26,
+                "name": "booking.default.administrator",
+                "display_name": "Réservation \/ *\/ Administrateur",
+                "description": ""
+            },
+            {
+                "id": 27,
+                "name": "booking.default.user",
+                "display_name": "Réservation \/ * \/ Utilisateur",
+                "description": ""
+            },
+            {
+                "id": 28,
+                "name": "finance.default.user",
+                "display_name": "Comptabilité \/ * \/ Utilisateur",
+                "description": ""
+            },
+            {
+                "id": 29,
+                "name": "finance.default.administrator",
+                "display_name": "Comptabilité \/ * \/ Administrateur",
+                "description": ""
+            },
+            {
+                "id": 32,
+                "name": "stats.default.administrator",
+                "display_name": "Stats \/ * \/ Administrateur",
+                "description": ""
+            },
+            {
+                "id": 33,
+                "name": "stats.default.user",
+                "display_name": "Stats \/ * \/ Utilisateur",
+                "description": ""
+            },
+            {
+                "id": 34,
+                "name": "documents.default.administrator",
+                "display_name": "Documents \/ * \/ Administrateur",
+                "description": ""
+            },
+            {
+                "id": 35,
+                "name": "documents.default.user",
+                "display_name": "Document \/ * \/ Utilisateur",
+                "description": ""
+            },
+            {
+                "id": 36,
+                "name": "setting.default.administrator",
+                "display_name": "Configuration \/ * \/ Administrateur",
+                "description": ""
+            },
+            {
+                "id": 37,
+                "name": "setting.default.user",
+                "display_name": "Configuration \/ * \/ Utilisateur",
+                "description": ""
+            },
+            {
+                "id": 38,
+                "name": "inventory.default.user",
+                "display_name": "Inventaire \/ * \/ Utilisateur",
+                "description": ""
+            },
+            {
+                "id": 39,
+                "name": "inventory.default.administrator",
+                "display_name": "Inventaire \/ * \/ Administrateur",
+                "description": ""
+            },
+            {
+                "id": 41,
+                "name": "pos.default.user",
+                "display_name": "Caisse \/ * \/ Utilisateur",
+                "description": ""
+            },
+            {
+                "id": 42,
+                "name": "pos.default.administrator",
+                "display_name": "Caisse \/ * \/ Administrateur",
+                "description": ""
+            },
+            {
+                "id": 44,
+                "name": "support.default.user",
+                "display_name": "Equipe de support",
+                "description": ""
+            },
+            {
+                "id": 45,
+                "name": "booking.infra.user",
+                "display_name": "Réservation \/ Infra \/ Utilisateur",
+                "description": "<p>Utilisateurs avec droits en lecture seule pour la consultation du planning des réservations.<\/p>"
+            }
+        ]
+    }
+]

@@ -1,0 +1,506 @@
+[
+    {
+        "name": "lodging\\sale\\discount\\Discount",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "name": "réduction +3 nuits",
+                "description": null,
+                "value": 0.04,
+                "discount_list_id": 1,
+                "discount_category_id": 2,
+                "type": "percent"
+            },
+            {
+                "id": 2,
+                "name": "réduction grand groupe",
+                "description": null,
+                "value": 0.05,
+                "discount_list_id": 1,
+                "discount_category_id": 3,
+                "type": "percent"
+            },
+            {
+                "id": 3,
+                "name": "réduction grand groupe",
+                "description": null,
+                "value": 0.05,
+                "discount_list_id": 2,
+                "discount_category_id": 3,
+                "type": "percent"
+            },
+            {
+                "id": 4,
+                "name": "réduction basse saison",
+                "description": null,
+                "value": 0.1,
+                "discount_list_id": 3,
+                "discount_category_id": 1,
+                "type": "percent"
+            },
+            {
+                "id": 5,
+                "name": "réduction grand groupe",
+                "description": null,
+                "value": 0.05,
+                "discount_list_id": 3,
+                "discount_category_id": 3,
+                "type": "percent"
+            },
+            {
+                "id": 6,
+                "name": "réduction grand groupe",
+                "description": null,
+                "value": 0.05,
+                "discount_list_id": 4,
+                "discount_category_id": 3,
+                "type": "percent"
+            },
+            {
+                "id": 7,
+                "name": "réduction basse saison",
+                "description": null,
+                "value": 0.11,
+                "discount_list_id": 5,
+                "discount_category_id": 1,
+                "type": "percent"
+            },
+            {
+                "id": 8,
+                "name": "réduction moyenne saison",
+                "description": null,
+                "value": 0.11,
+                "discount_list_id": 5,
+                "discount_category_id": 1,
+                "type": "percent"
+            },
+            {
+                "id": 9,
+                "name": "réduction +3 nuits",
+                "description": null,
+                "value": 0.04,
+                "discount_list_id": 5,
+                "discount_category_id": 2,
+                "type": "percent"
+            },
+            {
+                "id": 10,
+                "name": "réduction basse saison",
+                "description": null,
+                "value": 0.11,
+                "discount_list_id": 7,
+                "discount_category_id": 1,
+                "type": "percent"
+            },
+            {
+                "id": 143,
+                "name": "Gratuité 1 accompagnant",
+                "description": "Gratuité accompagnant 10+",
+                "value": 1,
+                "discount_list_id": 33,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 144,
+                "name": "Gratuité 2 accompagnants",
+                "description": "Gratuité accompagnant 20+",
+                "value": 2,
+                "discount_list_id": 33,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 145,
+                "name": "Gratuité 3 accompagnants",
+                "description": "Gratuité accompagnants 30+",
+                "value": 3,
+                "discount_list_id": 33,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 146,
+                "name": "Gratuité 4 accompagnants",
+                "description": "Gratuité accompagnants 40+",
+                "value": 4,
+                "discount_list_id": 33,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 147,
+                "name": "Gratuité 5 accompagnants",
+                "description": "Gratuité accompagnants 50+",
+                "value": 5,
+                "discount_list_id": 33,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 148,
+                "name": "Gratuité 6 accompagnants",
+                "description": "Gratuité accompagnants 60+",
+                "value": 6,
+                "discount_list_id": 33,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 149,
+                "name": "Gratuité 7 accompagnants",
+                "description": "Gratuité accompagnants 70+",
+                "value": 7,
+                "discount_list_id": 33,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 150,
+                "name": "Gratuité 8 accompagnants",
+                "description": "Gratuité accompagnants 8+",
+                "value": 8,
+                "discount_list_id": 33,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 151,
+                "name": "Gratuité 9 accompagnants",
+                "description": "Gratuité accompagnants 90+",
+                "value": 9,
+                "discount_list_id": 33,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 152,
+                "name": "Gratuité 10 accompagnants",
+                "description": "Gratuité accompagnants 10+",
+                "value": 10,
+                "discount_list_id": 33,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 304,
+                "name": "réduction grand groupe",
+                "description": null,
+                "value": 0.05,
+                "discount_list_id": 46,
+                "discount_category_id": 3,
+                "type": "percent"
+            },
+            {
+                "id": 305,
+                "name": "réduction basse saison",
+                "description": null,
+                "value": 0.11,
+                "discount_list_id": 47,
+                "discount_category_id": 1,
+                "type": "percent"
+            },
+            {
+                "id": 306,
+                "name": "réduction moyenne saison",
+                "description": null,
+                "value": 0.03,
+                "discount_list_id": 47,
+                "discount_category_id": 1,
+                "type": "percent"
+            },
+            {
+                "id": 307,
+                "name": "réduction +3 nuits",
+                "description": null,
+                "value": 0.04,
+                "discount_list_id": 47,
+                "discount_category_id": 2,
+                "type": "percent"
+            },
+            {
+                "id": 308,
+                "name": "Gratuité 1 accompagnant",
+                "description": "Gratuité accompagnant 10+",
+                "value": 1,
+                "discount_list_id": 47,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 309,
+                "name": "Gratuité 2 accompagnants",
+                "description": "Gratuité accompagnant 20+",
+                "value": 2,
+                "discount_list_id": 47,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 310,
+                "name": "Gratuité 3 accompagnants",
+                "description": "Gratuité accompagnant 30+",
+                "value": 3,
+                "discount_list_id": 47,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 311,
+                "name": "Gratuité 4 accompagnants",
+                "description": "Gratuité accompagnant 40+",
+                "value": 4,
+                "discount_list_id": 47,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 312,
+                "name": "Gratuité 5 accompagnants",
+                "description": "Gratuité accompagnant 50+",
+                "value": 5,
+                "discount_list_id": 47,
+                "discount_category_id": 3,
+                "type": "freebie",
+                "has_age_ranges": true,
+                "age_ranges_ids": [1],
+                "value_max": "nb_adults"
+            },
+            {
+                "id": 313,
+                "name": "Gratuité 6 accompagnants",
+                "description": "Gratuité accompagnant 60+",
+                "value": 6,
+                "discount_list_id": 47,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 314,
+                "name": "Gratuité 7 accompagnants",
+                "description": "Gratuité accompagnant 70+",
+                "value": 7,
+                "discount_list_id": 47,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 315,
+                "name": "Gratuité 8 accompagnants",
+                "description": "Gratuité accompagnant 80+",
+                "value": 8,
+                "discount_list_id": 47,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 316,
+                "name": "Gratuité 9 accompagnants",
+                "description": "Gratuité accompagnant 90+",
+                "value": 9,
+                "discount_list_id": 47,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 317,
+                "name": "Gratuité 10 accompagnants",
+                "description": "Gratuité accompagnant 100+",
+                "value": 10,
+                "discount_list_id": 47,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 318,
+                "name": "Gratuité 11 accompagnants",
+                "description": "Gratuité accompagnant 110+",
+                "value": 11,
+                "discount_list_id": 47,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 319,
+                "name": "Gratuité 12 accompagnants",
+                "description": "Gratuité accompagnant 120+",
+                "value": 12,
+                "discount_list_id": 47,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 320,
+                "name": "Gratuité 13 accompagnants",
+                "description": "Gratuité accompagnant 130+",
+                "value": 13,
+                "discount_list_id": 47,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 355,
+                "name": "réduction basse saison",
+                "description": null,
+                "value": 0.4,
+                "discount_list_id": 53,
+                "discount_category_id": 1,
+                "type": "percent"
+            },
+            {
+                "id": 356,
+                "name": "réduction moyenne saison",
+                "description": null,
+                "value": 0.3,
+                "discount_list_id": 53,
+                "discount_category_id": 1,
+                "type": "percent"
+            },
+            {
+                "id": 357,
+                "name": "réduction haute saison",
+                "description": null,
+                "value": 0.1,
+                "discount_list_id": 53,
+                "discount_category_id": 1,
+                "type": "percent"
+            },
+            {
+                "id": 358,
+                "name": "réduction +4 nuits",
+                "description": null,
+                "value": 0.1,
+                "discount_list_id": 53,
+                "discount_category_id": 2,
+                "type": "percent"
+            },
+            {
+                "id": 359,
+                "name": "réduction +8 nuits",
+                "description": null,
+                "value": 0.1,
+                "discount_list_id": 53,
+                "discount_category_id": 2,
+                "type": "percent"
+            },
+            {
+                "id": 360,
+                "name": "réduction résa -24 mois",
+                "description": null,
+                "value": 0.05,
+                "discount_list_id": 53,
+                "discount_category_id": 4,
+                "type": "percent"
+            },
+            {
+                "id": 417,
+                "name": "réduction moyenne saison",
+                "description": null,
+                "value": 0.03,
+                "discount_list_id": 61,
+                "discount_category_id": 1,
+                "type": "percent"
+            },
+            {
+                "id": 418,
+                "name": "réduction +3 nuits",
+                "description": null,
+                "value": 0.04,
+                "discount_list_id": 61,
+                "discount_category_id": 2,
+                "type": "percent"
+            },
+            {
+                "id": 419,
+                "name": "Gratuité 1 accompagnant",
+                "description": "Gratuité accompagnant 10+",
+                "value": 1,
+                "discount_list_id": 61,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 420,
+                "name": "Gratuité 2 accompagnants",
+                "description": "Gratuité accompagnant 20+",
+                "value": 2,
+                "discount_list_id": 61,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 421,
+                "name": "Gratuité 3 accompagnants",
+                "description": "Gratuité accompagnant 30+",
+                "value": 3,
+                "discount_list_id": 61,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 422,
+                "name": "Gratuité 4 accompagnants",
+                "description": "Gratuité accompagnant 40+",
+                "value": 4,
+                "discount_list_id": 61,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 423,
+                "name": "Gratuité 5 accompagnants",
+                "description": "Gratuité accompagnant 50+",
+                "value": 5,
+                "discount_list_id": 61,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 424,
+                "name": "Gratuité 6 accompagnants",
+                "description": "Gratuité accompagnant 60+",
+                "value": 6,
+                "discount_list_id": 61,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 425,
+                "name": "Gratuité 7 accompagnants",
+                "description": "Gratuité accompagnant 70+",
+                "value": 7,
+                "discount_list_id": 61,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 426,
+                "name": "Gratuité 8 accompagnants",
+                "description": "Gratuité accompagnant 80+",
+                "value": 8,
+                "discount_list_id": 61,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 427,
+                "name": "Gratuité 9 accompagnants",
+                "description": "Gratuité accompagnant 90+",
+                "value": 9,
+                "discount_list_id": 61,
+                "discount_category_id": 3,
+                "type": "freebie"
+            },
+            {
+                "id": 428,
+                "name": "Gratuité 10 accompagnants",
+                "description": "Gratuité accompagnant 100+",
+                "value": 10,
+                "discount_list_id": 61,
+                "discount_category_id": 3,
+                "type": "freebie"
+            }
+        ]
+    }
+]

@@ -1,0 +1,29 @@
+{
+    "name": "Remise",
+    "plural": "Remises",
+    "description": "",
+    "model": {
+        "value_max": {
+            "label": "Valeur max",
+            "description": "Nombre de gratuités maximum (relatif).",
+            "help": "",
+			"selection": {
+				"nb_pers": "nombre de personnes",
+                "nb_children": "nombre d'enfants",
+                "nb_adults": "nombre d'adultes"
+            }
+        },
+        "age_ranges_ids": {
+            "label": "Tranches d'âge",
+            "description": "Liste des tranches d'âges auxquelles est limitée la remise.",
+            "help": ""
+        },
+        "has_age_ranges": {
+            "label": "Tranches d'âge spécifiques",
+            "description": "Remise limitée à certaines tranches d'âge.",
+            "help": ""
+        }
+    },
+    "view": {},
+    "error": {}
+}

@@ -1,0 +1,135 @@
+{
+    "name": "Payment",
+    "description": "",
+    "access": {
+        "groups": ["sale.default.user"]
+    },
+    "actions": [
+        {
+            "id": "action.psp",
+            "label": "Retrieve PSP info",
+            "description": "Tries to fetch additional payment details from the PSP, if any.",
+            "controller": "lodging_payments_fetch-psp",
+            "confirm": true,
+            "visible": [ ["has_psp", "=", true], ["psp_fee_amount", "is", null]]
+        },
+        {
+            "id": "action.transfer",
+            "label": "Funding transfer",
+            "description": "Allows the transfer of the payment to another funding.",
+            "controller": "lodging_payment_do-transfer",
+            "confirm": true,
+            "access": {
+                "groups": ["finance.default.administrator", "finance.default.user", "booking.default.user"]
+            }
+        }
+
+    ],
+    "layout": {
+        "groups": [
+            {
+                "sections": [
+                    {
+                        "id": "section.details",
+                        "label": "Details",
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "50%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "booking_id",
+                                                "width": "50%",
+                                                "widget": {
+                                                    "fields": ["customer_id.bookings_ids"],
+                                                    "heading": true
+                                                }
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "partner_id",
+                                                "width": "50%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "amount",
+                                                "width": "50%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "payment_method",
+                                                "width": "50%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "is_exported",
+                                                "width": "50%",
+                                                "widget": {
+                                                    "readonly": true
+                                                }
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "status",
+                                                "width": "0%",
+                                                "visible": false
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "has_psp",
+                                                "width": "0%",
+                                                "visible": false
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "section.details",
+                        "label": "Payment Service Provider",
+                        "visible": ["has_psp", "=", true],
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "50%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "label": "Provider",
+                                                "value": "psp_type",
+                                                "width": "50%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "label": "Reference",
+                                                "value": "psp_ref",
+                                                "width": "50%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "label": "Fee amount",
+                                                "value": "psp_fee_amount",
+                                                "width": "25%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "label": "Currency",
+                                                "value": "psp_fee_currency",
+                                                "width": "25%"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

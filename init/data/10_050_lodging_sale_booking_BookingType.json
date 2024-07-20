@@ -1,0 +1,50 @@
+[
+    {
+        "name": "lodging\\sale\\booking\\BookingType",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "name": "Individuel (tout public)",
+                "code": "TP",
+                "days_expiry_option": 10
+            },
+            {
+                "id": 3,
+                "name": "Stage",
+                "code": "STA",
+                "days_expiry_option": 20
+            },
+            {
+                "id": 4,
+                "name": "Séjour scolaire",
+                "code": "SEJ",
+                "days_expiry_option": 30
+            },
+            {
+                "id": 6,
+                "name": "Groupe (tout public)",
+                "code": "TPG",
+                "days_expiry_option": 10
+            },
+            {
+                "id": 13,
+                "name": "Tour Operateur",
+                "code": "TO",
+                "days_expiry_option": 10
+            },
+            {
+                "id": 14,
+                "name": "Online Travel Agencies",
+                "code": "OTA",
+                "days_expiry_option": 1
+            },
+            {
+                "id": 15,
+                "name": "Autre",
+                "code": null,
+                "days_expiry_option": null
+            }
+        ]
+    }
+]

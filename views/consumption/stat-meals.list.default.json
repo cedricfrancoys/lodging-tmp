@@ -1,0 +1,78 @@
+{
+    "name": "Meals planning",
+    "description": "List of scheduled meal (consumptions).",
+    "access": {
+        "groups": ["booking.default.user"]
+    },
+    "header": {
+        "actions": {
+            "ACTION.CREATE": false
+        }
+    },
+    "domain": [ ["center_id", "in", "user.centers_ids"]],
+    "limit": 500,
+    "group_by" : ["date"],
+    "order": "date",
+    "sort" : "asc",
+    "controller": "lodging_consumption_stat-meals",
+    "operations": {
+        "total": {
+            "total": {
+                "operation": "SUM",
+                "usage": "number/integer"
+            },
+            "total_breakfast":{
+                "operation": "SUM",
+                "usage": "number/integer"
+            },
+            "total_lunch":{
+                "operation": "SUM",
+                "usage": "number/integer"
+            },
+            "total_diner":{
+                "operation": "SUM",
+                "usage": "number/integer"
+            }
+        }
+    },
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "date",
+                "label": "Date",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "age_range_id",
+                "label": "Tranche d'age",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "total_breakfast",
+                "label": "Petit déjeuner",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "total_lunch",
+                "label": "Lunch",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "total_diner",
+                "label": "Dîner",
+                "width": "10%"
+            },
+            {
+                "type": "field",
+                "value": "total",
+                "label": "Total",
+                "width": "10%"
+            }
+        ]
+    }
+}

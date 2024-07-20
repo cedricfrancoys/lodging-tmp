@@ -1,0 +1,17 @@
+{
+    "name": "Confirmation du nettoyage",
+    "description": "L'unité locative sera marquée comme nettoyée.",
+    "model": {
+        "id": {
+            "label": "Identifiant",
+            "description": "Identifiant de l'unité locative.",
+            "help": ""
+        }
+    },
+    "error": {
+        "errors": {
+            "unknown_rental_unit": "Unité locative inconnue.",
+            "invalid_action_required_rental_unit": "Invalide action requise."
+        }
+    }
+}

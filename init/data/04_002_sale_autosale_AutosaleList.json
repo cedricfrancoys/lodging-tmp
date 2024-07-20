@@ -1,0 +1,104 @@
+[
+    {
+        "name": "sale\\autosale\\AutosaleList",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "name": "GA 2021",
+                "description": "Produits auto GA",
+                "date_from": "2021-01-01",
+                "date_to": "2021-12-31",
+                "autosale_list_category_id": 1
+            },
+            {
+                "id": 2,
+                "name": "GG 2021",
+                "description": "Produits auto GG",
+                "date_from": "2021-01-01",
+                "date_to": "2021-12-31",
+                "autosale_list_category_id": 2
+            },
+            {
+                "id": 3,
+                "name": "VSG 2021",
+                "description": "Produits auto VSG",
+                "date_from": "2021-01-01",
+                "date_to": "2021-12-31",
+                "autosale_list_category_id": 3
+            },
+            {
+                "id": 4,
+                "name": "GA 2022",
+                "description": "Produits auto GA",
+                "date_from": "2022-01-01",
+                "date_to": "2022-12-31",
+                "autosale_list_category_id": 1
+            },
+            {
+                "id": 5,
+                "name": "GG 2022",
+                "description": "Produits auto GG",
+                "date_from": "2022-01-01",
+                "date_to": "2022-12-31",
+                "autosale_list_category_id": 2
+            },
+            {
+                "id": 6,
+                "name": "VSG 2022",
+                "description": "Produits auto VSG",
+                "date_from": "2022-01-01",
+                "date_to": "2022-12-31",
+                "autosale_list_category_id": 3
+            },
+            {
+                "id": 7,
+                "name": "GA 2023",
+                "description": "Produits auto GA",
+                "date_from": "2023-01-01",
+                "date_to": "2023-12-31",
+                "autosale_list_category_id": 1
+            },
+            {
+                "id": 8,
+                "name": "GG 2023",
+                "description": "Produits auto GG",
+                "date_from": "2023-01-01",
+                "date_to": "2023-12-31",
+                "autosale_list_category_id": 2
+            },
+            {
+                "id": 9,
+                "name": "VSG 2023",
+                "description": "Produits auto VSG",
+                "date_from": "2023-01-01",
+                "date_to": "2023-12-31",
+                "autosale_list_category_id": 3
+            },
+            {
+                "id": 10,
+                "name": "GA 2024",
+                "description": "Produits auto GA",
+                "date_from": "2024-01-01",
+                "date_to": "2024-12-31",
+                "autosale_list_category_id": 1
+            },
+            {
+                "id": 11,
+                "name": "GG 2024",
+                "description": "Produits auto GG",
+                "date_from": "2024-01-01",
+                "date_to": "2024-12-31",
+                "autosale_list_category_id": 2
+            },
+            {
+                "id": 12,
+                "name": "VSG 2024",
+                "description": "Produits auto VSG",
+                "date_from": "2024-01-01",
+                "date_to": "2024-12-31",
+                "autosale_list_category_id": 3
+            }
+        ]
+    }
+]

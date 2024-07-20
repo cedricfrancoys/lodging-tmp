@@ -1,0 +1,25 @@
+{
+    "name": "Facturer",
+    "description": "Une facture pro-forma sera (re)générée.\n\nIMPORTANT: il ne faut renseigner un payeur que s'il est différent du client de la réservation.",
+    "model": {
+        "id": {
+            "label": "Identifiant",
+            "description": "Identifiant de la réservation ciblée.",
+            "help": ""
+        },
+        "partner_id": {
+            "label": "Payeur",
+            "description": "Organisation à qui envoyer la facture, si différent du client.",
+            "help": ""
+        }
+    },
+    "error": {
+        "errors": {
+            "non_emitted_deposit_invoice": "Proforma d'acompte non émise.",
+            "due_amount": "Solde dû non nul.",
+            "unknown_booking": "Réservation inconnue.",
+            "unknown_partner": "Payeur inconnu.",
+            "invalid_partner": "Le payeur est invalide sans identité."
+        }
+    }
+}

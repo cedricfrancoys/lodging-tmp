@@ -1,0 +1,28 @@
+[
+    {
+        "name": "sale\\season\\SeasonType",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "name": "BS",
+                "description": "Basse saison"
+            },
+            {
+                "id": 2,
+                "name": "MS",
+                "description": "Moyenne saison"
+            },
+            {
+                "id": 3,
+                "name": "HS",
+                "description": "Haute saison"
+            },
+            {
+                "id": 4,
+                "name": "THS",
+                "description": "Très haute saison"
+            }
+        ]
+    }
+]

@@ -1,0 +1,52 @@
+{
+    "name": "Identities",
+    "description": "Advanced collector for Identities",
+    "access": {
+        "groups": ["booking.default.user"]
+    },
+    "layout": {
+        "groups": [
+            {
+                "sections": [
+                    {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "50%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "label": "Identifiant",
+                                                "value": "identifier",
+                                                "width": "50%"
+                                            },
+
+                                            {
+                                                "type": "field",
+                                                "label": "Nom (partiel)",
+                                                "value": "query",
+                                                "width": "50%"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "width": "50%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "label": "Contact",
+                                                "value": "contact_identity_id",
+                                                "width": "50%"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Mettre à jour le status",
+    "description": "Le statut de la réservation sera mis à jour. Le statut de la réservation doit être facturée, solde créditeur ou solde débiteur. Voulez-vous continuer ?.",
+    "model": {
+        "ids": {
+            "label": "Identifiantes",
+            "description": "Liste des identifiants de réservation.",
+            "help": ""
+        }
+    },
+    "error": {
+        "errors": {
+            "incompatible_status": "Le statut de la réservation doit être facturée, solde créditeur ou solde débiteur."
+        }
+    }
+}

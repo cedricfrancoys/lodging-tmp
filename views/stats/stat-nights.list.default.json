@@ -1,0 +1,38 @@
+{
+    "name": "Nights by Center",
+    "description": "",
+    "controller": "lodging_stats_stat-nights",
+    "limit": 50,
+    "header": {
+        "actions": {
+            "ACTION.CREATE" : false
+        },
+        "advanced_search": {
+            "show": true,
+            "open": true
+        }
+    },
+    "operations": {
+        "total": {
+            "nb_nights": {
+                "operation": "SUM",
+                "usage": "numeric/integer",
+                "suffix": " nuitées"
+            }
+        }
+    },
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "center",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "nb_nights",
+                "width": "10%"
+            }
+        ]
+    }
+}

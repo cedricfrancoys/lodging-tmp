@@ -1,0 +1,45 @@
+{
+    "name": "Recherche avancé de la facture",
+    "description": "Contrôleur proposant une recherche avancée de la facture.",
+    "model": {
+        "name": {
+            "label": "Libellé",
+            "description": "Numéro de la facture, selon la logique d'organisation.",
+            "help": ""
+        },
+        "booking_id": {
+            "label": "Réservation",
+            "description": "La réservation est liée à la facture.",
+            "help": ""
+        },
+        "center_id": {
+            "label": "Center",
+            "description": "Le centre qui a créé la facture",
+            "help": ""
+        },
+        "center_office_id": {
+            "label": "Equipe de gestion",
+            "description": "Le centre de gestion à l'origine de la facture.",
+            "help": ""
+        },
+        "customer_id": {
+            "label": "Client",
+            "description": "Le client au nom duquel la réservation a été effectuée"
+        },
+        "partner_id": {
+            "label": "Destinataire",
+            "description": "Organisation responsable de payer la facture.",
+            "help": "Client ou organisation responsable de payer les biens et services liés à la vente."
+        },
+        "date_from": {
+            "label": "Date de début",
+            "description": "Date de début de l'intervalle de temps.",
+            "help": ""
+        },
+        "date_to": {
+            "label": "Date de fin ",
+            "description": "Date de fin de l'intervalle de temps.",
+            "help": ""
+        }
+    }
+}

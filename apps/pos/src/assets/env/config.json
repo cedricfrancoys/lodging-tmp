@@ -1,0 +1,8 @@
+{
+  "production": false,
+  "parent_domain":  "discope.local",
+  "backend_url":  "http://discope.local",
+  "rest_api_url": "http://discope.local/",
+  "lang":           "fr",
+  "locale":         "fr"
+}

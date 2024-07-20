@@ -1,0 +1,260 @@
+{
+    "name": "Funding",
+    "description": "",
+    "access": {
+        "groups": ["booking.default.user"]
+    },
+    "routes": [
+        {
+            "id": "item.funding.booking.file",
+            "label": "Fiche de réservation",
+            "description": "",
+            "icon": "library_books",
+            "route": "/booking/object.booking_id",
+            "context": {
+                "entity": "lodging\\sale\\booking\\Booking",
+                "view": "form.default",
+                "domain": ["id", "=", "object.booking_id"]
+            }
+        },
+        {
+            "id": "item.funding.send",
+            "label": "Envoi / Rappel",
+            "description": "Envoyer la demande",
+            "icon": "email",
+            "route": "/booking/object.booking_id/funding/object.id/remind"
+        },
+        {
+            "id": "item.funding.invoice",
+            "label": "Créer une facture",
+            "description": "",
+            "icon": "file_copy",
+            "route": "/booking/object.booking_id/funding/object.id/invoice",
+            "visible": ["type", "=", "installment"]
+        }
+    ],
+    "actions": [
+        {
+            "id": "action.pay_instant",
+            "label": "Instant payment",
+            "description": "This will complete the funding with a manual payment (card) and Funding will be marked as paid.",
+            "controller": "lodging_funding_do-pay-append",
+            "confirm": true,
+            "access": {
+                "groups": ["finance.default.administrator", "finance.default.user"]
+            },
+            "visible": ["is_paid", "=", false]
+        },
+        {
+            "id": "action.unpay_instant",
+            "label": "Undo payment",
+            "description": "This will remove any manual payment and Funding will be unmarked as paid.",
+            "controller": "lodging_funding_do-pay-remove",
+            "confirm": true,
+            "access": {
+                "groups": ["finance.default.administrator", "finance.default.user"]
+            },
+            "visible": ["is_paid", "=", true]
+        },
+        {
+            "id": "action.mark_paid",
+            "label": "Payment via accounting",
+            "description": "Arbitrary mark a funding as paid for the booking that has tou operator, is not from channel manager, and for GA center.",
+            "controller": "lodging_funding_do-paid",
+            "confirm": true,
+            "access": {
+                "groups": ["finance.default.administrator", "finance.default.user"]
+            },
+            "visible": ["is_paid", "=", false]
+        },
+        {
+            "id": "action.transfer",
+            "label": "Booking transfer",
+            "description": "Allows to transfer the funding to another booking.",
+            "controller": "lodging_funding_do-transfer",
+            "confirm": true,
+            "access": {
+                "groups": ["finance.default.administrator", "finance.default.user", "booking.default.user"]
+            },
+            "visible": ["type", "<>", "invoice"]
+        },
+        {
+            "id": "action.delete",
+            "label": "Delete",
+            "description": "Delete a refund funding.",
+            "controller": "lodging_funding_do-delete",
+            "confirm": true,
+            "access": {
+                "groups": ["finance.default.administrator", "finance.default.user", "booking.default.user"]
+            },
+            "visible": [["type", "<>", "invoice"], ["due_amount", "<", 0]]
+        }
+    ],
+    "layout": {
+        "groups": [
+            {
+                "sections": [
+                    {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "name",
+                                                "width": "50%",
+                                                "widget": {
+                                                    "heading": true,
+                                                    "readonly": true
+                                                }
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "description",
+                                                "width": "50%"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "sections": [
+                    {
+                        "id": "section.funding",
+                        "label": "General Info",
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "50%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "label": "Booking",
+                                                "value": "booking_id",
+                                                "width": "100%",
+                                                "widget": {
+                                                    "fields": ["customer_id"],
+                                                    "readonly": true
+                                                }
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "type",
+                                                "width": "33%",
+                                                "widget": {
+                                                    "readonly": true
+                                                }
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "is_paid",
+                                                "width": "33%",
+                                                "widget": {
+                                                    "readonly": true
+                                                }
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "paid_amount",
+                                                "width": "33%",
+                                                "widget": {
+                                                    "readonly": true
+                                                }
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "center_office_id",
+                                                "visible": false,
+                                                "width": "0",
+                                                "widget": {
+                                                    "readonly": true
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "width": "50%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "due_amount",
+                                                "width": "50%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "due_date",
+                                                "width": "50%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "label": "Payment Deadline",
+                                                "value": "payment_deadline_id",
+                                                "width": "50%",
+                                                "widget": {
+                                                    "header": {
+                                                        "actions": {
+                                                            "ACTION.CREATE": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "type": "field",
+                                                "label": "Invoice",
+                                                "value": "invoice_id",
+                                                "width": "50%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "label": "Reference",
+                                                "value": "payment_reference",
+                                                "width": "50%"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "section.payments",
+                        "label": "Payments",
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "payments_ids",
+                                                "width": "100%",
+                                                "widget": {
+                                                    "domain": ["status", "=", "paid"],
+                                                    "view": "list.funding",
+                                                    "header": {
+                                                        "actions": {
+                                                            "ACTION.CREATE" : false
+                                                        },
+                                                        "selection": false
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

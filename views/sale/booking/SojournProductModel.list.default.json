@@ -1,0 +1,36 @@
+{
+    "name": "Sojourn Product Model",
+    "description": "List of Sojourn Product Model.",
+    "access": {
+        "groups": ["booking.default.user"]
+     },
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "booking_id",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "booking_line_group_id",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "product_model_id",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "qty",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "is_accomodation",
+                "width": "20%"
+            }
+        ]
+    }
+}

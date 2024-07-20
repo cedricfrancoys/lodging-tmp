@@ -1,0 +1,34 @@
+{
+    "name": "Produit",
+    "plural": "Produits",
+    "description": "Les produits offert",
+    "model": {
+        "ref_pack_lines_ids": {
+            "label":"Références packs",
+            "description":"",
+            "help": ""
+        },
+        "allow_price_adaptation": {
+            "label": "Prix adaptables",
+            "description": "Le pack est-il candidat aux adaptations de prix (catégories tarifaires).",
+            "help": "Si cette proprété est désactivée, les adaptations de prix (avantages) liées aux catégories tarifaires ne sont pas appliquées sur les produits du pack."
+        }
+    },
+    "view": {
+        "form.default": {
+            "name": "Produit",
+            "description": "Une famille de produits est un groupe de produits fabriqués sous la même marque. Les familles soutiennent la hiérarchie.",
+            "layout": {
+                "section.ref_pack_lines": {
+                    "label": "Utilisations packs"
+                }
+            }
+        },
+        "list.default": {
+            "name": "Produits",
+            "description": "Liste des produits.",
+            "layout": {}
+        }
+    },
+    "error": {}
+}

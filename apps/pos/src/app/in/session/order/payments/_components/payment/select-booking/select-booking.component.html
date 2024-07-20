@@ -1,0 +1,58 @@
+<ng-container>
+    <mat-form-field>
+        <mat-label>
+            <ng-content></ng-content>
+        </mat-label>
+
+        <input
+            #inputControl
+            type="text"
+            placeholder="{{ placeholder }}"
+            matInput
+            [formControl]="inputFormControl"
+            [matAutocomplete]="inputAutocomplete"
+            (focus)="onFocus()"
+            (blur)="onBlur()"
+        />
+
+        <button
+            class="suffix-action"
+            aria-label="Clear"
+            mat-button
+            mat-icon-button
+            matSuffix
+            [class.hidden]="!inputFormControl.value"
+            (click)="onReset()"
+        >
+            <mat-icon>close</mat-icon>
+        </button>
+
+        <mat-autocomplete
+            #inputAutocomplete="matAutocomplete"
+            [displayWith]="bookingDisplay"
+            [panelWidth]="'auto'"
+            (optionSelected)="onChange($event)"
+        >
+            <div *ngIf="autocompleteBookingList$ | async; let bookingList">
+                <mat-option
+                    *ngFor="let booking of bookingList"
+                    [value]="booking"
+                    [title]="booking.name"
+                >
+                    {{ bookingDisplay(booking) }}
+                </mat-option>
+
+                <mat-option *ngIf="bookingList.length == 0">
+                    <i>{{ noResult }}</i>
+                </mat-option>
+            </div>
+        </mat-autocomplete>
+
+        <mat-hint
+            style="opacity: 1"
+            [align]="'start'"
+        >
+            <span>{{ hint }}</span>
+        </mat-hint>
+    </mat-form-field>
+</ng-container>

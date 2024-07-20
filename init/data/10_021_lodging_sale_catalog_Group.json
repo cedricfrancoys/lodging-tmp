@@ -1,0 +1,188 @@
+[
+    {
+        "name": "lodging\\sale\\catalog\\Group",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "name": "AE",
+                "family_id": null,
+                "center_id": 3
+            },
+            {
+                "id": 2,
+                "name": "AP",
+                "family_id": null,
+                "center_id": 4
+            },
+            {
+                "id": 3,
+                "name": "BA",
+                "family_id": null,
+                "center_id": 5
+            },
+            {
+                "id": 4,
+                "name": "BG",
+                "family_id": null,
+                "center_id": 6
+            },
+            {
+                "id": 5,
+                "name": "BO",
+                "family_id": null,
+                "center_id": 7
+            },
+            {
+                "id": 6,
+                "name": "BP",
+                "family_id": null,
+                "center_id": 8
+            },
+            {
+                "id": 7,
+                "name": "BR",
+                "family_id": null,
+                "center_id": 9
+            },
+            {
+                "id": 8,
+                "name": "CH",
+                "family_id": null,
+                "center_id": 10
+            },
+            {
+                "id": 9,
+                "name": "CO",
+                "family_id": null,
+                "center_id": 11
+            },
+            {
+                "id": 10,
+                "name": "DA",
+                "family_id": null,
+                "center_id": 12
+            },
+            {
+                "id": 11,
+                "name": "HA",
+                "family_id": null,
+                "center_id": 13
+            },
+            {
+                "id": 12,
+                "name": "HU",
+                "family_id": null,
+                "center_id": 14
+            },
+            {
+                "id": 13,
+                "name": "LA",
+                "family_id": null,
+                "center_id": 15
+            },
+            {
+                "id": 14,
+                "name": "LT",
+                "family_id": null,
+                "center_id": 16
+            },
+            {
+                "id": 15,
+                "name": "LP",
+                "family_id": null,
+                "center_id": 17
+            },
+            {
+                "id": 16,
+                "name": "LS",
+                "family_id": null,
+                "center_id": 18
+            },
+            {
+                "id": 17,
+                "name": "MA",
+                "family_id": null,
+                "center_id": 19
+            },
+            {
+                "id": 18,
+                "name": "MO",
+                "family_id": null,
+                "center_id": 20
+            },
+            {
+                "id": 19,
+                "name": "VE",
+                "family_id": null,
+                "center_id": 21
+            },
+            {
+                "id": 20,
+                "name": "WC",
+                "family_id": null,
+                "center_id": 22
+            },
+            {
+                "id": 21,
+                "name": "WE",
+                "family_id": null,
+                "center_id": 23
+            },
+            {
+                "id": 22,
+                "name": "EU",
+                "family_id": null,
+                "center_id": 24
+            },
+            {
+                "id": 23,
+                "name": "VS",
+                "family_id": null,
+                "center_id": 25
+            },
+            {
+                "id": 24,
+                "name": "HL",
+                "family_id": null,
+                "center_id": 26
+            },
+            {
+                "id": 25,
+                "name": "OV",
+                "family_id": null,
+                "center_id": 27
+            },
+            {
+                "id": 26,
+                "name": "LO",
+                "family_id": null,
+                "center_id": 28
+            },
+            {
+                "id": 27,
+                "name": "RO",
+                "family_id": null,
+                "center_id": 29
+            },
+            {
+                "id": 28,
+                "name": "WA",
+                "family_id": null,
+                "center_id": 30
+            },
+            {
+                "id": 29,
+                "name": "BF",
+                "family_id": null,
+                "center_id": 31
+            },
+            {
+                "id": 30,
+                "name": "VG",
+                "family_id": null,
+                "center_id": 32
+            }
+        ]
+    }
+]

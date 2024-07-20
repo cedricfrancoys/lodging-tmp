@@ -1,0 +1,33 @@
+{
+    "name": "Center capacity",
+    "description": "",
+    "controller": "lodging_stats_stat-capacity",
+    "header": {
+        "actions": {
+            "ACTION.CREATE" : false
+        }
+    },
+    "operations": {
+        "total": {
+            "capacity": {
+                "operation": "SUM",
+                "usage": "numeric/integer",
+                "suffix": " lits"
+            }
+        }
+    },
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "center",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "capacity",
+                "width": "20%"
+            }
+        ]
+    }
+}

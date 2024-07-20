@@ -1,0 +1,36 @@
+[
+    {
+        "name": "finance\\tax\\VatRule",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "name": "Vente TVA 0%",
+                "rate": 0.0000,
+                "type": "sale",
+                "account_id": 518
+            },
+            {
+                "id": 2,
+                "name": "Vente TVA 6%",
+                "rate": 0.0600,
+                "type": "sale",
+                "account_id": 518
+            },
+            {
+                "id": 3,
+                "name": "Vente TVA 12%",
+                "rate": 0.1200,
+                "type": "sale",
+                "account_id": 518
+            },
+            {
+                "id": 4,
+                "name": "Vente TVA 21%",
+                "rate": 0.2100,
+                "type": "sale",
+                "account_id": 518
+            }
+        ]
+    }
+]

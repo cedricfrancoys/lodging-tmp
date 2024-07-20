@@ -1,0 +1,175 @@
+{
+    "name": "Financement",
+    "plural": "Financements",
+    "description": "",
+    "model": {
+        "booking_id": {
+            "label": "Réservation",
+            "description": "Réservation à laquelle est associé le financement.",
+            "help": ""
+        },
+        "invoice_id": {
+            "label": "Facture",
+            "description": "Facture ciblée par le financement.",
+            "help": ""
+        },
+        "center_office_id": {
+            "label": "Centre de gestion",
+            "description": "Centre de gestion lié au financement.",
+            "help": ""
+        },
+        "paid_amount": {
+            "label": "Payé",
+            "description": "Montant versé pour ce financement.",
+            "help": ""
+        }
+    },
+    "view": {
+        "form.default": {
+            "name": "Financement",
+            "description": "",
+            "actions": {
+                "action.mark_paid": {
+                    "label": "Paiement via la compta",
+                    "description": "Marquer arbitrairement un financement comme payé pour la réservation qui a un tour opérateur, n'est pas gérée par un channel manager et concerne le centre GA."
+                },
+                "action.mark_unpaid": {
+                    "deprecated": true,
+                    "label": "Marquer comme non-payé",
+                    "description": "Le financement sera arbitrairement marqué comme non-payé (ceci n'a pas d'impact sur les éventuels paiements)."
+                },
+                "action.pay_instant": {
+                    "label": "Paiement rapide",
+                    "description": "Un paiement manuel par carte de crédit sera ajouté pour compléter le financement, et le financement sera marqué comme payé. Lorsqu'elle aboutit à la clôture de la réservation, cette action ne peut plus être annulée."
+                },
+                "action.unpay_instant": {
+                    "label": "Retirer les paiements manuels",
+                    "description": "Le financement sera marqué comme non-payé et les paiements manuels seront supprimés."
+                },
+                "action.transfer": {
+                    "label": "Transfert de réservation",
+                    "description": "Permet de transférer le financement vers une autre réservation."
+                },
+                "action.delete": {
+                    "label": "Supprimer",
+                    "description": "Permet de supprimer financement de remboursement un obsolète."
+                }
+            },
+            "layout": {
+                "section.funding": {
+                    "label": "Général"
+                },
+                "section.payments": {
+                    "label": "Paiements"
+                }
+            }
+        },
+        "form.booking": {
+            "name": "Financement",
+            "description": "",
+            "actions": {
+                "action.mark_paid": {
+                    "label": "Paiement via la compta",
+                    "description": "Marquer arbitrairement un financement comme payé pour la réservation qui a un tour opérateur, n'est pas gérée par un channel manager et concerne le centre GA."
+                },
+                "action.mark_unpaid": {
+                    "deprecated": true,
+                    "label": "Marquer comme non-payé",
+                    "description": "Le financement sera arbitrairement marqué comme non-payé (ceci n'a pas d'impact sur les éventuels paiements)."
+                },
+                "action.pay_instant": {
+                    "label": "Paiement rapide",
+                    "description": "Un paiement manuel par carte de crédit sera ajouté pour compléter le financement, et le financement sera marqué comme payé. Lorsqu'elle aboutit à la clôture de la réservation, cette action ne peut plus être annulée."
+                },
+                "action.unpay_instant": {
+                    "label": "Retirer les paiements manuels",
+                    "description": "Le financement sera marqué comme non-payé et les paiements manuels seront supprimés."
+                },
+                "action.transfer": {
+                    "label": "Transfert de réservation",
+                    "description": "Permet de transférer le financement vers une autre réservation."
+                },
+                "action.delete": {
+                    "label": "Supprimer",
+                    "description": "Permet de supprimer financement de remboursement un obsolète."
+                }
+            },
+            "layout": {
+                "section.funding": {
+                    "label": "Général"
+                },
+                "section.payments": {
+                    "label": "Paiements"
+                }
+            }
+        },
+        "form.settings": {
+            "name": "Financement",
+            "description": "",
+            "actions": {
+                "action.mark_paid": {
+                    "label": "Paiement via la compta",
+                    "description": "Marquer arbitrairement un financement comme payé pour la réservation qui a un tour opérateur, n'est pas gérée par un channel manager et concerne le centre GA."
+                },
+                "action.mark_unpaid": {
+                    "deprecated": true,
+                    "label": "Marquer comme non-payé",
+                    "description": "Le financement sera arbitrairement marqué comme non-payé (ceci n'a pas d'impact sur les éventuels paiements)."
+                },
+                "action.pay_instant": {
+                    "label": "Paiement rapide",
+                    "description": "Un paiement manuel par carte de crédit sera ajouté pour compléter le financement, et le financement sera marqué comme payé. Lorsqu'elle aboutit à la clôture de la réservation, cette action ne peut plus être annulée."
+                },
+                "action.unpay_instant": {
+                    "label": "Retirer les paiements manuels",
+                    "description": "Le financement sera marqué comme non-payé et les paiements manuels seront supprimés."
+                }
+            },
+            "layout": {
+                "section.funding": {
+                    "label": "Général"
+                },
+                "section.payments": {
+                    "label": "Paiements"
+                }
+            }
+        },
+        "form.sale": {
+            "name": "Financement",
+            "description": "",
+            "actions": {
+                "action.mark_paid": {
+                    "label": "Paiement via la compta",
+                    "description": "Marquer arbitrairement un financement comme payé pour la réservation qui a un tour opérateur, n'est pas gérée par un channel manager et concerne le centre GA."
+                },
+                "action.mark_unpaid": {
+                    "deprecated": true,
+                    "label": "Marquer comme non-payé",
+                    "description": "Le financement sera arbitrairement marqué comme non-payé (ceci n'a pas d'impact sur les éventuels paiements)."
+                },
+                "action.pay_instant": {
+                    "label": "Paiement rapide",
+                    "description": "Un paiement manuel par carte de crédit sera ajouté pour compléter le financement, et le financement sera marqué comme payé. Lorsqu'elle aboutit à la clôture de la réservation, cette action ne peut plus être annulée."
+                },
+                "action.unpay_instant": {
+                    "label": "Retirer les paiements manuels",
+                    "description": "Le financement sera marqué comme non-payé et les paiements manuels seront supprimés."
+                }
+            },
+            "layout": {
+                "section.funding": {
+                    "label": "Général"
+                },
+                "section.payments": {
+                    "label": "Paiements"
+                }
+            }
+        },
+        "list.default": {
+            "name": "Financements",
+            "description": "Liste des financements.",
+            "layout": {}
+        }
+    },
+    "error": {}
+}

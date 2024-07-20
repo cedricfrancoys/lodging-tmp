@@ -1,0 +1,320 @@
+[
+    {
+        "name": "sale\\autosale\\Condition",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "name": "Carte de membre",
+                "operand": "count_booking_12",
+                "operator": "<",
+                "value": "1",
+                "autosale_line_id": 1
+            },
+            {
+                "id": 2,
+                "name": "Carte de membre",
+                "operand": "count_booking_12",
+                "operator": "<",
+                "value": "1",
+                "autosale_line_id": 2
+            },
+            {
+                "id": 3,
+                "name": "",
+                "operand": "nb_nights",
+                "operator": ">=",
+                "value": "1",
+                "autosale_line_id": 3
+            },
+            {
+                "id": 4,
+                "name": "",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "30",
+                "autosale_line_id": 4
+            },
+            {
+                "id": 5,
+                "name": "",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "30",
+                "autosale_line_id": 5
+            },
+            {
+                "id": 6,
+                "name": "",
+                "operand": "nb_nights",
+                "operator": ">=",
+                "value": "1",
+                "autosale_line_id": 6
+            },
+            {
+                "id": 7,
+                "name": "",
+                "operand": "nb_nights",
+                "operator": ">=",
+                "value": "1",
+                "autosale_line_id": 7
+            },
+            {
+                "id": 8,
+                "name": "",
+                "operand": "nb_nights",
+                "operator": ">=",
+                "value": "1",
+                "autosale_line_id": 8
+            },
+            {
+                "id": 9,
+                "name": "Carte de membre",
+                "operand": "count_booking_12",
+                "operator": "<",
+                "value": "1",
+                "autosale_line_id": 9
+            },
+            {
+                "id": 10,
+                "name": "",
+                "operand": "nb_nights",
+                "operator": ">=",
+                "value": "1",
+                "autosale_line_id": 10
+            },
+            {
+                "id": 11,
+                "name": "Carte de membre",
+                "operand": "count_booking_12",
+                "operator": "<",
+                "value": "1",
+                "autosale_line_id": 11
+            },
+            {
+                "id": 12,
+                "name": "",
+                "operand": "nb_nights",
+                "operator": ">=",
+                "value": "1",
+                "autosale_line_id": 12
+            },
+            {
+                "id": 13,
+                "name": "séjour",
+                "operand": "nb_nights",
+                "operator": ">=",
+                "value": "1",
+                "autosale_line_id": 13
+            },
+            {
+                "id": 14,
+                "name": "participants",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "30",
+                "autosale_line_id": 14
+            },
+            {
+                "id": 15,
+                "name": "participants",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "30",
+                "autosale_line_id": 15
+            },
+            {
+                "id": 16,
+                "name": "",
+                "operand": "nb_nights",
+                "operator": ">=",
+                "value": "1",
+                "autosale_line_id": 16
+            },
+            {
+                "id": 17,
+                "name": "Carte de membre",
+                "operand": "count_booking_12",
+                "operator": "<",
+                "value": "1",
+                "autosale_line_id": 17
+            },
+            {
+                "id": 18,
+                "name": "",
+                "operand": "nb_nights",
+                "operator": ">=",
+                "value": "1",
+                "autosale_line_id": 18
+            },
+            {
+                "id": 19,
+                "name": "Carte de membre",
+                "operand": "count_booking_12",
+                "operator": "<",
+                "value": "1",
+                "autosale_line_id": 19
+            },
+            {
+                "id": 20,
+                "name": "",
+                "operand": "nb_nights",
+                "operator": ">=",
+                "value": "1",
+                "autosale_line_id": 20
+            },
+            {
+                "id": 21,
+                "name": "séjour",
+                "operand": "nb_nights",
+                "operator": ">=",
+                "value": "1",
+                "autosale_line_id": 21
+            },
+            {
+                "id": 22,
+                "name": "participants",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "30",
+                "autosale_line_id": 22
+            },
+            {
+                "id": 23,
+                "name": "participants",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "30",
+                "autosale_line_id": 23
+            },
+            {
+                "id": 24,
+                "name": "",
+                "operand": "nb_nights",
+                "operator": ">=",
+                "value": "1",
+                "autosale_line_id": 24
+            },
+            {
+                "id": 25,
+                "name": "historique",
+                "operand": "count_booking_12",
+                "operator": "<",
+                "value": "1",
+                "autosale_line_id": 14
+            },
+            {
+                "id": 26,
+                "name": "historique",
+                "operand": "count_booking_12",
+                "operator": "<",
+                "value": "1",
+                "autosale_line_id": 15
+            },
+            {
+                "id": 27,
+                "name": "historique",
+                "operand": "count_booking_12",
+                "operator": "<",
+                "value": "1",
+                "autosale_line_id": 22
+            },
+            {
+                "id": 28,
+                "name": "historique",
+                "operand": "count_booking_12",
+                "operator": "<",
+                "value": "1",
+                "autosale_line_id": 23
+            },
+            {
+                "id": 29,
+                "name": "Carte de membre",
+                "operand": "count_booking_12",
+                "operator": "<=",
+                "value": "1",
+                "autosale_line_id": 25
+            },
+            {
+                "id": 30,
+                "name": "",
+                "operand": "nb_nights",
+                "operator": ">=",
+                "value": "1",
+                "autosale_line_id": 26
+            },
+            {
+                "id": 31,
+                "name": "Carte de membre",
+                "operand": "count_booking_12",
+                "operator": "<=",
+                "value": "1",
+                "autosale_line_id": 27
+            },
+            {
+                "id": 32,
+                "name": "",
+                "operand": "nb_nights",
+                "operator": ">=",
+                "value": "1",
+                "autosale_line_id": 28
+            },
+            {
+                "id": 33,
+                "name": "séjour",
+                "operand": "nb_nights",
+                "operator": ">=",
+                "value": "1",
+                "autosale_line_id": 29
+            },
+            {
+                "id": 34,
+                "name": "participants",
+                "operand": "nb_pers",
+                "operator": ">=",
+                "value": "30",
+                "autosale_line_id": 30
+            },
+            {
+                "id": 35,
+                "name": "historique",
+                "operand": "count_booking_12",
+                "operator": "<",
+                "value": "1",
+                "autosale_line_id": 30
+            },
+            {
+                "id": 36,
+                "name": "participants",
+                "operand": "nb_pers",
+                "operator": "<",
+                "value": "30",
+                "autosale_line_id": 31
+            },
+            {
+                "id": 37,
+                "name": "historique",
+                "operand": "count_booking_12",
+                "operator": "<",
+                "value": "1",
+                "autosale_line_id": 31
+            },
+            {
+                "id": 38,
+                "name": "",
+                "operand": "nb_nights",
+                "operator": ">=",
+                "value": "1",
+                "autosale_line_id": 32
+            },
+            {
+                "id": 39,
+                "name": "Carte de membre",
+                "operand": "count_booking_12",
+                "operator": "<=",
+                "value": "1",
+                "autosale_line_id": 33
+            }
+        ]
+    }
+]

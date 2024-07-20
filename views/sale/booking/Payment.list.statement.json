@@ -1,0 +1,54 @@
+{
+    "name": "Payments",
+    "description": "List of payments related to a bank statement line.",
+    "access": {
+        "groups": ["sale.default.user"]
+    },
+    "operations": {
+        "total": {
+            "amount": {
+                "operation": "SUM",
+                "usage": "amount/money:2"
+            }
+        }
+    },
+    "limit": 500,
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "label": "Partner",
+                "value": "partner_id",
+                "width": "25%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "label": "Funding",
+                "value": "funding_id",
+                "width": "20%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "label": "Funding",
+                "value": "booking_id",
+                "width": "20%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "label": "Office",
+                "value": "center_office_id",
+                "width": "20%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "value": "amount",
+                "width": "10%",
+                "sortable": true
+            }
+        ]
+    }
+}

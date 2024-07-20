@@ -1,0 +1,22 @@
+{
+	"name": "Pièce Jointe",
+	"plural": "Pièces Jointes",
+	"description": "",
+	"model": {
+        "attachment_type":{
+			"label":"Type",
+			"description": "",
+			"help": "",
+            "selection": {
+                "all": "Tous",
+                "schools": "Écoles",
+                "individuals": "Individuels",
+                "groups": "Groupes"
+            }
+		}
+	},
+	"view": {
+	},
+	"error": {
+	}
+}

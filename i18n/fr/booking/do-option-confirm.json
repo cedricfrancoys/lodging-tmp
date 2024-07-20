@@ -1,0 +1,29 @@
+{
+    "name": "Prise d'option",
+    "description": "Le statut de la réservation sera mis à 'confirmée'. Les consommations seront ajoutées au planning et le plan de financement sera généré.",
+    "model": {
+        "id": {
+            "label": "Identifiant",
+            "description": "Identifiant de la réservation ciblée.",
+            "help": ""
+        },
+        "instant_payment": {
+            "label": "Paiement instantané",
+            "description": "Ne pas générer de plan de financement et facturer 100% du montant.",
+            "help": ""
+        }
+    },
+    "error": {
+        "errors": {
+            "overbooking_detected": "Surbooking détecté.",
+            "invalid_accommodation_detected": "Assignation invalide détectée",
+            "empty_booking": "Réservation vide.",
+            "invalid_booking": "Résevation invalide.",
+            "incompatible_status": "Action impossible pour ce statut de réservation.",
+            "unconfirmed_price": "Le contrat ne peut être généré avec un prix non-confirmé.",
+            "uncomplete_customer": "Les coordonnées du client sont incomplètes.",
+            "multiaccomodation_detected": "Un séjour compte plusieurs types de logements distincts.",
+            "missing_contact_phone" : "Numéro de téléphone non valide ou introuvable dans les contacts.."
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "name": "Génération des factures de commandes.",
+    "description": "",
+    "model": {
+    },
+    "error": {
+        "errors": {
+            "missing_month": "Un mois spécifique doit être précisé.",
+            "missing_center": "Le Centre doit être précisé."
+        }
+    }
+}

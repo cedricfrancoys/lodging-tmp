@@ -1,0 +1,46 @@
+{
+    "name": "Booking Line Group",
+    "description": "List of booking lines groups for products.",
+    "access": {
+        "groups": ["booking.default.user"]
+     },
+    "operations": {
+        "total": {
+            "price": {
+                "usage": "numeric/float",
+                "operation": "SUM"
+            }
+        }
+    },
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "name",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "label": "Number of People",
+                "value": "nb_pers",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "date_from",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "date_to",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "label": "Prix TTC",
+                "value": "price",
+                "width": "20%"
+            }
+        ]
+    }
+}

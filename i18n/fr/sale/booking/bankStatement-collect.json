@@ -1,0 +1,26 @@
+{
+    "name": "Recherche avancé de Relevés Bancaire",
+    "description": "Contrôleur proposant une recherche avancée des Relevés Bancaire.",
+    "model": {
+        "name": {
+            "label": "Libellé",
+            "description": "Nom de relevé bancaire",
+            "help": ""
+        },
+        "center_office_id": {
+            "label": "Equipe de gestion",
+            "description": "Le centre de gestion des relevés bancaires.",
+            "help": ""
+        },
+        "date_from": {
+            "label": "Date de début",
+            "description": "Date de début de l'intervalle de temps.",
+            "help": ""
+        },
+        "date_to": {
+            "label": "Date de fin ",
+            "description": "Date de fin de l'intervalle de temps.",
+            "help": ""
+        }
+    }
+}

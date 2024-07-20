@@ -1,0 +1,438 @@
+{
+    "name": "Réservation",
+    "plural": "Réservations",
+    "description": "",
+    "model": {
+        "customer_identity_id": {
+            "label": "Client",
+            "description": "Le client au nom de qui sera établie la facture.",
+            "help": ""
+        },
+        "type_id": {
+            "label": "Type",
+            "description": "Type de réservation (automatique, selon les produits choisis).",
+            "help": ""
+        },
+        "customer_nature_id": {
+            "label": "Nature client",
+            "description": "Nature applicable au client.",
+            "help": ""
+        },
+        "center_id": {
+            "label": "Centre",
+            "description": "Le centre visé par la réservation.",
+            "help": ""
+        },
+        "booking_lines_ids": {
+            "label": "Lignes de Réservation",
+            "description": "Consommations détaillées de la réservation.",
+            "help": ""
+        },
+        "booking_lines_groups_ids": {
+            "label": "Groupes de Lignes de Réservation",
+            "description": "Consommations groupées de la réservation.",
+            "help": ""
+        },
+        "has_tour_operator": {
+            "label": "Via Tour Opérateur ?",
+            "description": "Réservation conclue via un Tour Opérateur ou une OTA.",
+            "help": ""
+        },
+        "tour_operator_id": {
+            "label": "Tour Opérateur",
+            "description": "Le Tour Opérateur à l'origine de la réservation.",
+            "help": ""
+        },
+        "tour_operator_ref": {
+            "label": "Référence",
+            "description": "Référence spécifique, code Voucher ou code réservation du TO.",
+            "help": ""
+        },
+        "alert": {
+            "label": "Suivi",
+            "description": "Situation des alertes sur la réservation.",
+            "help": ""
+        },
+        "paid_amount": {
+            "label": "Reçu",
+            "description": "Montant reçu pour la réservation.",
+            "help": ""
+        },
+        "payment_plan_id": {
+            "label": "Plan de paiement",
+            "description": "Plan de paiement initialement sélectionné.",
+            "help": ""
+        },
+        "payment_status": {
+            "label": "Paiements",
+            "description": "Situation des paiements attendus.",
+            "help": ""
+        },
+        "is_locked": {
+            "label": "Verrouillée",
+            "description": "Une réservation peut être verrouillée pour empêcher la mise à jour du prix de vente des produits faisant l'objet d'un contrat.",
+            "help": ""
+        },
+        "is_invoiced": {
+            "label": "Facturée",
+            "description": "Marque la réservation ayant une facture de solde non annulée.",
+            "help": ""
+        },
+        "is_from_channelmanager": {
+            "label": "Channel Manager",
+            "description": "Utilisé pour distinguer les réservations créées par le Channel Manager.",
+            "help": ""
+        },
+        "extref_reservation_id": {
+            "label": "ID Channel Manager",
+            "description": "Identifiant de la réservation correspondante du côté du gestionnaire de  Channel Manager.",
+            "help": ""
+        },
+        "guarantee_id": {
+            "label": "Garantie",
+            "description": "La garantie donnée par le client, le cas échéant.",
+            "help": ""
+        },
+        "display_name": {
+            "label": "Libellé",
+            "description": "Le nom de l'objet.",
+            "help": ""
+        },
+        "payment_reference": {
+            "label": "Communictation structurée (VCS)",
+            "description": "Référence bancaire (SCOR/VCS) assocociée à la réservation.",
+            "help": ""
+        },
+        "display_payment_reference": {
+            "label": "Communictation structurée (VCS)",
+            "description": "Référence bancaire (SCOR/VCS) assocociée à la réservation.",
+            "help": ""
+        },
+        "date_expiry": {
+            "label": "Date d'expiration",
+            "description": "Date d'expiration de l'option.",
+            "help": ""
+        }
+    },
+    "view": {
+        "form.default": {
+            "name": "Réservation",
+            "description": "Formulaire d'édition d'une réservation",
+            "actions": {
+                "action.quote": {
+                    "label": "Repasser en devis",
+                    "description": "Les unités locatives ne seront plus réservées et pourront être occupées pour d'autres réservation. Les services liées à la réservation pourront à nouveau être modifiés."
+                },
+                "action.option": {
+                    "label": "Placer une option",
+                    "description": "Les unités locatives seront réservées pendant une courte période. Aucun paiement ne sera demandé."
+                },
+                "action.option-confirm": {
+                    "label": "Confirmer",
+                    "description": "Les unités locatives seront réservées, un contrat sera créé et une facture proforma sera éditée."
+                },
+                "action.confirm": {
+                    "label": "Confirmer",
+                    "description": "Les unités locatives seront réservées, un contrat sera créé et un échéancier de paiement sera généré."
+                },
+                "action.checkin": {
+                    "label": "Check in",
+                    "description": "L'hôte occupe désormais l'hébergement: les unités locatives seront marquées comme occupées."
+                },
+                "action.checkout": {
+                    "label": "Checkout client",
+                    "description": "L'hôte quitte l'hébergement: les unités locatives seront marquées pour le nettoyage."
+                },
+                "action.invoice": {
+                    "label": "Facturer le solde",
+                    "description": "L'unité locative a été vérifiée et les services complémentaires ont été ajoutés. Une facture pro-forma sera créée. (Si une facture de solde proforma existe, elle sera réinitialisée.)"
+                },
+                "action.invoice_direct": {
+                    "label": "Facturer le solde",
+                    "description": "L'unité locative a été vérifiée et les services complémentaires ont été ajoutés. Une facture pro-forma sera créée. (Si une facture de solde proforma existe, elle sera réinitialisée.)"
+                },
+                "action.invoice-back": {
+                    "label": "Repasser en Terminée",
+                    "description": "Des adaptations sont encore nécessaire et la facture proforma devra être regénérée."
+                },
+                "action.cancel": {
+                    "label": "Annuler",
+                    "description": "La réservation sera annulée et les unités locatives seront libérées. Les éventuels frais d'annulation seront appliqués."
+                },
+                "action.import-contacts": {
+                    "label": "Importer les contacts",
+                    "description": "Les contacts du client sélectionné seront (ré)importés dans les contacts de la réservations."
+                },
+                "action.release-rentalunits": {
+                    "label": "Libérer les unités loc.",
+                    "description": "Ceci supprimera les consommations précédemment créés. Les éventuelles unités locatives bloquées seront libérées."
+                },
+                "action.reimbursed": {
+                    "label": "Marquer comme remboursé",
+                    "description": "La réservation sera cloturée et marquée comme balancée (le montant déjà payé par le client a été remboursé)."
+                },
+                "action.update-status": {
+                    "label": "Mettre à jour le statut",
+                    "description": "Le statut de la réservation sera adapté selon les statuts de ses financements."
+                },
+                "action.pay_instant": {
+                    "label": "Paiement rapide",
+                    "description": "La réservation sera marquée comme payée via un paiement par carte bancaire.\n\nATTENTION: Lorsqu'elle aboutit à la clôture de la réservation, cette action ne peut plus être annulée."
+                },
+                "action.invoice_instant": {
+                    "label": "Facture rapide",
+                    "description": "Une facture de solde sera émise et le financement correspondant sera généré. Lorsque les paiements ont déjà été reçus, cette action aboutit à la clôture de la réservation.\n\nATTENTION: En cas d'erreur, la facture ne pourra être annulée que via une note de crédit."
+                }
+            },
+            "routes": {
+                "item.booking.file": {
+                    "label": "Fiche de réservation"
+                },
+                "item.booking.edit": {
+                    "label": "Services réservés"
+                },
+                "item.booking.composition": {
+                    "label": "Composition"
+                },
+                "item.booking.contract": {
+                    "label": "Envoyer le contrat"
+                },
+                "item.booking.quote": {
+                    "label": "Envoi du devis"
+                },
+                "item.booking.option": {
+                    "label": "Envoi devis d'option"
+                },
+                "item.booking.consumptions": {
+                    "label": "Consommations"
+                },
+                "item.booking.payments": {
+                    "label": "Paiements"
+                }
+            },
+            "layout": {
+                "section.booking_info": {
+                    "label": "Infos générales"
+                },
+                "section.booking_consumptions": {
+                    "label": "Consommations"
+                },
+                "section.booking_composition": {
+                    "label": "Composition"
+                },
+                "section.booking_contacts": {
+                    "label": "Contacts"
+                },
+                "section.booking_contracts": {
+                    "label": "Contrats"
+                },
+                "section.booking_fundings": {
+                    "label": "Financements"
+                },
+                "section.booking_invoices": {
+                    "label": "Factures"
+                },
+                "section.mails": {
+                    "label": "Emails"
+                }
+            }
+        },
+        "form.planning": {
+            "name": "Réservation",
+            "description": "Formulaire de visualisation d'une réservation via le Planning",
+            "layout": {
+                "section.booking_info": {
+                    "label": "Infos générales"
+                },
+                "section.booking_consumptions": {
+                    "label": "Consommations"
+                },
+                "section.booking_composition": {
+                    "label": "Composition"
+                },
+                "section.booking_contacts": {
+                    "label": "Contacts"
+                },
+                "section.booking_contracts": {
+                    "label": "Contrats"
+                },
+                "section.booking_fundings": {
+                    "label": "Financements"
+                },
+                "section.booking_invoices": {
+                    "label": "Factures"
+                },
+                "section.mails": {
+                    "label": "Emails"
+                }
+            }
+        },
+        "form.create": {
+            "name": "Réservation",
+            "description": "Formulaire d'édition d'une réservation",
+            "layout": {
+                "section.booking_info": {
+                    "label": "Infos générales"
+                },
+                "section.booking_description": {
+                    "label": "Description"
+                },
+                "section.booking_contacts": {
+                    "label": "Contacts"
+                }
+            }
+        },
+        "form.settings": {
+            "name": "Réservation",
+            "description": "Formulaire d'édition d'une réservation",
+            "actions": {
+                "action.quote": {
+                    "label": "Repasser en devis",
+                    "description": "Les unités locatives ne seront plus réservées et pourront être occupées pour d'autres réservation. Les services liées à la réservation pourront à nouveau être modifiés."
+                },
+                "action.option": {
+                    "label": "Placer une option",
+                    "description": "Les unités locatives seront réservées pendant une courte période. Aucun paiement ne sera demandé."
+                },
+                "action.option-confirm": {
+                    "label": "Confirmer",
+                    "description": "Les unités locatives seront réservées, un contrat sera créé et une facture proforma sera éditée."
+                },
+                "action.confirm": {
+                    "label": "Confirmer",
+                    "description": "Les unités locatives seront réservées, un contrat sera créé et un échéancier de paiement sera généré."
+                },
+                "action.checkin": {
+                    "label": "Check in",
+                    "description": "L'hôte occupe désormais l'hébergement: les unités locatives seront marquées comme occupées."
+                },
+                "action.checkout": {
+                    "label": "Checkout client",
+                    "description": "L'hôte quitte l'hébergement: les unités locatives seront marquées pour le nettoyage."
+                },
+                "action.invoice": {
+                    "label": "Facturer le solde",
+                    "description": "L'unité locative a été vérifiée et les services complémentaires ont été ajoutés. Une facture pro-forma sera créée. (Si une facture de solde proforma existe, elle sera réinitialisée.)"
+                },
+                "action.invoice_direct": {
+                    "label": "Facturer le solde",
+                    "description": "L'unité locative a été vérifiée et les services complémentaires ont été ajoutés. Une facture pro-forma sera créée. (Si une facture de solde proforma existe, elle sera réinitialisée.)"
+                },
+                "action.invoice-back": {
+                    "label": "Repasser en Terminée",
+                    "description": "Des adaptations sont encore nécessaire et la facture proforma devra être regénérée."
+                },
+                "action.cancel": {
+                    "label": "Annuler",
+                    "description": "La réservation sera annulée et les unités locatives seront libérées. Les éventuels frais d'annulation seront appliqués."
+                },
+                "action.import-contacts": {
+                    "label": "Importer les contacts",
+                    "description": "Les contacts du client sélectionné seront (ré)importés dans les contacts de la réservations."
+                },
+                "action.release-rentalunits": {
+                    "label": "Libérer les unités loc.",
+                    "description": "Ceci supprimera les consommations précédemment créés. Les éventuelles unités locatives bloquées seront libérées."
+                },
+                "action.reimbursed": {
+                    "label": "Marquer comme remboursé",
+                    "description": "La réservation sera cloturée et marquée comme balancée (le montant déjà payé par le client a été remboursé)."
+                },
+                "action.update-status": {
+                    "label": "Mettre à jour le statut",
+                    "description": "Le statut de la réservation sera adapté selon les statuts de ses financements."
+                },
+                "action.pay_instant": {
+                    "label": "Paiement rapide",
+                    "description": "La réservation sera marquée comme payée via un paiement par carte bancaire.\n\nATTENTION: Lorsqu'elle aboutit à la clôture de la réservation, cette action ne peut plus être annulée."
+                },
+                "action.invoice_instant": {
+                    "label": "Facture rapide",
+                    "description": "Une facture de solde sera émise et le financement correspondant sera généré. Lorsque les paiements ont déjà été reçus, cette action aboutit à la clôture de la réservation.\n\nATTENTION: En cas d'erreur, la facture ne pourra être annulée que via une note de crédit."
+                }
+            },
+            "routes": {
+                "item.booking.file": {
+                    "label": "Fiche de réservation"
+                },
+                "item.booking.edit": {
+                    "label": "Services réservés"
+                },
+                "item.booking.composition": {
+                    "label": "Composition"
+                },
+                "item.booking.contract": {
+                    "label": "Envoyer le contrat"
+                },
+                "item.booking.quote": {
+                    "label": "Envoi du devis"
+                },
+                "item.booking.option": {
+                    "label": "Envoi devis d'option"
+                },
+                "item.booking.consumptions": {
+                    "label": "Consommations"
+                },
+                "item.booking.payments": {
+                    "label": "Paiements"
+                }
+            },
+            "layout": {
+                "section.booking_info": {
+                    "label": "Infos générales"
+                },
+                "section.bookingLine_section": {
+                    "label": "Lignes de Réservation"
+                },
+                "section.bookingLineGroups_section": {
+                    "label": "Groupes de Lignes"
+                },
+                "section.booking_consumptions": {
+                    "label": "Consommations"
+                },
+                "section.booking_contacts": {
+                    "label": "Contacts"
+                },
+                "section.booking_contracts": {
+                    "label": "Contrats"
+                },
+                "section.booking_fundings": {
+                    "label": "Financements"
+                },
+                "section.booking_invoices": {
+                    "label": "Factures"
+                }
+            }
+        },
+        "list.default": {
+            "name": "Réservations",
+            "description": "",
+            "exports": {
+                "export.print.contract": {
+                    "label": "Imprimer le contrat"
+                }
+            },
+            "layout": {
+            }
+        },
+        "list.checkins_all": {
+            "name": "Arrivées",
+            "exports": {
+                "export.print.arrivals": {
+                    "label": "Imprimer le listing des arrivées"
+                }
+            },
+            "layout": {
+            }
+        },
+        "chart.accomodation": {
+            "name": "Nombre de nuitées",
+            "description": ""
+        },
+        "chart.occupancy": {
+            "name": "Taux d'occupation",
+            "description": ""
+        }
+    },
+    "error": {}
+}

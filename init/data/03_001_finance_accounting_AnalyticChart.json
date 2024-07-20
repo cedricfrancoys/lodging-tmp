@@ -1,0 +1,28 @@
+[
+    {
+        "name": "finance\\accounting\\AnalyticChart",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 1,
+                "name": "Plan analytique Kaleo",
+                "organisation_id": 1
+            },
+            {
+                "id": 2,
+                "name": "Plan analytique VSG",
+                "organisation_id": 2
+            },
+            {
+                "id": 3,
+                "name": "Plan analytique Mozaïk",
+                "organisation_id": 3
+            },
+            {
+                "id": 4,
+                "name": "Plan analytique Van Gogh",
+                "organisation_id": 4
+            }
+        ]
+    }
+]

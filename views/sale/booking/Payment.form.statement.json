@@ -1,0 +1,91 @@
+{
+    "name": "Reconciliation Payment",
+    "description": "",
+    "access": {
+        "groups": ["sale.default.user"]
+    },
+    "layout": {
+        "groups": [
+            {
+                "sections": [
+                    {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "width": "50%",
+                                        "items": [
+                                            {
+                                                "type": "field",
+                                                "value": "status",
+                                                "visible": false,
+                                                "width": "0"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "label": "Date",
+                                                "value": "receipt_date",
+                                                "width": "50%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "label": "Amount",
+                                                "value": "amount",
+                                                "width": "25%"
+                                            },
+                                            {
+                                                "type": "field",
+                                                "value": "funding_id",
+                                                "width": "50%",
+                                                "widget": {
+                                                    "required": true,
+                                                    "header": {
+                                                        "actions": {
+                                                            "ACTION.CREATE": false
+                                                        }
+                                                    },
+                                                    "domain": ["is_paid", "=", false]
+                                                }
+                                            },
+                                            {
+                                                "type": "field",
+                                                "label": "Booking",
+                                                "value": "booking_id",
+                                                "width": "50%",
+                                                "widget": {
+                                                    "readonly": true,
+                                                    "required": true,
+                                                    "header": {
+                                                        "actions": {
+                                                            "ACTION.CREATE": false,
+                                                            "ACTION.OPEN": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "type": "field",
+                                                "label": "Partner",
+                                                "value": "partner_id",
+                                                "width": "50%",
+                                                "widget": {
+                                                    "readonly": true,
+                                                    "required": true,
+                                                    "header": {
+                                                        "actions": {
+                                                            "ACTION.CREATE": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

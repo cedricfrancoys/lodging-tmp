@@ -1,0 +1,18 @@
+{
+    "model": {
+        "payments_ids": {
+            "label": "Paiements",
+            "description": "Liste des paiemments liés (0 ou 1).",
+            "help": ""
+        },
+        "is_exported": {
+            "label": "Exporté",
+            "description": "Indicateur d'export des paiements liés.",
+            "help": ""
+        }
+    },
+    "view": {
+    },
+    "error": {
+    }
+}

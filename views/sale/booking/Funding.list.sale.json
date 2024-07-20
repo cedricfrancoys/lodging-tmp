@@ -1,0 +1,79 @@
+{
+    "name": "Funding",
+    "description": "List of Fundings.",
+    "access": {
+        "groups": ["booking.default.user"]
+    },
+    "domain": ["center_office_id", "in", "user.center_offices_ids"],
+    "controller": "lodging_sale_booking_funding-collect",
+    "layout": {
+        "items": [
+            {
+                "type": "field",
+                "value": "name",
+                "width": "20%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "value": "description",
+                "width": "20%"
+            },
+            {
+                "type": "field",
+                "value": "center_office_id",
+                "width": "20%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "value": "invoice_id",
+                "width": "10%",
+                "readonly": true,
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "value": "type",
+                "width": "10%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "value": "due_date",
+                "width": "10%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "value": "is_paid",
+                "width": "10%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "value": "amount_share",
+                "width": "10%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "value": "payment_reference",
+                "width": "20%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "value": "due_amount",
+                "width": "10%",
+                "sortable": true
+            },
+            {
+                "type": "field",
+                "value": "paid_amount",
+                "width": "10%",
+                "sortable": true
+            }
+        ]
+    }
+}

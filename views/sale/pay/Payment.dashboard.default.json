@@ -1,0 +1,74 @@
+{
+    "name": "Main dashboard",
+    "description": "",
+    "layout": {
+        "groups": [
+			{
+                "label": "test",
+                "height": "100%",
+                "sections": [
+                    {
+                        "rows": [
+                            {
+                                "height": "50%",
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "id": "item.sale",
+                                                "label": "Alertes",
+                                                "description": "",
+                                                "width": "50%",
+                                                "entity": "core\\alert\\Message",
+                                                "view": "list.default",
+                                                "domain":  ["object_class", "=", "sale\\pay\\*"]
+                                            },
+                                            {
+                                                "id": "item.sale2",
+                                                "label": "Extraits bancaires",
+                                                "description": "",
+                                                "width": "50%",
+                                                "entity": "lodging\\sale\\booking\\BankStatement",
+                                                "view": "list.dashboard",
+                                                "domain": ["status", "=", "pending"]
+                                            }
+
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "height": "50%",
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "id": "item.sale3",
+                                                "label": "Financements",
+                                                "description": "",
+                                                "width": "50%",
+                                                "entity": "lodging\\sale\\booking\\Funding",
+                                                "view": "chart.default"
+                                            },
+                                            {
+                                                "id": "item.sale4",
+                                                "label": "CA total Réservations",
+                                                "description": "",
+                                                "width": "50%",
+                                                "entity": "lodging\\sale\\booking\\Booking",
+                                                "view": "chart.default"
+                                            }
+
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

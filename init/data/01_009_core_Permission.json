@@ -1,0 +1,791 @@
+[
+    {
+        "name": "core\\Permission",
+        "lang": "fr",
+        "data": [
+            {
+                "id": 79,
+                "class_name": "sale\\booking\\*",
+                "domain": null,
+                "group_id": 27,
+                "user_id": null,
+                "rights": 13,
+                "rights_txt": "create, write, delete"
+            },
+            {
+                "id": 83,
+                "class_name": "sale\\contract\\*",
+                "domain": null,
+                "group_id": 27,
+                "user_id": null,
+                "rights": 7,
+                "rights_txt": "create, read, write"
+            },
+            {
+                "id": 84,
+                "class_name": "finance\\accounting\\Invoice",
+                "domain": null,
+                "group_id": 27,
+                "user_id": null,
+                "rights": 5,
+                "rights_txt": "create, write"
+            },
+            {
+                "id": 86,
+                "class_name": "sale\\pay\\Payment",
+                "domain": null,
+                "group_id": 25,
+                "user_id": null,
+                "rights": 13,
+                "rights_txt": "create, write, delete"
+            },
+            {
+                "id": 88,
+                "class_name": "sale\\catalog\\Product",
+                "domain": null,
+                "group_id": 24,
+                "user_id": null,
+                "rights": 12,
+                "rights_txt": "write, delete"
+            },
+            {
+                "id": 89,
+                "class_name": "sale\\season\\*",
+                "domain": null,
+                "group_id": 24,
+                "user_id": null,
+                "rights": 13,
+                "rights_txt": "create, write, delete"
+            },
+            {
+                "id": 90,
+                "class_name": "sale\\pay\\*",
+                "domain": null,
+                "group_id": 24,
+                "user_id": null,
+                "rights": 8,
+                "rights_txt": "delete"
+            },
+            {
+                "id": 91,
+                "class_name": "finance\\accounting\\*",
+                "domain": null,
+                "group_id": 28,
+                "user_id": null,
+                "rights": 4,
+                "rights_txt": "write"
+            },
+            {
+                "id": 92,
+                "class_name": "finance\\accounting\\Invoice",
+                "domain": null,
+                "group_id": 29,
+                "user_id": null,
+                "rights": 5,
+                "rights_txt": "create, write"
+            },
+            {
+                "id": 94,
+                "class_name": "finance\\accounting\\*",
+                "domain": null,
+                "group_id": 29,
+                "user_id": null,
+                "rights": 9,
+                "rights_txt": "create, delete"
+            },
+            {
+                "id": 96,
+                "class_name": "finance\\accounting\\Invoice",
+                "domain": null,
+                "group_id": 29,
+                "user_id": null,
+                "rights": 5,
+                "rights_txt": "create, write"
+            },
+            {
+                "id": 98,
+                "class_name": "documents\\*",
+                "domain": null,
+                "group_id": 35,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 99,
+                "class_name": "documents\\*",
+                "domain": null,
+                "group_id": 34,
+                "user_id": null,
+                "rights": 13,
+                "rights_txt": "create, write, delete"
+            },
+            {
+                "id": 101,
+                "class_name": "core\\setting\\*",
+                "domain": null,
+                "group_id": 36,
+                "user_id": null,
+                "rights": 7,
+                "rights_txt": "create, read, write"
+            },
+            {
+                "id": 102,
+                "class_name": "identity\\Partner",
+                "domain": null,
+                "group_id": 27,
+                "user_id": null,
+                "rights": 5,
+                "rights_txt": "create, write"
+            },
+            {
+                "id": 103,
+                "class_name": "identity\\*",
+                "domain": null,
+                "group_id": 26,
+                "user_id": null,
+                "rights": 13,
+                "rights_txt": "create, write, delete"
+            },
+            {
+                "id": 106,
+                "class_name": "identity\\Partner",
+                "domain": null,
+                "group_id": 25,
+                "user_id": null,
+                "rights": 5,
+                "rights_txt": "create, write"
+            },
+            {
+                "id": 107,
+                "class_name": "sale\\price\\*",
+                "domain": null,
+                "group_id": 24,
+                "user_id": null,
+                "rights": 13,
+                "rights_txt": "create, write, delete"
+            },
+            {
+                "id": 108,
+                "class_name": "finance\\stats\\statChart",
+                "domain": null,
+                "group_id": 24,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 109,
+                "class_name": "finance\\*",
+                "domain": null,
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 110,
+                "class_name": "finance\\stats\\*",
+                "domain": null,
+                "group_id": 32,
+                "user_id": null,
+                "rights": 13,
+                "rights_txt": "create, write, delete"
+            },
+            {
+                "id": 111,
+                "class_name": "finance\\stats\\*",
+                "domain": null,
+                "group_id": 28,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 112,
+                "class_name": "finance\\stats\\*",
+                "domain": null,
+                "group_id": 29,
+                "user_id": null,
+                "rights": 5,
+                "rights_txt": "create, write"
+            },
+            {
+                "id": 113,
+                "class_name": "sale\\pay\\*",
+                "domain": null,
+                "group_id": 25,
+                "user_id": null,
+                "rights": 5,
+                "rights_txt": "create, write"
+            },
+            {
+                "id": 119,
+                "class_name": "sale\\customer\\*",
+                "domain": null,
+                "group_id": 24,
+                "user_id": null,
+                "rights": 13,
+                "rights_txt": "create, write, delete"
+            },
+            {
+                "id": 123,
+                "class_name": "sale\\pay\\BankStatement",
+                "domain": null,
+                "group_id": 24,
+                "user_id": null,
+                "rights": 8,
+                "rights_txt": "delete"
+            },
+            {
+                "id": 149,
+                "class_name": "sale\\*",
+                "domain": null,
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 150,
+                "class_name": "sale\\autosale\\*",
+                "domain": null,
+                "group_id": 24,
+                "user_id": null,
+                "rights": 13,
+                "rights_txt": "create, write, delete"
+            },
+            {
+                "id": 158,
+                "class_name": "finance\\tax\\VatRule",
+                "domain": null,
+                "group_id": 28,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 160,
+                "class_name": "sale\\discount\\*",
+                "domain": null,
+                "group_id": 24,
+                "user_id": null,
+                "rights": 13,
+                "rights_txt": "create, write, delete"
+            },
+            {
+                "id": 161,
+                "class_name": "sale\\catalog\\*",
+                "domain": null,
+                "group_id": 42,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 163,
+                "class_name": "sale\\pos\\*",
+                "domain": null,
+                "group_id": 41,
+                "user_id": null,
+                "rights": 13,
+                "rights_txt": "create, write, delete"
+            },
+            {
+                "id": 166,
+                "class_name": "sale\\pay\\Payment",
+                "domain": null,
+                "group_id": 41,
+                "user_id": null,
+                "rights": 13,
+                "rights_txt": "create, write, delete"
+            },
+            {
+                "id": 167,
+                "class_name": "*",
+                "domain": null,
+                "group_id": 1,
+                "user_id": null,
+                "rights": 31,
+                "rights_txt": "create, read, write, delete, manage"
+            },
+            {
+                "id": 169,
+                "class_name": "core\\*",
+                "domain": null,
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 179,
+                "class_name": "lodging\\sale\\booking\\*",
+                "domain": null,
+                "group_id": 27,
+                "user_id": null,
+                "rights": 13,
+                "rights_txt": "create, write, delete"
+            },
+            {
+                "id": 184,
+                "class_name": "realestate\\*",
+                "domain": null,
+                "group_id": 2,
+                "user_id": 0,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 188,
+                "class_name": "identity\\*",
+                "domain": null,
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 197,
+                "class_name": "lodging\\*",
+                "domain": null,
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 216,
+                "class_name": "communication\\*",
+                "domain": null,
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 217,
+                "class_name": "communication\\*",
+                "domain": null,
+                "group_id": 34,
+                "user_id": null,
+                "rights": 13,
+                "rights_txt": "create, write, delete"
+            },
+            {
+                "id": 225,
+                "class_name": "lodging\\sale\\pos\\*",
+                "domain": null,
+                "group_id": 41,
+                "user_id": null,
+                "rights": 13,
+                "rights_txt": "create, write, delete"
+            },
+            {
+                "id": 226,
+                "class_name": "lodging\\*",
+                "domain": null,
+                "group_id": 36,
+                "user_id": null,
+                "rights": 13,
+                "rights_txt": "create, write, delete"
+            },
+            {
+                "id": 227,
+                "class_name": "calendar\\*",
+                "domain": null,
+                "group_id": 27,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 228,
+                "class_name": "identity\\Address",
+                "domain": null,
+                "group_id": 27,
+                "user_id": null,
+                "rights": 5,
+                "rights_txt": "create, write"
+            },
+            {
+                "id": 229,
+                "class_name": "identity\\Address",
+                "domain": null,
+                "group_id": 25,
+                "user_id": null,
+                "rights": 5,
+                "rights_txt": "create, write"
+            },
+            {
+                "id": 230,
+                "class_name": "identity\\Identity",
+                "domain": null,
+                "group_id": 27,
+                "user_id": null,
+                "rights": 5,
+                "rights_txt": "create, write"
+            },
+            {
+                "id": 231,
+                "class_name": "identity\\Identity",
+                "domain": null,
+                "group_id": 25,
+                "user_id": null,
+                "rights": 5,
+                "rights_txt": "create, write"
+            },
+            {
+                "id": 232,
+                "class_name": "calendar\\*",
+                "domain": null,
+                "group_id": 26,
+                "user_id": null,
+                "rights": 13,
+                "rights_txt": "create, write, delete"
+            },
+            {
+                "id": 234,
+                "class_name": "core\\User",
+                "domain": null,
+                "group_id": 36,
+                "user_id": null,
+                "rights": 13,
+                "rights_txt": "create, write, delete"
+            },
+            {
+                "id": 235,
+                "class_name": "core\\Mail",
+                "domain": null,
+                "group_id": 2,
+                "user_id": null,
+                "rights": 7,
+                "rights_txt": "create, read, write"
+            },
+            {
+                "id": 236,
+                "class_name": "core\\Group",
+                "domain": null,
+                "group_id": 36,
+                "user_id": null,
+                "rights": 13,
+                "rights_txt": "create, write, delete"
+            },
+            {
+                "id": 237,
+                "class_name": "documents\\*",
+                "domain": null,
+                "group_id": 27,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 238,
+                "class_name": "lodging\\documents\\Export",
+                "domain": null,
+                "group_id": 29,
+                "user_id": null,
+                "rights": 7,
+                "rights_txt": "create, read, write"
+            },
+            {
+                "id": 239,
+                "class_name": "support\\*",
+                "domain": null,
+                "group_id": 2,
+                "user_id": null,
+                "rights": 7,
+                "rights_txt": "create, read, write"
+            },
+            {
+                "id": 240,
+                "class_name": "lodging\\sale\\catalog\\PosProduct",
+                "domain": null,
+                "group_id": 42,
+                "user_id": null,
+                "rights": 13,
+                "rights_txt": "create, write, delete"
+            },
+            {
+                "id": 241,
+                "class_name": "lodging\\sale\\catalog\\PosProductModel",
+                "domain": null,
+                "group_id": 42,
+                "user_id": null,
+                "rights": 13,
+                "rights_txt": "create, write, delete"
+            },
+            {
+                "id": 242,
+                "class_name": "lodging\\sale\\catalog\\PosPrice",
+                "domain": null,
+                "group_id": 42,
+                "user_id": null,
+                "rights": 13,
+                "rights_txt": "create, write, delete"
+            },
+            {
+                "id": 243,
+                "class_name": "lodging\\documents\\Export",
+                "domain": null,
+                "group_id": 28,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 244,
+                "class_name": "core\\*",
+                "domain": null,
+                "group_id": 45,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 245,
+                "class_name": "identity\\*",
+                "domain": null,
+                "group_id": 45,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 246,
+                "class_name": "sale\\booking\\*",
+                "domain": null,
+                "group_id": 45,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 247,
+                "class_name": "calendar\\*",
+                "domain": null,
+                "group_id": 45,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 248,
+                "class_name": "sale\\booking\\Booking",
+                "domain": "",
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 249,
+                "class_name": "lodging\\sale\\booking\\Booking",
+                "domain": "",
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 250,
+                "class_name": "sale\\customer\\Customer",
+                "domain": "",
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 251,
+                "class_name": "identity\\Establishment",
+                "domain": "",
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 252,
+                "class_name": "lodging\\identity\\Center",
+                "domain": "",
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 253,
+                "class_name": "sale\\booking\\BookingType",
+                "domain": "",
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 254,
+                "class_name": "sale\\booking\\Booking",
+                "domain": "",
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 255,
+                "class_name": "lodging\\sale\\booking\\Booking",
+                "domain": "",
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 256,
+                "class_name": "sale\\customer\\Customer",
+                "domain": "",
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 257,
+                "class_name": "identity\\Establishment",
+                "domain": "",
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 258,
+                "class_name": "lodging\\identity\\Center",
+                "domain": "",
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 259,
+                "class_name": "sale\\booking\\BookingType",
+                "domain": "",
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 260,
+                "class_name": "sale\\booking\\Booking",
+                "domain": "",
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 261,
+                "class_name": "lodging\\sale\\booking\\Booking",
+                "domain": "",
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 262,
+                "class_name": "sale\\customer\\Customer",
+                "domain": "",
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 263,
+                "class_name": "identity\\Establishment",
+                "domain": "",
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 264,
+                "class_name": "lodging\\identity\\Center",
+                "domain": "",
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 265,
+                "class_name": "sale\\booking\\BookingType",
+                "domain": "",
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 266,
+                "class_name": "sale\\booking\\Booking",
+                "domain": "",
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 267,
+                "class_name": "lodging\\sale\\booking\\Booking",
+                "domain": "",
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 268,
+                "class_name": "sale\\customer\\Customer",
+                "domain": "",
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 269,
+                "class_name": "identity\\Establishment",
+                "domain": "",
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 270,
+                "class_name": "lodging\\identity\\Center",
+                "domain": "",
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            },
+            {
+                "id": 271,
+                "class_name": "sale\\booking\\BookingType",
+                "domain": "",
+                "group_id": 2,
+                "user_id": null,
+                "rights": 2,
+                "rights_txt": "read"
+            }
+        ]
+    }
+]
