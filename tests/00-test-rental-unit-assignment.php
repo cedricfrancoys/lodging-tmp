@@ -97,7 +97,6 @@ $tests = [
                 ->first(true);
 
             $sojourn_product_model  =   SojournProductModel::search([
-                    ['booking_id' , "=" , $booking['id']],
                     ['booking_line_group_id' , "=" , $booking_line_group['id']],
                     ['product_model_id' , "=" , $product_model['id']]
                 ])

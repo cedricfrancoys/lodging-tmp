@@ -102,32 +102,31 @@ $tests = [
 
             $booking_line_group = BookingLineGroup::id($booking_line_group['id'])
                 ->update(['nb_pers' => 10])
-                ->read(['id', 'nb_pers', 'price', 'fare_benefit','nb_pers','booking_lines_ids'])
+                ->read(['id', 'nb_pers', 'price', 'fare_benefit', 'nb_pers', 'booking_lines_ids'])
                 ->first(true);
 
             $product_model = ProductModel::search([
-                    ['can_sell','=', true],
-                    ['is_rental_unit','=', true],
-                    ['is_accomodation','=', true],
-                    ['name', 'like' , '%'. 'Nuitée Séjour scolaire'. '%']
+                    ['can_sell', '=', true],
+                    ['is_rental_unit', '=', true],
+                    ['is_accomodation', '=', true],
+                    ['name', 'like', '%'. 'Nuitée Séjour scolaire'. '%']
                 ])
                 ->read(['id', 'name'])
                 ->first(true);
 
-            $sojourn_product_model  =   SojournProductModel::search([
-                    ['booking_id' , "=" , $booking['id']],
-                    ['booking_line_group_id' , "=" , $booking_line_group['id']],
-                    ['product_model_id' , "=" , $product_model['id']]
+            $sojourn_product_model = SojournProductModel::search([
+                    ['booking_line_group_id', "=", $booking_line_group['id']],
+                    ['product_model_id', "=", $product_model['id']]
                 ])
                 ->read(['id'])
                 ->first(true);
 
             $rental_units = RentalUnit::search([
-                    ['center_id', '=' , $center_id],
-                    ['sojourn_type_id', '=' , $sojourn_type_id],
-                    ['is_accomodation', '=' , true],
+                    ['center_id', '=', $center_id],
+                    ['sojourn_type_id', '=', $sojourn_type_id],
+                    ['is_accomodation', '=', true],
                 ])
-                ->read(['id','name','sojourn_type_id','capacity','room_types_ids']);
+                ->read(['id', 'name', 'sojourn_type_id', 'capacity', 'room_types_ids']);
 
             $num_rua = 0;
             foreach ($rental_units as $rental_unit) {

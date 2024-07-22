@@ -36,7 +36,7 @@ $tests = [
             $center = Center::search(['name', 'like', '%Villers-Sainte-Gertrude%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'TP'])->read(['id'])->first(true);
             $customer_nature = CustomerNature::search(['code', '=', 'IN'])->read(['id'])->first(true);
-            $customer_identity = Identity::search(['display_name', '=', 'John DOE'])->read(['id'])->first(true);
+            $customer_identity = Identity::search([['firstname', '=', 'John'], ['lastname', '=', 'Doe']])->read(['id'])->first(true);
             $sojourn_type = SojournType::search(['name', '=', 'GA'])->read(['id'])->first(true);
             $rate_class = RateClass::search(['name', '=', 'T5'])->read(['id'])->first(true);
 
@@ -95,10 +95,9 @@ $tests = [
                 ->read(['id', 'name'])
                 ->first(true);
 
-            $sojourn_product_model  =   SojournProductModel::search([
-                    ['booking_id' , "=" , $booking['id']],
-                    ['booking_line_group_id' , "=" , $booking_line_group['id']],
-                    ['product_model_id' , "=" , $product_model['id']]
+            $sojourn_product_model = SojournProductModel::search([
+                    ['booking_line_group_id', "=" , $booking_line_group['id']],
+                    ['product_model_id', "=" , $product_model['id']]
                 ])
                 ->read(['id'])
                 ->first(true);
@@ -182,7 +181,7 @@ $tests = [
             $center = Center::search(['name', 'like', '%Louvain-la-Neuve%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'TP'])->read(['id'])->first(true);
             $customer_nature = CustomerNature::search(['code', '=', 'IN'])->read(['id'])->first(true);
-            $customer_identity = Identity::search(['display_name', '=', 'John DOE'])->read(['id'])->first(true);
+            $customer_identity = Identity::search([['firstname', '=', 'John'], ['lastname', '=', 'Doe']])->read(['id'])->first(true);
             $sojourn_type = SojournType::search(['name', '=', 'GA'])->read(['id'])->first(true);
 
             return [$center['id'], $booking_type['id'], $customer_nature['id'], $customer_identity['id'], $sojourn_type['id']];
@@ -240,10 +239,9 @@ $tests = [
                 ->read(['id', 'name'])
                 ->first(true);
 
-            $sojourn_product_model  =   SojournProductModel::search([
-                    ['booking_id' , "=" , $booking['id']],
-                    ['booking_line_group_id' , "=" , $booking_line_group['id']],
-                    ['product_model_id' , "=" , $product_model['id']]
+            $sojourn_product_model = SojournProductModel::search([
+                    ['booking_line_group_id', "=" , $booking_line_group['id']],
+                    ['product_model_id', "=" , $product_model['id']]
                 ])
                 ->read(['id'])
                 ->first(true);
@@ -313,6 +311,7 @@ $tests = [
     ],
     '0703' => [
         'description'       =>  'Validate that the contract has been cancelled and the funding unit has been deleted if the reservation changes from confirmed to quote',
+
         'help'              =>  "
             Create a reservation for 4 persons client for one night.
             Change the reservation status from 'quote' to 'confirm'.
@@ -320,12 +319,13 @@ $tests = [
             Verify that the contract has been cancelled.
             Verify that the unpaid funding has been deleted.
             Verify that the reservation is in the quote status.",
+
         'arrange'           =>  function () {
 
             $center = Center::search(['name', 'like', '%Louvain-la-Neuve%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'TP'])->read(['id'])->first(true);
             $customer_nature = CustomerNature::search(['code', '=', 'IN'])->read(['id'])->first(true);
-            $customer_identity = Identity::search(['display_name', '=', 'John DOE'])->read(['id'])->first(true);
+            $customer_identity = Identity::search([['firstname', '=', 'John'], ['lastname', '=', 'Doe']])->read(['id'])->first(true);
             $sojourn_type = SojournType::search(['name', '=', 'GA'])->read(['id'])->first(true);
 
             return [$center['id'], $booking_type['id'], $customer_nature['id'], $customer_identity['id'], $sojourn_type['id']];
@@ -383,10 +383,9 @@ $tests = [
                 ->read(['id', 'name'])
                 ->first(true);
 
-            $sojourn_product_model  =   SojournProductModel::search([
-                    ['booking_id' , "=" , $booking['id']],
-                    ['booking_line_group_id' , "=" , $booking_line_group['id']],
-                    ['product_model_id' , "=" , $product_model['id']]
+            $sojourn_product_model = SojournProductModel::search([
+                    ['booking_line_group_id', "=", $booking_line_group['id']],
+                    ['product_model_id', "=", $product_model['id']]
                 ])
                 ->read(['id'])
                 ->first(true);

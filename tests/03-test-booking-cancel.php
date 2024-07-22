@@ -28,7 +28,7 @@ $tests = [
             $center = Center::search(['name', 'like', '%Villers-Sainte-Gertrude%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'TP'])->read(['id'])->first(true);
             $customer_nature = CustomerNature::search(['code', '=', 'IN'])->read(['id'])->first(true);
-            $customer_identity = Identity::search(['display_name', '=', 'John DOE'])->read(['id'])->first(true);
+            $customer_identity = Identity::search([['firstname', '=', 'John'], ['lastname', '=', 'Doe']])->read(['id'])->first(true);
             $sojourn_type = SojournType::search(['name', '=', 'GA'])->read(['id'])->first(true);
             $rate_class = RateClass::search(['name', '=', 'T4'])->read(['id'])->first(true);
 
@@ -83,7 +83,7 @@ $tests = [
             $center = Center::search(['name', 'like', '%Villers-Sainte-Gertrude%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'TP'])->read(['id'])->first(true);
             $customer_nature = CustomerNature::search(['code', '=', 'IN'])->read(['id'])->first(true);
-            $customer_identity = Identity::search(['display_name', '=', 'John DOE'])->read(['id'])->first(true);
+            $customer_identity = Identity::search([['firstname', '=', 'John'], ['lastname', '=', 'Doe']])->read(['id'])->first(true);
 
             return [$center['id'], $booking_type['id'], $customer_nature['id'], $customer_identity['id']];
 
@@ -131,7 +131,7 @@ $tests = [
             $center = Center::search(['name', 'like', '%Villers-Sainte-Gertrude%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'TP'])->read(['id'])->first(true);
             $customer_nature = CustomerNature::search(['code', '=', 'IN'])->read(['id'])->first(true);
-            $customer_identity = Identity::search(['display_name', '=', 'John DOE'])->read(['id'])->first(true);
+            $customer_identity = Identity::search([['firstname', '=', 'John'], ['lastname', '=', 'Doe']])->read(['id'])->first(true);
 
             return [$center['id'], $booking_type['id'], $customer_nature['id'], $customer_identity['id']];
 
@@ -185,7 +185,7 @@ $tests = [
             $center = Center::search(['name', 'like', '%Villers-Sainte-Gertrude%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'TP'])->read(['id'])->first(true);
             $customer_nature = CustomerNature::search(['code', '=', 'IN'])->read(['id'])->first(true);
-            $customer_identity = Identity::search(['display_name', '=', 'John DOE'])->read(['id'])->first(true);
+            $customer_identity = Identity::search([['firstname', '=', 'John'], ['lastname', '=', 'Doe']])->read(['id'])->first(true);
             $sojourn_type = SojournType::search(['name', '=', 'GA'])->read(['id'])->first(true);
             $rate_class = RateClass::search(['name', '=', 'T4'])->read(['id'])->first(true);
 
@@ -251,7 +251,7 @@ $tests = [
             $center = Center::search(['name', 'like', '%Villers-Sainte-Gertrude%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'TP'])->read(['id'])->first(true);
             $customer_nature = CustomerNature::search(['code', '=', 'IN'])->read(['id'])->first(true);
-            $customer_identity = Identity::search(['display_name', '=', 'John DOE'])->read(['id'])->first(true);
+            $customer_identity = Identity::search([['firstname', '=', 'John'], ['lastname', '=', 'Doe']])->read(['id'])->first(true);
             $sojourn_type = SojournType::search(['name', '=', 'GA'])->read(['id'])->first(true);
             $rate_class = RateClass::search(['name', '=', 'T4'])->read(['id'])->first(true);
 

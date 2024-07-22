@@ -35,7 +35,7 @@ $tests = [
             $center = Center::search(['name', 'like', '%Louvain-la-Neuve%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'TP'])->read(['id'])->first(true);
             $customer_nature = CustomerNature::search(['code', '=', 'IN'])->read(['id'])->first(true);
-            $customer_identity = Identity::search(['display_name', '=', 'John DOE'])->read(['id'])->first(true);
+            $customer_identity = Identity::search([['firstname', '=', 'John'], ['lastname', '=', 'Doe']])->read(['id'])->first(true);
             $sojourn_type = SojournType::search(['name', '=', 'GA'])->read(['id'])->first(true);
 
             return [$center['id'], $booking_type['id'], $customer_nature['id'], $customer_identity['id'], $sojourn_type['id']];
@@ -94,7 +94,6 @@ $tests = [
                 ->first(true);
 
             $sojourn_product_model  =   SojournProductModel::search([
-                    ['booking_id' , "=" , $booking['id']],
                     ['booking_line_group_id' , "=" , $booking_line_group['id']],
                     ['product_model_id' , "=" , $product_model['id']]
                 ])
@@ -184,7 +183,7 @@ $tests = [
             $center = Center::search(['name', 'like', '%Louvain-la-Neuve%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'TP'])->read(['id'])->first(true);
             $customer_nature = CustomerNature::search(['code', '=', 'IN'])->read(['id'])->first(true);
-            $customer_identity = Identity::search(['display_name', '=', 'John DOE'])->read(['id'])->first(true);
+            $customer_identity = Identity::search([['firstname', '=', 'John'], ['lastname', '=', 'Doe']])->read(['id'])->first(true);
             $sojourn_type = SojournType::search(['name', '=', 'GA'])->read(['id'])->first(true);
 
             return [$center['id'], $booking_type['id'], $customer_nature['id'], $customer_identity['id'], $sojourn_type['id']];
@@ -296,7 +295,7 @@ $tests = [
             $center = Center::search(['name', 'like', '%Louvain-la-Neuve%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'TP'])->read(['id'])->first(true);
             $customer_nature = CustomerNature::search(['code', '=', 'IN'])->read(['id'])->first(true);
-            $customer_identity = Identity::search(['display_name', '=', 'John DOE'])->read(['id'])->first(true);
+            $customer_identity = Identity::search([['firstname', '=', 'John'], ['lastname', '=', 'Doe']])->read(['id'])->first(true);
             $sojourn_type = SojournType::search(['name', '=', 'GA'])->read(['id'])->first(true);
 
             return [$center['id'], $booking_type['id'], $customer_nature['id'], $customer_identity['id'], $sojourn_type['id'] ];
@@ -355,9 +354,8 @@ $tests = [
                 ->first(true);
 
             $sojourn_product_model  =   SojournProductModel::search([
-                    ['booking_id' , "=" , $booking['id']],
-                    ['booking_line_group_id' , "=" , $booking_line_group['id']],
-                    ['product_model_id' , "=" , $product_model['id']]
+                    ['booking_line_group_id', "=", $booking_line_group['id']],
+                    ['product_model_id', "=", $product_model['id']]
                 ])
                 ->read(['id'])
                 ->first(true);
@@ -458,7 +456,7 @@ $tests = [
             $center = Center::search(['name', 'like', '%Louvain-la-Neuve%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'TP'])->read(['id'])->first(true);
             $customer_nature = CustomerNature::search(['code', '=', 'IN'])->read(['id'])->first(true);
-            $customer_identity = Identity::search(['display_name', '=', 'John DOE'])->read(['id'])->first(true);
+            $customer_identity = Identity::search([['firstname', '=', 'John'], ['lastname', '=', 'Doe']])->read(['id'])->first(true);
             $sojourn_type = SojournType::search(['name', '=', 'GA'])->read(['id'])->first(true);
 
             return [$center['id'], $booking_type['id'], $customer_nature['id'], $customer_identity['id'], $sojourn_type['id']];

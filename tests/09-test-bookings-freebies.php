@@ -19,20 +19,25 @@ use sale\customer\CustomerNature;
 use sale\customer\RateClass;
 
 $tests = [
+
     '0901' => [
-        'description'   => 'Test that a discount that applies on adult age range does not exceed nb_adults when value_max is set to nb_adults.',
-        'help'          => 'The discount should give 5 freebie but only give 3 because of the value_max set to "nb_adults".',
-        'arrange'       => function() {
+
+        'description' => 'Test that a discount that applies on adult age range does not exceed nb_adults when value_max is set to nb_adults.',
+
+        'help' => 'The discount should give 5 freebie but only give 3 because of the value_max set to "nb_adults".',
+
+        'arrange' => function() {
             return [
                 Center::search(['name', 'like', '%Louvain-la-Neuve%'])->read(['id', 'center_office_id'])->first(true),
                 BookingType::search(['code', '=', 'SEJ'])->read(['id'])->first(true)['id'],
                 CustomerNature::search(['code', '=', 'IN'])->read(['id'])->first(true)['id'],
-                Identity::search(['display_name', '=', 'John DOE'])->read(['id'])->first(true)['id'],
+                Identity::search([['firstname', '=', 'John'], ['lastname', '=', 'Doe']])->read(['id'])->first(true)['id'],
                 SojournType::search(['name', '=', 'GA'])->read(['id'])->first(true)['id'],
                 RateClass::search(['name', '=', 'T5'])->read(['id'])->first(true)['id']
             ];
         },
-        'act'           => function($data) {
+
+        'act' => function($data) {
 
             list($center, $booking_type_id, $customer_nature_id, $customer_identity_id, $sojourn_type_id, $rate_class_id) = $data;
 
@@ -169,7 +174,7 @@ $tests = [
                 Center::search(['name', 'like', '%Louvain-la-Neuve%'])->read(['id'])->first(true)['id'],
                 BookingType::search(['code', '=', 'SEJ'])->read(['id'])->first(true)['id'],
                 CustomerNature::search(['code', '=', 'IN'])->read(['id'])->first(true)['id'],
-                Identity::search(['display_name', '=', 'John DOE'])->read(['id'])->first(true)['id'],
+                Identity::search([['firstname', '=', 'John'], ['lastname', '=', 'Doe']])->read(['id'])->first(true)['id'],
                 SojournType::search(['name', '=', 'GA'])->read(['id'])->first(true)['id'],
                 RateClass::search(['name', '=', 'T5'])->read(['id'])->first(true)['id']
             ];
