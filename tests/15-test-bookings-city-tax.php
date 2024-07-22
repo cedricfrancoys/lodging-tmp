@@ -52,7 +52,6 @@ $tests = [
                 ->read(['id','date_from','date_to','price'])
                 ->first(true);
 
-            // should resolve to 414
             $pack_children = Product::search(['sku','=','GA-SejScoSec-A'])
                     ->read(['id','label'])
                     ->first(true);
@@ -80,7 +79,7 @@ $tests = [
             ])
                 ->update(['age_range_id' => $secondary_age_range_id]);
 
-            $booking = Booking::id($booking['id'])->read(['id','price'])->first(true);
+            $booking = Booking::id($booking['id'])->read(['id','price'])->first();
 
             return($booking);
         },
@@ -112,7 +111,7 @@ $tests = [
         'rollback'          =>  function () {
 
             Center::search(['name', 'like', '%Louvain-la-Neuve%'])->update(['has_citytax_school' => false]);
-            // Booking::search(['description', 'like', '%'. 'Booking test for the city tax'.'%'])->delete(true);
+            Booking::search(['description', 'like', '%'. 'Booking test for the city tax'.'%'])->delete(true);
 
         }
     ],
@@ -137,6 +136,7 @@ $tests = [
 
         },
         'act'               =>  function ($data) {
+
             list($center_id, $booking_type_id, $customer_nature_id, $customer_identity_id) = $data;
 
             $booking = Booking::create([
@@ -178,7 +178,7 @@ $tests = [
             ])
                 ->update(['age_range_id' => $secondary_age_range_id]);
 
-            $booking = Booking::id($booking['id'])->read(['id','price'])->first(true);
+            $booking = Booking::id($booking['id'])->read(['id','price'])->first();
 
             return($booking);
         },
