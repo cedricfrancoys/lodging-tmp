@@ -52,7 +52,7 @@ $tests = [
             $center = Center::search(['name', 'like', '%Villers-Sainte-Gertrude%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'SEJ'])->read(['id'])->first(true);
             $customer_nature = CustomerNature::search(['code', '=', 'IN'])->read(['id'])->first(true);
-            $customer_identity = Identity::search(['display_name', '=', 'John DOE'])->read(['id'])->first(true);
+            $customer_identity = Identity::search([['firstname', '=', 'John'], ['lastname', '=', 'Doe']])->read(['id'])->first(true);
             $sojourn_type = SojournType::search(['name', '=', 'GA'])->read(['id'])->first(true);
             $rate_class = RateClass::search(['name', '=', 'T5'])->read(['id'])->first(true);
 
