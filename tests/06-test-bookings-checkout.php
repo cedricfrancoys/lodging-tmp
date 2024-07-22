@@ -22,16 +22,19 @@ use lodging\sale\booking\Invoice;
 
 
 $tests = [
+
     '0601' => [
-        'description'       => 'Validate that supplements can be added to the booked services when the reservation is in the check-out status.',
-        'help'              =>  "
+        'description' => 'Validate that supplements can be added to the booked services when the reservation is in the check-out status.',
+
+        'help' =>  "
             Create a reservation for 1 person client for two night.
-            Change the reservation status from 'devis' to 'confirm'.
+            Change the reservation status from 'quote' to 'confirmed'.
             Validate the contract of the client before the check-in.
-            Change the reservation status from 'confirm' to 'check-in'.
-            Change the reservation status from 'check-in' to 'check-out'.
+            Change the reservation status from 'confirmed' to 'checkedin'.
+            Change the reservation status from 'checkedin' to 'checkedout'.
             Validate that the supplements have been included in the reservation.",
-        'arrange'           =>  function () {
+
+        'arrange' =>  function () {
             $center = Center::search(['name', 'like', '%Louvain-la-Neuve%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'TP'])->read(['id'])->first(true);
             $customer_nature = CustomerNature::search(['code', '=', 'IN'])->read(['id'])->first(true);
@@ -40,7 +43,8 @@ $tests = [
 
             return [$center['id'], $booking_type['id'], $customer_nature['id'], $customer_identity['id'], $sojourn_type['id']];
         },
-        'act'               =>  function ($data) {
+
+        'act' => function ($data) {
 
             list($center_id, $booking_type_id, $customer_nature_id, $customer_identity_id, $sojourn_type_id ) = $data;
 
@@ -176,17 +180,18 @@ $tests = [
 
             try {
                 $new_booking_line_group = BookingLineGroup::create([
-                    'booking_id'     => $booking['id'],
-                    'is_sojourn'     => false,
-                    'group_type'     => 'simple',
-                    'has_pack'       => false,
-                    'name'           => 'Suppléments',
-                    'order'          => 1,
-                    'rate_class_id'  => 4
-                ])
-                ->read(['id'])
-                ->first(true);
-            } catch (Exception $e) {
+                        'booking_id'     => $booking['id'],
+                        'is_sojourn'     => false,
+                        'group_type'     => 'simple',
+                        'has_pack'       => false,
+                        'name'           => 'Suppléments',
+                        'order'          => 1,
+                        'rate_class_id'  => 4
+                    ])
+                    ->read(['id'])
+                    ->first(true);
+            }
+            catch (Exception $e) {
                 $e->getMessage();
             }
 
@@ -198,12 +203,14 @@ $tests = [
                 ->update([
                     'product_id'            => $new_product['id']
                 ]);
-            } catch (Exception $e) {
+            }
+            catch (Exception $e) {
                 $e->getMessage();
             }
             return $booking['id'];
         },
-        'assert'            =>  function ($booking_id) {
+
+        'assert' =>  function ($booking_id) {
             $booking = Booking::id($booking_id)
                 ->read(['id','price', 'status'])
                 ->first(true);
@@ -216,8 +223,8 @@ $tests = [
 
             return isset($booking_line);
         },
-        'rollback'          =>  function () {
 
+        'rollback' =>  function () {
             $booking = Booking::search(['description', 'ilike', '%'. 'Allow Supplements in Checkout Reservation'.'%'])
                   ->update(['status' => 'quote'])
                   ->read(['id'])
@@ -238,13 +245,13 @@ $tests = [
 
         'help' =>  "
             Create a reservation for 1 person client for two night.
-            Change the reservation status from 'devis' to 'confirm'.
+            Change the reservation status from 'quote' to 'confirm'.
             Validate the contract of the client before the check-in.
-            Change the reservation status from 'confirm' to 'check-in'.
-            Change the reservation status from 'check-in' to 'check-out'.
+            Change the reservation status from 'confirmed' to 'checkedin'.
+            Change the reservation status from 'checkedin' to 'checkedout'.
             Validate that the supplements have been included in the reservation.",
 
-        'arrange' =>  function () {
+        'arrange' => function () {
             $center = Center::search(['name', 'like', '%Louvain-la-Neuve%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'TP'])->read(['id'])->first(true);
             $customer_nature = CustomerNature::search(['code', '=', 'IN'])->read(['id'])->first(true);
@@ -253,7 +260,7 @@ $tests = [
             return [$center['id'], $booking_type['id'], $customer_nature['id'], $customer_identity['id'], $sojourn_type['id']];
         },
 
-        'act' =>  function ($data) {
+        'act' => function ($data) {
             list($center_id, $booking_type_id, $customer_nature_id, $customer_identity_id, $sojourn_type_id ) = $data;
             $booking = Booking::create([
                     'date_from'             => strtotime('2023-05-03'),
@@ -266,6 +273,7 @@ $tests = [
                 ])
                 ->read(['id','date_from','date_to'])
                 ->first(true);
+
             $booking_line_group = BookingLineGroup::create([
                     'booking_id'     => $booking['id'],
                     'is_sojourn'     => true,
@@ -338,7 +346,7 @@ $tests = [
                 ->read(['id','qty'])
                 ->first(true);
                 $num_rua+= $spm_rental_unit_assignement['qty'];
-            };
+            }
 
             try {
                 eQual::run('do', 'lodging_booking_do-option', ['id' => $booking['id']]);
@@ -388,10 +396,8 @@ $tests = [
                 $e->getMessage();
             }
 
-
             Invoice::search(['booking_id' , '=', $booking['id']])
-                ->update(['status' => 'invoiced']);
-
+                ->update(['status' => 'invoice']);
 
             try {
                 eQual::run('do', 'lodging_booking_do-checkout', ['id' => $booking['id']]);
@@ -404,16 +410,18 @@ $tests = [
             return $message;
         },
 
-        'assert' =>  function ($message) {
+        'assert' => function ($message) {
             return ($message == "emitted_balance_invoice");
         },
 
-        'rollback' =>  function () {
+        'rollback' => function () {
             $booking = Booking::search(['description', 'ilike', '%'. 'Ensure reservation cannot check out if invoice is issued'.'%'])
+                ->update(['status' => 'quote'])
                 ->read(['id'])
                 ->first(true);
 
             Invoice::search(['booking_id', '=', $booking['id']])
+                ->update(['status' => 'cancelled'])
                 ->update(['state' => 'archive']);
 
             $services = eQual::inject(['orm']);

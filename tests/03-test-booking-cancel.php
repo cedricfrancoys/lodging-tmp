@@ -15,15 +15,18 @@ use sale\booking\BookingType;
 
 
 $tests = [
+
     '0301' => [
-        'description'       => 'Validate that the reservation can be canceled from a reservation in quote status.',
-        'help'              => "
+        'description' => 'Validate that the reservation can be canceled from a reservation in quote status.',
+
+        'help' => "
             action: lodging_booking_do-cancel
             Center: Villers-Sainte-Gertrude
             Dates from: 12/03/2023
             Dates to: 13/03/2023
             Nights: 1 nights",
-        'arrange'           =>  function () {
+
+        'arrange' =>  function () {
 
             $center = Center::search(['name', 'like', '%Villers-Sainte-Gertrude%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'TP'])->read(['id'])->first(true);
@@ -34,7 +37,8 @@ $tests = [
 
             return [$center['id'], $booking_type['id'], $customer_nature['id'], $customer_identity['id'], $sojourn_type['id'], $rate_class['id']];
         },
-        'act'               =>  function ($data) {
+
+        'act' =>  function ($data) {
 
             list($center_id, $booking_type_id, $customer_nature_id, $customer_identity_id, $sojourn_type_id, $rate_class_id ) = $data;
 
@@ -59,26 +63,31 @@ $tests = [
             }
 
             return $booking['id'];
-
         },
-        'assert'            =>  function ($booking_id) {
 
+        'assert' =>  function ($booking_id) {
             $booking = Booking::id($booking_id)
                 ->read(['id','status','is_cancelled'])
                 ->first(true);
 
             return ($booking['status'] == 'quote' && $booking['is_cancelled'] == true );
-
         },
-        'rollback'          =>  function () {
-          Booking::search(['description', 'like', '%'. 'Validate that the reservation can be canceled from a reservation in quote status'.'%' ])
-                   ->delete(true);
-        }
 
+        'rollback' =>  function () {
+            $booking = Booking::search(['description', 'like', '%'. 'Validate that the reservation can be canceled from a reservation in quote status'.'%' ])
+                ->update(['status' => 'quote'])
+                ->read(['id'])
+                ->first(true);
+
+            $services = eQual::inject(['orm']);
+            $services['orm']->delete(Booking::getType(), $booking['id'], true);
+        }
     ],
+
     '0302' => [
-        'description'       => 'Validate that the reservation cannot be canceled if the reason is missing',
-        'arrange'           =>  function () {
+        'description' => 'Validate that the reservation cannot be canceled if the reason is missing',
+
+        'arrange' =>  function () {
 
             $center = Center::search(['name', 'like', '%Villers-Sainte-Gertrude%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'TP'])->read(['id'])->first(true);
@@ -86,9 +95,9 @@ $tests = [
             $customer_identity = Identity::search([['firstname', '=', 'John'], ['lastname', '=', 'Doe']])->read(['id'])->first(true);
 
             return [$center['id'], $booking_type['id'], $customer_nature['id'], $customer_identity['id']];
-
         },
-        'act'               =>  function ($data) {
+
+        'act' =>  function ($data) {
 
             list($center_id, $booking_type_id, $customer_nature_id, $customer_identity_id) = $data;
 
@@ -114,20 +123,28 @@ $tests = [
 
             return $message;
         },
-        'assert'            =>  function ($message) {
 
+        'assert' =>  function ($message) {
             return ($message == 'reason');
         },
-        'rollback'          =>  function () {
-            Booking::search(['description', 'like', '%'. 'Validate that the reservation cannot be canceled if the reason is missing'.'%' ])
-                    ->delete(true);
+
+        'rollback' =>  function () {
+            $booking = Booking::search(['description', 'like', '%'. 'Validate that the reservation cannot be canceled if the reason is missing'.'%' ])
+                ->update(['status' => 'quote'])
+                ->read(['id'])
+                ->first(true);
+
+            $services = eQual::inject(['orm']);
+            $services['orm']->delete(Booking::getType(), $booking['id'], true);
         }
 
     ],
-    '0303' => [
-        'description'       => 'Validate that the reservation cannot be canceled if the reservation has been canceled before',
-        'arrange'           =>  function () {
 
+    '0303' => [
+
+        'description' => 'Validate that the reservation cannot be canceled if the reservation has been canceled before',
+
+        'arrange' =>  function () {
             $center = Center::search(['name', 'like', '%Villers-Sainte-Gertrude%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'TP'])->read(['id'])->first(true);
             $customer_nature = CustomerNature::search(['code', '=', 'IN'])->read(['id'])->first(true);
@@ -136,7 +153,8 @@ $tests = [
             return [$center['id'], $booking_type['id'], $customer_nature['id'], $customer_identity['id']];
 
         },
-        'act'               =>  function ($data) {
+
+        'act' =>  function ($data) {
 
             list($center_id, $booking_type_id, $customer_nature_id, $customer_identity_id) = $data;
 
@@ -163,24 +181,34 @@ $tests = [
 
             return $message;
         },
-        'assert'            =>  function ($message) {
 
+        'assert' =>  function ($message) {
             return ($message == "incompatible_status");
         },
-        'rollback'          =>  function () {
-            Booking::search(['description', 'ilike', '%'. 'Validate that the reservation cannot be canceled if the reservation has been canceled before'.'%' ])
-                    ->delete(true);
+
+        'rollback' =>  function () {
+            $booking = Booking::search(['description', 'ilike', '%'. 'Validate that the reservation cannot be canceled if the reservation has been canceled before'.'%' ])
+                ->update(['status' => 'quote'])
+                ->read(['id'])
+                ->first(true);
+
+            $services = eQual::inject(['orm']);
+            $services['orm']->delete(Booking::getType(), $booking['id'], true);
         }
 
     ],
+
     '0304' => [
-        'description'       => 'Validate that the reservation can be canceled from a reservation in option status.',
-        'help'              => "
+
+        'description' => 'Validate that the reservation can be canceled from a reservation in option status.',
+
+        'help' => "
             Center: Villers-Sainte-Gertrude
             Dates from: 18/03/2023
             Dates to: 19/03/2023
             Nights: 1 nights",
-        'arrange'           =>  function () {
+
+        'arrange' => function () {
 
             $center = Center::search(['name', 'like', '%Villers-Sainte-Gertrude%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'TP'])->read(['id'])->first(true);
@@ -192,8 +220,8 @@ $tests = [
             return [$center['id'], $booking_type['id'], $customer_nature['id'], $customer_identity['id'], $sojourn_type['id'], $rate_class['id']];
 
         },
-        'act'               =>  function ($data) {
 
+        'act' => function ($data) {
             list($center_id, $booking_type_id, $customer_nature_id, $customer_identity_id, $sojourn_type_id, $rate_class_id ) = $data;
 
             $booking = Booking::create([
@@ -211,17 +239,15 @@ $tests = [
 
             try {
                 eQual::run('do', 'lodging_booking_do-cancel', ['id' => $booking['id'], 'reason' => 'other']);
-
             }
             catch(Exception $e) {
                 $e->getMessage();
             }
 
             return $booking['id'];
-
         },
-        'assert'            =>  function ($booking_id) {
 
+        'assert' => function ($booking_id) {
             $booking = Booking::id($booking_id)
                 ->read(['id','status','is_cancelled', 'cancellation_reason'])
                 ->first(true);
@@ -233,12 +259,15 @@ $tests = [
             );
 
         },
-        'rollback'          =>  function () {
-          $booking = Booking::search(['description', 'ilike', '%'. 'Validate that the reservation can be canceled from a reservation in option status'.'%' ])
-                  ->update(['status' => 'quote'])
-                  ->read(['id'])
-                  ->first(true);
-            Booking::id($booking['id'])->delete(true);
+
+        'rollback' => function () {
+            $booking = Booking::search(['description', 'ilike', '%'. 'Validate that the reservation can be canceled from a reservation in option status'.'%' ])
+                ->update(['status' => 'quote'])
+                ->read(['id'])
+                ->first(true);
+
+            $services = eQual::inject(['orm']);
+            $services['orm']->delete(Booking::getType(), $booking['id'], true);
         }
 
     ],
@@ -290,6 +319,7 @@ $tests = [
 
         'rollback' =>  function () {
             $booking = Booking::search(['description', 'ilike', '%'. 'Validate that the reservation can be canceled from a reservation in balanced status'.'%' ])
+                ->update(['status' => 'quote'])
                 ->read(['id'])
                 ->first(true);
 
