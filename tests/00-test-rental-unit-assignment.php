@@ -21,9 +21,12 @@ use lodging\sale\catalog\ProductModel;
 
 
 $tests = [
+
     '0009' => [
-        'description'       => 'Validate Rental Unit Assignments for a Booking at Villers-Sainte-Gertrude.',
-        'help'              => "
+
+        'description' => 'Validate Rental Unit Assignments for a Booking at Villers-Sainte-Gertrude.',
+
+        'help' => "
             Creates a booking with configuration below and test the consistency between of the number of participants matches the number of individuals assigned to the SPM Rental Unit. \n
             The price for the group booking is determined based on the advantages associated with the 'Ecoles primaires et secondaires' category.'
             Center: Villers-Sainte-Gertrude
@@ -32,8 +35,8 @@ $tests = [
             Dates from: 20/01/2023
             Dates to: 24/01/2023
             Nights: 4 nights",
-        'arrange'           =>  function () {
 
+        'arrange' =>  function () {
             $center = Center::search(['name', 'like', '%Villers-Sainte-Gertrude%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'TP'])->read(['id'])->first(true);
             $customer_nature = CustomerNature::search(['code', '=', 'IN'])->read(['id'])->first(true);
@@ -41,11 +44,10 @@ $tests = [
             $sojourn_type = SojournType::search(['name', '=', 'GA'])->read(['id'])->first(true);
             $rate_class = RateClass::search(['name', '=', 'T5'])->read(['id'])->first(true);
 
-
             return [$center['id'], $booking_type['id'], $customer_nature['id'], $customer_identity['id'], $sojourn_type['id'], $rate_class['id']];
-
         },
-        'act'               =>  function ($data) {
+
+        'act' =>  function ($data) {
 
             list($center_id, $booking_type_id, $customer_nature_id, $customer_identity_id, $sojourn_type_id, $rate_class_id ) = $data;
 
@@ -64,7 +66,6 @@ $tests = [
             $pack = Product::search(['sku','like','%'. 'GA-SejScoPri-A'. '%' ])
                     ->read(['id','label'])
                     ->first(true);
-
 
             $booking_line_group = BookingLineGroup::create([
                     'booking_id'     => $booking['id'],
@@ -96,7 +97,7 @@ $tests = [
                 ->read(['id', 'name'])
                 ->first(true);
 
-            $sojourn_product_model  =   SojournProductModel::search([
+            $sojourn_product_model = SojournProductModel::search([
                     ['booking_line_group_id' , "=" , $booking_line_group['id']],
                     ['product_model_id' , "=" , $product_model['id']]
                 ])
@@ -134,10 +135,9 @@ $tests = [
                 $e->getMessage();
             }
             return $spm_rental_unit_assignement;
-
-
         },
-        'assert'            =>  function ($spm_rental_unit_assignement) {
+
+        'assert' =>  function ($spm_rental_unit_assignement) {
 
             $booking = Booking::search(['id','=', $spm_rental_unit_assignement['booking_id']])
                 ->read(['id','nb_pers','rental_unit_assignments_ids'])
@@ -145,7 +145,7 @@ $tests = [
 
             $rental_unit_assignments_ids = $booking['rental_unit_assignments_ids'];
 
-            foreach ($rental_unit_assignments_ids as $rental_unit_assignments_id){
+            foreach($rental_unit_assignments_ids as $rental_unit_assignments_id) {
                 $b_spm_rental_unit_assignement = SojournProductModelRentalUnitAssignement::id($rental_unit_assignments_id)
                     ->read(['id'])
                     ->first(true);
@@ -156,10 +156,12 @@ $tests = [
                 $booking['nb_pers'] == $spm_rental_unit_assignement['qty'] &&
                 $b_spm_rental_unit_assignement['id'] == $spm_rental_unit_assignement['id']
             );
-
         },
-        'rollback'=>  function () {
-            $booking = Booking::search(['description', 'like', '%'. 'Validate the assignments of rental units in a booking'.'%' ])->read('id')->first(true);
+
+        'rollback' => function () {
+            $booking = Booking::search(['description', 'like', '%'. 'Validate the assignments of rental units in a booking'.'%' ])
+                ->read('id')
+                ->first(true);
 
             Booking::id($booking['id'])->update(['state' => 'archive']);
         }
