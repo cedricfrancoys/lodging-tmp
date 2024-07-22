@@ -156,8 +156,10 @@ $tests = [
             return true;
         },
         'rollback'      => function() {
+            /*
             Booking::search(['description', '=', 'Booking test 0901: adult freebies does not pass cap of nb_adult.'])
                 ->delete(true);
+            */
         }
     ],
     '0902' => [

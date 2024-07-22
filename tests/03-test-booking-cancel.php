@@ -13,6 +13,7 @@ use sale\customer\CustomerNature;
 use sale\customer\RateClass;
 use sale\booking\BookingType;
 
+$providers = eQual::inject(['orm']);
 
 $tests = [
     '0301' => [
@@ -242,10 +243,12 @@ $tests = [
         }
 
     ],
-    '0305' => [
-        'description'       => 'Validate that the reservation can be canceled from a reservation in balanced status.',
-        'arrange'           =>  function () {
 
+    '0305' => [
+
+        'description' => 'Validate that the reservation can be canceled from a reservation in balanced status.',
+
+        'arrange' =>  function () {
             $center = Center::search(['name', 'like', '%Villers-Sainte-Gertrude%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'TP'])->read(['id'])->first(true);
             $customer_nature = CustomerNature::search(['code', '=', 'IN'])->read(['id'])->first(true);
@@ -254,10 +257,9 @@ $tests = [
             $rate_class = RateClass::search(['name', '=', 'T4'])->read(['id'])->first(true);
 
             return [$center['id'], $booking_type['id'], $customer_nature['id'], $customer_identity['id'], $sojourn_type['id'], $rate_class['id']];
-
         },
-        'act'               =>  function ($data) {
 
+        'act' =>  function ($data) {
             list($center_id, $booking_type_id, $customer_nature_id, $customer_identity_id, $sojourn_type_id, $rate_class_id ) = $data;
 
             $booking = Booking::create([
@@ -273,27 +275,26 @@ $tests = [
                 ->read(['id'])
                 ->first(true);
 
-
             try {
                 eQual::run('do', 'lodging_booking_do-cancel', ['id' => $booking['id'], 'reason' => 'other']);
-
-            } catch (Exception $e) {
+            }
+            catch (Exception $e) {
                 $message = $e->getMessage();
-
             }
 
             return $message;
         },
-        'assert'            =>  function ($message) {
 
+        'assert' =>  function ($message) {
             return ($message == "incompatible_status");
         },
-        'rollback'          =>  function () {
-          $booking = Booking::search(['description', 'ilike', '%'. 'Validate that the reservation can be canceled from a reservation in balanced status'.'%' ])
-                  ->update(['status' => 'quote'])
-                  ->read(['id'])
-                  ->first(true);
-            Booking::id($booking['id'])->delete(true);
+
+        'rollback' =>  function () use($providers) {
+            $booking = Booking::search(['description', 'ilike', '%'. 'Validate that the reservation can be canceled from a reservation in balanced status'.'%' ])
+                ->read(['id'])
+                ->first(true);
+
+            $providers['orm']->delete(Booking::getType(), $booking['id'], true);
         }
     ]
 ];

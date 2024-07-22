@@ -407,14 +407,15 @@ $tests = [
         'rollback'          =>  function () {
 
             $booking = Booking::search(['description', 'ilike', '%'. 'Ensure reservation cannot check out if invoice is issued'.'%'])
-                  ->update(['state' =>  'archived',
-                            'status' => 'quote'])
-                  ->read(['id'])
-                  ->first(true);
+                ->update([
+                    'state'  =>  'archive',
+                    'status' => 'quote'
+                ])
+                ->read(['id'])
+                ->first(true);
 
             Invoice::search(['booking_id' , '=', $booking['id']])
-                ->update(['state' => 'archived']);
-
+                ->update(['state' => 'archive']);
 
             Booking::id($booking['id'])->delete(true);
         }

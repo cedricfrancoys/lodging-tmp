@@ -12,10 +12,7 @@ use sale\customer\CustomerNature;
 use sale\booking\BookingType;
 use sale\customer\RateClass;
 use lodging\sale\booking\SojournType;
-use lodging\sale\catalog\Product;
 use lodging\sale\booking\BookingLine;
-
-$providers = eQual::inject(['context', 'orm', 'auth', 'access']);
 
 $tests = [
     //0xxx : calls related to QN methods
