@@ -245,7 +245,7 @@ $tests = [
 
     '0305' => [
 
-        'description' => 'Validate that the reservation can be canceled from a reservation in balanced status.',
+        'description' => "Validate that the reservation can be canceled from a reservation in balanced status.",
 
         'arrange' =>  function () {
             $center = Center::search(['name', 'like', '%Villers-Sainte-Gertrude%'])->read(['id'])->first(true);

@@ -232,16 +232,20 @@ $tests = [
             Booking::id($booking['id'])->delete(true);
         }
     ],
+
     '0602' => [
-        'description'       => 'Validate that the reservation cannot be in checkout status if the invoice has been issued.',
-        'help'              =>  "
+
+        'description' => 'Validate that the reservation cannot be in checkout status if the invoice has been issued.',
+
+        'help' =>  "
             Create a reservation for 1 person client for two night.
             Change the reservation status from 'devis' to 'confirm'.
             Validate the contract of the client before the check-in.
             Change the reservation status from 'confirm' to 'check-in'.
             Change the reservation status from 'check-in' to 'check-out'.
             Validate that the supplements have been included in the reservation.",
-        'arrange'           =>  function () {
+
+        'arrange' =>  function () {
             $center = Center::search(['name', 'like', '%Louvain-la-Neuve%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'TP'])->read(['id'])->first(true);
             $customer_nature = CustomerNature::search(['code', '=', 'IN'])->read(['id'])->first(true);
@@ -249,7 +253,8 @@ $tests = [
             $sojourn_type = SojournType::search(['name', '=', 'GA'])->read(['id'])->first(true);
             return [$center['id'], $booking_type['id'], $customer_nature['id'], $customer_identity['id'], $sojourn_type['id']];
         },
-        'act'               =>  function ($data) {
+
+        'act' =>  function ($data) {
             list($center_id, $booking_type_id, $customer_nature_id, $customer_identity_id, $sojourn_type_id ) = $data;
             $booking = Booking::create([
                     'date_from'             => strtotime('2023-05-03'),
@@ -400,24 +405,21 @@ $tests = [
 
             return $message;
         },
-        'assert'            =>  function ($message) {
 
+        'assert' =>  function ($message) {
             return ($message == "emitted_balance_invoice");
         },
-        'rollback'          =>  function () {
 
+        'rollback' =>  function () {
             $booking = Booking::search(['description', 'ilike', '%'. 'Ensure reservation cannot check out if invoice is issued'.'%'])
-                ->update([
-                    'state'  =>  'archive',
-                    'status' => 'quote'
-                ])
                 ->read(['id'])
                 ->first(true);
 
-            Invoice::search(['booking_id' , '=', $booking['id']])
+            Invoice::search(['booking_id', '=', $booking['id']])
                 ->update(['state' => 'archive']);
 
-            Booking::id($booking['id'])->delete(true);
+            $services = eQual::inject(['orm']);
+            $services['orm']->delete(Booking::getType(), $booking['id'], true);
         }
     ]
 ];
