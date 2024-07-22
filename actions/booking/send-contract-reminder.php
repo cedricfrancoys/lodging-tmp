@@ -79,7 +79,7 @@ $contract = Contract::id($params['contract_id'])
     ->read([
         'booking_id' => ['id', 'center_id' => ['id', 'center_office_id' => ['email_bcc']], 'has_contract', 'contracts_ids']
     ])
-    ->first();
+    ->first(true);
 
 if(!$contract) {
     throw new Exception("unknown_funding", QN_ERROR_UNKNOWN_OBJECT);

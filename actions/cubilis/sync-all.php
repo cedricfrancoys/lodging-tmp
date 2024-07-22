@@ -61,7 +61,7 @@ if(constant('ROOT_APP_URL') != 'https://discope.yb.run') {
 
 $property = Property::id($params['property_id'])
     ->read(['room_types_ids' => ['id', 'extref_roomtype_id', 'rental_units_ids', 'is_active']])
-    ->first();
+    ->first(true);
 
 if(!$property) {
     throw new Exception('unknown_property', QN_ERROR_UNKNOWN_OBJECT);

@@ -53,7 +53,7 @@ $user = User::ids($ids)
         'center_offices_ids',
         'groups_ids' => ['name']
     ])
-    ->adapt('txt')
+    ->adapt('json')
     ->first(true);
 
 if(!$user) {
@@ -64,7 +64,7 @@ if(!$user) {
 $preferred_center_office_id = reset($user['center_offices_ids']);
 $user['center_office'] = CenterOffice::id($preferred_center_office_id)
     ->read(['id', 'name', 'docs_default_mode', 'printer_type', 'rentalunits_manual_assignment'])
-    ->adapt('txt')
+    ->adapt('json')
     ->first(true);
 
 // append list of user' groups

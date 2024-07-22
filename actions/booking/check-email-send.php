@@ -35,7 +35,7 @@ list($context, $cron, $dispatch) = [ $providers['context'], $providers['cron'], 
 // read booking object
 $booking = Booking::id($params['id'])
                   ->read(['id','center_office_id' ,'mails_ids' => ['id','status']])
-                  ->first();
+                  ->first(true);
 
 if(!$booking) {
     throw new Exception("unknown_booking", QN_ERROR_UNKNOWN_OBJECT);

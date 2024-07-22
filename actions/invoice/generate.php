@@ -48,7 +48,7 @@ list($context, $orm, $auth) = [$providers['context'], $providers['orm'], $provid
 
 
 // search for an existing balance invoice for this booking (there should be none)
-$invoice = Invoice::search([['booking_id', '=', $params['id']], ['type', '=', 'invoice'], ['status', '=', 'invoice'], ['is_deposit', '=', false]])->read(['id'])->first();
+$invoice = Invoice::search([['booking_id', '=', $params['id']], ['type', '=', 'invoice'], ['status', '=', 'invoice'], ['is_deposit', '=', false]])->read(['id'])->first(true);
 
 if($invoice) {
     throw new Exception("invoice_already_exists", QN_ERROR_NOT_ALLOWED);
@@ -92,7 +92,7 @@ $booking = Booking::id($params['id'])
             ]
         ]
     ])
-    ->first();
+    ->first(true);
 
 if(!$booking) {
     throw new Exception("unknown_booking", QN_ERROR_UNKNOWN_OBJECT);
@@ -156,7 +156,7 @@ $invoice = Invoice::create([
         'partner_id'        => (isset($params['partner_id']) && $params['partner_id'] > 0)?$params['partner_id']:$booking['customer_id']['id']
     ])
     ->read(['id', 'partner_id'])
-    ->first();
+    ->first(true);
 
 // append invoice lines based on booking lines
 foreach($booking['booking_lines_groups_ids'] as $group_id => $group) {
@@ -176,7 +176,7 @@ foreach($booking['booking_lines_groups_ids'] as $group_id => $group) {
             'invoice_id'        => $invoice['id']
         ])
         ->read(['id'])
-        ->first();
+        ->first(true);
 
     if($group['has_pack'] && $group['is_locked'] ) {
         // invoice group with a single line
@@ -254,7 +254,7 @@ if($fundings) {
 
     $downpayment_sku = Setting::get_value('sale', 'invoice', 'downpayment.sku.'.$booking['center_office_id']['organisation_id']);
     if($downpayment_sku) {
-        $product = Product::search(['sku', '=', $downpayment_sku])->read(['id'])->first();
+        $product = Product::search(['sku', '=', $downpayment_sku])->read(['id'])->first(true);
         if($product) {
             $downpayment_product_id = $product['id'];
         }
@@ -273,7 +273,7 @@ if($fundings) {
                         'id', 'created', 'name', 'status', 'partner_id', 'type', 'is_deposit', 'price',
                         'invoice_lines_ids' => ['vat_rate', 'product_id', 'qty', 'price', 'unit_price']
                     ])
-                ->first();
+                ->first(true);
 
             if(!$funding_invoice) {
                 // #memo - in the situation of a funding converted to an invoice, the generated invoice might have remained as proforma: in such case the invoice has just been deleted
@@ -310,7 +310,7 @@ if($fundings) {
                             ];
                             $new_line = InvoiceLine::create($i_line)
                                 ->read(['id'])
-                                ->first();
+                                ->first(true);
                             $i_lines_ids[] = $new_line['id'];
                         }
                     }
@@ -328,7 +328,7 @@ if($fundings) {
                             'qty'                       => -1
                             // #memo - we don't assign a price : downpayments will be identified as such and use a specific accounting rule
                         ];
-                        $new_line = InvoiceLine::create($i_line)->read(['id'])->first();
+                        $new_line = InvoiceLine::create($i_line)->read(['id'])->first(true);
                         $i_lines_ids[] = $new_line['id'];
                     }
                 }
@@ -344,7 +344,7 @@ if($fundings) {
         // if funding has already been attached to a non-cancelled invoice, ignore it (cannot be updated nor re-assigned)
         elseif($funding['invoice_id'] > 0) {
             // #memo - invoice might have been 'soft'-deleted: make sure it still exists
-            $related_invoice = Invoice::id($funding['invoice_id'])->read(['id', 'status'])->first();
+            $related_invoice = Invoice::id($funding['invoice_id'])->read(['id', 'status'])->first(true);
             if($related_invoice && $related_invoice['status'] == 'invoice') {
                 continue;
             }
@@ -388,7 +388,7 @@ if($fundings) {
 
                 // #memo - do not add non-invoiced fundings to balance invoice
                 /*
-                $new_line = InvoiceLine::create($i_line)->read(['id'])->first();
+                $new_line = InvoiceLine::create($i_line)->read(['id'])->first(true);
                 $i_lines_ids[] = $new_line['id'];
                 */
             }

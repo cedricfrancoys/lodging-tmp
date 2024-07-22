@@ -510,7 +510,7 @@ class BookingLineGroup extends \sale\booking\BookingLineGroup {
     }
 
     public static function onupdateHasPack($om, $oids, $values, $lang) {
-        trigger_error("ORM::calling lodging\sale\booking\BookingLineGroup:onchangeHasPack", QN_REPORT_DEBUG);
+        trigger_error("ORM::calling lodging\sale\booking\BookingLineGroup:onupdateHasPack", QN_REPORT_DEBUG);
 
         $groups = $om->read(self::getType(), $oids, ['has_pack', 'booking_lines_ids']);
         if($groups > 0 && count($groups)) {
@@ -526,7 +526,7 @@ class BookingLineGroup extends \sale\booking\BookingLineGroup {
     }
 
     public static function onupdateIsLocked($om, $oids, $values, $lang) {
-        trigger_error("ORM::calling lodging\sale\booking\BookingLineGroup:onchangeIsLocked", QN_REPORT_DEBUG);
+        trigger_error("ORM::calling lodging\sale\booking\BookingLineGroup:onupdateIsLocked", QN_REPORT_DEBUG);
         // invalidate prices
         $om->callonce('sale\booking\BookingLineGroup', '_resetPrices', $oids, [], $lang);
         $om->callonce(self::getType(), '_updatePriceId', $oids, [], $lang);
@@ -547,7 +547,7 @@ class BookingLineGroup extends \sale\booking\BookingLineGroup {
      * and that pack_id relates to a product that is a pack.
      */
     public static function onupdatePackId($om, $oids, $values, $lang) {
-        trigger_error("ORM::calling lodging\sale\booking\BookingLineGroup:onchangePackId", QN_REPORT_DEBUG);
+        trigger_error("ORM::calling lodging\sale\booking\BookingLineGroup:onupdatePackId", QN_REPORT_DEBUG);
 
         $groups = $om->read(self::getType(), $oids, [
             'name',
@@ -628,7 +628,7 @@ class BookingLineGroup extends \sale\booking\BookingLineGroup {
     }
 
     public static function onupdateDateFrom($om, $oids, $values, $lang) {
-        trigger_error("ORM::calling lodging\sale\booking\BookingLineGroup:onchangeDateFrom", QN_REPORT_DEBUG);
+        trigger_error("ORM::calling lodging\sale\booking\BookingLineGroup:onupdateDateFrom (".implode(',', $oids).")", QN_REPORT_DEBUG);
         // invalidate prices
         $om->callonce('sale\booking\BookingLineGroup', '_resetPrices', $oids, [], $lang);
 
@@ -653,7 +653,7 @@ class BookingLineGroup extends \sale\booking\BookingLineGroup {
     }
 
     public static function onupdateDateTo($om, $oids, $values, $lang) {
-        trigger_error("ORM::calling lodging\sale\booking\BookingLineGroup:onchangeDateTo", QN_REPORT_DEBUG);
+        trigger_error("ORM::calling lodging\sale\booking\BookingLineGroup:onupdateDateTo (".implode(',', $oids).")", QN_REPORT_DEBUG);
         // invalidate prices
         $om->callonce('sale\booking\BookingLineGroup', '_resetPrices', $oids, [], $lang);
 
@@ -1121,7 +1121,7 @@ class BookingLineGroup extends \sale\booking\BookingLineGroup {
                 Search for matching Discounts within the found Discount List
             */
             if($discount_list_id) {
-                $count_booking_24 = $om->call(self::getType(), 'calcCountBooking24', $group['booking_id.customer_id'], $group['date_from']);
+                $count_booking_24 = self::calcCountBooking24($om, $group['booking_id.customer_id'], $group['date_from']);
 
                 $operands = [
                     'count_booking_24'  => $count_booking_24,     // qty of customer bookings from 2 years ago to present
@@ -1345,7 +1345,8 @@ class BookingLineGroup extends \sale\booking\BookingLineGroup {
         return ($bookings_ids > 0)?0:count($bookings_ids);
     }
 
-    public static function updatePriceAdaptersFromLines($om, $oids, $booking_lines_ids, $lang) {
+    public static function updatePriceAdaptersFromLines($om, $oids, $values, $lang) {
+        $booking_lines_ids = $values;
         /*
             Remove all previous price adapters relating to given lines were automatically created
         */
@@ -1426,7 +1427,7 @@ class BookingLineGroup extends \sale\booking\BookingLineGroup {
                 Search for matching Discounts within the found Discount List
             */
             if($discount_list_id) {
-                $count_booking_24 = $om->call(self::getType(), 'calcCountBooking24', $group['booking_id.customer_id'], $group['date_from']);
+                $count_booking_24 = self::calcCountBooking24($om, $group['booking_id.customer_id'], $group['date_from']);
 
                 $operands = [
                     'count_booking_24'  => $count_booking_24,     // qty of customer bookings from 2 years ago to present
@@ -2274,8 +2275,8 @@ class BookingLineGroup extends \sale\booking\BookingLineGroup {
      * Updates rental unit assignments from a set of booking lines (called by BookingLine::onupdateProductId).
      * The references booking_lines_ids are expected to be identifiers of lines that have just been modified and to belong to a same sojourn (BookingLineGroup).
      */
-    public static function createRentalUnitsAssignmentsFromLines($om, $oids, $booking_lines_ids, $lang) {
-
+    public static function createRentalUnitsAssignmentsFromLines($om, $oids, $values, $lang) {
+        $booking_lines_ids = $values;
         // Attempt to auto-assign rental units.
         $groups = $om->read(self::getType(), $oids, [
             'booking_id',
@@ -2704,7 +2705,7 @@ class BookingLineGroup extends \sale\booking\BookingLineGroup {
 
                 // for now, we only support member cards for customer that haven't booked a service for more thant 12 months
 
-                $operands['count_booking_12'] = $om->call(self::getType(), 'calcCountBooking12', $group['booking_id.customer_id'], $group['date_from']);
+                $operands['count_booking_12'] = self::calcCountBooking12($om, $group['booking_id.customer_id'], $group['date_from']);
                 $operands['nb_pers'] = $group['nb_pers'];
                 $operands['nb_nights'] = $group['nb_nights'];
 

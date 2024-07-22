@@ -29,7 +29,7 @@ list($params, $providers) = announce([
 list($context, $om, $auth) = [ $providers['context'], $providers['orm'], $providers['auth'] ];
 
 // retrieve targeted exeport
-$export = Export::id($params['id'])->read(['name', 'data', 'type'])->first();
+$export = Export::id($params['id'])->read(['name', 'data', 'type'])->first(true);
 
 if(!$export) {
     throw new Exception("document_unknown", QN_ERROR_UNKNOWN_OBJECT);

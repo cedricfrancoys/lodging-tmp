@@ -214,7 +214,7 @@ switch($params['variant']) {
         break;
 }
 
-$orders = Order::id($params['id'])->read($tree)->adapt('txt')->get(true);
+$orders = Order::id($params['id'])->read($tree)->adapt('json')->get(true);
 
 if(!$orders || !count($orders)) {
     throw new Exception("unknown_order", QN_ERROR_UNKNOWN_OBJECT);

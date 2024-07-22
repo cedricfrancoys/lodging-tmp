@@ -452,7 +452,7 @@
                             <mat-form-field>
                                 <mat-label>Référence du Pack</mat-label>
                                 <input
-                                    *ngIf="!vm.pack.name.length"
+                                    *ngIf="!vm.pack?.name?.length"
                                     matInput
                                     type="text"
                                     [matAutocomplete]="packAutocomplete"
@@ -462,7 +462,7 @@
                                     (blur)="vm.pack.restore()"
                                     placeholder="Commencez à taper le nom" />
                                 <input
-                                    *ngIf="vm.pack.name.length"
+                                    *ngIf="vm.pack?.name?.length"
                                     matInput
                                     type="text"
                                     [value]="vm.pack.name"

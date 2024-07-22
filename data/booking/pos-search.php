@@ -57,7 +57,7 @@ $result = [];
 
 $bookings = Booking::search($domain, ['sort' => [ 'name' => 'asc']])
     ->read(['id', 'name', 'customer_id' => 'name'])
-    ->adapt('txt')
+    ->adapt('json')
     ->get(true);
 
 // additional filter on customer name, if necessary

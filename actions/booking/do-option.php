@@ -71,7 +71,7 @@ $booking = Booking::id($params['id'])
         'consumptions_ids' => ['is_accomodation', 'rental_unit_id'],
         'type_id' => ['id', 'days_expiry_option']
     ])
-    ->first();
+    ->first(true);
 
 if(!$booking) {
     throw new Exception("unknown_booking", QN_ERROR_UNKNOWN_OBJECT);

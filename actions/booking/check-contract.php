@@ -34,7 +34,7 @@ list($params, $providers) = eQual::announce([
 list($context, $dispatch) = [ $providers['context'], $providers['dispatch']];
 
 // ensure booking object exists and is readable
-$booking = Booking::id($params['id'])->read(['id', 'name', 'center_office_id', 'status', 'has_contract', 'contracts_ids'])->first();
+$booking = Booking::id($params['id'])->read(['id', 'name', 'center_office_id', 'status', 'has_contract', 'contracts_ids'])->first(true);
 
 if(!$booking) {
     throw new Exception("unknown_booking", QN_ERROR_UNKNOWN_OBJECT);
@@ -54,7 +54,7 @@ if(!$booking['has_contract'] || empty($booking['contracts_ids'])) {
 else {
     // by convention the most recent contract is listed first (see schema in lodging/classes/sale/booking/Booking.class.php)
     $contract_id = array_shift($booking['contracts_ids']);
-    $contract = Contract::id($contract_id)->read(['status'])->first();
+    $contract = Contract::id($contract_id)->read(['status'])->first(true);
     $status = $contract['status'];
 }
 

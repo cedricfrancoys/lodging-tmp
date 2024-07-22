@@ -56,7 +56,7 @@ list($context, $orm, $auth) = [$providers['context'], $providers['orm'], $provid
 // read booking object
 $booking = Booking::id($params['id'])
                   ->read(['id', 'name', 'status', 'composition_items_ids'])
-                  ->first();
+                  ->first(true);
 
 if(!$booking) {
     throw new Exception("unknown_booking", QN_ERROR_UNKNOWN_OBJECT);

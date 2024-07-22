@@ -39,7 +39,7 @@ list($context, $orm) = [$providers['context'], $providers['orm']];
 /** @var Booking */
 $booking = Booking::id($params['id'])
                   ->read(['id', 'name', 'status'])
-                  ->first();
+                  ->first(true);
 
 if(!$booking) {
     throw new Exception("unknown_booking", QN_ERROR_UNKNOWN_OBJECT);

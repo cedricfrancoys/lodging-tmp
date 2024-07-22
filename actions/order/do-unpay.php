@@ -43,7 +43,7 @@ $order = Order::id($params['id'])
             'order_payment_parts_ids' => ['payment_method', 'amount']
         ]
     ])
-    ->first();
+    ->first(true);
 
 if(!$order) {
     throw new Exception('unknown_order', QN_ERROR_UNKNOWN_OBJECT);
@@ -94,7 +94,7 @@ foreach($order['order_payments_ids'] as $pid => $payment) {
             ['user_id', '=', $order['creator']]
         ])
             ->read(['id'])
-            ->first();
+            ->first(true);
 
         Operation::id($operation['id'])->delete(true);
     }
@@ -107,7 +107,7 @@ foreach($order['order_payments_ids'] as $pid => $payment) {
             ['user_id', '=', $order['creator']]
         ])
             ->read(['id'])
-            ->first();
+            ->first(true);
 
         Operation::id($operation['id'])->delete(true);
     }

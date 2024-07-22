@@ -151,14 +151,14 @@ if(isset($center['center_office_id']['product_favorites_ids'])) {
     // #memo - ProductFavorite schema specifies the field `order` for sorting
     $favorites = Product::ids(array_keys($map_favorites_ids))
         ->read($fields)
-        ->adapt('txt')
+        ->adapt('json')
         ->get(true);
 }
 
 // read products (without favorites)
 $products = Product::ids($products_ids)
     ->read($fields)
-    ->adapt('txt')
+    ->adapt('json')
     ->get(true);
 
 // sort products by name (on ascending order)

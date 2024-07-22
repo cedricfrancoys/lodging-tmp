@@ -35,13 +35,13 @@ list($params, $providers) = announce([
 list($context, $orm, $auth, $dispatch) = [ $providers['context'], $providers['orm'], $providers['auth'], $providers['dispatch']];
 
 // ensure booking object exists and is readable
-$booking = Booking::id($params['id'])->read(['id', 'status','date_from', 'date_to', 'is_cancelled','center_office_id'])->first();
+$booking = Booking::id($params['id'])->read(['id', 'status','date_from', 'date_to', 'is_cancelled','center_office_id'])->first(true);
 
 if(!$booking) {
     throw new Exception("unknown_booking", QN_ERROR_UNKNOWN_OBJECT);
 }
 
-$center_office = CenterOffice::id($booking['center_office_id'])->read(['id', 'name'])->first();
+$center_office = CenterOffice::id($booking['center_office_id'])->read(['id', 'name'])->first(true);
 
 if(!$center_office) {
     throw new Exception("unknown_center_office", QN_ERROR_UNKNOWN_OBJECT);

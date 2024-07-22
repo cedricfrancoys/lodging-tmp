@@ -55,7 +55,7 @@ Message::search([['object_class', '=', 'lodging\sale\booking\Booking'], ['object
 
 // remove fundings
 foreach($booking['fundings_ids'] as $funding_id) {
-    $funding = Funding::id($funding_id)->read(['payments_ids'])->first();
+    $funding = Funding::id($funding_id)->read(['payments_ids'])->first(true);
     Payment::ids($funding['payments_ids'])->delete(true);
 }
 

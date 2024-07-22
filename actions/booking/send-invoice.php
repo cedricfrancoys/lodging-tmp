@@ -88,7 +88,7 @@ $invoice = Invoice::id($params['invoice_id'])
     ->read([
         'booking_id' => ['id', 'center_id' => ['id', 'center_office_id' => ['email_bcc']]]
     ])
-    ->first();
+    ->first(true);
 
 if(!$invoice) {
     throw new Exception("unknown_invoice", QN_ERROR_UNKNOWN_OBJECT);
@@ -137,7 +137,7 @@ if(count($params['attachments_ids'])) {
     $params['attachments_ids'] = array_unique($params['attachments_ids']);
     $template_attachments = TemplateAttachment::ids($params['attachments_ids'])->read(['name', 'document_id'])->get();
     foreach($template_attachments as $tid => $tdata) {
-        $document = Document::id($tdata['document_id'])->read(['name', 'data', 'type'])->first();
+        $document = Document::id($tdata['document_id'])->read(['name', 'data', 'type'])->first(true);
         if($document) {
             $attachments[] = new EmailAttachment($document['name'], $document['data'], $document['type']);
         }

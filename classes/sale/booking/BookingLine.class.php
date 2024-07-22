@@ -59,7 +59,8 @@ class BookingLine extends \sale\booking\BookingLine {
             ],
 
             'qty_vars' => [
-                'type'              => 'text',
+                'type'              => 'string',
+                'usage'             => 'text/plain',
                 'description'       => 'JSON array holding qty variation deltas (for \'by person\' products), if any.',
                 'onupdate'          => 'onupdateQtyVars'
             ],
@@ -746,6 +747,7 @@ class BookingLine extends \sale\booking\BookingLine {
              * than equivalent services subscribed when the contract was established, whatever the current price lists
              */
             if($line['booking_id.is_locked']) {
+                trigger_error("ORM::booking is locked", QN_REPORT_DEBUG);
                 // search booking line from same booking, targeting the same product
                 $booking_lines_ids = $om->search(self::getType(), [['booking_id', '=', $line['booking_id']],  ['product_id', '=', $line['product_id']], ['id', '<>', $line_id]]);
                 if($booking_lines_ids > 0 && count($booking_lines_ids)) {
@@ -766,6 +768,7 @@ class BookingLine extends \sale\booking\BookingLine {
                 Find the Price List that matches the criteria from the booking (shortest duration first)
             */
             if(!$found) {
+                trigger_error("ORM::no price from previous contract", QN_REPORT_DEBUG);
                 $is_tbc = false;
                 $selected_price_id = 0;
 
@@ -774,8 +777,10 @@ class BookingLine extends \sale\booking\BookingLine {
                 // 1) use searchPriceId (published price lists)
                 $prices = self::searchPriceId($om, [$line_id], $product_id);
 
+                trigger_error("ORM::searchPriceId result:".implode(',', array_values($prices)), QN_REPORT_DEBUG);
                 if(isset($prices[$line_id])) {
                     $selected_price_id = $prices[$line_id];
+                    trigger_error("ORM::found published price:".$selected_price_id, QN_REPORT_DEBUG);
                 }
                 // 2) if not found, search for a matching Price within the pending Price Lists
                 else {
@@ -783,6 +788,7 @@ class BookingLine extends \sale\booking\BookingLine {
                     if(isset($prices[$line_id])) {
                         $is_tbc = true;
                         $selected_price_id = $prices[$line_id];
+                        trigger_error("ORM::found non-published price:".$selected_price_id, QN_REPORT_DEBUG);
                     }
                 }
 
@@ -790,6 +796,7 @@ class BookingLine extends \sale\booking\BookingLine {
                     // assign found Price to current line
                     $om->update(self::getType(), $line_id, ['price_id' => $selected_price_id]);
                     if($is_tbc) {
+                        trigger_error("ORM::setting booking as TBC", QN_REPORT_DEBUG);
                         // found price is TBC: mark booking as to be confirmed
                         $om->update(Booking::getType(), $line['booking_id'], ['is_price_tbc' => true]);
                     }
@@ -797,6 +804,7 @@ class BookingLine extends \sale\booking\BookingLine {
                     trigger_error("ORM::assigned price {$selected_price_id} ({$is_tbc}) for product {$line['product_id']} for date {$date}", QN_REPORT_INFO);
                 }
                 else {
+                    trigger_error("ORM::no price found : force to zero", QN_REPORT_DEBUG);
                     $om->update(self::getType(), $line_id, ['price_id' => null, 'price' => null]);
                     if(!$line['has_manual_unit_price']) {
                         $om->update(self::getType(), $line_id, ['unit_price' => 0]);

@@ -71,7 +71,7 @@ $consumptions = Consumption::ids($consumptions_ids)
         'booking_id'        => ['id', 'name', 'status', 'description', 'payment_status'],
         'repairing_id'      => ['id', 'name', 'description']
     ])
-    ->adapt('txt')
+    ->adapt('json')
     ->get();
 
 // enrich and adapt result

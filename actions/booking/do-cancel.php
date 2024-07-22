@@ -59,7 +59,7 @@ list($context, $orm, $cron, $auth, $dispatch) = [$providers['context'], $provide
 // read booking object
 $booking = Booking::id($params['id'])
                   ->read(['id', 'name', 'is_cancelled', 'status', 'paid_amount', 'date_from', 'date_to'])
-                  ->first();
+                  ->first(true);
 
 if(!$booking) {
     throw new Exception("unknown_booking", QN_ERROR_UNKNOWN_OBJECT);
@@ -147,7 +147,7 @@ $booking = Booking::id($params['id'])
         'booking_lines_groups_ids',
         'fundings_ids' => ['is_paid', 'paid_amount']
     ])
-    ->first();
+    ->first(true);
 
 // delete non-paid fundings
 if(count($booking['fundings_ids'])) {

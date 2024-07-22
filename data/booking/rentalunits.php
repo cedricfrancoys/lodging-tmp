@@ -219,7 +219,7 @@ if($sojourn) {
 
     $rental_units = RentalUnit::ids($rental_units_ids)
         ->read(['id', 'name', 'capacity', 'order', 'is_accomodation', 'can_rent', 'rental_unit_category_id'])
-        ->adapt('txt')
+        ->adapt('json')
         ->get(true);
 
     $domain = new Domain($params['domain']);

@@ -40,7 +40,7 @@ list($context, $orm, $cron, $dispatch) = [$providers['context'], $providers['orm
 // read contract object
 $contract = Contract::id($params['id'])
                   ->read(['id', 'name', 'status', 'booking_id', 'valid_until'])
-                  ->first();
+                  ->first(true);
 
 if(!$contract) {
     throw new Exception("unknown_contract", QN_ERROR_UNKNOWN_OBJECT);

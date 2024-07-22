@@ -43,7 +43,7 @@ $booking = Booking::id($params['id'])
                     'center_office_id',
                     'customer_identity_id' => ['id', 'display_name', 'address_street', 'address_city', 'address_zip']
                 ])
-            ->first();
+            ->first(true);
 
 if(!$booking) {
     throw new Exception("unknown_booking", QN_ERROR_UNKNOWN_OBJECT);

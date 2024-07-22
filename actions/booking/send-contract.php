@@ -100,7 +100,7 @@ $booking = Booking::id($params['booking_id'])
         'has_contract',
         'contracts_ids'
     ])
-    ->first();
+    ->first(true);
 
 if(!$booking) {
     throw new Exception("unknown_booking", QN_ERROR_UNKNOWN_OBJECT);
@@ -158,7 +158,7 @@ if(count($params['attachments_ids'])) {
     $params['attachments_ids'] = array_unique($params['attachments_ids']);
     $template_attachments = TemplateAttachment::ids($params['attachments_ids'])->read(['name', 'document_id'])->get();
     foreach($template_attachments as $tid => $tdata) {
-        $document = Document::id($tdata['document_id'])->read(['name', 'data', 'type'])->first();
+        $document = Document::id($tdata['document_id'])->read(['name', 'data', 'type'])->first(true);
         if($document) {
             $attachments[] = new EmailAttachment($document['name'], $document['data'], $document['type']);
         }
@@ -167,7 +167,7 @@ if(count($params['attachments_ids'])) {
 
 if(count($params['documents_ids'])) {
     foreach($params['documents_ids'] as $oid) {
-        $document = Document::id($oid)->read(['name', 'data', 'type'])->first();
+        $document = Document::id($oid)->read(['name', 'data', 'type'])->first(true);
         if($document) {
             $attachments[] = new EmailAttachment($document['name'], $document['data'], $document['type']);
         }
@@ -216,7 +216,7 @@ Mail::queue($message, 'lodging\sale\booking\Booking', $params['booking_id']);
 */
 
 $collection = Contract::id($contract_id)->read(['status']);
-$contract = $collection->first();
+$contract = $collection->first(true);
 if($contract['status'] == 'pending') {
     $collection->update(['status' => 'sent']);
 }

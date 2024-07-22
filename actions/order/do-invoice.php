@@ -56,7 +56,7 @@ $order = Order::id($params['id'])
                         ]
                     ]
                 ])
-                ->first();
+                ->first(true);
 
 if(!$order) {
     throw new Exception("unknown_order", QN_ERROR_UNKNOWN_OBJECT);
@@ -85,7 +85,7 @@ $invoice = Invoice::create([
         'status'            => 'proforma',
         'partner_id'        => $order['customer_id']
     ])
-    ->first();
+    ->first(true);
 
 // attach products on invoice, based on order lines
 foreach($order['order_payments_ids'] as $payment_id => $payment) {
@@ -110,7 +110,7 @@ foreach($order['order_payments_ids'] as $payment_id => $payment) {
 }
 
 // emit the invoice (changing status will trigger an invoice number assignation)
-$invoice = Invoice::id($invoice['id'])->update(['status' => 'invoice'])->read(['id', 'price', 'due_date'])->first();
+$invoice = Invoice::id($invoice['id'])->update(['status' => 'invoice'])->read(['id', 'price', 'due_date'])->first(true);
 
 // create a new funding relating to the invoice
 $funding = Funding::create([
@@ -126,7 +126,7 @@ $funding = Funding::create([
         'due_date'              => $invoice['due_date']
     ])
     ->read(['id'])
-    ->first();
+    ->first(true);
 
 // attach order payments (order_payment_part) to the funding
 foreach($order['order_payments_ids'] as $pid => $payment) {

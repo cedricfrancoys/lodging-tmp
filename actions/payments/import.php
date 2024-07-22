@@ -79,7 +79,7 @@ foreach($statements as $statement) {
     }
 
     // unique constraint on ['date', 'old_balance', 'new_balance'] will apply
-    $bank_statement = BankStatement::create($fields)->adapt('txt')->first();
+    $bank_statement = BankStatement::create($fields)->adapt('json')->first();
 
     try {
         foreach($statement['transactions'] as $transaction) {

@@ -40,7 +40,7 @@ list($context, $om, $cron, $dispatch) = [$providers['context'], $providers['orm'
 $funding = Funding::id($params['id'])
     ->read(['booking_id'])
     ->update(['is_paid' => false, 'paid_amount' => null])
-    ->first();
+    ->first(true);
 
 Booking::id($funding['booking_id'])->update(['paid_amount' => null]);
 

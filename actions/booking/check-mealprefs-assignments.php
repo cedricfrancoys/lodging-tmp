@@ -36,7 +36,7 @@ list($context, $dispatch) = [ $providers['context'], $providers['dispatch']];
 // ensure booking object exists and is readable
 $booking = Booking::id($params['id'])
     ->read(['id', 'name', 'center_office_id', 'booking_lines_groups_ids' => ['is_sojourn', 'is_event', 'nb_pers', 'booking_lines_ids', 'meal_preferences_ids' => ['qty']]])
-    ->first();
+    ->first(true);
 
 if(!$booking) {
     throw new Exception("unknown_booking", QN_ERROR_UNKNOWN_OBJECT);

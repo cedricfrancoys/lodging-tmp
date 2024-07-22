@@ -41,7 +41,7 @@ list($context, $om, $cron, $auth) = [$providers['context'], $providers['orm'], $
 
 $invoice = Invoice::id($params['id'])
     ->read(['id', 'state', 'deleted', 'date', 'status', 'type', 'is_deposit', 'price', 'booking_id', 'has_orders', 'invoice_lines_ids'])
-    ->first();
+    ->first(true);
 
 if(!$invoice) {
     throw new Exception("unknown_invoice", QN_ERROR_UNKNOWN_OBJECT);
@@ -90,7 +90,7 @@ elseif(!is_null($invoice['booking_id'])) {
                     'id', 'date', 'type', 'status', 'price'
                 ]
             ])
-        ->first();
+        ->first(true);
 
     if(!$booking) {
         throw new Exception("unknown_booking", QN_ERROR_UNKNOWN_OBJECT);

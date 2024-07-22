@@ -44,7 +44,7 @@ list($params, $providers) = eQual::announce([
  */
 list($context, $orm, $cron, $dispatch) = [$providers['context'], $providers['orm'], $providers['cron'], $providers['dispatch']];
 
-$funding = Funding::id($params['id'])->read(['id', 'type', 'booking_id'])->first();
+$funding = Funding::id($params['id'])->read(['id', 'type', 'booking_id'])->first(true);
 
 if(!$funding) {
     throw new Exception('unknown_funding', EQ_ERROR_INVALID_PARAM);
@@ -56,7 +56,7 @@ if($funding['type'] == 'invoice') {
 }
 
 // retrieve the target booking
-$booking = Booking::id($params['booking_id'])->read(['id'])->first();
+$booking = Booking::id($params['booking_id'])->read(['id'])->first(true);
 
 if(!$booking) {
     throw new Exception('unknown_booking', EQ_ERROR_INVALID_PARAM);

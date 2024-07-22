@@ -81,7 +81,7 @@ if(is_null($contact)) {
 }
 
 $last_contract_id = array_shift($funding['booking_id']['contracts_ids']);
-$contract = Contract::id($last_contract_id)->read(['status'])->first();
+$contract = Contract::id($last_contract_id)->read(['status'])->first(true);
 
 if(in_array($contract['status'], ['pending', 'cancelled']) || $funding['booking_id']['date_from'] >= time()) {
     throw new Exception("sending_skipped", 0);

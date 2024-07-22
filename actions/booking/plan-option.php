@@ -84,7 +84,7 @@ list($context, $orm, $cron, $dispatch) = [$providers['context'], $providers['orm
 // retrieve rental unit and related center
 $rental_unit = RentalUnit::id($params['rental_unit_id'])
     ->read(['id', 'name', 'capacity', 'center_id' => ['id', 'name', 'sojourn_type_id', 'product_groups_ids']])
-    ->first();
+    ->first(true);
 
 if(!$rental_unit) {
     throw new Exception("unknown_booking", QN_ERROR_UNKNOWN_OBJECT);
@@ -93,7 +93,7 @@ if(!$rental_unit) {
 // look for an existing customer for given identity
 $customer = Customer::search([ ['relationship', '=', 'customer'], ['owner_identity_id', '=', 1], ['partner_identity_id', '=', $params['customer_identity_id']] ])
     ->read(['rate_class_id', 'customer_nature_id'])
-    ->first();
+    ->first(true);
 
 // default nature (individual)
 $customer_nature_id = 30;
@@ -125,7 +125,7 @@ if(!count($product_models_ids)) {
 
 $product = Product::search([ ['can_sell', '=', true], ['product_model_id', 'in', $product_models_ids] ])
     ->read(['id', 'product_model_id'])
-    ->first();
+    ->first(true);
 
 if(!$product) {
     throw new Exception("no_product_match", QN_ERROR_UNKNOWN_OBJECT);
@@ -142,7 +142,7 @@ $booking = Booking::create([
         'customer_identity_id'  => $params['customer_identity_id'],
         'customer_nature_id'    => $customer_nature_id
     ])
-    ->first();
+    ->first(true);
 
 $groups = BookingLineGroup::create([
     'booking_id'            => $booking['id'],
@@ -154,7 +154,7 @@ $groups = BookingLineGroup::create([
     'date_to'               => $params['date_to']
 ]);
 
-$group = $groups->first();
+$group = $groups->first(true);
 
 BookingLine::create([
         'booking_id'            => $booking['id'],
@@ -173,7 +173,7 @@ $groups->update([
 // make sure computed fields are available
 Booking::id($booking['id'])->read(['name', 'status', 'date_from', 'date_to', 'total', 'price']);
 
-$group = $groups->read(['id', 'sojourn_product_models_ids'])->first();
+$group = $groups->read(['id', 'sojourn_product_models_ids'])->first(true);
 
 // reset auto assigned rental units (if any)
 SojournProductModel::ids($group['sojourn_product_models_ids'])->delete(true);
@@ -184,7 +184,7 @@ $spm = SojournProductModel::create([
         'booking_line_group_id' => $group['id'],
         'product_model_id'      => $product['product_model_id']
     ])
-    ->first();
+    ->first(true);
 
 SojournProductModelRentalUnitAssignement::create([
         'booking_id'                => $booking['id'],

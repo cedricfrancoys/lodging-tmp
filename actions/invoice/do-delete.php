@@ -39,7 +39,7 @@ list($context, $orm, $cron, $auth) = [$providers['context'], $providers['orm'], 
 
 $invoice = Invoice::id($params['id'])
     ->read(['id', 'status', 'type', 'is_deposit', 'funding_id', 'fundings_ids'])
-    ->first();
+    ->first(true);
 
 if($invoice['status'] != 'proforma') {
     throw new Exception("incompatible_status", QN_ERROR_INVALID_PARAM);

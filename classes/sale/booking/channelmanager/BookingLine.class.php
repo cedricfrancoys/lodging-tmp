@@ -26,7 +26,8 @@ class BookingLine extends \lodging\sale\booking\BookingLine {
             ],
 
             'qty_vars' => [
-                'type'              => 'text',
+                'type'              => 'string',
+                'usage'             => 'text/plain',
                 'description'       => 'JSON array holding qty variation deltas (for \'by person\' products), if any.',
             ],
 

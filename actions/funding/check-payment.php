@@ -36,7 +36,7 @@ list($context, $auth, $dispatch) = [ $providers['context'], $providers['auth'], 
 // switch to root account (access is 'private')
 $auth->su();
 
-$funding = Funding::id($params['id'])->read(['id', 'is_paid','due_amount', 'due_date', 'booking_id' => ['id', 'center_office_id']])->first();
+$funding = Funding::id($params['id'])->read(['id', 'is_paid','due_amount', 'due_date', 'booking_id' => ['id', 'center_office_id']])->first(true);
 
 if(!$funding) {
     throw new Exception("unknown_funding", QN_ERROR_UNKNOWN_OBJECT);

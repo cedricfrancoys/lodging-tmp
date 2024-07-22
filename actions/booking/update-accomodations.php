@@ -53,7 +53,7 @@ foreach($consumptions as $cid => $consumption) {
         $orm->update('lodging\realestate\RentalUnit', $consumption['rental_unit_id'], ['status' => 'ooo', 'action_required' => 'repair']);
     }
     else {
-        $rental_unit = RentalUnit::id($consumption['rental_unit_id'])->read(['is_accomodation'])->first();
+        $rental_unit = RentalUnit::id($consumption['rental_unit_id'])->read(['is_accomodation'])->first(true);
 
         if($rental_unit['is_accomodation']) {
             $action_required = 'cleanup_daily';

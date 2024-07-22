@@ -43,7 +43,7 @@ $booking = Booking::id($params['id'])
                     'center_id' => ['name', 'template_category_id'],
                     'contacts_ids' => ['partner_identity_id' => ['email' , 'lang_id' => ['code']]]
             ])
-            ->first();
+            ->first(true);
 
 if(!$booking) {
     throw new Exception("unknown_booking", QN_ERROR_UNKNOWN_OBJECT);
@@ -59,7 +59,7 @@ $recipient = [
 ];
 
 $contract_id = array_shift($booking['contracts_ids']);
-$contract = Contract::id($contract_id)->read(['status'])->first();
+$contract = Contract::id($contract_id)->read(['status'])->first(true);
 
 $httpResponse = $context->httpResponse()->status(200);
 

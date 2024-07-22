@@ -158,7 +158,7 @@ $tree = [
 
 $bookings = Booking::id($params['id'])
     ->read($tree)
-    ->adapt('txt')
+    ->adapt('json')
     ->get(true);
 
 if(!$bookings || !count($bookings)) {

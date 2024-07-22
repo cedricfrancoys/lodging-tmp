@@ -66,7 +66,7 @@ $invoice = Invoice::id($params['id'])
             ]
         ]
     ])
-    ->first();
+    ->first(true);
 
 if(!$invoice) {
     throw new Exception("unknown_invoice", QN_ERROR_UNKNOWN_OBJECT);
@@ -98,7 +98,7 @@ $reversed_invoice = Invoice::create([
         'is_deposit'            => $invoice['is_deposit'],
         'reversed_invoice_id'   => $invoice['id']
     ])
-    ->first();
+    ->first(true);
 
 // create groups and lines
 foreach($invoice['invoice_line_groups_ids'] as $gid => $group) {

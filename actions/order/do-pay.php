@@ -65,7 +65,7 @@ $order = Order::id($params['id'])
             ]
         ]
     ])
-    ->first();
+    ->first(true);
 
 if(!$order) {
     throw new Exception("unknown_order", QN_ERROR_UNKNOWN_OBJECT);
@@ -183,7 +183,7 @@ foreach($order['order_payments_ids'] as $pid => $payment) {
             }
             // no 'extra' group: create one
             else {
-                $new_group = BookingLineGroup::create(['name' => 'Suppléments', 'booking_id' => $booking_id, 'is_extra' => true])->first();
+                $new_group = BookingLineGroup::create(['name' => 'Suppléments', 'booking_id' => $booking_id, 'is_extra' => true])->first(true);
                 $group_id = $new_group['id'];
             }
             // create booking lines according to order lines
@@ -194,7 +194,7 @@ foreach($order['order_payments_ids'] as $pid => $payment) {
                         'booking_line_group_id' => $group_id
                     ])
                     ->update(['product_id' => $line['product_id']])
-                    ->first();
+                    ->first(true);
                 // #memo - at creation booking_line qty is always set accordingly to its parent group nb_pers
                 BookingLine::id($new_line['id'])
                     // #memo - setting qty reset prices

@@ -34,7 +34,7 @@ list($params, $providers) = announce([
 list($context, $dispatch) = [ $providers['context'], $providers['dispatch']];
 
 // ensure booking object exists and is readable
-$booking = Booking::id($params['id'])->read(['id', 'name', 'center_office_id', 'booking_lines_groups_ids' => ['nb_pers', 'age_range_assignments_ids' => ['age_range_id', 'qty']]])->first();
+$booking = Booking::id($params['id'])->read(['id', 'name', 'center_office_id', 'booking_lines_groups_ids' => ['nb_pers', 'age_range_assignments_ids' => ['age_range_id', 'qty']]])->first(true);
 
 if(!$booking) {
     throw new Exception("unknown_booking", QN_ERROR_UNKNOWN_OBJECT);

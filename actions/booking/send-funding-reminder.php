@@ -79,7 +79,7 @@ $funding = Funding::id($params['funding_id'])
     ->read(['booking_id' => ['id', 'date_from', 'status',
                              'center_id' => ['id', 'center_office_id' => ['email_bcc']],
                              'has_contract', 'contracts_ids']])
-    ->first();
+    ->first(true);
 
 if(!$funding) {
     throw new Exception("unknown_funding", QN_ERROR_UNKNOWN_OBJECT);
@@ -96,7 +96,7 @@ if(!$booking['has_contract'] || empty($booking['contracts_ids'])) {
 }
 
 $last_contract_id = array_shift($booking['contracts_ids']);
-$contract = Contract::id($last_contract_id)->read(['status'])->first();
+$contract = Contract::id($last_contract_id)->read(['status'])->first(true);
 
 if(in_array($contract['status'], ['pending', 'cancelled'])) {
     throw new Exception('sending_skipped', 0);

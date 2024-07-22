@@ -39,7 +39,7 @@ list($context, $orm, $cron, $auth) = [$providers['context'], $providers['orm'], 
 
 $invoice = Invoice::id($params['id'])
     ->read(['id', 'status', 'type', 'is_deposit', 'booking_id', 'funding_id', 'center_office_id', 'reversed_invoice_id', 'price', 'balance', 'due_date'])
-    ->first();
+    ->first(true);
 
 if($invoice['status'] != 'invoice') {
     // only emitted invoices can have fundings
@@ -100,7 +100,7 @@ if(is_null($invoice['funding_id'])) {
                     'due_date'              => $invoice['due_date']
                 ];
 
-                $new_funding = Funding::create($funding)->read(['id', 'name'])->first();
+                $new_funding = Funding::create($funding)->read(['id', 'name'])->first(true);
                 // attach the invoice to the new funding
                 Invoice::id($params['id'])->update(['funding_id' => $new_funding['id']]);
             }

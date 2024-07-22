@@ -193,7 +193,7 @@ $contract = Contract::create([
         'customer_id'   => $booking['customer_id']['id']
     ])
     ->read(['id'])
-    ->first();
+    ->first(true);
 
 foreach($booking['booking_lines_groups_ids'] as $group) {
     $group_id = $group['id'];
@@ -218,7 +218,7 @@ foreach($booking['booking_lines_groups_ids'] as $group) {
                 'fare_benefit'      => $group['fare_benefit'],
                 'rate_class_id'     => $group_rate_class_id
             ])
-            ->first();
+            ->first(true);
 
         // create a line based on the group
         $c_line = [
@@ -233,7 +233,7 @@ foreach($booking['booking_lines_groups_ids'] as $group) {
         $contract_line = ContractLine::create($c_line)
             ->update(['total' => $group['total']])
             ->update(['price' => $group['price']])
-            ->first();
+            ->first(true);
 
         ContractLineGroup::ids($contract_line_group['id'])->update([ 'contract_line_id' => $contract_line['id'] ]);
     }
@@ -245,7 +245,7 @@ foreach($booking['booking_lines_groups_ids'] as $group) {
                 'fare_benefit'      => $group['fare_benefit'],
                 'rate_class_id'     => $group_rate_class_id
             ])
-            ->first();
+            ->first(true);
     }
 
     // create as many lines as the group booking_lines
@@ -341,7 +341,7 @@ if($params['instant_payment']) {
                 'name', 'delay_from_event', 'delay_from_event_offset', 'delay_count', 'type', 'is_balance_invoice', 'amount_share'
             ]
         ])
-        ->first();
+        ->first(true);
 }
 else {
     // retrieve existing payment plans
@@ -525,7 +525,7 @@ try {
 
                 // request funding creation
                 try {
-                    $new_funding = Funding::create($funding)->read(['id', 'name'])->first();
+                    $new_funding = Funding::create($funding)->read(['id', 'name'])->first(true);
                     if($deadline['type'] == 'invoice') {
                         // an invoice was requested: convert the installment to an invoice
                         eQual::run('do', 'lodging_funding_convert', ['id' => $new_funding['id'], 'partner_id' => $booking['customer_id']['id']]);
