@@ -11,8 +11,6 @@
 // use lodging\sale\booking\BookingLineGroup;
 // use lodging\sale\booking\BookingLineRentalUnitAssignement;
 
-// $providers = eQual::inject(['context', 'orm', 'auth', 'access']);
-
 
 // $tests = [
     

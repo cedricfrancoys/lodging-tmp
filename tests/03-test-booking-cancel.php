@@ -13,7 +13,6 @@ use sale\customer\CustomerNature;
 use sale\customer\RateClass;
 use sale\booking\BookingType;
 
-$providers = eQual::inject(['orm']);
 
 $tests = [
     '0301' => [
@@ -289,12 +288,13 @@ $tests = [
             return ($message == "incompatible_status");
         },
 
-        'rollback' =>  function () use($providers) {
+        'rollback' =>  function () {
             $booking = Booking::search(['description', 'ilike', '%'. 'Validate that the reservation can be canceled from a reservation in balanced status'.'%' ])
                 ->read(['id'])
                 ->first(true);
 
-            $providers['orm']->delete(Booking::getType(), $booking['id'], true);
+            $services = eQual::inject(['orm']);
+            $services['orm']->delete(Booking::getType(), $booking['id'], true);
         }
     ]
 ];
