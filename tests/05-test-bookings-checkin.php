@@ -442,7 +442,7 @@ $tests = [
                 ->first(true);
 
             Booking::id($booking['id'])
-                ->update(['status' => 'confirm']);
+                ->update(['status' => 'confirmed']);
 
             try {
                 eQual::run('do', 'lodging_booking_do-checkin', ['id' => $booking['id']]);

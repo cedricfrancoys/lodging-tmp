@@ -148,7 +148,7 @@ $tests = [
             }
 
             $booking = Booking::id($booking['id'])
-                ->update(['status' => 'confirm'])
+                ->update(['status' => 'confirmed'])
                 ->read(['id','status'])
                 ->first(true);
 
@@ -252,7 +252,7 @@ $tests = [
             }
 
             $booking = Booking::id($booking['id'])
-                ->update(['status' => 'confirm'])
+                ->update(['status' => 'confirmed'])
                 ->read(['id','status'])
                 ->first(true);
 
@@ -409,7 +409,7 @@ $tests = [
             }
 
             $booking = Booking::id($booking['id'])
-                ->update(['status' => 'confirm'])
+                ->update(['status' => 'confirmed'])
                 ->read(['id','status'])
                 ->first(true);
 

@@ -437,7 +437,7 @@ $tests = [
                 $e->getMessage();
             }
 
-            Booking::id($booking['id'])->update(['status' => 'confirm']);
+            Booking::id($booking['id'])->update(['status' => 'confirmed']);
 
             try {
                 eQual::run('do', 'lodging_booking_do-quote', ['id' => $booking['id'], 'free_rental_units' => true]);

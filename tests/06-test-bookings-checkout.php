@@ -387,7 +387,7 @@ $tests = [
 
 
             Invoice::search(['booking_id' , '=', $booking['id']])
-                ->update(['status' => 'invoice']);
+                ->update(['status' => 'invoiced']);
 
 
             try {
