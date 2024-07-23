@@ -74,7 +74,7 @@ class Contract extends \sale\booking\Contract {
      * @return array    Returns an associative array mapping fields with their error messages. En empty array means that object has been successfully processed and can be updated.
      */
     public static function canupdate($om, $oids, $values, $lang='en') {
-        $allowed_fields = ['status', 'is_locked'];
+        $allowed_fields = ['status', 'is_locked', 'price', 'total'];
 
         if(count(array_diff(array_keys($values), $allowed_fields))) {
             return ['status' => ['not_allowed' => 'Contract cannot be manually updated.']];
