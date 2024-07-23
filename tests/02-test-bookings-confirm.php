@@ -172,13 +172,17 @@ $tests = [
             Booking::id($booking['id'])->delete(true);
         }
     ],
+
     '0202' => array(
-        'description'       =>  'Verify that the contract price matches the reservation price.',
-        'help'              =>  "
+
+        'description' =>  'Verify that the contract price matches the reservation price.',
+
+        'help' =>  "
             Create a reservation for 1 person client for two night.
             Change the reservation status from 'devis' to 'confirm'.
             Verify that the contract price matches the reservation price.",
-        'arrange'           =>  function () {
+
+        'arrange' =>  function () {
 
             $center = Center::search(['name', 'like', '%Louvain-la-Neuve%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'TP'])->read(['id'])->first(true);
@@ -189,7 +193,8 @@ $tests = [
             return [$center['id'], $booking_type['id'], $customer_nature['id'], $customer_identity['id'], $sojourn_type['id']];
 
         },
-        'act'               =>  function ($data) {
+
+        'act' =>  function ($data) {
 
             list($center_id, $booking_type_id, $customer_nature_id, $customer_identity_id, $sojourn_type_id ) = $data;
 
@@ -205,59 +210,63 @@ $tests = [
                 ->read(['id','date_from','date_to'])
                 ->first(true);
 
-            $booking_line_group = BookingLineGroup::create([
-                    'booking_id'     => $booking['id'],
-                    'is_sojourn'     => true,
-                    'group_type'     => 'sojourn',
-                    'has_pack'       => false,
-                    'name'           => 'Séjour pour 1 personne pendant 1 nuitée',
-                    'order'          => 1,
-                    'rate_class_id'  => 4,
-                    'sojourn_type_id'=> 1
-                ])
-                ->update([
-                    'date_from'      => $booking['date_from'],
-                    'date_to'        => $booking['date_to'],
-                ])
-                ->update([
-                    'nb_pers'        => 1,
-                ])
-                ->read(['id','nb_pers'])
-                ->first(true);
-
-            $product = Product::search(['sku','=', 'GA-NuitCh1-A' ])->read(['id','product_model_id'])->first(true);
-
-            BookingLine::create([
-                    'booking_id'            => $booking['id'],
-                    'booking_line_group_id' => $booking_line_group['id']
-                ])
-                ->update([
-                    'product_id'            => $product['id']
-                ])
-                ->read(['id','name','price'])
-                ->first(true);
-
-            $booking = Booking::id($booking['id'])
-                ->update(['status' => 'option'])
-                ->read(['id','status'])
-                ->first(true);
-
             try {
-                eQual::run('do', 'lodging_booking_do-confirm', ['id' => $booking['id']]);
+                $booking_line_group = BookingLineGroup::create([
+                        'booking_id'     => $booking['id'],
+                        'is_sojourn'     => true,
+                        'group_type'     => 'sojourn',
+                        'has_pack'       => false,
+                        'name'           => 'Séjour pour 1 personne pendant 1 nuitée',
+                        'order'          => 1,
+                        'rate_class_id'  => 4,
+                        'sojourn_type_id'=> 1
+                    ])
+                    ->update([
+                        'date_from'      => $booking['date_from'],
+                        'date_to'        => $booking['date_to'],
+                    ])
+                    ->update([
+                        'nb_pers'        => 1,
+                    ])
+                    ->read(['id','nb_pers'])
+                    ->first(true);
 
+                $product = Product::search(['sku','=', 'GA-NuitCh1-A' ])->read(['id','product_model_id'])->first(true);
+
+                BookingLine::create([
+                        'booking_id'            => $booking['id'],
+                        'booking_line_group_id' => $booking_line_group['id']
+                    ])
+                    ->update([
+                        'product_id'            => $product['id']
+                    ])
+                    ->read(['id','name','price'])
+                    ->first(true);
+
+                $sojourn_product_model = SojournProductModel::search([
+                        ['booking_line_group_id', "=", $booking_line_group['id']],
+                        ['product_model_id', "=", $product['product_model_id']]
+                    ])
+                    ->read(['id'])
+                    ->first(true);
+
+                SojournProductModelRentalUnitAssignement::create([
+                        "rental_unit_id" => 501,
+                        "qty" => 1,
+                        "booking_id" => $booking['id'],
+                        "booking_line_group_id" => $booking_line_group['id'],
+                        "sojourn_product_model_id" => $sojourn_product_model['id']
+                    ]);
+                eQual::run('do', 'lodging_booking_do-option-confirm', ['id' => $booking['id'], 'instant_payment' => true]);
             }
             catch(Exception $e) {
                 $e->getMessage();
             }
 
-            $booking = Booking::id($booking['id'])
-                ->update(['status' => 'confirmed'])
-                ->read(['id','status'])
-                ->first(true);
-
             return $booking['id'];
         },
-        'assert'            =>  function ($booking_id) {
+
+        'assert' =>  function ($booking_id) {
 
             $booking = Booking::id($booking_id)
                 ->read(['id','price', 'status'])
@@ -272,7 +281,8 @@ $tests = [
 
             return $booking['price'] == $contract['price'];
         },
-        'rollback'          =>  function () {
+
+        'rollback' =>  function () {
 
             $booking = Booking::search(['description', 'ilike', '%'. 'Verify that the contract price matches the reservation price'.'%'])
                   ->update(['status' => 'quote'])
@@ -281,16 +291,20 @@ $tests = [
             Booking::id($booking['id'])->delete(true);
         }
     ),
-    '0203' => array(
-        'description'       =>  "Validate that a new booking line cannot be added to the reservation in confirmed status.",
-        'help'              =>  "
+
+    '0203' => [
+
+        'description' =>  "Validate that a new booking line cannot be added to the reservation in confirmed status.",
+
+        'help' =>  "
             Create a reservation for a client for one night.
             Change the reservation status from 'devis' to 'confirm'.
             Create a new booking line with the product 'Nuit Chambre 2 pers'.
             Retrieve the error message for the new booking line.\n
             Verify the error message.
             Verify that the reservation price has not been modified.",
-        'arrange'           =>  function () {
+
+        'arrange' =>  function () {
 
             $center = Center::search(['name', 'like', '%Louvain-la-Neuve%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'TP'])->read(['id'])->first(true);
@@ -301,7 +315,8 @@ $tests = [
             return [$center['id'], $booking_type['id'], $customer_nature['id'], $customer_identity['id'], $sojourn_type['id'] ];
 
         },
-        'act'               =>  function ($data) {
+
+        'act' =>  function ($data) {
 
             list($center_id, $booking_type_id, $customer_nature_id, $customer_identity_id, $sojourn_type_id ) = $data;
 
@@ -421,7 +436,8 @@ $tests = [
                     'product_id'            => $new_product['id']
                 ]);
 
-            } catch (Exception $e) {
+            }
+            catch (Exception $e) {
                 $message = $e->getMessage();
 
             }
@@ -430,7 +446,8 @@ $tests = [
             $messageError = $data['status']['non_editable'];
             return [$messageError];
         },
-        'assert'            =>  function ($data) {
+
+        'assert' =>  function ($data) {
 
             if ($data){
                 list($messageError) = $data;
@@ -438,7 +455,8 @@ $tests = [
 
             return ($messageError == "Non-extra service lines cannot be changed for non-quote bookings.");
         },
-        'rollback'          =>  function () {
+
+        'rollback' =>  function () {
 
             $booking = Booking::search(['description', 'ilike', '%'. 'Reservation cannot be deleted in the confirm'.'%'])
                   ->update(['status' => 'quote'])
@@ -446,12 +464,14 @@ $tests = [
                   ->first(true);
             Booking::id($booking['id'])->delete(true);
 
-
         }
-    ),
-    '0204' => array(
-        'description'       =>  "Validate that the reservation is not in confirmed status if the rental units are not assigned.",
-        'arrange'           =>  function () {
+    ],
+
+    '0204' => [
+
+        'description' =>  "Validate that the reservation is not in confirmed status if the rental units are not assigned.",
+
+        'arrange' =>  function () {
 
             $center = Center::search(['name', 'like', '%Louvain-la-Neuve%'])->read(['id'])->first(true);
             $booking_type = BookingType::search(['code', '=', 'TP'])->read(['id'])->first(true);
@@ -462,7 +482,8 @@ $tests = [
             return [$center['id'], $booking_type['id'], $customer_nature['id'], $customer_identity['id'], $sojourn_type['id']];
 
         },
-        'act'               =>  function ($data) {
+
+        'act' =>  function ($data) {
 
             list($center_id, $booking_type_id, $customer_nature_id, $customer_identity_id, $sojourn_type_id ) = $data;
 
@@ -526,15 +547,16 @@ $tests = [
 
             return $booking['id'];
         },
-        'assert'            =>  function ($booking_id) {
 
+        'assert' =>  function ($booking_id) {
             $booking = Booking::id($booking_id)
                 ->read(['id','status'])
                 ->first(true);
 
             return ($booking['status'] != 'confirm');
         },
-        'rollback'          =>  function () {
+
+        'rollback' =>  function () {
 
             $booking = Booking::search(['description', 'like', '%'. 'Validate that the reservation is not in confirmed status if the rental units are not assigned'.'%'])
                 ->update(['status' => 'quote'])
@@ -543,5 +565,5 @@ $tests = [
 
             Booking::id($booking['id'])->delete(true);
         }
-    )
+    ]
 ];
