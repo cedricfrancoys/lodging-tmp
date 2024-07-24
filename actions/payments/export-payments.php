@@ -50,14 +50,14 @@ $auth->su();
 */
 
 // retrieve center_office
-$office = CenterOffice::id($params['center_office_id'])->read(['id'])->first();
+$office = CenterOffice::id($params['center_office_id'])->read(['id'])->first(true);
 
 if(!$office) {
     throw new Exception("unknown_center_office", QN_ERROR_UNKNOWN_OBJECT);
 }
 
 // retrieve the journal of miscellaneous operations
-$journal = AccountingJournal::search([['center_office_id', '=', $params['center_office_id']], ['type', '=', 'miscellaneous']])->read(['id', 'code', 'index'])->first();
+$journal = AccountingJournal::search([['center_office_id', '=', $params['center_office_id']], ['type', '=', 'miscellaneous']])->read(['id', 'code', 'index'])->first(true);
 
 if(!$journal) {
     throw new Exception("unknown_center_office", QN_ERROR_UNKNOWN_OBJECT);

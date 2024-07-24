@@ -50,7 +50,7 @@ $result = [];
 /*
     Retrieve all models belonging to the POS category
 */
-$category = Category::search([['code', '=', 'POS']])->read(['id', 'code', 'product_models_ids'])->first();
+$category = Category::search([['code', '=', 'POS']])->read(['id', 'code', 'product_models_ids'])->first(true);
 
 /*
     Fetch all products belonging to the targeted models
@@ -66,7 +66,7 @@ $candidate_products_ids = PosProduct::search([
     Keep only products for which a price can be retrieved
 */
 // retrieve pricelist category from center
-$center = Center::id($params['center_id'])->read(['price_list_category_id'])->first();
+$center = Center::id($params['center_id'])->read(['price_list_category_id'])->first(true);
 
 // find all Price Lists that matches the criteria from the order with (shortest duration first)
 $price_lists_ids = PosPriceList::search([

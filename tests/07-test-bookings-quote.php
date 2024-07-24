@@ -123,7 +123,7 @@ $tests = [
 
             $booking = Booking::id($booking['id'])
                 ->read(['id','price', 'nb_pers', 'booking_lines_ids'])
-                ->first();
+                ->first(true);
 
             try {
                 eQual::run('do', 'lodging_booking_do-option', ['id' => $booking['id']]);
@@ -455,7 +455,7 @@ $tests = [
 
             $contract = Contract::id($booking['contracts_ids'][0])
                 ->read(['status'])
-                ->first();
+                ->first(true);
 
             return $booking['status'] == 'quote' &&
                 $contract['status'] == 'cancelled' &&
@@ -465,7 +465,7 @@ $tests = [
 
             $booking = Booking::search(['description', 'like', '%'. 'Validate contract and funding cancellation on reservation shift from confirmed to quoted'.'%'])
                 ->read(['contracts_ids'])
-                ->first();
+                ->first(true);
 
             Contract::id($booking['contracts_ids'][0])->delete(true);
 

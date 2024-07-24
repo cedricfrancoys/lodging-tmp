@@ -56,14 +56,14 @@ list($context, $orm, $auth, $dispatch) = [$providers['context'], $providers['orm
 */
 
 // retrieve center_office
-$office = CenterOffice::id($params['center_office_id'])->read(['id'])->first();
+$office = CenterOffice::id($params['center_office_id'])->read(['id'])->first(true);
 
 if(!$office) {
     throw new Exception("unknown_center_office", QN_ERROR_UNKNOWN_OBJECT);
 }
 
 // retrieve the journal of sales
-$journal = AccountingJournal::search([['center_office_id', '=', $params['center_office_id']], ['type', '=', 'sales']])->read(['id', 'code'])->first();
+$journal = AccountingJournal::search([['center_office_id', '=', $params['center_office_id']], ['type', '=', 'sales']])->read(['id', 'code'])->first(true);
 
 if(!$journal) {
     throw new Exception("unknown_center_office", QN_ERROR_UNKNOWN_OBJECT);

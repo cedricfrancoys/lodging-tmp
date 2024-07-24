@@ -70,7 +70,7 @@ if(!isset($map_centers_customers[$center_id])) {
     throw new Exception('unsupported_center', EQ_ERROR_INVALID_PARAM);
 }
 
-$center = Center::id($center_id)->read(['organisation_id', 'center_office_id'])->first();
+$center = Center::id($center_id)->read(['organisation_id', 'center_office_id'])->first(true);
 
 if(!$center) {
     throw new Exception('missing_center', EQ_ERROR_UNKNOWN_OBJECT);

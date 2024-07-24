@@ -125,7 +125,7 @@ $tests = [
 
             $booking = Booking::id($booking['id'])
                 ->read(['id','price', 'nb_pers', 'booking_lines_ids'])
-                ->first();
+                ->first(true);
 
             try {
                 eQual::run('do', 'lodging_booking_do-option', ['id' => $booking['id']]);

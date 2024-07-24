@@ -52,7 +52,7 @@ $center = Center::id($params['center_id'])
                     'fax',
                     'email'
                 ], $params['lang'])
-                ->first();
+                ->first(true);
 
 if($center && count($center)) {
 

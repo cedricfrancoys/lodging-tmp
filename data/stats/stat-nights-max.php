@@ -75,7 +75,7 @@ if(isset($params['center_id']) || $params['all_centers']) {
             throw new Exception('user_unknown', QN_ERROR_NOT_ALLOWED);
         }
 
-        $user = User::id($user_id)->read(['centers_ids'])->first();
+        $user = User::id($user_id)->read(['centers_ids'])->first(true);
         if(!$user) {
             throw new Exception('unexpected_error', QN_ERROR_INVALID_USER);
         }

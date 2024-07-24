@@ -79,7 +79,7 @@ $tests = [
             ])
                 ->update(['age_range_id' => $secondary_age_range_id]);
 
-            $booking = Booking::id($booking['id'])->read(['id','price'])->first();
+            $booking = Booking::id($booking['id'])->read(['id','price'])->first(true);
 
             return($booking);
         },
@@ -178,7 +178,7 @@ $tests = [
             ])
                 ->update(['age_range_id' => $secondary_age_range_id]);
 
-            $booking = Booking::id($booking['id'])->read(['id','price'])->first();
+            $booking = Booking::id($booking['id'])->read(['id','price'])->first(true);
 
             return($booking);
         },

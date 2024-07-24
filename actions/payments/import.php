@@ -56,7 +56,7 @@ foreach($statements as $statement) {
 
     $iban = BankStatement::convertBbanToIban($statement['account']['number']);
 
-    $center_office = CenterOffice::search(['bank_account_iban', '=', trim($iban)])->read(['id'])->first();
+    $center_office = CenterOffice::search(['bank_account_iban', '=', trim($iban)])->read(['id'])->first(true);
 
     if(!$center_office) {
         throw new Exception('unknown_account_number', QN_ERROR_INVALID_PARAM);
@@ -73,13 +73,13 @@ foreach($statements as $statement) {
         'status'                => 'pending'
     ];
 
-    $bank_statement = BankStatement::search([['old_balance', '=', $fields['old_balance']],['new_balance', '=', $fields['new_balance']],['date', '=', $fields['date']]])->first();
+    $bank_statement = BankStatement::search([['old_balance', '=', $fields['old_balance']],['new_balance', '=', $fields['new_balance']],['date', '=', $fields['date']]])->first(true);
     if($bank_statement) {
         throw new Exception('already_imported', QN_ERROR_CONFLICT_OBJECT);
     }
 
     // unique constraint on ['date', 'old_balance', 'new_balance'] will apply
-    $bank_statement = BankStatement::create($fields)->adapt('json')->first();
+    $bank_statement = BankStatement::create($fields)->adapt('json')->first(true);
 
     try {
         foreach($statement['transactions'] as $transaction) {

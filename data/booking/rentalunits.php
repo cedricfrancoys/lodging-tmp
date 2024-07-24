@@ -67,7 +67,7 @@ $sojourn = BookingLineGroup::id($params['booking_line_group_id'])
         'time_from',
         'time_to'
     ])
-    ->first();
+    ->first(true);
 
 if($sojourn) {
     $date_from = $sojourn['date_from'] + $sojourn['time_from'];
@@ -132,7 +132,7 @@ if($sojourn) {
 
     // retrieve rental units that are already assigned by other groups within same time range, if any (independently from consumptions)
     // (we need to withdraw those from available units)
-    $booking = Booking::id($sojourn['booking_id']['id'])->read(['booking_lines_groups_ids', 'rental_unit_assignments_ids'])->first();
+    $booking = Booking::id($sojourn['booking_id']['id'])->read(['booking_lines_groups_ids', 'rental_unit_assignments_ids'])->first(true);
     if($booking) {
         $groups = BookingLineGroup::ids($booking['booking_lines_groups_ids'])->read(['id', 'date_from', 'date_to', 'time_from', 'time_to'])->get();
         $assignments = SojournProductModelRentalUnitAssignement::ids($booking['rental_unit_assignments_ids'])->read(['qty', 'rental_unit_id' => ['id', 'capacity'], 'booking_line_group_id'])->get();

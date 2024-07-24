@@ -206,7 +206,7 @@ $fields = [
 ];
 
 
-$contract = Contract::id($params['id'])->read($fields, $params['lang'])->first();
+$contract = Contract::id($params['id'])->read($fields, $params['lang'])->first(true);
 
 if(!$contract) {
     throw new Exception("unknown_contract", QN_ERROR_UNKNOWN_OBJECT);
@@ -421,7 +421,7 @@ if($booking['center_id']['template_category_id']) {
             ['type', '=', 'contract']
         ])
         ->read(['parts_ids' => ['name', 'value']], $params['lang'])
-        ->first();
+        ->first(true);
 
     foreach($template['parts_ids'] as $part_id => $part) {
         if($part['name'] == 'header') {
@@ -438,7 +438,7 @@ if($booking['center_id']['template_category_id']) {
 
 $template_part = TemplatePart::search(['name', '=', 'advantage_notice'])
     ->read(['value'], $params['lang'])
-    ->first();
+    ->first(true);
 
 if($template_part) {
     $values['advantage_notice_html'] = $template_part['value'];
@@ -446,7 +446,7 @@ if($template_part) {
 
 $template_part = TemplatePart::search(['name', '=', 'contract_agreement'])
     ->read(['value'], $params['lang'])
-    ->first();
+    ->first(true);
 
 if($template_part) {
     $values['contract_agreement_html'] = $template_part['value'];

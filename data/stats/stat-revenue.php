@@ -98,7 +98,7 @@ if($params['all_centers']) {
         throw new Exception('user_unknown', QN_ERROR_NOT_ALLOWED);
     }
 
-    $user = User::id($user_id)->read(['centers_ids'])->first();
+    $user = User::id($user_id)->read(['centers_ids'])->first(true);
 
     if(!$user) {
         throw new Exception('unexpected_error', QN_ERROR_INVALID_USER);
@@ -168,7 +168,7 @@ foreach($bookings as $booking) {
 
     foreach($groups as $group) {
         if($group['has_pack'] && $group['is_locked']) {
-            $product_model = ProductModel::id($group['pack_id']['product_model_id'])->read(['id', 'stat_section_id'])->first();
+            $product_model = ProductModel::id($group['pack_id']['product_model_id'])->read(['id', 'stat_section_id'])->first(true);
             $stat_id = $product_model['stat_section_id'];
             if(!isset($map_stats[$stat_id])) {
                 continue;

@@ -226,7 +226,7 @@ $fields = [
 ];
 
 
-$invoice = Invoice::id($params['id'])->read($fields, $params['lang'])->first();
+$invoice = Invoice::id($params['id'])->read($fields, $params['lang'])->first(true);
 
 if(!$invoice) {
     throw new Exception("unknown_invoice", QN_ERROR_UNKNOWN_OBJECT);
@@ -494,7 +494,7 @@ if($booking['center_id']['template_category_id']) {
                             ['type', '=', 'invoice']
                         ])
                         ->read(['parts_ids' => ['name', 'value']])
-                        ->first();
+                        ->first(true);
     if($template && count($template) > 0) {
         foreach($template['parts_ids'] as $part_id => $part) {
             if($part['name'] == 'header') {
@@ -510,7 +510,7 @@ if($booking['center_id']['template_category_id']) {
 
 $template_part = TemplatePart::search(['name', '=', 'proforma_notice'])
                     ->read(['value'], $params['lang'])
-                    ->first();
+                    ->first(true);
 
 if($template_part) {
     $values['invoice_proforma_notice_html'] = $template_part['value'];

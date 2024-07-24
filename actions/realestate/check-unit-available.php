@@ -44,7 +44,7 @@ list($params, $providers) = announce([
 list($context) = [ $providers['context']];
 
 
-$rental_unit = RentalUnit::id($params['id']) ->read(['id'])->first();
+$rental_unit = RentalUnit::id($params['id']) ->read(['id'])->first(true);
 
 if(!$rental_unit) {
     throw new Exception("unknown_rental_unit", QN_ERROR_UNKNOWN_OBJECT);

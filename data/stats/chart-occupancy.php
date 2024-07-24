@@ -99,7 +99,7 @@ $centers_ids = [];
 
 
 if($params['all_centers']) {
-    $user = User::id($user_id)->read(['centers_ids'])->first();
+    $user = User::id($user_id)->read(['centers_ids'])->first(true);
     if(!$user) {
         throw new Exception('unexpected_error', QN_ERROR_INVALID_USER);
     }

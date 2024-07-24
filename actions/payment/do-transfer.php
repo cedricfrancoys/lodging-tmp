@@ -45,13 +45,13 @@ list($params, $providers) = eQual::announce([
  */
 list($context, $orm, $cron, $dispatch) = [$providers['context'], $providers['orm'], $providers['cron'], $providers['dispatch']];
 
-$payment = Payment::id($params['id'])->read(['id', 'amount', 'funding_id', 'booking_id', 'center_office_id'])->first();
+$payment = Payment::id($params['id'])->read(['id', 'amount', 'funding_id', 'booking_id', 'center_office_id'])->first(true);
 
 if(!$payment) {
     throw new Exception('unknown_payment', EQ_ERROR_INVALID_PARAM);
 }
 
-$funding = Funding::id($params['funding_id'])->read(['id', 'booking_id'])->first();
+$funding = Funding::id($params['funding_id'])->read(['id', 'booking_id'])->first(true);
 
 if(!$funding) {
     throw new Exception('unknown_funding', EQ_ERROR_INVALID_PARAM);

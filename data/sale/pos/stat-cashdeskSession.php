@@ -104,7 +104,7 @@ if(!empty($params['center_id'])) {
     $center_domain = ['id', 'in', $params['center_id']];
 }
 else {
-    $auth_user = User::id($auth->userId())->read(['centers_ids'])->first();
+    $auth_user = User::id($auth->userId())->read(['centers_ids'])->first(true);
     $center_domain = ['id', 'in', $auth_user['centers_ids']];
 }
 $centers = Center::search($center_domain)->read(['id', 'name'])->get();

@@ -184,7 +184,7 @@ foreach($orders_ids as $order_id) {
                 'order_payment_parts_ids' => ['id','status','payment_method','amount']
             ]
         ])
-        ->first();
+        ->first(true);
 
     if(!$order) {
         continue;
